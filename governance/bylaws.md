@@ -46,5 +46,5 @@ This section describes how an institution or supplier can demonstrate that they 
 *	Documentation on own implementation is available online for at least the working group members. Compliance with the specification can be demonstrated with a badge stating 'complies with OOAPI'. Each version of the OOAPI will have its own 'complies with OOAPI Vx.x' badge so that it is clear which version of the specification it complies with. 
 
 # Appendix A: Code of Conduct (COC)
-The Open Education API project applies the following code of conduct:
-https://github.com/open-education-api/specification/blob/master/code-of-conduct.md
+The Open Education API project applies the following [code of conduct](code-of-conduct.md)
+
