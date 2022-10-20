@@ -81,7 +81,8 @@ For RIO [this mechanism](historical-and-future-data) can be leveraged as follows
 
 ![Mapping of OOAPI EducationSpecifications to RIO Opleidingseenheden](../../_media/simple_rio_opleidingseenheid_mapping.png "Mapping of OOAPI EducationSpecifications to RIO Opleidingseenheden")
 
-EducationSpecifications can have relations to other EducationSpecifications which will be translated to RIO as relations between OpleidingsEenheden.
+### Mapping relations between EducationSpecifications
+EducationSpecifications can have relations to other EducationSpecifications which will be translated to RIO as relations between OpleidingsEenheden. Right now the SURFeduhub RIO mapping functionality only supports relations between an EducationSpecification that map to a HoOpleiding `soort` = `OPLEIDING` on the one side, and an EducationSpecification that maps to a HoOpleiding with `soort` = `VARIANT`.
 
 <div class="colored-table yellow">
 
@@ -184,16 +185,6 @@ EducationSpecifications can have relations to other EducationSpecifications whic
 <!-- tabs:end -->
 
 </div>
-
-### Relations between RIO Opleidingseenheden
-In RIO, there can exist relations between Opleidingseenheden. Two types of relations are possible:
-
-- Hierarchical
-  - From a HoOpleiding (regular) to a HoOnderwijsEenhedenCluster or HoOnderwijsEenheid
-  - From a HoOpleiding (variant) to a HoOnderwijsEenhedenCluster or HoOnderwijsEenheid
-  - From a HoOnderwijsEenhedenCluster to a HoOnderwijsEenheid
-- Variant
-  - From a HoOpleiding (regular) to a HoOpleiding (variant)
 
 ## Mapping Educations to RIO AangebodenOpleidingen
 
