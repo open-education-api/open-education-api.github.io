@@ -24,14 +24,14 @@ The decision-making procedure is as follows: There are two forms of decision-mak
 *	Decisions on the specification description on GitHub
 *	Decisions on the method and the acceptance of proposed major changes within GitHub, for example, a release.
 
-**Decisions within GitHub** For issues within the GitHub environment, the following applies: If an issue is submitted, the master committer has 5 days to prepare for handling the issue. The voting procedure is started within these 5 days so that the decision can be voted on. The decision in respect of which an issue is handled is recorded within the GitHub environment. See the info at https://openonderwijsapi.nl/en/community/
+**Decisions within GitHub** For issues within the GitHub environment, the following applies: If an issue is submitted, the master committer has 5 days to prepare for handling the issue. The voting procedure is started within these 5 days so that the decision can be voted on. The decision in respect of which an issue is handled is recorded within the GitHub environment. See the info at https://openonderwijsapi.nl/#/community/
 
-**Other decisions** Remote voting can take place online at any time through email using the mailing list openonderwijsapi@googlegroups.com or can be send by email. Any working group member can submit a decision to be voted on. All working group members receive an email of the forthcoming vote. This notification specifies:
+**Other decisions** Voting can take place by sending your vote to info@openonderwijsapi.nl. Any working group member can submit a decision to be voted on. All working group members receive an email of the forthcoming vote. This notification specifies:
 *	the matter which is the subject of the vote;
 *	when the vote will take place;
 *	and, if necessary, the timeframe within which a vote must be cast.
 
-There must be a period of at least 7 days between the announcement of the vote and the time a vote can be cast. Only members of the working group can cast a vote. Voting can take place online OR at a meeting. If a member cannot attend the meeting, they must make their vote known before the meeting by sending an email to openonderwijsapi@googlegroups.com. Votes cast after the meeting will not be taken into consideration in taking the decision. If there is a majority vote, the decision will be adopted. If there is no majority vote, or if a vote leads to discussion or a member of the working group appeals against the decision, the vote will be put as an agenda item for the next meeting of the working group. A working group member can appeal against a decision by formulating their objection and sharing it through the mailing list.
+There must be a period of at least 7 days between the announcement of the vote and the time a vote can be cast. Only members of the working group can cast a vote. Voting can only take place by sending an email to info@openonderwijsapi.nl Votes cast after the meeting will not be taken into consideration in taking the decision. If there is a majority vote, the decision will be adopted. If there is no majority vote, or if a vote leads to discussion or a member of the working group appeals against the decision, the vote will be put as an agenda item for the next meeting of the working group. A working group member can appeal against a decision by formulating their objection and sharing it through the mailing list.
 
 The following rules apply to decision-making:
 *	Only institutions affiliated with SURFnet and 1 representative per institution have voting rights.
