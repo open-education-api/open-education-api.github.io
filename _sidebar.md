@@ -13,6 +13,7 @@
     * [Referentiecomponenten en applicaties / References, implementations and examples](architecture/implementations "implementations")
 * [Community](community/)
   * [Working group](community/workinggroup.md)
+  * [Contributing](community/contributing.md)
 * [Governance](governance/)
   * [Bylaws](governance/bylaws.md)
   * [Code of conduct](governance/code-of-conduct.md)
