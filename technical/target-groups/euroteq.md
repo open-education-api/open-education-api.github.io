@@ -1,0 +1,2 @@
+# EuroTeQ targetGroup definition
+

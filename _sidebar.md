@@ -35,5 +35,7 @@
   * [Consumers and profiles](technical/consumers-and-profiles/)
     * [RIO](technical/consumers-and-profiles/rio.md)
     * [eduXchange](technical/consumers-and-profiles/eduxchange.md)
+  * [Target groups (OOAPI v4)](technical/target-groups/)
+    * [EuroTeQ](technical/target-groups/euroteq.md)
 * [Abbreviations and definitions](abbreviations.md)
 * [Contact](contact.md)
