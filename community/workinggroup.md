@@ -39,11 +39,13 @@ The Working group consists of the following members:
 
 ## Working group and community meetings
 
-The working group and community meetings take place on the following dates:
+The (online) working group and community meetings take place on the following dates:
 
-* ~~Tuesday 25 Jan. 14.00-16.00~~
-* ~~Thursday 17 Mar. 10.00-12.00~~
-* ~~Tuesday 10 May 14.00-16.00~~
-* ~~Thursday 7 Jul 10.00-12.00~~
-* ~~Tuesday 13 Sep. 14.00-16.00~~
-* Thursday 17 Nov. 10.00-12.00
+2023:
+* Tuesday 17 Jan. 14.00-16.00
+* Thursday 16 Mar. 10.00-12.00
+* Tuesday 16 May 14.00-16.00
+* Thursday 6 Jul 14.00-16.00
+* Tuesday 12 Sep. 14.00-16.00
+* Thursday 16 Nov. 10.00-12.00
+
