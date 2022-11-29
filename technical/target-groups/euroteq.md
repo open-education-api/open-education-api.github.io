@@ -54,7 +54,10 @@ Also the targetgroup extension object should be added to the course object. The 
   * `instructorNames`: an array with names of all instructors, `["instructor name", "instructor name"]`
   * `contacHours`: a float with the amount of contact hours, `3.5` for example.
   * `modeOfDelivery`: the mode of delivery specific for this alliance, allowed values are:
-    * to be discussed
+    * `"Online - at a specific time"`
+    * `"Online - time-independent"`
+    * `"Hybrid"`: EuroTeQ students attend online, local students attend on campus.
+    * `"Blended"`: course is largely online for all students, but there may be face-to-face elements that require travelling, for instance lab work or a final exam.
   * `activities`: a string that mentions the activities that take place in the course, `"lectures and practises"` for example.
 
 **Example**
@@ -69,7 +72,7 @@ This is an example of the extension object for eduXchange courses.
 			"theme": "Computer Science and ICT, Data, AI",
 			"instructorNames": ["John Smith"],
 			"contactHours": 3.5,
-			"modeOfDelivery": "hybrid",
+			"modeOfDelivery": "Hybrid",
 			"activities": "lectures and practises"
 		}]
 	}
