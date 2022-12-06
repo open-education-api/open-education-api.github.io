@@ -51,6 +51,7 @@ Also the targetgroup extension object should be added to the course object. The 
     * `"Mechanical Engineering"`
     * `"Physics and Energy"`
     * `"Transport"`
+    * `"Other subject area"`
   * `instructorNames`: an array with names of all instructors, `["instructor name", "instructor name"]`
   * `contacHours`: a float with the amount of contact hours, `3.5` for example.
   * `modeOfDelivery`: the mode of delivery specific for this alliance, allowed values are:
