@@ -108,9 +108,14 @@ The idea behind this construct is
 * At the program/course level is specified if a student can enroll for a course of the home institution at a specific URL of the home institution. Specified with `enrollmentForOwnStudents=url`.
 * A program/course usually has multiple offerings associated with is, these offerings can have a different enrollment url's at the home institution. Therefor this url is specified in `enrollmentUrl` of the offering itself.
 
+In addition the `enrollStartTime` and `enrollEndTime` of an offering can be added. This time is more specific then the enrollStartDate and enrollEndDate of an offering. This makes it possible to start on enrollStartDate at enrollStartTime and end at enrollEndDate at enrollEndTime.
+
+  * `enrollStartTime`: the time of the start of the enrollment for the offering, for example "13:00". The default is 00:00.
+  * `enrollEndTime`: the time of the end of the enrollment for the offering, for example "20:00". The default is 23:59.
+
 ### Example
 
-This is an example of the consumer object for eduXchange offerings. This consumer object specifies an `enrollmentUrl` for one of the `alliances` with a specific `name`.
+This is an example of the consumer object for eduXchange offerings. 
 
 ```json
 {
@@ -118,7 +123,9 @@ This is an example of the consumer object for eduXchange offerings. This consume
 		"consumerKey": "eduxchange",
 		"alliances": [{
 			"name": "ewuu",
-			"enrollmentUrl": "https://www.my-url.nl/"
+			"enrollmentUrl": "https://www.my-url.nl/",
+			"enrollStartTime": "13:00",
+			"enrollEndTime": "20:00"
 		}]
 	}]
 }
