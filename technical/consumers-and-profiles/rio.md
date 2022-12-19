@@ -409,8 +409,8 @@ The following level cannot be mapped from OOAPI to RIO:
 
 | modeOfDelivery    | opleidingsvorm       | remarks           |
 | ----------------- | -------------------- | ----------------- |
-| distance-learning |                      | Cannot map to RIO |
-| on campus         |                      | Cannot map to RIO |
+| distance-learning | ONLINE               |                   |
+| on campus         | KLASSIKAAL           |                   |
 | online            | ONLINE               |                   |
 | hybrid            | KLASSIKAAL_EN_ONLINE |                   |
 | situated          | KLASSIKAAL           |                   |
@@ -465,12 +465,12 @@ The following level cannot be mapped from OOAPI to RIO:
 
 ### modeOfStudy › vorm
 
-| modeOfStudy   | vorm     | Remarks                  |
-| ------------- | -------- | ------------------------ |
-| full-time     | VOLTIJD  |                          |
-| part-time     | DEELTIJD |                          |
-| dual training | DUAAL    |                          |
-| self-paced    |          | Cannot be mapped to RIO. |
+| modeOfStudy   | vorm     |
+| ------------- | -------- |
+| full-time     | VOLTIJD  |
+| part-time     | DEELTIJD |
+| dual training | DUAAL    |
+| self-paced    | DEELTIJD |
 
 ### teachingLanguage › voertaal
 
