@@ -63,10 +63,40 @@ To be able to fill RIO it is necessary to be able to communicate about historic 
 For RIO [this mechanism](historical-and-future-data) can be leveraged as follows:
 - An OOAPI implementation is expected to always return the current values of attributes.
   - The subset of these *current* attributes that RIO considers *changeable over time* will constitute one Periode.
-  - With start and end dates as specified by the attributes `validFrom` and `validTo`.
+  - With start (`beginDatum`) and end dates (`eindDatum`) as specified by the attributes `validFrom` and `validTo`.
 - For each historic or future Periode that an implementation wishes to communicate, a`timelineOverride` object must be added to the array of `timelineOverrides`.
-  - Each `timelineOverride` will be translated to a Periode.
+  - Each `timelineOverride` will be translated to another Periode.
   - With start and end dates as specified by the attributes `startDate` and `endDate` from the `timelineOverride`.
+- The `beginDatum` and `eindDatum` for the main object in RIO will be automatically set by the mapping process.
+  - `beginDatum` will be the earliest `validFrom` date from both the main OOAPI object and its `timelineOverrides`.
+  - `eindDatum` will not always be set. If the latest mapped Periode has no `eindDatum`, no `eindDatum` will be set to the main RIO object. Otherwise the latest `eindDatum` will be set.
+
+![Example of timelineOverrides for mapping an EducationSpecification to an OpleidingsEenheid and its Perioden.](../../_media/timelineoverrides.png "Example of timelineOverrides for mapping an EducationSpecification to an OpleidingsEenheid and its Perioden.")
+
+### Example
+The above diagram shows an example of this mechanism when applied to an EducationSpecification:
+- On the horizontal axis we've depicted "valid time".
+- A vertical line indicates when the OOAPI request `GET /education-specifications/{educationSpecificationId}?returnTimelineOverrides=true` was made.
+- The EducationSpecification object (big blue object) will be mapped to two entities in RIO:
+  - The OpleidingsEenheid
+  - And one OpleidingsEenheidPeriode
+- Its three `timelineOverrides` will be mapped to three Perioden.
+
+*Note that this mechanism also works for Programs and Courses.*
+
+### RIO contraints
+RIO enforces the following constraints when dealing with Perioden:
+- Perioden should be contiguous, that is, there should be *no gaps* in time.
+- Perioden should not overlap in time.
+- The `beginDatum` of the earliest Periode should be the same as the `beginDatum` of the main object.
+- The `eindDatum` of the latest Periode should be the same as the `eindDatum` of the main object.
+- The `beginDatum` of a Periode should be before its `eindDatum`.
+- There should be at least one Periode, and all Periodes together should cover the entire lifespan of the main object.
+
+*Note that an `eindDatum` for the latest Periode (and thus for the main object) is **not required***.
+
+*Note that `eindDatum` will be determined automatically by RIO for Perioden that are not the latest Periode, based on the `beginDatum` from the Periode directly following it. However, since the OOAPI `timelineOverride` mechanism is meant to be more generic and also usable for other use cases, OOAPI allows specifying `validTo` dates explicitely.*
+
 
 <style>
   .colored-table tr:nth-child(odd) > td:nth-child(1) { background: #eef7f9 }
