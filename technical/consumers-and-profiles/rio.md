@@ -345,6 +345,7 @@ Notes:
 
 <!-- tabs:end -->
 <div id="rio-field-constraints-2">&nbsp;</div>
+
 > ### RIO field constraints ###
 > [1] Niet toegestaan zijn: line feeds, carriage return, tabs, spaties voorafgaande en achter de tekst spaties en dubbele spaties in de tekst. \
 > [2] Toegestane tekens zijn letters, cijfers, punt, underscore, min, slash en spatie. \
