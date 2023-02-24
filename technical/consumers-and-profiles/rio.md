@@ -345,11 +345,13 @@ Notes:
 
 <!-- tabs:end -->
 <div id="rio-field-constraints-2">
+
 > ### RIO field constraints ###
 > [1] Niet toegestaan zijn: line feeds, carriage return, tabs, spaties voorafgaande en achter de tekst spaties en dubbele spaties in de tekst. \
 > [2] Toegestane tekens zijn letters, cijfers, punt, underscore, min, slash en spatie. \
 > [3] ISCED Detailed fields will be mapped to Broad fields according to Appendix I of the [ISCED-F 2013 Manual](http://uis.unesco.org/sites/default/files/documents/isced-fields-of-education-and-training-2013-en.pdf) \
 > [4] 3 cijfers, de hoofdletter A en drie cijfers.
+
 </div>
 
 </div>
@@ -387,11 +389,13 @@ Notes:
 > OOAPI fields marked with `[*]` are required fields in the OOAPI specification.
 
 <div id="rio-field-constraints-3">
+
 > ### RIO field constraints ###
 > [1] Niet toegestaan zijn: line feeds, carriage return, tabs, spaties voorafgaande en achter de tekst spaties en dubbele spaties in de tekst. \
 > [2] Toegestane tekens zijn letters, cijfers, punt, underscore, min, slash en spatie. \
 > [3] ISCED Detailed fields will be mapped to Broad fields according to Appendix I of the [ISCED-F 2013 Manual](http://uis.unesco.org/sites/default/files/documents/isced-fields-of-education-and-training-2013-en.pdf) \
 > [4] 3 cijfers, de hoofdletter A en drie cijfers.
+
 </div>
 
 </div>
@@ -424,11 +428,13 @@ Notes:
 > OOAPI fields marked with `[*]` are required fields in the OOAPI specification.
 
 <div id="rio-field-constraints-4">
+
 > ### RIO field constraints ###
 > [1] Niet toegestaan zijn: line feeds, carriage return, tabs, spaties voorafgaande en achter de tekst spaties en dubbele spaties in de tekst. \
 > [2] Toegestane tekens zijn letters, cijfers, punt, underscore, min, slash en spatie. \
 > [3] ISCED Detailed fields will be mapped to Broad fields according to Appendix I of the [ISCED-F 2013 Manual](http://uis.unesco.org/sites/default/files/documents/isced-fields-of-education-and-training-2013-en.pdf) \
 > [4] 3 cijfers, de hoofdletter A en drie cijfers.
+
 </div>
 
 </div>
