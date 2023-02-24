@@ -344,7 +344,7 @@ Notes:
 > OOAPI fields marked with `[*]` are required fields in the OOAPI specification.
 
 <!-- tabs:end -->
-<div id="rio-field-constraints-2">
+<div id="rio-field-constraints-2" style="height: 0px;overflow:hidden">&nbsp;</div>
 
 > ### RIO field constraints ###
 > [1] Niet toegestaan zijn: line feeds, carriage return, tabs, spaties voorafgaande en achter de tekst spaties en dubbele spaties in de tekst. \
@@ -352,7 +352,6 @@ Notes:
 > [3] ISCED Detailed fields will be mapped to Broad fields according to Appendix I of the [ISCED-F 2013 Manual](http://uis.unesco.org/sites/default/files/documents/isced-fields-of-education-and-training-2013-en.pdf) \
 > [4] 3 cijfers, de hoofdletter A en drie cijfers.
 
-</div>
 
 </div>
 
@@ -388,7 +387,7 @@ Notes:
 
 > OOAPI fields marked with `[*]` are required fields in the OOAPI specification.
 
-<div id="rio-field-constraints-3">
+<div id="rio-field-constraints-3" style="height: 0px;overflow:hidden">&nbsp;</div>
 
 > ### RIO field constraints ###
 > [1] Niet toegestaan zijn: line feeds, carriage return, tabs, spaties voorafgaande en achter de tekst spaties en dubbele spaties in de tekst. \
@@ -396,7 +395,6 @@ Notes:
 > [3] ISCED Detailed fields will be mapped to Broad fields according to Appendix I of the [ISCED-F 2013 Manual](http://uis.unesco.org/sites/default/files/documents/isced-fields-of-education-and-training-2013-en.pdf) \
 > [4] 3 cijfers, de hoofdletter A en drie cijfers.
 
-</div>
 
 </div>
 
@@ -427,7 +425,7 @@ Notes:
 
 > OOAPI fields marked with `[*]` are required fields in the OOAPI specification.
 
-<div id="rio-field-constraints-4">
+<div id="rio-field-constraints-4" style="height: 0px;overflow:hidden">&nbsp;</div>
 
 > ### RIO field constraints ###
 > [1] Niet toegestaan zijn: line feeds, carriage return, tabs, spaties voorafgaande en achter de tekst spaties en dubbele spaties in de tekst. \
@@ -435,7 +433,7 @@ Notes:
 > [3] ISCED Detailed fields will be mapped to Broad fields according to Appendix I of the [ISCED-F 2013 Manual](http://uis.unesco.org/sites/default/files/documents/isced-fields-of-education-and-training-2013-en.pdf) \
 > [4] 3 cijfers, de hoofdletter A en drie cijfers.
 
-</div>
+
 
 </div>
 
