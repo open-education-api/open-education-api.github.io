@@ -26,6 +26,17 @@ To be compatible with ooapi V4 and eduXchange v1 an institution of the EuroTeQ a
 
 !> To select educational information meant for eduXchange, eduXchange will always append the query parameter `targetgroup=euroteq` to every call.
 
+## Agreements on language use
+
+Some attributes in OOAPI can have multiple values. It is receommended that all participants agree on the use of these values. This results in an unambiguous list on the frontend.
+
+### level attribute of a course
+
+For the level attribute of a course the participants agreed to use
+- Bachelor
+- Master
+- Doctoral
+
 ## Extension objects
 
 Extension objects are used to supply the eduXchange frontend with additional information which is not specified in the OOAPI V4 specification.
