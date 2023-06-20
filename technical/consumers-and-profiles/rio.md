@@ -480,9 +480,9 @@ The following level cannot be mapped from OOAPI to RIO:
 | online            | ONLINE               |                   |
 | hybrid            | KLASSIKAAL_EN_ONLINE |                   |
 | situated          | KLASSIKAAL           |                   |
-|                   | LEZING               | Cannot map to RIO |
-|                   | ZELFSTUDIE           | Cannot map to RIO |
-|                   | COACHING             | Cannot map to RIO |
+|                   | LEZING               | To be mapped through **consumers > RIO > modeOfDelivery** (see below) |
+|                   | ZELFSTUDIE           |  To be mapped through **consumers > RIO > modeOfDelivery** (see below) |
+|                   | COACHING             |  To be mapped through **consumers > RIO > modeOfDelivery** (see below) |
 
 
 Note: When present, the value of the RIO consumer: consumers › RIO › modeOfDelivery will override the value of modeOfDelivery (see below)
