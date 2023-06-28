@@ -7,18 +7,11 @@ To support Dutch educational institutions with filling and maintaining their inf
 To make the RIO functionality of SURFeduhub work an OOAPI implementation needs to implement the specific extensions as described on this page. When correctly implemented, the OOAPI base and the RIO extension provide a 1-to-1 mapping from the OOAPI model to the RIO model.
 
 An educational institution needs to implement the following calls to be compatible with RIO:
-- `GET /`
-- `GET /education-specifications`
-- `GET /education-specifications/{educationSpecificationId}`
-- `GET /education-specifications/{educationSpecificationId}/education-specifications`
-- `GET /education-specifications/{educationSpecificationId}/programs`
-- `GET /education-specifications/{educationSpecificationId}/courses`
-- `GET /programs`
-- `GET /programs/{programId}`
-- `GET /programs/{programId}/offerings`
-- `GET /courses`
-- `GET /courses/{courseId}`
-- `GET /courses/{courseId}/offerings`
+- `GET /education-specifications/{educationSpecificationId}?returnTimelineOverrides=true`
+- `GET /programs/{programId}?returnTimelineOverrides=true`
+- `GET /programs/{programId}/offerings?pageSize=250&consumer=rio`
+- `GET /courses/{courseId}?returnTimelineOverrides=true`
+- `GET /courses/{courseId}/offerings?pageSize=250&consumer=rio`
 
 !> All calls returning collections need to support at least the `consumer` query parameter and should only return entities meant for RIO when this parameter is set to `rio`, e.g. `?consumer=rio`.
 
