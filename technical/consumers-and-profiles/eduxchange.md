@@ -48,7 +48,7 @@ Also the eduxchange consumer object should be added to the array of consumer obj
 
 * `consumerKey`, should always have the value `"eduxchange"`
 * `alliances`, an array with all the alliances this Program or Course is offered for. Each alliance is an object with the following attributes:
-  * `name`: (required) the name of the alliance, allowed values are `"ewuu"` or `"lde"`
+  * `name`: (required) the name of the alliance, allowed values are `"ewuu"`, `"lde"` or `"euroteq"`
   * `theme`: the theme of the Program or Course within the alliance
   * `selection`: boolean value (`true` or `false`) indicating whether this Program or Course is selective, e.g. whether student need to pass extra requirements before being allowed to enroll.
   * `type`: a string indicating whether a Program or Course is broadening or deepening. Allowed values are: `"broadening"` and `"deepening"`.
@@ -59,6 +59,9 @@ Also the eduxchange consumer object should be added to the array of consumer obj
     * `shortName`: the shortName of the institution to identify the source institution. Possible values for ewuu are `"tue"`, `"wur"` and `"uu"`, for lde these are `"ul"`, `"tud"` and `"eur"`
     * `primaryCode`: a string value with the primaryCode of the course to identify the source course.
     * `uuid`: the uuid of the course to reference the OOAPI endpoint of the source course.
+  * `instructorNames`: an array with names of all instructors, `["instructor name", "instructor name"]`
+  * `contacHours`: a float with the amount of contact hours, `3.5` for example.
+  * `activities`: a string that mentions the activities that take place in the course, `"lectures and practises"` for example.
 
 ### Example
 
@@ -89,12 +92,60 @@ This is an example of the consumer object for eduXchange. The example reflects t
                 "primaryCode": "WB-MI-168",
                 "uuid": "123e4567-e89b-12d3-a456-123514174000"
               }
+            },
+            {
+              "name": "euroteq",
+              "theme": "Computer Science and ICT, Data, AI",
+              "instructorNames": ["John Smith"],
+              "modeOfDelivery": "Hybrid",
+              "contactHours": 3.5,
+              "activities": "lectures and practises"
             }
           ]
         }
       ]
     }
 ```
+
+## Agreements per alliance
+
+Some attributes in OOAPI can have multiple values. It is recommended that all participants within an alliance agree on the use of these values. This results in an unambiguous list on the frontend.
+
+### EuroTeq Alliance 
+
+#### themes
+Participants agreed to use these themes in the theme attribute of the consumer object.
+* `"Architecture and Construction"`
+* `"Business and Economics"`
+* `"Chemistry and Biology"`
+* `"Computer Science and ICT, Data, AI"`
+* `"Electrical Engineering"`
+* `"Entrepreneurship"`
+* `"Food and Health Sciences, Medical engineering"`
+* `"Languages and Culture"`
+* `"Manufacturing and Processing"`
+* `"Mathematics and Statistics"`
+* `"Mechanical Engineering"`
+* `"Physics and Energy"`
+* `"Transport"`
+* `"Other subject area"`
+
+#### modeOfDelivery
+
+The mode of delivery the participants agreed to use differ from the standard modeOfDelivery options in OOAPI. Therefore these modeOfDelivery values need to be specified in the consumer attribute. 
+
+Participants agreed to use:
+* `"Online - at a specific time"`
+* `"Online - time-independent"`
+* `"Hybrid"`: EuroTeQ students attend online, local students attend on campus.
+* `"Blended"`: course is largely online for all students, but there may be face-to-face elements that require travelling, for instance lab work or a final exam.
+
+#### level
+
+For the level attribute of a course the participants agreed to use these standard OOAPI options:
+- `"Bachelor"`
+- `"Master"`
+- `"Doctoral"`
 
 ## Eduxchange consumer object for Offerings
 
@@ -112,6 +163,7 @@ In addition the `enrollStartTime` and `enrollEndTime` of an offering can be adde
 
   * `enrollStartTime`: the time of the start of the enrollment for the offering, for example "13:00". The default is 00:00.
   * `enrollEndTime`: the time of the end of the enrollment for the offering, for example "20:00". The default is 23:59.
+  * `dateComment`: a string with additional date information, for example `"The course takes place on monday morning"`
 
 ### Example
 
@@ -119,15 +171,16 @@ This is an example of the consumer object for eduXchange offerings.
 
 ```json
 {
-	"consumers": [{
-		"consumerKey": "eduxchange",
-		"alliances": [{
-			"name": "ewuu",
-			"enrollmentUrl": "https://www.my-url.nl/",
-			"enrollStartTime": "13:00",
-			"enrollEndTime": "20:00"
-		}]
-	}]
+  "consumers": [{
+    "consumerKey": "eduxchange",
+    "alliances": [{
+      "name": "ewuu",
+      "enrollmentUrl": "https://www.my-url.nl/",
+      "enrollStartTime": "13:00",
+      "enrollEndTime": "20:00",
+      "dateComment": "This time is in ECT and the course takes place on Monday morning."
+    }]
+  }]
 }
 ```
 
