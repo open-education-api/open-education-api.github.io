@@ -60,7 +60,7 @@ Also the eduxchange consumer object should be added to the array of consumer obj
     * `primaryCode`: a string value with the primaryCode of the course to identify the source course.
     * `uuid`: the uuid of the course to reference the OOAPI endpoint of the source course.
   * `instructorNames`: an array with names of all instructors, `["instructor name", "instructor name"]`
-  * `contacHours`: a float with the amount of contact hours, `3.5` for example.
+  * `contactHours`: a float with the amount of contact hours, `3.5` for example.
   * `activities`: a string that mentions the activities that take place in the course, `"lectures and practises"` for example.
 
 ### Example
