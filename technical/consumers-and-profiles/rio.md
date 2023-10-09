@@ -119,7 +119,7 @@ EducationSpecifications can have relations to other EducationSpecifications whic
 |                                                 | opleidingseenheidcode [0..1]         |                                                | Een betekenisloze identifier voor een opleidingseenheid in de Registratie Instellingen en Opleidingen.                                                                                                   | RIO field constraints: [[1]](#rio-field-constraints) <br> Will be determined during transit.                                                                                                                                               |
 | validFrom                                       | beginDatum [1]                       |                                                | De datum die het begin van de periode aangeeft (inclusief).                                                                                                                                              |                                                                                                                                                                                                                                            |
 | validTo                                         | eindDatum [0..1]                     |                                                | De datum die het einde van de periode aangeeft (exclusief).                                                                                                                                              |                                                                                                                                                                                                                                            |
-| educationSpecificationId [*]                    | eigenAangebodenOpleidingSleutel [0..1] |                                                | Een identificerend kenmerk dat door een particuliere organisatie is bepaald voor een particuliere opleiding ten behoeve van uitwisseling in de keten.                                                    |                                                                                                                                                                                                                                            |
+| educationSpecificationId [*]                    | eigenOpleidingsEenheidSleutel [0..1] |                                                | Een identificerend kenmerk dat door een particuliere organisatie is bepaald voor een particuliere opleiding ten behoeve van uitwisseling in de keten.                                                    |                                                                                                                                                                                                                                            |
 | consumers › RIO › educationSpecificationSubType | soort [1]                            |                                                | Mogelijke verscheidenheden van een opleiding in het hoger onderwijs.                                                                                                                                     | RIO field constraints: [[2]](#rio-field-constraints) <br> If type is `program` and the subType field is absent `soort` will be set to `OPLEIDING`. If type is `program` and subType is set to `variant`, `soort` will be set to `VARIANT`. |
 | formalDocument                                  | waardedocumentsoort [1]              | [mapping](#formaldocument-waardedocumentsoort) | Aanduiding van het soort waardedocument dat kan worden of is behaald.                                                                                                                                    | RIO field constraints: [[2]](#rio-field-constraints)                                                                                                                                                                                       |
 | level + sector                                  | niveau [1]                           | [mapping](#sector-level-niveau)                | Een unieke code voor het opleidingsniveau ten behoeve van opleidingen en vakken van alle onderwijssectoren.                                                                                              | Waarde ONBEPAALD is voor niet formeel erkende opleidingseenheden.                                                                                                                                                                          |
@@ -470,30 +470,30 @@ The following level cannot be mapped from OOAPI to RIO:
 
 ### modeOfDelivery › opleidingsvorm
 
-| modeOfDelivery    | opleidingsvorm       | remarks                                                               |
-| ----------------- | -------------------- | --------------------------------------------------------------------- |
-| distance-learning | ONLINE               |                                                                       |
-| on campus         | KLASSIKAAL           |                                                                       |
-| online            | ONLINE               |                                                                       |
-| hybrid            | KLASSIKAAL_EN_ONLINE |                                                                       |
-| situated          | KLASSIKAAL           |                                                                       |
+| modeOfDelivery    | opleidingsvorm       | remarks           |
+| ----------------- | -------------------- | ----------------- |
+| distance-learning | ONLINE               |                   |
+| on campus         | KLASSIKAAL           |                   |
+| online            | ONLINE               |                   |
+| hybrid            | KLASSIKAAL_EN_ONLINE |                   |
+| situated          | KLASSIKAAL           |                   |
 |                   | LEZING               | To be mapped through **consumers > RIO > modeOfDelivery** (see below) |
-|                   | ZELFSTUDIE           | To be mapped through **consumers > RIO > modeOfDelivery** (see below) |
-|                   | COACHING             | To be mapped through **consumers > RIO > modeOfDelivery** (see below) |
+|                   | ZELFSTUDIE           |  To be mapped through **consumers > RIO > modeOfDelivery** (see below) |
+|                   | COACHING             |  To be mapped through **consumers > RIO > modeOfDelivery** (see below) |
 
 
 Note: When present, the value of the RIO consumer: consumers › RIO › modeOfDelivery will override the value of modeOfDelivery (see below)
 
 ### consumers RIO modeOfDelivery › opleidingsvorm
 
-| consumers RIO modeOfDelivery | opleidingsvorm       |
-| ---------------------------- | -------------------- |
-| online                       | ONLINE               |
+| consumers RIO modeOfDelivery | opleidingsvorm       | 
+| ---------------------------- | -------------------- | 
+| online                       | ONLINE               | 
 | hybrid                       | KLASSIKAAL_EN_ONLINE |
-| situated                     | KLASSIKAAL           |
-| lecture                      | LEZING               |
-| self-study                   | ZELFSTUDIE           |
-| coaching                     | COACHING             |
+| situated                     | KLASSIKAAL           | 
+| lecture                      | LEZING               | 
+| self-study                   | ZELFSTUDIE           | 
+| coaching                     | COACHING             | 
 
 NOTE: the value of consumers › RIO › modeOfDelivery will override the main object's modeOfDelivery
 
