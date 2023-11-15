@@ -1,8 +1,32 @@
-# eduXchange and Project Studentmobiliteit (Version 2.0)
+# eduXchange
 
-## Required requests
+In this documentation of the eduxchange consumer object you will find
+- required requests
+- agreements per alliance
+- student orientation consumer objects
+- student registration consumer objects
 
-To be compatible with eduXchange and the Project 'Studentmobiliteit' an institution needs to implement the following requests:
+## Versions
+
+- last update: 15 November, 2023
+- current alliances using eduxchange:
+  - ewuu
+  - lde
+  - euroteq
+
+We will use v2.0 and v2.1 throughout this document to identify the requirements of consumer attributes for different versions. Below a short history of versions.
+
+### Version 2.1
+In 2023 and 2024 we are, and will be, working on version 2.1 with new features for the dutch alliances. In this version also international alliances will be using eduxchange on eduxchange.eu, starting with EuroTeq. This also requires changes.
+
+### Version 2.0
+Version 2.0 has been worked on in 2021 and 2022 and is the current live version on eduxchange.nl. This version was build for the dutch alliances EWUU and LDE.
+
+Before version 2.0 we started eduXchange with the EWUU alliance.
+
+# Required requests
+
+To be compatible with eduXchange an institution needs to implement the following requests:
 
 * `GET /organizations`
 * `GET /organizations?organizationType=root`
@@ -34,7 +58,72 @@ To be compatible with the [eduXchange catalogue website](https://www.eduxchange.
 * offerings
 * persons
 
-# The student orientation part
+# Agreements per alliance
+
+To refer to partners in an alliance a list of partner id's is specified.
+
+Some attributes in OOAPI can have multiple values. It is recommended that all participants within an alliance agree on the use of these values. This results in an unambiguous list on the frontend.
+
+## EWUU Alliance 
+
+### partner id's
+* uu
+* wur
+* tue
+
+## LDE Alliance 
+
+### partner id's
+* eur
+* tud
+* ul
+
+## EuroTeq Alliance 
+
+### partner id's
+* tue
+* taltech
+* dtu
+* ls
+* ctu
+* tum
+* technion
+
+### themes
+Participants agreed to use these themes in the theme attribute of the consumer object.
+* `"Architecture and Construction"`
+* `"Business and Economics"`
+* `"Chemistry and Biology"`
+* `"Computer Science and ICT, Data, AI"`
+* `"Electrical Engineering"`
+* `"Entrepreneurship"`
+* `"Food and Health Sciences, Medical engineering"`
+* `"Languages and Culture"`
+* `"Manufacturing and Processing"`
+* `"Mathematics and Statistics"`
+* `"Mechanical Engineering"`
+* `"Physics and Energy"`
+* `"Transport"`
+* `"Other subject area"`
+
+### modeOfDelivery
+
+The mode of delivery the participants agreed to use differ from the standard modeOfDelivery options in OOAPI. Therefore these modeOfDelivery values need to be specified in the consumer attribute. 
+
+Participants agreed to use:
+* `"Online - at a specific time"`
+* `"Online - time-independent"`
+* `"Hybrid"`: EuroTeQ students attend online, local students attend on campus.
+* `"Blended"`: course is largely online for all students, but there may be face-to-face elements that require travelling, for instance lab work or a final exam.
+
+### level
+
+For the level attribute of a course the participants agreed to use these standard OOAPI options that need to be specified in the consumer attribute:
+- `"Bachelor"`
+- `"Master"`
+- `"Doctoral"`
+
+# The student orientation consumer objects
 
 The documentation below is essential for the orientation part.
 
@@ -48,24 +137,38 @@ Also the eduxchange consumer object should be added to the array of consumer obj
 
 * `consumerKey`, should always have the value `"eduxchange"`
 * `alliances`, an array with all the alliances this Program or Course is offered for. Each alliance is an object with the following attributes:
-  * `name`: (required) the name of the alliance, allowed values are `"ewuu"`, `"lde"` or `"euroteq"`
-  * `theme`: the theme of the Program or Course within the alliance
-  * `selection`: boolean value (`true` or `false`) indicating whether this Program or Course is selective, e.g. whether student need to pass extra requirements before being allowed to enroll.
-  * `type`: a string indicating whether a Program or Course is broadening or deepening. Allowed values are: `"broadening"` and `"deepening"`.
-  * `visibleForOwnStudents`: a boolean value (`true` or `false`) indicating whether this Program or Course should be visible for students of the offering institution. The default values for this attribute is specified outside of this specification on the alliance level. By default, students who are not enrolled in one of the participating alliances can see all Programs and Courses but not enroll.
-  * `enrollmentForOwnStudents`: a string indicating which enrollments process should be followed for students of the offering institution. Allowed values are `"broker"` or `"url"`. This attribute is only used if `visibleForOwnStudents` is set to `true`. 
+
+General attributes
+
+  * `name` (v2.0): (required) the name of the alliance, allowed values are the current alliances using eduxchange, for example: `"ewuu"`, `"lde"` or `"euroteq"`
+  * `theme` (v2.0): the theme of the Program or Course within the alliance
+  * `themes` (v2.1): an array of themes of the Program or Course within the alliance, `["theme 1", "theme 2"]`. If the themes attribute is present for a particular course or program, theme is ignored. If theme is avaiable, but themes is not, the theme attribute is used. If both are missing, the course or program has no themes.
+  * `selection` (v2.0): boolean value (`true` or `false`) indicating whether this Program or Course is selective, e.g. whether student need to pass extra requirements before being allowed to enroll.
+  * `type` (v2.0): a string indicating whether a Program or Course is broadening or deepening. Allowed values are: `"broadening"` and `"deepening"`.
+  * `instructorNames` (v2.1): an array with names of all instructors, `["instructor name", "instructor name"]`
+  * `contactHours` (v2.1): a float with the amount of contact hours, `3.5` for example.
+  * `activities` (v2.1): a string that mentions the activities that take place in the course, `"lectures and practises"` for example.
+
+Attributes regarding visibility and enrollment of different types of users. Please note, that there are three types of students. (1) Students from the alliance partner institutions,  (2) students from the own institution and (3) guest students from institutions outside the alliance.
+
+  * `visibleForOwnStudents` (v2.0): a boolean value (`true` or `false`) indicating whether this Program or Course should be visible for students of the offering institution. Note: the default value for this attribute can be specified per institution in the eduxchange frontend.
+  * `enrollmentForOwnStudents` (v2.0): a string indicating which enrollments process should be followed for students of the offering institution. Allowed values are `"broker"` or `"url"`. This attribute is only used if `visibleForOwnStudents` is set to `true`. 
     * If `"url"` is chosen the attribute `enrollmentUrl` **in the consumer object of an offering** is mandatory.
-  * `source`: an optional object with a reference to the source of a Course or Program. In an alliance one of the institutions could act as overall coordinator and specifies the program and underlying courses. Underlying courses could be given at one of the other institutions. In this source object the course at the other institution can be specified. Use these attributes:
-    * `shortName`: the shortName of the institution to identify the source institution. Possible values for ewuu are `"tue"`, `"wur"` and `"uu"`, for lde these are `"ul"`, `"tud"` and `"eur"`
-    * `primaryCode`: a string value with the primaryCode of the course to identify the source course.
-    * `uuid`: the uuid of the course to reference the OOAPI endpoint of the source course.
-  * `instructorNames`: an array with names of all instructors, `["instructor name", "instructor name"]`
-  * `contactHours`: a float with the amount of contact hours, `3.5` for example.
-  * `activities`: a string that mentions the activities that take place in the course, `"lectures and practises"` for example.
+  * `visibleForGuests` (v2.1): a boolean value (`true` or `false`) indicating whether this Program or Course should be visible for students outside the partner institutions. Note: the default value for this attribute can be specified per institution in the eduxchange frontend.
+  * `enrollmentForGuests` (v2.1): a string indicating which enrollments process should be followed for students outside the partner institutions. Allowed values are `"broker"` or `"url"`. This attribute is only used if `visibleForGuests` is set to `true`. 
+    * If `"url"` is chosen the attribute `enrollmentUrlForGuests` **in the consumer object of an offering** is mandatory.
+
+Attributes regarding joint programs.
+
+  * `jointPartners` (v2.1): an array of partners of the Program. This is used to identify the partners in case of a joint program. The agreed partner id's are used here. For example in the `lde` alliance: `["tud", "ul"]`.
+  * `source` (v2.0): an optional object with a reference to the source of a Course or Program. In case of a joint program one of the institutions could act as overall coordinator and specifies the program and underlying courses. Underlying courses could be given at one of the other institutions. In this source object the course at the other institution can be specified. Use these attributes:
+    * `shortName` (v2.0): the partner id of the institution to identify the source institution. An example for the `lde` alliance is: `"eur"`
+    * `primaryCode` (v2.0): a string value with the primaryCode of the course to identify the source course.
+    * `uuid` (v2.0): the uuid of the course to reference the OOAPI endpoint of the source course.
 
 ### Example
 
-This is an example of the consumer object for eduXchange. The example reflects the default behaviour for visibility of the `ewuu` and `lde` alliances. The `ewuu` courses are not visible for students from the offering institution. The `lde` minors are visible for student from the offering institution. These students can enroll through the `broker`.
+This is an example of the consumer object for eduXchange. The example reflects the default behaviour for visibility of the `ewuu` and `lde` alliances. The `ewuu` courses are not visible for students from the offering institution. The `lde` minors are visible for student from the offering institution. These students can enroll through the `broker`. The example also reflects new attributes introduced in v2.1 for `euroteq`.
 
 ```json
     {
@@ -107,63 +210,20 @@ This is an example of the consumer object for eduXchange. The example reflects t
     }
 ```
 
-## Agreements per alliance
-
-Some attributes in OOAPI can have multiple values. It is recommended that all participants within an alliance agree on the use of these values. This results in an unambiguous list on the frontend.
-
-### EuroTeq Alliance 
-
-#### themes
-Participants agreed to use these themes in the theme attribute of the consumer object.
-* `"Architecture and Construction"`
-* `"Business and Economics"`
-* `"Chemistry and Biology"`
-* `"Computer Science and ICT, Data, AI"`
-* `"Electrical Engineering"`
-* `"Entrepreneurship"`
-* `"Food and Health Sciences, Medical engineering"`
-* `"Languages and Culture"`
-* `"Manufacturing and Processing"`
-* `"Mathematics and Statistics"`
-* `"Mechanical Engineering"`
-* `"Physics and Energy"`
-* `"Transport"`
-* `"Other subject area"`
-
-#### modeOfDelivery
-
-The mode of delivery the participants agreed to use differ from the standard modeOfDelivery options in OOAPI. Therefore these modeOfDelivery values need to be specified in the consumer attribute. 
-
-Participants agreed to use:
-* `"Online - at a specific time"`
-* `"Online - time-independent"`
-* `"Hybrid"`: EuroTeQ students attend online, local students attend on campus.
-* `"Blended"`: course is largely online for all students, but there may be face-to-face elements that require travelling, for instance lab work or a final exam.
-
-#### level
-
-For the level attribute of a course the participants agreed to use these standard OOAPI options:
-- `"Bachelor"`
-- `"Master"`
-- `"Doctoral"`
-
 ## Eduxchange consumer object for Offerings
 
-The outline of the consumer object for offerings is the same as specified above for the programs and courses.
+The outline of the consumer object for offerings is the same as specified above for the programs and courses.There should always be a `consumerKey` attribute and an `alliances` array
 
-This consumer object is used to specify the `enrollmentUrl` that is associated with the `enrollmentForOwnStudents=url` attribute in the consumer object of the corresponding program or course.
+This consumer object is used to specify the `enrollmentUrl` and `enrollmentUrlForGuests` per offering. These attributes are associated with the corresponding attributes in the consumer object of the program or course.
 
-  * `enrollmentUrl`: a string formatted as an URL to which students will be redirected if `enrollmentForOwnStudents` **in the program/course consumer object** is set to `"url"`.
-
-The idea behind this construct is
-* At the program/course level is specified if a student can enroll for a course of the home institution at a specific URL of the home institution. Specified with `enrollmentForOwnStudents=url`.
-* A program/course usually has multiple offerings associated with is, these offerings can have a different enrollment url's at the home institution. Therefor this url is specified in `enrollmentUrl` of the offering itself.
+  * `enrollmentUrl` (v2.0): a string formatted as an URL to which own students will be redirected if `enrollmentForOwnStudents` **in the program/course consumer object** is set to `"url"`.
+  * `enrollmentUrlForGuests` (v2.1): a string formatted as an URL to which guest students will be redirected if `enrollmentForGuests` **in the program/course consumer object** is set to `"url"`.
 
 In addition the `enrollStartTime` and `enrollEndTime` of an offering can be added. This time is more specific then the enrollStartDate and enrollEndDate of an offering. This makes it possible to start on enrollStartDate at enrollStartTime and end at enrollEndDate at enrollEndTime.
 
-  * `enrollStartTime`: the time of the start of the enrollment for the offering, for example "13:00". The default is 00:00.
-  * `enrollEndTime`: the time of the end of the enrollment for the offering, for example "20:00". The default is 23:59.
-  * `dateComment`: a string with additional date information, for example `"The course takes place on monday morning"`
+  * `enrollStartTime` (v2.0): the time of the start of the enrollment for the offering, for example "13:00". The default is 00:00.
+  * `enrollEndTime` (v2.0): the time of the end of the enrollment for the offering, for example "20:00". The default is 23:59.
+  * `dateComment` (v2.1): a string with additional date information, for example `"The course takes place on monday morning"`
 
 ### Example
 
@@ -184,7 +244,7 @@ This is an example of the consumer object for eduXchange offerings.
 }
 ```
 
-# The student registration part
+# The student registration consumer objects
 
 The documentation below is essential for the registration part.
 
@@ -249,15 +309,15 @@ The documentation below is essential for the registration part.
 
 To be compatible with the registering process of the `broker` after the 'register' button is pressed in the eduxchange frontend, an implementation needs to implement the following consumer object and attributes on the Persons object. 
 
-* `consumerKey`, should always have the value `"eduxchange"`
-* `enrollments`, an array with all the CROHO enrollments for this person. Each enrollment is an object with the following attributes:
-  * `crohoCreboCode`: (required) the crohoCreboCode for this program. This should be a five character string, e.g. "34401".
-  * `name`: (required) the name of the program this enrollment is for.
-  * `phase`: the phase of the program for this enrollment. Allowed values are `"bachelor"` or `"master"`.
-  * `modeOfStudy`: the modeOfStudy of the program for this enrollment. Allowed values are `"full-time"`, `"part-time"`, `"dual training"` or `"self-paced"`.
-  * `startDate`: the start date for this enrollment. Should be a string formatted as an RFC3099 full-date.
-  * `endDate`: end start date for this enrollment. Should be a string formatted as an RFC3099 full-date.
-* `institutionBRINCode`, the BRIN code of the institution. Should consist of two digits and two capital letters.
+* `consumerKey` (v2.0), should always have the value `"eduxchange"`
+* `enrollments` (v2.0), an array with all the CROHO enrollments for this person. Each enrollment is an object with the following attributes:
+  * `crohoCreboCode` (v2.0): (required) the crohoCreboCode for this program. This should be a five character string, e.g. "34401".
+  * `name` (v2.0): (required) the name of the program this enrollment is for.
+  * `phase` (v2.0): the phase of the program for this enrollment. Allowed values are `"bachelor"` or `"master"`.
+  * `modeOfStudy` (v2.0): the modeOfStudy of the program for this enrollment. Allowed values are `"full-time"`, `"part-time"`, `"dual training"` or `"self-paced"`.
+  * `startDate` (v2.0): the start date for this enrollment. Should be a string formatted as an RFC3099 full-date.
+  * `endDate` (v2.0): end start date for this enrollment. Should be a string formatted as an RFC3099 full-date.
+* `institutionBRINCode` (v2.0), the BRIN code of the institution. Should consist of two digits and two capital letters.
 
 ### Example
 
@@ -284,7 +344,7 @@ To be compatible with the registering process of the `broker` after the 'registe
 
 ## Changes since OOAPI v4
 
-In OOAPI version 5.0 the following changes were made that are relevant for eduXchange and Project Studentmobiliteit. Some of the highlights:
+In OOAPI version 5.0 the following changes were made that are relevant for eduXchange. Some of the highlights:
 
 1. Some attributes were added to the Program object.
 2. Some attributes were added to the Course object.
