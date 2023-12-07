@@ -135,6 +135,8 @@ EducationSpecifications can have relations to other EducationSpecifications whic
 
 > OOAPI fields marked with `[*]` are required fields in the OOAPI specification.
 
+> RIO fields marked with `[1]` or `[1..n]` are required by RIO.
+
 ### **HoOnderwijsEenhedenCluster**
 
 | EducationSpecification                          | HoOnderwijseenhedencluster                 | Enumeration mapping                            | RIO field description                                                                                                                                                                                   | Remarks                                                                                                                                                                                        |
@@ -158,6 +160,8 @@ EducationSpecifications can have relations to other EducationSpecifications whic
 
 > OOAPI fields marked with `[*]` are required fields in the OOAPI specification.
 
+> RIO fields marked with `[1]` or `[1..n]` are required by RIO.
+
 ### **HoOnderwijsEenheid**
 
 | EducationSpecification                     | HoOnderwijseenheid                   | Enumeration mapping                            | RIO field description                                                                                                                                                                                   | Remarks                                                                                                                                                                                        |
@@ -180,6 +184,8 @@ EducationSpecifications can have relations to other EducationSpecifications whic
 |                                            |                                      |                                                |                                                                                                                                                                                                         |                                                                                                                                                                                                |
 
 > OOAPI fields marked with `[*]` are required fields in the OOAPI specification.
+
+> RIO fields marked with `[1]` or `[1..n]` are required by RIO.
 
 ### **ParticuliereOpleiding**
 
@@ -205,6 +211,8 @@ EducationSpecifications can have relations to other EducationSpecifications whic
 | studyload › studyLoadUnit                  | » studielasteenheid [0..1]            | [mapping](#studyloadunit-studielasteenheid)    | De meeteenheid voor de studielast                                                                                                                                                                        |                                                                                                                                                                                                |
 
 > OOAPI fields marked with `[*]` are required fields in the OOAPI specification.
+
+> RIO fields marked with `[1]` or `[1..n]` are required by RIO.
 
 <!-- tabs:end -->
 
@@ -307,6 +315,8 @@ Notes:
 
 > OOAPI fields marked with `[*]` are required fields in the OOAPI specification.
 
+> RIO fields marked with `[1]` or `[1..n]` are required by RIO.
+
 ### **AangebodenParticuliereOpleiding**
 
 Notes:
@@ -338,6 +348,8 @@ Notes:
 | link                                       | » website [0..1]                                |                                                              | De locatie op het World Wide Web waar documenten en andere objecten kunnen worden gevonden                                                                            |                                                                                                                                                                                                                                                                                                                                   |
 
 > OOAPI fields marked with `[*]` are required fields in the OOAPI specification.
+
+> RIO fields marked with `[1]` or `[1..n]` are required by RIO.
 
 <!-- tabs:end -->
 <div id="rio-field-constraints-2" style="height: 0px;overflow:hidden">&nbsp;</div>
@@ -384,6 +396,8 @@ Notes:
 
 > OOAPI fields marked with `[*]` are required fields in the OOAPI specification.
 
+> RIO fields marked with `[1]` or `[1..n]` are required by RIO.
+
 <div id="rio-field-constraints-3" style="height: 0px;overflow:hidden">&nbsp;</div>
 
 > ### RIO field constraints ###
@@ -422,6 +436,8 @@ Notes:
 | flexibleEntryPeriodEnd                           | » (flexibel) eindeInstroomperiode [0..1] |                                                                             | De laatste dag dat een student kan beginnen in een cohort van een aangeboden opleiding met een flexibele instroom.                                                    | Studenten kunnen niet later dan deze datum aan dit cohort van deze aangeboden opleiding beginnen.                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 
 > OOAPI fields marked with `[*]` are required fields in the OOAPI specification.
+
+> RIO fields marked with `[1]` or `[1..n]` are required by RIO.
 
 <div id="rio-field-constraints-4" style="height: 0px;overflow:hidden">&nbsp;</div>
 
