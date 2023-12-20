@@ -1,17 +1,19 @@
 # eduXchange
 
 In this documentation of the eduxchange consumer object you will find
-- required requests
+- required OOAPI resources 
+- agreements per eduxchange instance
 - agreements per alliance
 - student orientation consumer objects
 - student registration consumer objects
 
 ## Versions
 
-- last update: 15 November, 2023
-- current alliances using eduxchange:
+- last update: 20 December, 2023
+- current alliances using eduxchange.NL:
   - ewuu
   - lde
+- current alliances using eduxchange.EU
   - euroteq
 
 We will use v2.0 and v2.1 throughout this document to identify the requirements of consumer attributes for different versions. Below a short history of versions.
@@ -24,9 +26,9 @@ Version 2.0 has been worked on in 2021 and 2022 and is the current live version 
 
 Before version 2.0 we started eduXchange with the EWUU alliance.
 
-# Required requests
+# Required OOAPI resources
 
-To be compatible with eduXchange an institution needs to implement the following requests:
+To be compatible with eduXchange an institution needs to implement the following OOAPI resources:
 
 * `GET /organizations`
 * `GET /organizations?organizationType=root`
@@ -58,29 +60,96 @@ To be compatible with the [eduXchange catalogue website](https://www.eduxchange.
 * offerings
 * persons
 
+# Agreements per eduxchange instance
+
+An instance is a frontend of eduxchange for a particular region. Currently there is eduxchange.NL for alliances in the Netherlands and eduxchange.EU for alliances in Europe.
+
+It is recommended that alliances within a region agree on certain aspects of eduxchange to give the students the best experience possible.
+
+## eduxchange.NL
+
+This instance is running version 2.0.
+
+### Filters
+
+Below are the filters, those `highlighted` are in use by the instance:
+
+- `Search box`, free text search box
+- First application period, selection of open courses or programs
+- `Education type`, programs or courses selection
+- `Academic year`, academic year selection
+- `Starts in`, starting month selection
+- `Institution`, offering institution selection
+- `Location`, location where the offering takes place selection
+- `Theme`, theme selection
+- Level, level selection
+- `Selection minor`, selection minor indication
+- `Language`, language of the offering selection
+- `Study load (ECTS)`, study load of programs or courses in ects selection
+- Mode of study, mode of study selection
+- Mode of delivery, mode of delivery selection
+
+## eduxchange.EU
+
+This instance is running version 2.1.
+
+### Filters
+
+Below are the filters, those `highlighted` are in use by the instance:
+
+- `Search box`, free text search box
+- `First application period`, selection of open courses or programs
+- Education type, programs or courses selection
+- `Academic year`, academic year selection
+- `Starts in`, starting month selection
+- `Institution`, offering institution selection
+- Location, location where the offering takes place selection
+- `Theme`, theme selection
+- `Level`, level selection
+- Selection minor, selection minor indication
+- Language, language of the offering selection
+- `Study load (ECTS)`, study load of programs or courses in ects selection
+- Mode of study, mode of study selection
+- `Mode of delivery`, mode of delivery selection
+
 # Agreements per alliance
 
-To refer to partners in an alliance a list of partner id's is specified.
+An alliance is a partnership between two or more institutions that agreed to exchange student information using eduxchange.
 
-Some attributes in OOAPI can have multiple values. It is recommended that all participants within an alliance agree on the use of these values. This results in an unambiguous list on the frontend.
+To refer to partners in an alliance a list of partner codes is specified.
+
+Some attributes in OOAPI can have multiple values. It is recommended that all participants within an alliance agree on the use of these values. This results in an unambiguous list on the frontend for the students.
 
 ## EWUU Alliance 
 
-### partner id's
+### partner codes
 * uu
 * wur
 * tue
 
 ## LDE Alliance 
 
-### partner id's
+### partner codes
 * eur
 * tud
 * ul
 
+### themes
+Participants agreed to use croho themes in the theme attribute of the consumer object. These themes are specified by a number:
+*  10: `"Interdisciplinary"`
+*  11: `"Economics"`
+*  12: `"Behaviour and society"`
+*  13: `"Health care"`
+*  14: `"Agriculture and natural environment"`
+*  15: `"Nature"`
+*  16: `"Educations"`
+*  17: `"Law"`
+*  18: `"Language and culture"`
+*  19: `"Technology"`
+
 ## EuroTeq Alliance 
 
-### partner id's
+### partner codes
 * tue
 * taltech
 * dtu
@@ -141,7 +210,7 @@ Also the eduxchange consumer object should be added to the array of consumer obj
 General attributes
 
   * `name` (v2.0): (required) the name of the alliance, allowed values are the current alliances using eduxchange, for example: `"ewuu"`, `"lde"` or `"euroteq"`
-  * `theme` (v2.0): the theme of the Program or Course within the alliance
+  * `theme` (v2.0, deprecated): the theme of the Program or Course within the alliance
   * `themes` (v2.1): an array of themes of the Program or Course within the alliance, `["theme 1", "theme 2"]`. If the themes attribute is present for a particular course or program, theme is ignored. If theme is avaiable, but themes is not, the theme attribute is used. If both are missing, the course or program has no themes.
   * `selection` (v2.0): boolean value (`true` or `false`) indicating whether this Program or Course is selective, e.g. whether student need to pass extra requirements before being allowed to enroll.
   * `type` (v2.0): a string indicating whether a Program or Course is broadening or deepening. Allowed values are: `"broadening"` and `"deepening"`.
@@ -151,16 +220,16 @@ General attributes
 
 Attributes regarding visibility and enrollment of different types of users. Please note, that there are three types of students. (1) Students from the alliance partner institutions,  (2) students from the own institution and (3) guest students from institutions outside the alliance.
 
-  * `visibleForOwnStudents` (v2.0): a boolean value (`true` or `false`) indicating whether this Program or Course should be visible for students of the offering institution. Note: the default value for this attribute can be specified per institution in the eduxchange frontend.
+  * `visibleForOwnStudents` (v2.0): a boolean value (`true` or `false`) indicating whether enrollment of a Program or Course should be visible for students of the offering institution. *Note: in the eduxchange frontend a higher level institution setting is set to indicate that programs and courses themselves are visible for own students.*
   * `enrollmentForOwnStudents` (v2.0): a string indicating which enrollments process should be followed for students of the offering institution. Allowed values are `"broker"` or `"url"`. This attribute is only used if `visibleForOwnStudents` is set to `true`. 
     * If `"url"` is chosen the attribute `enrollmentUrl` **in the consumer object of an offering** is mandatory.
-  * `visibleForGuests` (v2.1): a boolean value (`true` or `false`) indicating whether this Program or Course should be visible for students outside the partner institutions. Note: the default value for this attribute can be specified per institution in the eduxchange frontend.
+  * `visibleForGuests` (v2.1): a boolean value (`true` or `false`) indicating whether enrollment of a Program or Course should be visible for students outside the partner institutions. *Note: in the eduxchange frontend a higher level institution setting is set to indicate that programs and courses themselves are visible for students outside the partner institutions.*
   * `enrollmentForGuests` (v2.1): a string indicating which enrollments process should be followed for students outside the partner institutions. Allowed values are `"broker"` or `"url"`. This attribute is only used if `visibleForGuests` is set to `true`. 
     * If `"url"` is chosen the attribute `enrollmentUrlForGuests` **in the consumer object of an offering** is mandatory.
 
 Attributes regarding joint programs.
 
-  * `jointPartners` (v2.1): an array of partners of the Program. This is used to identify the partners in case of a joint program. The agreed partner id's are used here. For example in the `lde` alliance: `["tud", "ul"]`.
+  * `jointPartnerCodes` (v2.1): an array of partners of the Program. This is used to identify the partners in case of a joint program. The agreed partner codes are used here. For example in the `lde` alliance: `["tud", "ul"]`.
   * `source` (v2.0): an optional object with a reference to the source of a Course or Program. In case of a joint program one of the institutions could act as overall coordinator and specifies the program and underlying courses. Underlying courses could be given at one of the other institutions. In this source object the course at the other institution can be specified. Use these attributes:
     * `shortName` (v2.0): the partner id of the institution to identify the source institution. An example for the `lde` alliance is: `"eur"`
     * `primaryCode` (v2.0): a string value with the primaryCode of the course to identify the source course.
@@ -212,7 +281,7 @@ This is an example of the consumer object for eduXchange. The example reflects t
 
 ## Eduxchange consumer object for Offerings
 
-The outline of the consumer object for offerings is the same as specified above for the programs and courses.There should always be a `consumerKey` attribute and an `alliances` array
+The outline of the consumer object for offerings is the same as specified above for the programs and courses. There should always be a `consumerKey` attribute and an `alliances` array in the consumer object.
 
 This consumer object is used to specify the `enrollmentUrl` and `enrollmentUrlForGuests` per offering. These attributes are associated with the corresponding attributes in the consumer object of the program or course.
 
@@ -231,16 +300,20 @@ This is an example of the consumer object for eduXchange offerings.
 
 ```json
 {
-  "consumers": [{
-    "consumerKey": "eduxchange",
-    "alliances": [{
-      "name": "ewuu",
-      "enrollmentUrl": "https://www.my-url.nl/",
-      "enrollStartTime": "13:00",
-      "enrollEndTime": "20:00",
-      "dateComment": "This time is in ECT and the course takes place on Monday morning."
-    }]
-  }]
+  "consumers": [
+    {
+      "consumerKey": "eduxchange",
+      "alliances": [
+        {
+          "name": "ewuu",
+          "enrollmentUrl": "https://www.my-url.nl/",
+          "enrollStartTime": "13:00",
+          "enrollEndTime": "20:00",
+          "dateComment": "This time is in ECT and the course takes place on Monday morning."
+        }
+      ]
+    }
+  ]
 }
 ```
 
