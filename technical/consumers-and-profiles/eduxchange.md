@@ -9,7 +9,7 @@ In this documentation of the eduxchange consumer object you will find
 
 ## Versions
 
-- last update: 20 December, 2023
+- last update: 21 December, 2023
 - current alliances using eduxchange.NL:
   - ewuu
   - lde
@@ -130,9 +130,9 @@ Some attributes in OOAPI can have multiple values. It is recommended that all pa
 ## LDE Alliance 
 
 ### partner codes
-* eur
-* tud
-* ul
+* 21PE (Erasmus)
+* 21PF (Delft)
+* 21PB (Leiden)
 
 ### themes
 Participants agreed to use croho themes in the theme attribute of the consumer object. These themes are specified by a number:
@@ -229,9 +229,9 @@ Attributes regarding visibility and enrollment of different types of users. Plea
 
 Attributes regarding joint programs.
 
-  * `jointPartnerCodes` (v2.1): an array of partners of the Program. This is used to identify the partners in case of a joint program. The agreed partner codes are used here. For example in the `lde` alliance: `["tud", "ul"]`.
+  * `jointPartnerCodes` (v2.1): an array of partners of the Program. This is used to identify the partners in case of a joint program. The agreed partner codes are used here. For example in the `lde` alliance: `["21PF", "21PB"]`.
   * `source` (v2.0): an optional object with a reference to the source of a Course or Program. In case of a joint program one of the institutions could act as overall coordinator and specifies the program and underlying courses. Underlying courses could be given at one of the other institutions. In this source object the course at the other institution can be specified. Use these attributes:
-    * `shortName` (v2.0): the partner id of the institution to identify the source institution. An example for the `lde` alliance is: `"eur"`
+    * `shortName` (v2.0): the partner id of the institution to identify the source institution. An example for the `lde` alliance is: `"21PE"`
     * `primaryCode` (v2.0): a string value with the primaryCode of the course to identify the source course.
     * `uuid` (v2.0): the uuid of the course to reference the OOAPI endpoint of the source course.
 
@@ -260,7 +260,7 @@ This is an example of the consumer object for eduXchange. The example reflects t
               "visibleForOwnStudents": true,
               "enrollmentForOwnStudents": "broker"
               "source": {
-                "shortName": "tud",
+                "shortName": "21PE",
                 "primaryCode": "WB-MI-168",
                 "uuid": "123e4567-e89b-12d3-a456-123514174000"
               }
