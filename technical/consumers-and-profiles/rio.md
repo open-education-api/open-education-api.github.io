@@ -282,6 +282,8 @@ Notes:
 
 > OOAPI fields marked with `[*]` are required fields in the OOAPI specification.
 
+> RIO fields marked with `[1]` or `[1..n]` are required by RIO.
+
 ### **AangebodenHoOpleidingsonderdeel**
 
 Notes:
