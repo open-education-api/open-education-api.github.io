@@ -53,7 +53,7 @@ To be compatible with eduXchange an institution needs to implement the following
 
 !> For `/organizations` the `organizationType=root` parameter must be supported and for all calls returning programs the `programType=minor` parameter will be set and must be supported.
 
-!> To select educational information meant for eduXchange, eduXchange will always append the query parameter `consumer=eduxchange` to every call.
+!> To select educational information meant for eduXchange, eduXchange will always append the query parameter `consumer=eduxchange` to every call. To select information meant for a particular alliance, eduXchange can append an additional parameter `alliances.name=ALLIANCE_NAME` for an alliance.
 
 To be compatible with the [eduXchange catalogue website](https://www.eduxchange.nl), an implementation needs to implement the eduXchange consumer object and query parameter for three different kind of objects.
 * programs & courses
@@ -75,7 +75,7 @@ This instance is running version 2.0.
 Below are the filters, those `highlighted` are in use by the instance:
 
 - `Search box`, free text search box
-- First application period, selection of open courses or programs
+- `First application period`, selection of open courses or programs
 - `Education type`, programs or courses selection
 - `Academic year`, academic year selection
 - `Starts in`, starting month selection
@@ -148,6 +148,7 @@ Participants agreed to use croho themes in the theme attribute of the consumer o
 *  19: `"Technology"`
 
 ## EuroTeq Alliance 
+The additional parameter `alliances.name=euroteq` is effective.
 
 ### partner codes
 * tue
