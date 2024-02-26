@@ -1,8 +1,7 @@
 # Datamodel
 
-<a href='docs/_media/datamodel.svg' target=_blank>Open full model</a>
+![OOAPI objects and their relationships in a schema](https://open-education-api.github.io/specification/v5/OOAPIv5_model.png)
 
-![](../_media/datamodel.svg)
 
 ## Entity definitions
 
