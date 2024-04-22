@@ -15,6 +15,8 @@ An educational institution needs to implement the following calls to be compatib
 
 !> All calls returning collections need to support at least the `consumer` query parameter and should only return entities meant for RIO when this parameter is set to `rio`, e.g. `?consumer=rio`.
 
+!> All calls returning resources should have a "rio consumer object" in the `consumers` array. The `consumerKey` of this consumer should be set to `"rio"`.
+
 Furthermore, the returned entities should implement the attributes as described on this page. Some of this attributes are part of the additional "RIO Consumer object". See the general information about [specific consumers](consumers) for more information.
 
 ## Mapping OOAPI to RIO
