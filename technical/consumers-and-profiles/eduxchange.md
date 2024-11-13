@@ -28,27 +28,31 @@ Before version 2.0 we started eduXchange with the EWUU alliance.
 
 # Required OOAPI resources
 
-To be compatible with eduXchange an institution needs to implement the following OOAPI resources:
+To be compatible with eduXchange an institution needs to implement the following OOAPI resources. The endpoints currently in use are highlighted.
 
+Orientation
 * `GET /organizations`
 * `GET /organizations?organizationType=root`
-* `GET /organizations/{organizationId}`
-* `GET /organizations/{organizationId}/programs?programType=minor`
-* `GET /organizations/{organizationId}/courses`
+* GET /organizations/{organizationId}
+* GET /organizations/{organizationId}/programs?programType=minor
+* GET /organizations/{organizationId}/courses
 * `GET /programs?programType=minor`
 * `GET /programs/{programId}`
+* `GET /programs/{programId}/courses` (NEW: October 2024)
 * `GET /programs/{programId}/offerings`
 * `GET /courses`
 * `GET /courses/{courseId}`
 * `GET /courses/{courseId}/offerings`
 * `GET /offerings/{offeringId}`
-* `GET /academic-sessions`
-* `GET /academic-sessions/{academicSessionId}`
-* `GET /academic-sessions/{academicSessionId}/offerings`
+* GET /academic-sessions
+* GET /academic-sessions/{academicSessionId}
+* GET /academic-sessions/{academicSessionId}/offerings
+
+Enrolment
 * `GET /persons/me`
-* `GET /persons/{personId}`
-* `GET /associations/{associationId}`
+* GET /persons/{personId}
 * `POST /associations/external/me`
+* `GET /associations/{associationId}`
 * `PATCH /associations/{associationId}`
 
 !> For `/organizations` the `organizationType=root` parameter must be supported and for all calls returning programs the `programType=minor` parameter will be set and must be supported.
@@ -158,11 +162,13 @@ The additional parameter `alliances.name=euroteq` is effective.
 * ctu
 * tum
 * technion
+* epfl
 
 ### themes
 Participants agreed to use these themes in the theme attribute of the consumer object.
 * `"Architecture and Construction"`
 * `"Business and Economics"`
+* `"Chemical Engineering"`
 * `"Chemistry and Biology"`
 * `"Computer Science and ICT, Data, AI"`
 * `"Electrical Engineering"`
