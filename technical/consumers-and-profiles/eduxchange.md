@@ -81,6 +81,7 @@ To be compatible with the [eduXchange catalogue website](https://www.eduxchange.
 ## required ooapi attributes
 
 These are the required ooapi attributes per resource.
+
 | resource | required attributes |
 | --- | --- |
 | /organizations <br/>/organizations?organizationType=root | organizationId <br/>primaryCode <br/>organizationType <br/>name <br/>shortName <br/>consumers.consumerKey:eduxchange <br/>consumers.alliances[x].name:ALLIANCE_NAME |
