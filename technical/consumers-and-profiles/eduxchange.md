@@ -1,7 +1,7 @@
 # eduXchange
 
 In this documentation of the eduxchange consumer object you will find
-- required OOAPI resources 
+- required OOAPI resources and attributes
 - agreements per eduxchange instance
 - agreements per alliance
 - student orientation consumer objects
@@ -9,17 +9,20 @@ In this documentation of the eduxchange consumer object you will find
 
 ## Versions
 
-- last update: 21 December, 2023
+- last update: 10 Februari, 2025
 - current alliances using eduxchange.NL:
   - ewuu
   - lde
 - current alliances using eduxchange.EU
   - euroteq
 
-We will use v2.0 and v2.1 throughout this document to identify the requirements of consumer attributes for different versions. Below a short history of versions.
+We will use v2.x throughout this document to identify the requirements of consumer attributes for different versions. Below a short history of versions.
+
+### Version 2.2
+In 2025 we are, and will be, working on version 2.2 with new features for the dutch and european alliances. We expect to add more alliances and courses for professionals.
 
 ### Version 2.1
-In 2023 and 2024 we are, and will be, working on version 2.1 with new features for the dutch alliances. In this version also international alliances will be using eduxchange on eduxchange.eu, starting with EuroTeq. This also requires changes.
+In 2023 and 2024 we were working on version 2.1 with new features for the dutch alliances. In this version also international alliances will be using eduxchange on eduxchange.eu, starting with EuroTeq. This also required changes.
 
 ### Version 2.0
 Version 2.0 has been worked on in 2021 and 2022 and is the current live version on eduxchange.nl. This version was build for the dutch alliances EWUU and LDE.
@@ -27,6 +30,13 @@ Version 2.0 has been worked on in 2021 and 2022 and is the current live version 
 Before version 2.0 we started eduXchange with the EWUU alliance.
 
 # Required OOAPI resources
+
+The subset of OOAPI Resources that is used in eduXchange is described in the picture below.
+* The white resources are used in the orientation proces.
+  * The dashed lines are resources that are only accessed by another resource through the expand parameter.
+* The grey resources are used in the enrolment and grade transmission processes.
+
+![OOAPI Resources used in eduXchange](../../_media/Student%20mobility%202025%20-%20OOAPI%20Resources.jpg "OOAPI Resources used in eduXchange")
 
 To be compatible with eduXchange an institution needs to implement the following OOAPI resources. The endpoints currently in use are highlighted.
 
@@ -38,15 +48,19 @@ Orientation
 * GET /organizations/{organizationId}/courses
 * `GET /programs?programType=minor`
 * `GET /programs/{programId}`
-* `GET /programs/{programId}/courses` (NEW: October 2024)
+* `GET /programs/{programId}?expand=coordinator`
+* `GET /programs/{programId}/courses`
 * `GET /programs/{programId}/offerings`
 * `GET /courses`
 * `GET /courses/{courseId}`
+* `GET /courses/{courseId}?expand=coordinator`
 * `GET /courses/{courseId}/offerings`
 * `GET /offerings/{offeringId}`
+* `GET /offerings/{offeringId}?expand=academicSession`
 * GET /academic-sessions
 * GET /academic-sessions/{academicSessionId}
 * GET /academic-sessions/{academicSessionId}/offerings
+* GET /persons/{personId}
 
 Enrolment
 * `GET /persons/me`
@@ -64,6 +78,16 @@ To be compatible with the [eduXchange catalogue website](https://www.eduxchange.
 * offerings
 * persons
 
+## required ooapi attributes
+
+These are the required ooapi attributes per resource.
+|resource|required attributes|
+|---|---|
+|/organizations <br/>/organizations?organizationType=root|organizationId <br/>primaryCode <br/>organizationType <br/>name <br/>shortName <br/>consumers.consumerKey:eduxchange <br/>consumers.alliances[x].name:ALLIANCE_NAME|
+|/programs?programType=minor <br/>/programs/{programId} | programId <br/>programType (=minor) <br/>primaryCode <br/>name <br/>abbreviation <br/>description <br/>teachingLanguage <br/>level <br/>studyLoad <br/>consumers.consumerKey:eduxchange <br/>consumers.alliances[x].name:ALLIANCE_NAME |
+|/programs/{programId}/courses <br/>/courses <br/>/courses/{courseId} | courseId <br/>primaryCode <br/>name <br/>abbreviation <br/>description <br/>teachingLanguage <br/>level <br/>studyLoad <br/>consumers.consumerKey:eduxchange <br/>consumers.alliances[x].name:ALLIANCE_NAME |
+|/programs/{programId}/offerings <br/>/courses/{courseId}/offerings <br/>/offerings/{offeringId} |offeringId <br/>primaryCode <br/>offeringType <br/>name <br/>description <br/>teachinglanguage <br/>resultExpected <br/>startDate <br/>endDate <br/>consumers.consumerKey:eduxchange <br/>consumers.alliances[x].name:ALLIANCE_NAME |
+
 # Agreements per eduxchange instance
 
 An instance is a frontend of eduxchange for a particular region. Currently there is eduxchange.NL for alliances in the Netherlands and eduxchange.EU for alliances in Europe.
@@ -72,7 +96,7 @@ It is recommended that alliances within a region agree on certain aspects of edu
 
 ## eduxchange.NL
 
-This instance is running version 2.0.
+This instance is running version 2.1.
 
 ### Filters
 
@@ -158,7 +182,7 @@ The additional parameter `alliances.name=euroteq` is effective.
 * tue
 * taltech
 * dtu
-* ls
+* lx
 * ctu
 * tum
 * technion
@@ -242,9 +266,16 @@ Attributes regarding joint programs.
     * `primaryCode` (v2.0): a string value with the primaryCode of the course to identify the source course.
     * `uuid` (v2.0): the uuid of the course to reference the OOAPI endpoint of the source course.
 
+Attributes regarding life long learning
+
+  * `lifeLongLearning` (v2.2): an optional object that specifies information on life long learning (LLL) courses for professionals, next to the regular student courses. Courses marked as LLL are not visble for students, instead those are made visible for professionals.
+    * `isLifeLongLearningEnabled` (v2.2): a boolean value (`true` or `false`) that specifies if the course is a LLL course.
+    * `hasMicrocredential` (v2.2): a boolean value (`true` or `false`) that specifies if the course is rewarded with a microcredential.
+    * `isStackable` (v2.2): a boolean value (`true` or `false`) that specifies if the microcredential is stackable.
+
 ### Example
 
-This is an example of the consumer object for eduXchange. The example reflects the default behaviour for visibility of the `ewuu` and `lde` alliances. The `ewuu` courses are not visible for students from the offering institution. The `lde` minors are visible for student from the offering institution. These students can enroll through the `broker`. The example also reflects new attributes introduced in v2.1 for `euroteq`.
+This is an example of the consumer object for eduXchange. The example reflects the default behaviour for visibility of the `ewuu` and `lde` alliances. The `ewuu` courses are not visible for students from the offering institution. The `lde` minors are visible for student from the offering institution. These students can enroll through the `broker`. The example also reflects new attributes introduced in v2.1 and v2.2 for `euroteq`.
 
 ```json
     {
@@ -265,7 +296,7 @@ This is an example of the consumer object for eduXchange. The example reflects t
               "selection": false,
               "type": "deepening",
               "visibleForOwnStudents": true,
-              "enrollmentForOwnStudents": "broker"
+              "enrollmentForOwnStudents": "broker",
               "source": {
                 "shortName": "21PE",
                 "primaryCode": "WB-MI-168",
@@ -278,7 +309,12 @@ This is an example of the consumer object for eduXchange. The example reflects t
               "instructorNames": ["John Smith"],
               "modeOfDelivery": "Hybrid",
               "contactHours": 3.5,
-              "activities": "lectures and practises"
+              "activities": "lectures and practises",
+              "lifeLongLearning": {
+                "isLifeLongLearningEnabled": "true",
+                "hasMicrocredential": "true",
+                "isStackable": "false"
+              }
             }
           ]
         }
