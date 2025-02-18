@@ -249,9 +249,11 @@ General attributes
   * `instructorNames` (v2.1): an array with names of all instructors, `["instructor name", "instructor name"]`
   * `contactHours` (v2.1): a float with the amount of contact hours, `3.5` for example.
   * `activities` (v2.1): a string that mentions the activities that take place in the course, `"lectures and practises"` for example.
+  * `microcredential` (v2.2): specifies if the program or course is rewarded with a stackable or standalone microcredential, values `["stackable"|"standalone"]`. If not speficied, no microcredential is rewarded.
 
-Attributes regarding visibility and enrollment of different types of users. Please note, that there are three types of students. (1) Students from the alliance partner institutions,  (2) students from the own institution and (3) guest students from institutions outside the alliance.
+Attributes regarding visibility and enrollment of different types of users. Eduxchange can be used by students and professionals. Please note, there are three types of students. (1) Students from the alliance partner institutions,  (2) students from the own institution and (3) guest students from institutions outside the alliance.
 
+  * `targetGroup` (v2.2): specifies if the program or course is a program or course for students or for professionals, values `["forStudents"|"forProfessionals"]`. If not specified, the course or program is supposed to be intended for students.
   * `visibleForOwnStudents` (v2.0): a boolean value (`true` or `false`) indicating whether enrollment of a Program or Course should be visible for students of the offering institution. *Note: in the eduxchange frontend a higher level institution setting is set to indicate that programs and courses themselves are visible for own students.*
   * `enrollmentForOwnStudents` (v2.0): a string indicating which enrollments process should be followed for students of the offering institution. Allowed values are `"broker"` or `"url"`. This attribute is only used if `visibleForOwnStudents` is set to `true`. 
     * If `"url"` is chosen the attribute `enrollmentUrl` **in the consumer object of an offering** is mandatory.
@@ -266,13 +268,6 @@ Attributes regarding joint programs.
     * `shortName` (v2.0): the partner id of the institution to identify the source institution. An example for the `lde` alliance is: `"21PE"`
     * `primaryCode` (v2.0): a string value with the primaryCode of the course to identify the source course.
     * `uuid` (v2.0): the uuid of the course to reference the OOAPI endpoint of the source course.
-
-Attributes regarding life long learning
-
-  * `lifeLongLearning` (v2.2): an optional object that specifies information on life long learning (LLL) courses for professionals, next to the regular student courses. Courses marked as LLL are not visble for students, instead those are made visible for professionals.
-    * `isLifeLongLearningEnabled` (v2.2): a boolean value (`true` or `false`) that specifies if the course is a LLL course.
-    * `hasMicrocredential` (v2.2): a boolean value (`true` or `false`) that specifies if the course is rewarded with a microcredential.
-    * `isStackable` (v2.2): a boolean value (`true` or `false`) that specifies if the microcredential is stackable.
 
 ### Example
 
@@ -311,11 +306,8 @@ This is an example of the consumer object for eduXchange. The example reflects t
               "modeOfDelivery": "Hybrid",
               "contactHours": 3.5,
               "activities": "lectures and practises",
-              "lifeLongLearning": {
-                "isLifeLongLearningEnabled": "true",
-                "hasMicrocredential": "true",
-                "isStackable": "false"
-              }
+              "microcredential": "standalone",
+              "targetGroup": "forProfessionals"
             }
           ]
         }
