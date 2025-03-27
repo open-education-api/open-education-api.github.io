@@ -115,6 +115,7 @@ Below are the filters, those `highlighted` are in use by the instance:
 - `Selection minor`, selection minor indication
 - `Language`, language of the offering selection
 - `Study load (ECTS)`, study load of programs or courses in ects selection
+- Study load (Hours), study load of programs or courses in hours selection
 - Mode of study, mode of study selection
 - Mode of delivery, mode of delivery selection
 
@@ -138,6 +139,7 @@ Below are the filters, those `highlighted` are in use by the instance:
 - Selection minor, selection minor indication
 - Language, language of the offering selection
 - `Study load (ECTS)`, study load of programs or courses in ects selection
+- `Study load (Hours)`, study load of programs or courses in hours selection
 - Mode of study, mode of study selection
 - `Mode of delivery`, mode of delivery selection
 
@@ -260,6 +262,8 @@ Attributes regarding visibility and enrollment of different types of users. Edux
   * `visibleForGuests` (v2.1): a boolean value (`true` or `false`) indicating whether enrollment of a Program or Course should be visible for students outside the partner institutions. *Note: in the eduxchange frontend a higher level institution setting is set to indicate that programs and courses themselves are visible for students outside the partner institutions.*
   * `enrollmentForGuests` (v2.1): a string indicating which enrollments process should be followed for students outside the partner institutions. Allowed values are `"broker"` or `"url"`. This attribute is only used if `visibleForGuests` is set to `true`. 
     * If `"url"` is chosen the attribute `enrollmentUrlForGuests` **in the consumer object of an offering** is mandatory.
+  * `enrollmentForProfessionals` (v2.2): a string indicating which enrollments process should be followed for professionals. Allowed values are `"broker"` or `"url"`. This attribute is only used if `targetGroup` is set to `forProfessionals`. 
+    * If `"url"` is chosen the attribute `enrollmentUrlForProfessionals` **in the consumer object of an offering** is mandatory.
 
 Attributes regarding joint programs.
 
@@ -323,6 +327,7 @@ This consumer object is used to specify the `enrollmentUrl` and `enrollmentUrlFo
 
   * `enrollmentUrl` (v2.0): a string formatted as an URL to which own students will be redirected if `enrollmentForOwnStudents` **in the program/course consumer object** is set to `"url"`.
   * `enrollmentUrlForGuests` (v2.1): a string formatted as an URL to which guest students will be redirected if `enrollmentForGuests` **in the program/course consumer object** is set to `"url"`.
+  * `enrollmentUrlForProfessionals` (v2.2): a string formatted as an URL to which professionals will be redirected if `enrollmentForProfessioanals` **in the program/course consumer object** is set to `"url"`.
 
 In addition the `enrollStartTime` and `enrollEndTime` of an offering can be added. This time is more specific then the enrollStartDate and enrollEndDate of an offering. This makes it possible to start on enrollStartDate at enrollStartTime and end at enrollEndDate at enrollEndTime.
 
