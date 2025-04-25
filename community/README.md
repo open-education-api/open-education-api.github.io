@@ -9,4 +9,4 @@ The Community consists of members (representatives) of education institutions an
 
 This enables for efficient sharing of education data, which benefits the members of the Community as well as their end-users. Community members can also be part of the [Working Group](community/workinggroup.md).
 
-If you wish to join the Community and stay informed of the latest developments, please click [here](https://list.surf.nl/postorius/lists/openonderwijsapi.list.surf.nl).
+If you wish to join the Community and stay informed of the latest developments, please click [here](https://list.surfnet.nl/mailman/listinfo/openonderwijsapi).

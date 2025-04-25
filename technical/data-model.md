@@ -45,24 +45,51 @@ A CourseOffering is the concrete offering of a Course in time. Persons can be as
 A ComponentOffering is the concrete offering of a Component in time. Persons can be associated with a ComponentOffering through a ComponentOfferingAssociation.
 
 ### Associations
+Associations are used to associate a person to an offering. The association data model contains information about the type of association. Associations come in three forms:
+* ProgramOfferingAssociation
+* CourseOfferingAssociation
+* ComponentOfferingAssociation
 
 #### ProgramOfferingAssociation
+Signifies an association to a program offering. Can be used to associate a person.
 
 #### CourseOfferingAssociation
+Signifies an association to a course offering. Can be used to associate a person.
 
 #### ComponentOfferingAssociation
+Signifies an association to a component offering. Can be used to associate a person.
 
 ### Person
+Describes a person, additionally emergency contact information can be provided.
 
 ### Organization
+Describes an organization. An organization must be one of these types:
+* root
+* institute
+* department
+* faculty
+* branch
+* academy
+* school
+
+!> Note: root describes the educational institution itself
 
 ### Group
+A group must be one of these types:
+* learning group
+* class
+* team
+
+Groups are related to organizations, persons and offerings. Groups of students that are related to an offering are typically used for rostering. The rostering application assigns students based on these groups. For example, class 1b will be assigned to the course offering on monday morning. Not all groups are related to an offering. A group of people can also be a team that is working on a task outside the OOAPI scope. These can be teams of students, but also teams of employees.
 
 ### Building
+Describes a physical location that is currently used by an organization. 
 
 ### Room
+The rooms API provides the part of a building where an activity can take place. Including detail information on the resources available, number of seats, etc. 
 
 ### NewsFeed
+The news API provides news feeds and items regarding a specific subject.
 
 ### NewsItem
-
+A single news item, can be associated to news feeds

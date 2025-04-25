@@ -1,0 +1,10 @@
+# OOAPI usecases
+Currently the OOAPI is implemented at universities for applied sciences and universities for the RIO and EduXchange usecase. MBO in the Netherlands also implement the OOAPI for pilots like [MBO OKE](https://github.com/NetwerkExamineringDigitalisering/NED-OOAPI). More future OOAPI usecases will follow.
+
+![Eduhub Usecases](../_media/eduhub_2022_use_cases.png)
+
+## RIO usecase
+The Open Onderwijs API (OOAPI) facilitates standardized data sharing among Dutch educational institutions and other national systems, such as RIO (Register Instellingen en Opleidingen), a registry managed by DUO. All Dutch educational institutions are required to keep their data in this registry current. Universities and universities of applied sciences utilize OOAPI for this purpose. SURFeduhub reads the OOAPI endpoint on demand, translating the institution’s data into a format that RIO can process, ensuring a streamlined and consistent data flow between educational institutions and the national registry, and making sure the data is always up to date and synchronized. Please find more information about [the RIO functionality](https://wiki.surfnet.nl/display/SURFeduhub/RIO+Functionality) with OOAPI here.
+
+## EduXchange Usecase
+EduXchange is a platform that enables students to explore and enroll in elective courses across universities, both within the Netherlands and across Europe. Leveraging the Open Onderwijs API (OOAPI), EduXchange consolidates course and minor offerings from participating institutions into a unified, user-friendly platform. The enrollment process itself is facilitated by OOAPI endpoints: personal data is securely retrieved from the student's home institution via the OOAPI /persons endpoint. Once a course or minor is completed, results are also communicated back to the home institution using OOAPI calls, ensuring that academic records remain up-to-date across institutions and borders. Please find more information about EduXchange and OOAPI [here](https://wiki.surfnet.nl/display/EDX/Step+1.+Implementing+an+OOAPI+endpoint).

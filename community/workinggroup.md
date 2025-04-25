@@ -26,26 +26,17 @@ To register for the working group and become an active part of the Community, pl
 
 The Working group consists of the following members:
 
-| Member                     | Representative(s)              |
-| -------------------------- | ------------------------------ |
-| Avans Hogeschool           | Andre Walraven                 |
-| Hogeschool Inholland       | Arthur van Alten               |
-| Hogeschool Leiden          | Mark de Jong, Frank Schimmel   |
-| SURF                       | Jelmer de Ronde, Frans Ward    |
-| Hogeschool Utrecht         | Joost Veerman, Xiaojie Bormans |
-| Universiteit van Amsterdam | Tom Kuipers                    |
-| Hogeschool Arnhem Nijmegen | Niels Kregting                 |
-| Haagse Hogeschool          | Danny Klootwijk                |
+| Member                     | Representative(s)                        |
+| -------------------------- | -----------------------------------------|
+| Avans Hogeschool           | Andre Walraven                           |
+| Hogeschool Inholland       | Arthur van Alten                         |
+| Hogeschool Leiden          | Mark de Jong, Frank Schimmel             |
+| SURF                       | Jelmer de Ronde, Patrick van der Veer    |
+| Hogeschool Utrecht         | Joost Veerman, Xiaojie Bormans           |
+| Universiteit van Amsterdam | Tom Kuipers                              |
+| Hogeschool Arnhem Nijmegen | Niels Kregting                           |
+| Haagse Hogeschool          | Danny Klootwijk                          |
 
 ## Working group and community meetings
 
-The (online) working group and community meetings take place on the following dates:
-
-2023:
-* Tuesday 17 Jan. 14.00-16.00
-* Thursday 16 Mar. 10.00-12.00
-* Tuesday 16 May 14.00-16.00
-* Thursday 6 Jul 14.00-16.00
-* Tuesday 12 Sep. 14.00-16.00
-* Thursday 16 Nov. 10.00-12.00
-
+The (online) working group and community meetings take place every month, register to the working group to receive an invite to join

@@ -1,1 +1,1 @@
-[filename](../../CHANGELOG.md ':include')
+[filename](../CHANGELOG.md ':include')

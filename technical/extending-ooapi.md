@@ -15,4 +15,4 @@ Use `consumers` when:
 - You would like to promote the use of this extension.
 
 ## Do not add extra paths or resources
-Adding extra paths or resources that are not defined in the specification is discouraged. If you have a specific usecase that cannot be served with the existing resources and paths, we recommend contacting the OOAPI work group to determine how the specification should be updated to accommodate your usecase.
+Adding extra paths or resources that are not defined in the specification is discouraged. If you have a specific usecase that cannot be served with the existing resources and paths, we recommend [contacting](../contact.md) the OOAPI work group to determine how the specification should be updated to accommodate your usecase.

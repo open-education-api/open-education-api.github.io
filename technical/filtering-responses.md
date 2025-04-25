@@ -4,7 +4,7 @@ When requesting collections of resources a client can request that the items be 
 
 ## Filtering items based on string contents using `q`
 
-This can be done using the query parameter `q`, e.g. `q=text`.
+This can be done using the query parameter `q`, e.g. `GET /education-specifications?q=japi`. 
 
 This parameter filters items by matching on the following attributes:
 * `name`

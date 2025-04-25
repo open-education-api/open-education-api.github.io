@@ -1,7 +1,7 @@
 # eduXchange
 
 In this documentation of the eduxchange consumer object you will find
-- required OOAPI resources and attributes
+- required OOAPI resources 
 - agreements per eduxchange instance
 - agreements per alliance
 - student orientation consumer objects
@@ -9,20 +9,17 @@ In this documentation of the eduxchange consumer object you will find
 
 ## Versions
 
-- last update: 10 Februari, 2025
+- last update: 21 December, 2023
 - current alliances using eduxchange.NL:
   - ewuu
   - lde
 - current alliances using eduxchange.EU
   - euroteq
 
-We will use v2.x throughout this document to identify the requirements of consumer attributes for different versions. Below a short history of versions.
-
-### Version 2.2
-In 2025 we are, and will be, working on version 2.2 with new features for the dutch and european alliances. We expect to add more alliances and courses for professionals.
+We will use v2.0 and v2.1 throughout this document to identify the requirements of consumer attributes for different versions. Below a short history of versions.
 
 ### Version 2.1
-In 2023 and 2024 we were working on version 2.1 with new features for the dutch alliances. In this version also international alliances will be using eduxchange on eduxchange.eu, starting with EuroTeq. This also required changes.
+In 2023 and 2024 we are, and will be, working on version 2.1 with new features for the dutch alliances. In this version also international alliances will be using eduxchange on eduxchange.eu, starting with EuroTeq. This also requires changes.
 
 ### Version 2.0
 Version 2.0 has been worked on in 2021 and 2022 and is the current live version on eduxchange.nl. This version was build for the dutch alliances EWUU and LDE.
@@ -31,42 +28,27 @@ Before version 2.0 we started eduXchange with the EWUU alliance.
 
 # Required OOAPI resources
 
-The subset of OOAPI Resources that is used in eduXchange is described in the picture below.
-* The white resources are used in the orientation proces.
-  * The dashed lines are resources that are only accessed by another resource through the expand parameter.
-* The grey resources are used in the enrolment and grade transmission processes.
+To be compatible with eduXchange an institution needs to implement the following OOAPI resources:
 
-![OOAPI Resources used in eduXchange](../../_media/Student%20mobility%202025%20-%20OOAPI%20Resources.jpg "OOAPI Resources used in eduXchange")
-
-To be compatible with eduXchange an institution needs to implement the following OOAPI resources. The endpoints currently in use are highlighted.
-
-Orientation
 * `GET /organizations`
 * `GET /organizations?organizationType=root`
-* GET /organizations/{organizationId}
-* GET /organizations/{organizationId}/programs?programType=minor
-* GET /organizations/{organizationId}/courses
+* `GET /organizations/{organizationId}`
+* `GET /organizations/{organizationId}/programs?programType=minor`
+* `GET /organizations/{organizationId}/courses`
 * `GET /programs?programType=minor`
 * `GET /programs/{programId}`
-* `GET /programs/{programId}?expand=coordinator`
-* `GET /programs/{programId}/courses`
 * `GET /programs/{programId}/offerings`
 * `GET /courses`
 * `GET /courses/{courseId}`
-* `GET /courses/{courseId}?expand=coordinator`
 * `GET /courses/{courseId}/offerings`
 * `GET /offerings/{offeringId}`
-* `GET /offerings/{offeringId}?expand=academicSession`
-* GET /academic-sessions
-* GET /academic-sessions/{academicSessionId}
-* GET /academic-sessions/{academicSessionId}/offerings
-* GET /persons/{personId}
-
-Enrolment
+* `GET /academic-sessions`
+* `GET /academic-sessions/{academicSessionId}`
+* `GET /academic-sessions/{academicSessionId}/offerings`
 * `GET /persons/me`
-* GET /persons/{personId}
-* `POST /associations/external/me`
+* `GET /persons/{personId}`
 * `GET /associations/{associationId}`
+* `POST /associations/external/me`
 * `PATCH /associations/{associationId}`
 
 !> For `/organizations` the `organizationType=root` parameter must be supported and for all calls returning programs the `programType=minor` parameter will be set and must be supported.
@@ -78,17 +60,6 @@ To be compatible with the [eduXchange catalogue website](https://www.eduxchange.
 * offerings
 * persons
 
-## required ooapi attributes
-
-These are the required ooapi attributes per resource.
-
-| resource | required attributes |
-| --- | --- |
-| /organizations <br/>/organizations?organizationType=root | organizationId <br/>primaryCode <br/>organizationType <br/>name <br/>shortName <br/>consumers.consumerKey:eduxchange <br/>consumers.alliances[x].name:ALLIANCE_NAME |
-| /programs?programType=minor <br/>/programs/{programId} | programId <br/>programType (=minor) <br/>primaryCode <br/>name <br/>abbreviation <br/>description <br/>teachingLanguage <br/>level <br/>studyLoad <br/>consumers.consumerKey:eduxchange <br/>consumers.alliances[x].name:ALLIANCE_NAME |
-| /programs/{programId}/courses <br/>/courses <br/>/courses/{courseId} | courseId <br/>primaryCode <br/>name <br/>abbreviation <br/>description <br/>teachingLanguage <br/>level <br/>studyLoad <br/>consumers.consumerKey:eduxchange <br/>consumers.alliances[x].name:ALLIANCE_NAME |
-| /programs/{programId}/offerings <br/>/courses/{courseId}/offerings <br/>/offerings/{offeringId} | offeringId <br/>primaryCode <br/>offeringType <br/>name <br/>description <br/>teachinglanguage <br/>resultExpected <br/>startDate <br/>endDate <br/>consumers.consumerKey:eduxchange <br/>consumers.alliances[x].name:ALLIANCE_NAME |
-
 # Agreements per eduxchange instance
 
 An instance is a frontend of eduxchange for a particular region. Currently there is eduxchange.NL for alliances in the Netherlands and eduxchange.EU for alliances in Europe.
@@ -97,7 +68,7 @@ It is recommended that alliances within a region agree on certain aspects of edu
 
 ## eduxchange.NL
 
-This instance is running version 2.1.
+This instance is running version 2.0.
 
 ### Filters
 
@@ -115,7 +86,6 @@ Below are the filters, those `highlighted` are in use by the instance:
 - `Selection minor`, selection minor indication
 - `Language`, language of the offering selection
 - `Study load (ECTS)`, study load of programs or courses in ects selection
-- Study load (Hours), study load of programs or courses in hours selection
 - Mode of study, mode of study selection
 - Mode of delivery, mode of delivery selection
 
@@ -139,7 +109,6 @@ Below are the filters, those `highlighted` are in use by the instance:
 - Selection minor, selection minor indication
 - Language, language of the offering selection
 - `Study load (ECTS)`, study load of programs or courses in ects selection
-- `Study load (Hours)`, study load of programs or courses in hours selection
 - Mode of study, mode of study selection
 - `Mode of delivery`, mode of delivery selection
 
@@ -185,17 +154,15 @@ The additional parameter `alliances.name=euroteq` is effective.
 * tue
 * taltech
 * dtu
-* lx
+* ls
 * ctu
 * tum
 * technion
-* epfl
 
 ### themes
 Participants agreed to use these themes in the theme attribute of the consumer object.
 * `"Architecture and Construction"`
 * `"Business and Economics"`
-* `"Chemical Engineering"`
 * `"Chemistry and Biology"`
 * `"Computer Science and ICT, Data, AI"`
 * `"Electrical Engineering"`
@@ -251,19 +218,15 @@ General attributes
   * `instructorNames` (v2.1): an array with names of all instructors, `["instructor name", "instructor name"]`
   * `contactHours` (v2.1): a float with the amount of contact hours, `3.5` for example.
   * `activities` (v2.1): a string that mentions the activities that take place in the course, `"lectures and practises"` for example.
-  * `microcredential` (v2.2): specifies if the program or course is rewarded with a stackable or standalone microcredential, values `["stackable"|"standalone"]`. If not speficied, no microcredential is rewarded.
 
-Attributes regarding visibility and enrollment of different types of users. Eduxchange can be used by students and professionals. Please note, there are three types of students. (1) Students from the alliance partner institutions,  (2) students from the own institution and (3) guest students from institutions outside the alliance.
+Attributes regarding visibility and enrollment of different types of users. Please note, that there are three types of students. (1) Students from the alliance partner institutions,  (2) students from the own institution and (3) guest students from institutions outside the alliance.
 
-  * `targetGroup` (v2.2): specifies if the program or course is a program or course for students or for professionals, values `["forStudents"|"forProfessionals"]`. If not specified, the course or program is supposed to be intended for students.
   * `visibleForOwnStudents` (v2.0): a boolean value (`true` or `false`) indicating whether enrollment of a Program or Course should be visible for students of the offering institution. *Note: in the eduxchange frontend a higher level institution setting is set to indicate that programs and courses themselves are visible for own students.*
   * `enrollmentForOwnStudents` (v2.0): a string indicating which enrollments process should be followed for students of the offering institution. Allowed values are `"broker"` or `"url"`. This attribute is only used if `visibleForOwnStudents` is set to `true`. 
     * If `"url"` is chosen the attribute `enrollmentUrl` **in the consumer object of an offering** is mandatory.
   * `visibleForGuests` (v2.1): a boolean value (`true` or `false`) indicating whether enrollment of a Program or Course should be visible for students outside the partner institutions. *Note: in the eduxchange frontend a higher level institution setting is set to indicate that programs and courses themselves are visible for students outside the partner institutions.*
   * `enrollmentForGuests` (v2.1): a string indicating which enrollments process should be followed for students outside the partner institutions. Allowed values are `"broker"` or `"url"`. This attribute is only used if `visibleForGuests` is set to `true`. 
     * If `"url"` is chosen the attribute `enrollmentUrlForGuests` **in the consumer object of an offering** is mandatory.
-  * `enrollmentForProfessionals` (v2.2): a string indicating which enrollments process should be followed for professionals. Allowed values are `"broker"` or `"url"`. This attribute is only used if `targetGroup` is set to `forProfessionals`. 
-    * If `"url"` is chosen the attribute `enrollmentUrlForProfessionals` **in the consumer object of an offering** is mandatory.
 
 Attributes regarding joint programs.
 
@@ -275,7 +238,7 @@ Attributes regarding joint programs.
 
 ### Example
 
-This is an example of the consumer object for eduXchange. The example reflects the default behaviour for visibility of the `ewuu` and `lde` alliances. The `ewuu` courses are not visible for students from the offering institution. The `lde` minors are visible for student from the offering institution. These students can enroll through the `broker`. The example also reflects new attributes introduced in v2.1 and v2.2 for `euroteq`.
+This is an example of the consumer object for eduXchange. The example reflects the default behaviour for visibility of the `ewuu` and `lde` alliances. The `ewuu` courses are not visible for students from the offering institution. The `lde` minors are visible for student from the offering institution. These students can enroll through the `broker`. The example also reflects new attributes introduced in v2.1 for `euroteq`.
 
 ```json
     {
@@ -296,7 +259,7 @@ This is an example of the consumer object for eduXchange. The example reflects t
               "selection": false,
               "type": "deepening",
               "visibleForOwnStudents": true,
-              "enrollmentForOwnStudents": "broker",
+              "enrollmentForOwnStudents": "broker"
               "source": {
                 "shortName": "21PE",
                 "primaryCode": "WB-MI-168",
@@ -309,9 +272,7 @@ This is an example of the consumer object for eduXchange. The example reflects t
               "instructorNames": ["John Smith"],
               "modeOfDelivery": "Hybrid",
               "contactHours": 3.5,
-              "activities": "lectures and practises",
-              "microcredential": "standalone",
-              "targetGroup": "forProfessionals"
+              "activities": "lectures and practises"
             }
           ]
         }
@@ -327,7 +288,6 @@ This consumer object is used to specify the `enrollmentUrl` and `enrollmentUrlFo
 
   * `enrollmentUrl` (v2.0): a string formatted as an URL to which own students will be redirected if `enrollmentForOwnStudents` **in the program/course consumer object** is set to `"url"`.
   * `enrollmentUrlForGuests` (v2.1): a string formatted as an URL to which guest students will be redirected if `enrollmentForGuests` **in the program/course consumer object** is set to `"url"`.
-  * `enrollmentUrlForProfessionals` (v2.2): a string formatted as an URL to which professionals will be redirected if `enrollmentForProfessioanals` **in the program/course consumer object** is set to `"url"`.
 
 In addition the `enrollStartTime` and `enrollEndTime` of an offering can be added. This time is more specific then the enrollStartDate and enrollEndDate of an offering. This makes it possible to start on enrollStartDate at enrollStartTime and end at enrollEndDate at enrollEndTime.
 

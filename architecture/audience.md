@@ -1,6 +1,6 @@
 # Audience
 
-The OOAPI workgroup consists of members of institutions for education, software suppliers of these members, as well as sectoral bodies such as [VH](https://www.vereniginghogescholen.nl/), [Universities of the Netherlands](https://www.universiteitenvannederland.nl/en_GB).
+The OOAPI workgroup consists of members of institutions for education, software suppliers of these members, as well as sectoral bodies such as [VH](https://www.vereniginghogescholen.nl/), [Universities of the Netherlands](https://www.universiteitenvannederland.nl/en).
 
 # Target audience
 The working group is open for other members of other educational sectors.

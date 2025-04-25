@@ -10,17 +10,19 @@ The expand mechanism works by adding an expand parameter and the name of the lin
 
 ## Endpoints which are expandable
 The current list of objects that allow for expansion of the related objects are:
-* academic-session
-* association
-* component
-* component-offering
-* course
-* course-offering
-* group
-* organization
-* program
-* program-offering
-* room
+* academic-sessions
+* associations
+* components
+* component-offerings
+* courses
+* course-offerings
+* education-specifications
+* groups
+* organizations
+* programs
+* program-offerings
+* rooms
+* news-items
 
 ## Example of the use of expand
 
