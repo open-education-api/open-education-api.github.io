@@ -9,7 +9,7 @@ In this documentation of the eduxchange consumer object you will find
 
 ## Versions
 
-- last update: 10 Februari, 2025
+- last update: June 19th, 2025
 - current alliances using eduxchange.NL:
   - ewuu
   - lde
@@ -334,6 +334,13 @@ In addition the `enrollStartTime` and `enrollEndTime` of an offering can be adde
   * `enrollStartTime` (v2.0): the time of the start of the enrollment for the offering, for example "13:00". The default is 00:00.
   * `enrollEndTime` (v2.0): the time of the end of the enrollment for the offering, for example "20:00". The default is 23:59.
   * `dateComment` (v2.1): a string with additional date information, for example `"The course takes place on monday morning"`
+
+When a waitlist is used for enrolment, the attributes below can be used to communicate this in the offering. There is a possibility to have an unlimited queue, in which case `hasStudentQueue` needs to be `true`. Or a limited queue, in which case `maxQueuedNumberStudents > 0` and the length of the remaining queue is determined by `maxQueuedNumberStudents - queuedNumberStudents`. *Note: the  queue only comes into effect when there are no regular available places.*
+
+  * `queuedNumberStudents` (v2.2): This is an integer >=0. The number of students that have a queued enrolment state for this offering.
+  * `maxQueuedNumberStudents` (v2.2): This is an integer >=0. The maximum number of students allowed in the queue for this offering.
+  * `hasStudentQueue` (v2.2): a boolean value (`true` or `false`) indicating whether enrolment is queued.
+
 
 ### Example
 
