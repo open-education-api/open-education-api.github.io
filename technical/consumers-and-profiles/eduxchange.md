@@ -370,7 +370,7 @@ This is an example of the consumer object for eduXchange offerings.
 
 The documentation below is essential for the registration part.
 
-Continu reading below for eduXchange.NL alliances. For eduXchange.EU specific enrolment information, please visit: [A collection of technical documents for enrolment on eduxchange.ey](https://tech-docs.eduxchange.eu/)
+Continu reading below for eduXchange.NL alliances. For eduXchange.EU specific enrolment information, please visit: [A collection of technical documents for enrolment on eduxchange.eu](https://tech-docs.eduxchange.eu/)
 
 ## About `GET /persons/me`
 
@@ -389,6 +389,20 @@ Continu reading below for eduXchange.NL alliances. For eduXchange.EU specific en
 }
 ```
 
+## Eduxchange consumer object for Persons
+
+To be compatible with the registering process of the `broker` after the 'register' button is pressed in the eduxchange frontend, an implementation needs to implement the following consumer object and attributes on the Persons object. 
+
+* `consumerKey` (v2.0), should always have the value `"eduxchange"`
+* `enrollments` (v2.0), an array with all the CROHO enrollments for this person. Each enrollment is an object with the following attributes:
+  * `crohoCreboCode` (v2.0): (required) the crohoCreboCode for this program. This should be a five character string, e.g. "34401".
+  * `name` (v2.0): (required) the name of the program this enrollment is for.
+  * `phase` (v2.0): the phase of the program for this enrollment. Allowed values are `"bachelor"` or `"master"`.
+  * `modeOfStudy` (v2.0): the modeOfStudy of the program for this enrollment. Allowed values are `"full-time"`, `"part-time"`, `"dual training"` or `"self-paced"`.
+  * `startDate` (v2.0): the start date for this enrollment. Should be a string formatted as an RFC3099 full-date.
+  * `endDate` (v2.0): end start date for this enrollment. Should be a string formatted as an RFC3099 full-date.
+* `institutionBRINCode` (v2.0), the BRIN code of the institution. Should consist of two digits and two capital letters.
+
 ## About `POST /associations/external/me`
 
 !> For the home institutions to get a full overview of the course a student is trying to enroll the `POST /associations/external/me` needs to have the courseOffering or programOffering expanded.
@@ -405,20 +419,6 @@ type of states:
 * canceled (by student) 
 * denied (either learning activity is stopped or student is not allowed)
 * queued (student is put on a waiting list)
-
-## Eduxchange consumer object for Persons
-
-To be compatible with the registering process of the `broker` after the 'register' button is pressed in the eduxchange frontend, an implementation needs to implement the following consumer object and attributes on the Persons object. 
-
-* `consumerKey` (v2.0), should always have the value `"eduxchange"`
-* `enrollments` (v2.0), an array with all the CROHO enrollments for this person. Each enrollment is an object with the following attributes:
-  * `crohoCreboCode` (v2.0): (required) the crohoCreboCode for this program. This should be a five character string, e.g. "34401".
-  * `name` (v2.0): (required) the name of the program this enrollment is for.
-  * `phase` (v2.0): the phase of the program for this enrollment. Allowed values are `"bachelor"` or `"master"`.
-  * `modeOfStudy` (v2.0): the modeOfStudy of the program for this enrollment. Allowed values are `"full-time"`, `"part-time"`, `"dual training"` or `"self-paced"`.
-  * `startDate` (v2.0): the start date for this enrollment. Should be a string formatted as an RFC3099 full-date.
-  * `endDate` (v2.0): end start date for this enrollment. Should be a string formatted as an RFC3099 full-date.
-* `institutionBRINCode` (v2.0), the BRIN code of the institution. Should consist of two digits and two capital letters.
 
 ### Example
 
