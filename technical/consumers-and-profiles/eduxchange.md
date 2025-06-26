@@ -1,15 +1,16 @@
 # eduXchange
 
 In this documentation of the eduxchange consumer object you will find
-- required OOAPI resources and attributes
-- agreements per eduxchange instance
-- agreements per alliance
-- student orientation consumer objects
-- student registration consumer objects
+- [Required OOAPI resources](#required-ooapi-resources)
+- [Agreements per eduxchange instance](#agreements-per-eduxchange-instance)
+- [Agreements per alliance](#agreements-per-alliance)
+- [The student orientation consumer objects](#the-student-orientation-consumer-objects)
+- [The student registration consumer objects](#the-student-registration-consumer-objects)
+- [And more](#and-more)
 
 ## Versions
 
-- last update: June 19th, 2025
+- last update: June 26th, 2025
 - current alliances using eduxchange.NL:
   - ewuu
   - lde
@@ -369,61 +370,40 @@ This is an example of the consumer object for eduXchange offerings.
 
 The documentation below is essential for the registration part.
 
-## Specific attributes that are required in the Person object
+Continu reading below for eduXchange.NL alliances. For eduXchange.EU specific enrolment information, please visit: [A collection of technical documents for enrolment on eduxchange.ey](https://tech-docs.eduxchange.eu/)
 
-!> For the person object that is requested either through  `GET /persons/me` or `GET /persons/{personId}`. The object also needt to enclude a studielinkNumber to facilitate deduplication. This is achieved by adding an extra object in the otherCodes array of Person:
+## About `GET /persons/me`
+
+!> For the person object that is requested either through  `GET /persons/me` or `GET /persons/{personId}`. The object also needs to include a studielinkNumber to facilitate deduplication. This is achieved by adding an extra object in the otherCodes array of Person:
 
 ```json
 {
-  "personId": "123e4567-e89b-12d3-a456-426614174000",
-  "primaryCode": {
-  "codeType": "identifier",
-  "code": "s123456"
-},
-...
-...
-"otherCodes": [
-	{
-      "codeType": "studielinkNumber",
-      "code": "12345678"
-	}
-],
-"consumers": [
-  {
-    "consumerKey": "eduxchange",
-    "enrollments": [
-      {
-        "crohoCreboCode": "34401",
-        "name": "B Bedrijfseconomie",
-        "phase": "bachelor",
-        "modeOfStudy": "full-time",
-        "startDate": "2020-09-01",
-        "endDate": "2021-08-31"
-      }
-    ],
-    "institutionBRINCode": "11AA"
-  }
-],
-"ext": { }
+  "otherCodes": [
+    {
+        "codeType": "studielinkNumber",
+        "code": "12345678"
+    },
+    ...
+  ],
+  ...
 }
 ```
 
+## About `POST /associations/external/me`
+
 !> For the home institutions to get a full overview of the course a student is trying to enroll the `POST /associations/external/me` needs to have the courseOffering or programOffering expanded.
 
-## Explanation of rules governing the association state
+### State and RemoteState
 
-* pending (proces is waiting on the status of the students home institution)
+The `remoteState` field contains the intial state of the Guest institution. The logic for this is as follows: the Guest institution is sending a request to the Home institution to create an association. From the perspective of the Home institution, the state of the Guest is the remoteState. 
+
+The `state` field is mandatory in OOAPI. However, during when sending the initial POST, the Guest cannot know what the state of the Home will be. Therefore the state should just be set to `associated` but it doesn’t have a real meaning at this stage. The Home institution will respond to the request with their initial `state` in the HTTP response.
+
+type of states: 
+* pending (proces is waiting on the status of the institution)
 * associated (the student is enrolled in the learning activity) 
 * canceled (by student) 
 * denied (either learning activity is stopped or student is not allowed)
-* queued (student is put on a waiting list)
-
-## Explanation of rules governing the association remoteState
-
-* pending (proces is waiting on the status of the students home institution)
-* associated (the student is enrolled in the learning activity) 
-* canceled (by student)
-* denied (student is not allowed)
 * queued (student is put on a waiting list)
 
 ## Eduxchange consumer object for Persons
@@ -462,6 +442,8 @@ To be compatible with the registering process of the `broker` after the 'registe
       ]
     }
 ```
+
+# And more
 
 ## Changes since OOAPI v4
 
