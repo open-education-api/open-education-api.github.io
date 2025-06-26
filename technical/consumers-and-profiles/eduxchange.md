@@ -403,23 +403,6 @@ To be compatible with the registering process of the `broker` after the 'registe
   * `endDate` (v2.0): end start date for this enrollment. Should be a string formatted as an RFC3099 full-date.
 * `institutionBRINCode` (v2.0), the BRIN code of the institution. Should consist of two digits and two capital letters.
 
-## About `POST /associations/external/me`
-
-!> For the home institutions to get a full overview of the course a student is trying to enroll the `POST /associations/external/me` needs to have the courseOffering or programOffering expanded.
-
-### State and RemoteState
-
-The `remoteState` field contains the intial state of the Guest institution. The logic for this is as follows: the Guest institution is sending a request to the Home institution to create an association. From the perspective of the Home institution, the state of the Guest is the remoteState. 
-
-The `state` field is mandatory in OOAPI. However, during when sending the initial POST, the Guest cannot know what the state of the Home will be. Therefore the state should just be set to `associated` but it doesn’t have a real meaning at this stage. The Home institution will respond to the request with their initial `state` in the HTTP response.
-
-type of states: 
-* pending (proces is waiting on the status of the institution)
-* associated (the student is enrolled in the learning activity) 
-* canceled (by student) 
-* denied (either learning activity is stopped or student is not allowed)
-* queued (student is put on a waiting list)
-
 ### Example
 
 ```json
@@ -442,6 +425,23 @@ type of states:
       ]
     }
 ```
+
+## About `POST /associations/external/me`
+
+!> For the home institutions to get a full overview of the course a student is trying to enroll the `POST /associations/external/me` needs to have the courseOffering or programOffering expanded.
+
+### State and RemoteState
+
+The `remoteState` field contains the intial state of the Guest institution. The logic for this is as follows: the Guest institution is sending a request to the Home institution to create an association. From the perspective of the Home institution, the state of the Guest is the remoteState. 
+
+The `state` field is mandatory in OOAPI. However, during when sending the initial POST, the Guest cannot know what the state of the Home will be. Therefore the state should just be set to `associated` but it doesn’t have a real meaning at this stage. The Home institution will respond to the request with their initial `state` in the HTTP response.
+
+type of states: 
+* pending (proces is waiting on the status of the institution)
+* associated (the student is enrolled in the learning activity) 
+* canceled (by student) 
+* denied (either learning activity is stopped or student is not allowed)
+* queued (student is put on a waiting list)
 
 # And more
 
