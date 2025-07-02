@@ -33,19 +33,20 @@ The value of the `consumers` attribute is an array of objects. Since the value i
 ## Consumer registry
 The following table lists which consumer keys are in use by which consumers. This list only shows the official and registered consumers of the OOAPI that are part of the specification and are maintained by OOAPI. Implementations that want to use this mechanism without registering a key, should prefix their key with `x-`. The registered consumers are: 
 
-| Key        | Description                                                                                                                         |
-| ---------- | ----------------------------------------------------------------------------------------------------------------------------------- |
-| rio        | RIO is a central registry, maintained by the Dutch Government that lists all educational institutions and the education they offer. |
-| eduxchange | eduXchange is a website that allows students to easily enroll in education from other institutions.                                 |
+| Key        | Description                                                                                                                             |
+| ---------- | ----------------------------------------------------------------------------------------------------------------------------------------|
+| rio        | RIO is a central registry, maintained by the Dutch Government that lists all educational institutions and the education they offer.     |
+| eduxchange | eduXchange is a website that allows students to easily enroll in education from other institutions.                                     |
+| test       | Test is a specification of messages that are interchanged between exam and testing tools, supporting a standardised assessment process. |
 
-Consumers that are registered are maintained by the OOAPI. These consumers serve a specific usecase and are implemented by multiple solutions and organisations. In order to register a new consumer and include it in the specification a request can be made for a 'consumer adoption' via Github. This is applicable if a new consumer needs to be maintained via the OOAPI governance. As a requestor you can be involved in the future maintenance of the consumer.
+Consumers that are registered are shown here and are included in the specification of the OOAPI. These consumers serve a specific usecase and are implemented by multiple solutions and organisations. In order to register a new consumer and include it in the specification a request can be made for a 'consumer adoption' via Github. This is applicable if a new consumer needs to be maintained via the OOAPI governance. As a requestor you are responsible for the maintenance of the consumer.
 
 ## Consumer versioning
 Consumers that are part of the standard are being kept in sync with the versioning schema of the OOAPI. This is required to communicate with which OOAPI versions a consumer is compatible and can be used. The basic rule is that the major version number of the OOAPI standard always needs to be adopted by the consumer specification: 
-0.	A new major version of the OOAPI is released, all consumers need to be reviewed and if required adjusted:
+1.	A new major version of the OOAPI is released, all consumers need to be reviewed and if required adjusted:
 This always results in a new consumer version (with or without changes) following the major version number of the OOAPI standard.
 
-Besides this basic rule. Three situations (1a, 1bcan occur:
+Besides this basic rule regarding a major OOAPI release. Three other situations can occur regarding OOAPI minor releases (1a and 1b) and new consumer releases (2):
 1.	A new OOAPI minor version is released, consumers can be:
 a.	Compatible with the new release, and require no change:
 The consumer version will not change to indicate the backwards (and forward) compatibility 
