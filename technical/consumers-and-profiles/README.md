@@ -57,7 +57,7 @@ The consumer version number will use the patch version number, introducing/incre
 
 An example of the versioning of consumers based on these rules is shown in the following table:
 
-![Consumer versioning overview](../_media/consumer_versioning_table.png)
+![Consumer versioning overview](../../_media/consumer_versioning_table.png)
 
 ## Profiles
 In addition to the `consumer` query parameter and the `consumer` object, it might be necessary for a specific application or usecase to specify which requests should be implemented for it to work. One can also imagine that applications at times need attributes that are not required in the base specification. To specify such requirements we recognize "profiles". Since there is no specific format to specify such a profile yet, for now profiles are simply described using text and lists.
