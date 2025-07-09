@@ -145,7 +145,7 @@ If fields selection is implemented on the server side, the client can explicitly
     ],
     "ext": { }
 }
-'''
+```
 
 If not all returned information is required or desired by the client. the fields query parameter can be used to reduce the information returned by the server:
 `GET persons/me?fields=(personId,affiliations,assignedNeeds(code)` will return all required fields, the affiliations and the assignedNeeds object with its code field. This limits the amount of data being shared:
