@@ -11,4 +11,4 @@ For enumerations that use an external vocabulary, we strongly discourage extendi
 
 
 ## Extending an enumeration
-If an enumeration is extended these values need to be prefixed with  `x-`. This helps to distinguish custom values from the standard ones, ensuring clarity and reducing the risk of conflicts. 
+If an enumeration is extended these additional values need to be prefixed with  `x-`. This helps to distinguish custom values from the standard ones, ensuring clarity and reducing the risk of conflicts. 
