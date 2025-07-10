@@ -27,7 +27,7 @@ If fields selection is implemented on the server side, the client can explicitly
 
 *Please note:* This approach also applies to consumer objects, ext objects and expands: if the client wants to limit the returned payload on these object, the fields parameter can be used to indicate which fields it expects to be returned.
 
-## Example of the use of fields query parameter
+## Example 1: Use of the fields query parameter to minimize data fields
 
 `GET persons/me` will provide:
 
@@ -147,8 +147,44 @@ If fields selection is implemented on the server side, the client can explicitly
 }
 ```
 
-If not all returned information is required or desired by the client. the fields query parameter can be used to reduce the information returned by the server:  
-`GET persons/me?fields=(personId,affiliations,assignedNeeds(code))` will return all required fields, the affiliations and the assignedNeeds object with its code field. This limits the amount of data being shared:
+If not all returned information is required or desired by the client. the fields query parameter can be used to reduce the information returned by the server, for example the request:  
+`GET persons/me?fields=(alternateName,surNamePrefix,preferredName,assignedNeeds(code,description))` will return all required fields and the specified fields; the affiliations and the assignedNeeds object with its code field. This limits the amount of data being shared:
+
+```
+{
+    "personId": "123e4567-e89b-12d3-a456-426614174000",
+    "primaryCode": {
+    "codeType": "identifier",
+    "code": "1234qwe12"
+},
+"givenName": "Martina",
+"alternateName": "Marieke",
+"surnamePrefix": "van",
+"preferredName": "Maartje",
+"surname": "Damme",
+"displayName": "Maartje van Damme",
+"activeEnrollment": false,
+"affiliations": [
+    "student"
+],
+"mail": "vandamme.mcw@universiteitvanharderwijk.nl",
+"assignedNeeds": [
+  {
+    "code": "string",
+    "description": [
+      {
+        "language": "en-GB",
+        "value": "Extra time for Math tests shown in a percentile of the overall time of a test"
+      }
+    ]
+  }
+]
+}
+```
+
+## Example 2: Use of the fields query parameter to receive only required fields
+
+If the client wants to only retrieve a minimal set of attributes (i.e., only the required attributes) from the server this can be achieved by using a required element in the fields parameter. For example the `GET persons/me?fields=(mail)` will only return the required attributes:
 
 ```
 {
@@ -167,16 +203,5 @@ If not all returned information is required or desired by the client. the fields
     "student"
 ],
 "mail": "vandamme.mcw@universiteitvanharderwijk.nl",
-"assignedNeeds": 
-[ {
-    "code": "string"
-} ],
-"consumers": 
-[ {
-    "consumerKey": "x-test-consumer",
-    "additional": "custom",
-    "attributes": "here"
-} ],
-    "ext": { }
 }
 ```
