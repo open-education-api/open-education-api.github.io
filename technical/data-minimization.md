@@ -189,8 +189,7 @@ If the client wants to only retrieve a minimal set of attributes (i.e., only the
 ```
 {
     "personId": "123e4567-e89b-12d3-a456-426614174000",
-    "primaryCode": 
-{
+    "primaryCode": {
     "codeType": "identifier",
     "code": "1234qwe12"
 },
@@ -198,8 +197,7 @@ If the client wants to only retrieve a minimal set of attributes (i.e., only the
 "surname": "Damme",
 "displayName": "Maartje van Damme",
 "activeEnrollment": false,
-"affiliations": 
-[
+"affiliations": [
     "student"
 ],
 "mail": "vandamme.mcw@universiteitvanharderwijk.nl",
