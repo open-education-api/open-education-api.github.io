@@ -28,6 +28,7 @@
   * [Implementation](technical/implementation.md)
   * [About identifiers](technical/identifiers.md)
   * [Expanding responses](technical/expanding-responses.md)
+  * [Enumerations](technical/enumerations.md "Enumerations")
   * [Filtering responses](technical/filtering-responses.md)
   * [Sorting responses](technical/sorting-responses.md)
   * [Formatting text](technical/formatting-text.md)
