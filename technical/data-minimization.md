@@ -30,10 +30,12 @@ If fields selection is implemented on the server side, the client can explicitly
 
 *Please note:* This approach also applies to consumer objects, ext objects and expands: if the client wants to limit the returned payload on these object, the fields parameter can be used to indicate which fields it expects to be returned.
 
-Below are three examples to demonstrate the use of the "fields" parameter if this is supported.  
+Below are three examples to demonstrate the use of the `fields` parameter if this is supported.  
 Example 1: Use of the `fields` query parameter to minimize data fields  
 Example 2: Use of the `fields` query parameter to receive only required fields  
 Example 3: Use of the `fields` query parameter together with an `expand` 
+
+A server can indicate the supports and use of the `fields` paramter via the service endpoint. If and endpoint does not support the `fields` parameter and a request is made using the `fields` query parameter the server will return an error message. 
 
 ## Example 1: Use of the fields query parameter to minimize data fields
 
