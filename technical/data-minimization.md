@@ -1,5 +1,5 @@
-# Data minimization and security
-The API follows the principle of data minimization, a key privacy requirement, ensuring that only the minimum necessary (personal) data is shared with each API client. This approach protects sensitive information. This provides users of the specification to retain control on what information they want to share with the API clients. Within the standard there are two incentives to do data minimization:  
+# Data minimisation and security
+The API follows the principle of data minimisation, a key privacy requirement, ensuring that only the minimum necessary (personal) data is shared with each API client. This approach protects sensitive information. This provides users of the specification to retain control on what information they want to share with the API clients. Within the standard there are two incentives to do data minimisation:  
 A. Security & privacy reasons: In this case the client of the API should not have access to all or specific data within the API. This is API security and requires 'server-controlled access enforcement'.  
 B. Data-usage-optimization: In this case the client of the API does have access to all data within the API, but is not interested in all information with every API call and it is not necessary to transmit all the data. This can be solved via Field selection.  
 
@@ -16,9 +16,9 @@ Most of the education offering data that is available via the API is public data
 
 This form of data mnimization has to be handled by the implementation of the API and is not further detailed in het specification itself. 
 
-# B. Data minimization (/data-usage-optimization) via fields selection
-Data minimization is a key principle where the API provides only the necessary data requested by the client. This reduces the risk of exposing sensitive information and aligns with privacy best practices.  
-To support both data minimization and performance optimization, the API can optionally allow clients to indicate which fields they are interested in. This mechanism can help reduce payload sizes and unnecessary data transmission.
+# B. Data minimisation (/data-usage-optimization) via fields selection
+Data minimisation is a key principle where the API provides only the necessary data requested by the client. This reduces the risk of exposing sensitive information and aligns with privacy best practices.  
+To support both data minimisation and performance optimization, the API can optionally allow clients to indicate which fields they are interested in. This mechanism can help reduce payload sizes and unnecessary data transmission.
 This can be implemented and supported using the `fields` query parameter. Via this approach a client can express fields preferences that the client wants the server to return in the response.  
 
 *Important:* This is a request hint, *not* a security feature. 
