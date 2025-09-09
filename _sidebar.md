@@ -30,7 +30,7 @@
   * [Expanding responses](technical/expanding-responses.md)
   * [Filtering responses](technical/filtering-responses.md)
   * [Sorting responses](technical/sorting-responses.md)
-  * [Data minimization](technical/data-minimization.md "OOAPI - Data minimization")
+  * [Data minimisation](technical/data-minimization.md "OOAPI - Data minimisation")
   * [Formatting text](technical/formatting-text.md)
   * [Historical and future data](technical/historical-and-future-data.md)
   * [Extending OOAPI](technical/extending-ooapi.md)
