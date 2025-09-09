@@ -33,7 +33,7 @@ If fields selection is implemented on the server side, the client can explicitly
 Below are three examples to demonstrate the use of the "fields" parameter if this is supported.  
 Example 1: Use of the `fields` query parameter to minimize data fields  
 Example 2: Use of the `fields` query parameter to receive only required fields  
-Example 3: Use of the `fields` quert parameter together with an `expand` 
+Example 3: Use of the `fields` query parameter together with an `expand` 
 
 ## Example 1: Use of the fields query parameter to minimize data fields
 
@@ -212,9 +212,9 @@ If the client wants to only retrieve the most minimal set of attributes (i.e., o
 }
 ```
 
-## Example 3: Use of the `fields` quert parameter together with an `expand` 
+## Example 3: Use of the `fields` query parameter together with an `expand` 
 
-Clients can also minimize the amount of information returned from the server if the `expland` parameter is used. For example the below call with two expands on the person and offering objects.
+Clients can also minimize the amount of information returned from the server if the `expland` parameter is used. For example the below call with an expand on the person object.
 
 `GET /test-component-offering-associations/{testComponentOfferingAssociationId}?expand=person` will provide
 
@@ -237,32 +237,25 @@ Clients can also minimize the amount of information returned from the server if 
     "ext": { },
     "extraDuration": "PT20M",
     "requiredPersonalNeeds": [
-    
         [
             "extra_time"
         ]
-    
     ],
     "attempt": 2,
     "attendance": "present",
     "irregularities": 
     [
-    
         "string"
-    
     ],
     "documents": 
     [
-    
         {
             "documentId": "12345678-1234-1234-1234-123456789012",
             "documentType": "test_made",
             "documentName": "paper_test_1234333.pdf"
         }
-    
     ],
     "result": {
-    
         "state": "completed",
         "pass": "passed",
         "comment": "Strong performance overall, only minor calculation errors in section 3.",
@@ -403,7 +396,7 @@ Clients can also minimize the amount of information returned from the server if 
 }
 ```
 
-To minimise this response the call with `GET /test-component-offering-associations/{testComponentOfferingAssociationId}?expand=person&fields=(remoteState,documents(documentName),ext,email,secondaryEmail,person(ext))` will return:
+To minimise the response for this request the `fields` query parameter can also be used. An example to limit the data is the follwoing call: `GET /test-component-offering-associations/{testComponentOfferingAssociationId}?expand=person&fields=(remoteState,documents(documentName),ext,email,secondaryEmail,person(ext))`. This will return the mandatory fields and the specified fields and reduces the response data:
 
 ```
 {
