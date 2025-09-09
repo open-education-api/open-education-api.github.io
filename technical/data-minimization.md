@@ -33,7 +33,7 @@ If fields selection is implemented on the server side, the client can explicitly
 Below are three examples to demonstrate the use of the `fields` parameter if this is supported.  
 Example 1: Use of the `fields` query parameter to minimize data fields  
 Example 2: Use of the `fields` query parameter to receive only required fields  
-Example 3: Use of the `fields` query parameter together with an `expand` 
+Example 3: Use of the `fields` query parameter together with `expand` 
 
 A server can indicate the supports and use of the `fields` paramter via the service endpoint. If and endpoint does not support the `fields` parameter and a request is made using the `fields` query parameter the server will return an error message. 
 
@@ -214,7 +214,7 @@ If the client wants to only retrieve the most minimal set of attributes (i.e., o
 }
 ```
 
-## Example 3: Use of the `fields` query parameter together with an `expand` 
+## Example 3: Use of the `fields` query parameter together with `expand` 
 
 Clients can also minimize the amount of information returned from the server if the `expland` parameter is used. For example the below call with an expand on the person object.
 
