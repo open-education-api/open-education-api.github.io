@@ -19,7 +19,7 @@ This form of data mnimization has to be handled by the implementation of the API
 # B. Data minimisation (/data-usage-optimization) via fields selection
 Data minimisation is a key principle where the API provides only the necessary data requested by the client. This reduces the risk of exposing sensitive information and aligns with privacy best practices.  
 To support both data minimisation and performance optimization, the API can optionally allow clients to indicate which fields they are interested in. This mechanism can help reduce payload sizes and unnecessary data transmission.
-This can be implemented and supported using the `fields` query parameter. Via this approach a client can express fields preferences that the client wants the server to return in the response.  
+This can be implemented and supported using the `fields` query parameter. Via this approach a client can express fields preferences that the client wants the server to return in the response. Use and support of this functionality is a new feature with v6 and is optional. It is not a 'must have' feature. A server can indicate the supports and use of the `fields` paramter via the service endpoint. If and endpoint does not support the `fields` parameter and a request is made using the `fields` query parameter the server needs to return an error message. 
 
 *Important:* This is a request hint, *not* a security feature. 
 The server always determines the final response shape based on the client’s access rights. If a client requests unauthorized fields, they are silently omitted or replaced with appropriate redaction placeholders.
@@ -34,8 +34,6 @@ Below are three examples to demonstrate the use of the `fields` parameter if thi
 Example 1: Use of the `fields` query parameter to minimize data fields  
 Example 2: Use of the `fields` query parameter to receive only required fields  
 Example 3: Use of the `fields` query parameter together with `expand` 
-
-A server can indicate the supports and use of the `fields` paramter via the service endpoint. If and endpoint does not support the `fields` parameter and a request is made using the `fields` query parameter the server will return an error message. 
 
 ## Example 1: Use of the fields query parameter to minimize data fields
 
