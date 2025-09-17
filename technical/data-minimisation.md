@@ -143,14 +143,12 @@ Example 3: Use of the `fields` query parameter together with `expand`
         "endDateTime": "2025-07-30T20:00:00+01:00"
     }
 ],
-"consumers": 
-[
-        {
-            "consumerKey": "x-test-consumer",
-            "additional": "custom",
-            "attributes": "here"
-        }
-    ],
+"consumer": 
+  {
+    "consumerKey": "x-test-consumer",
+    "additional": "custom",
+    "attributes": "here"
+  },
     "ext": { }
 }
 ```
@@ -227,13 +225,12 @@ Clients can also minimize the amount of information returned from the server if 
     "actualEndDateTime": "2025-10-23T08:30:00+01:00",
     "state": "associated",
     "remoteState": "associated",
-    "consumers": [
+    "consumer": 
         {
             "consumerKey": "x-test-consumer",
             "additional": "custom",
             "attributes": "here"
-        }
-    ],
+        },
     "ext": { },
     "extraDuration": "PT20M",
     "requiredPersonalNeeds": [
@@ -382,14 +379,12 @@ Clients can also minimize the amount of information returned from the server if 
                 "endDateTime": "2025-07-30T20:00:00+01:00"
             }
         ],
-        "consumers": 
-        [
-                {
-                    "consumerKey": "x-test-consumer",
-                    "additional": "custom",
-                    "attributes": "here"
-                }
-            ],
+        "consumer": 
+            {
+            "consumerKey": "x-test-consumer",
+            "additional": "custom",
+            "attributes": "here"
+            },
             "ext": { }
         }, 
     "offering": "123e4567-e89b-12d3-a456-426614174000"
