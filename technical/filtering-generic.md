@@ -1,16 +1,23 @@
 # Generic filtering
 
-## Implementation note
+## Implementation notes
 
-- The availability and behaviour of this query functionality are entirely determined by
-  the organisation hosting the API implementation. It is **not mandatory** for implementers
-  to support this functionality, and it **cannot be enforced** upon organisations that
-  provide or consume OOAPI endpoints.  
-- It is up to each implementer to decide whether to support this feature. It is **not** a
-  requirement of the OOAPI standard itself.  
-- Consumers or working groups that wish to apply specific filtering mechanisms are
-  encouraged to do so using this approach for the sake of consistency across
-  implementations.
+- Filtering support is **optional**. Implementing organisations **MAY** support it fully,
+  partially, or not at all. Support for filtering **SHOULD** be documented in the service
+  endpoint description. Support for this functionality **cannot be enforced** by any
+  party, including organisations that provide or consume OOAPI endpoints.  
+- The **availability** of this query functionality is determined by each implementing
+  organisation. The general structure and semantics are
+  **standardised** within the OOAPI specification.  
+- This mechanism is intended to promote **consistency** across implementations, while
+  allowing flexibility in technical realisation.  
+- Filtering can complement **[data minimisation](technical/data-minimisation.md)** principles, as it allows clients to
+  request only relevant data subsets.  
+- Consumers or working groups that wish to apply **generic filtering mechanisms** are
+  encouraged to use this approach for the sake of consistency across implementations.  
+- The structure is **extensible**. New operations or fields can be introduced if they
+  follow the same serialisation pattern.  
+- Filters are a **convenience feature** and not part of the formal API contract.
 
 ---
 
@@ -19,7 +26,7 @@ filtered using the query parameter `filter_query`.
 
 This mechanism is a **generic structure** that enables flexible filtering on any exposed
 field of a resource. It is **not required** and **may not be implemented** by every
-organisation. When unsupported, the parameter is simply ignored.
+implementing organisation. When unsupported, the parameter is simply ignored.
 
 ---
 
@@ -68,9 +75,9 @@ This query returns items whose `name` starts with either “bio” or “chem”
 
 ## Using wildcards
 
-Partial matches can be expressed using wildcards. Implementers **SHOULD** use only the
-asterisk `*` as a wildcard. Other characters such as `%` **must be escaped** and **may not
-be supported** consistently.
+Partial matches can be expressed using wildcards. Implementing organisations **SHOULD**
+use only the asterisk `*` as a wildcard. Other characters such as `%` **must be escaped**
+and **may not be supported** consistently.
 
 ### Example
 
@@ -79,20 +86,6 @@ filter_query[name][like]=bio*
 ```
 
 This matches all items whose name begins with “bio”.
-
----
-
-## Implementation notes
-
-- Filtering is **optional**. Implementers **MAY** support it fully, partially, or not at
-  all.  
-- The presence of a `filter_query` parameter does **not** guarantee that filtering will be
-  applied.  
-- The behaviour (for example case sensitivity or data type comparisons) **may vary**
-  between implementations.  
-- The structure is **extensible**. New operations or fields can be added if they follow the
-  same serialisation pattern.  
-- Filters are a convenience feature and **not** part of the formal API contract.
 
 ---
 
@@ -111,6 +104,6 @@ new endpoint-specific parameters.
 `filter_query` provides a consistent and extensible way for clients to filter API
 responses. It improves flexibility and reduces the need for endpoint-specific query
 parameters. However, its support is **optional**, and behaviour may differ per
-implementation. Implementers are encouraged to document which fields and operators are
-available, but support for this feature can **never be required** by the specification or
-by any organisation.
+implementation. Implementing organisations are encouraged to document which fields and
+operators are available, but support for this feature can **never be required** by the
+specification or by any organisation.
