@@ -70,13 +70,26 @@ Partial matches can be expressed using wildcards. Implementing organisations **S
 use only the asterisk `*` as a wildcard. Other characters such as `%` **must be escaped**
 and **may not be supported** consistently.
 
-### Example pattern
+### Example request
 
 ```http
-filter_query[name][like]=bio*
+GET /courses?filter_query[name][like]=bio*
 ```
 
-This matches all items whose name begins with “bio”.
+This request returns all items whose `name` starts with “bio”.
+
+If the server also supports the `%` wildcard (for example, in SQL-style pattern matching),
+the following request may produce the same result:
+
+```http
+GET /courses?filter_query[name][like]=bio%25
+```
+
+Here, `%` acts as a wildcard, but it must be URL-encoded as `%25` since the percent sign
+is a reserved URL character.
+
+**Note:** Implementers SHOULD prefer using the `*` wildcard for interoperability across
+implementations, as `%` support is optional and behaviour may vary between servers.
 
 ---
 
@@ -105,6 +118,19 @@ Outside the `__or` block, all filters continue to be combined with logical **AND
 string or categorical matching such as `eq`, `neq`, `like`, and `in`. Comparison operators
 (e.g., `gt`, `lt`, `gte`, `lte`, or date comparisons) are usually **not supported** within
 `__or` blocks for implementation consistency and performance reasons.
+
+
+### Example request
+
+```http
+GET /course-offerings?filter_query[__or][][name][like]=bio*&filter_query[__or][][name][like]=chem*&filter_query[programme.code][eq]=B-IT-2025
+```
+
+This request returns all course offerings whose `name` starts with either “bio” or “chem”
+and belong to the programme with code `B-IT-2025`.
+
+Within this example, filters inside the `__or` block are combined with logical **OR**,
+while filters outside it are combined with logical **AND**.
 
 ---
 
@@ -159,7 +185,14 @@ new endpoint-specific parameters.
 
 `filter_query` provides a consistent and extensible way for clients to filter API
 responses. It improves flexibility and reduces the need for endpoint-specific query
-parameters. However, its support is **optional**, and behaviour may differ per
-implementation. Implementing organisations are encouraged to document which fields and
+parameters. 
+
+However, support for filtering is **optional**, and implementers may differ in the 
+**set of attributes** they allow filtering on, or the **extent to which complex filter
+logic (such as nested OR/AND combinations)** is supported. Where supported, the 
+behaviour of individual operators and wildcards is expected to be consistent across
+implementations. 
+
+Implementing organisations are encouraged to document which fields and
 operators are available, but support for this feature can **never be required** by the
 specification or by any organisation.
