@@ -4,7 +4,7 @@ Data –> interface type –> API realisation. A realisation also has a usecase.
 
 ![OOAPI datamodel and interfacing](../_media/ooapi_v50_components_Interfacing.png)
 
-Currently, there is one API realisation available: the REST interface. The current rest interface is a further detail of the overall OOAPI data model. In some cases the data model has been comprised to make end points easier to consume, for example the aggregated type of education is not available as an endpoint only the three specific forms, program, course and component. For offerings a different approach has been chosen mostly to make the relation with an association reusable. The REST interface has been creates based on the [REST-API-Desgin-rules](https://forumstandaardisatie.nl/open-standaarden/rest-api-design-rules). 
+Currently, there is one API realisation available: the REST interface. The current rest interface is a further detail of the overall OOAPI data model. In some cases the data model has been comprised to make end points easier to consume, for example the aggregated type of education is not available as an endpoint only the three specific forms, programme, course and component. For offerings a different approach has been chosen mostly to make the relation with an association reusable. The REST interface has been creates based on the [REST-API-Desgin-rules](https://forumstandaardisatie.nl/open-standaarden/rest-api-design-rules). 
 
 The OOAPI specification itself is NOT an API. It is a specification that is provided to the public for implementation by educational institutions. Currently, SURF is performing tests and live implementations of the OOAPI specification in an API for the OOAPI-gateway and a course exchange. 
 

@@ -54,7 +54,7 @@ A ComponentOffering is the concrete offering of a Component in time. Persons can
 
 ### Person
 
-### Organization
+### Organisation
 
 ### Group
 

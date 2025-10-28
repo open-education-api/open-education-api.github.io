@@ -24,8 +24,8 @@ Please follow these guidelines before opening an issue:
 * YAML string keys/values should be single-quoted when quotation is needed
 * Duplication should be avoided where possible (e.g. using [$ref](http://json-schema.org/latest/json-schema-core.html#rfc.section.7) attributes)
 * Whether property- and relation names are written as single or plural, depends on the cardinality of the property or relation.
-* Parameter or property names are written as [lowerCamelCase](https://nl.wikipedia.org/wiki/CamelCase), also for abbreviations (e.g. `organizationUnitId`).
-* Path names are written as [kekab-case](https://en.wikipedia.org/wiki/Kebab_case) (e.g. `/organizations/{id}`).
+* Parameter or property names are written as [lowerCamelCase](https://nl.wikipedia.org/wiki/CamelCase), also for abbreviations (e.g. `organisationUnitId`).
+* Path names are written as [kekab-case](https://en.wikipedia.org/wiki/Kebab_case) (e.g. `/organisations/{id}`).
 * The default order of properties is:
   * Identifier
   * Properties

@@ -7,7 +7,7 @@ A usual implementation of OOAPI exposes internal (data) service endpoints for ex
 ![OOAPI components to provide access to API endpoints](../_media/ooapi_v50_components_IAA.png)
 
 ## IAA not in scope of the specification
-To optimize the use and adoption of the Open Education API (with the focus on providing a standardized API based on the underlying semantic data model), the specification does not prescribe a specific authentication & authorisation method. While having a clear stance and a prescriptive choice in this area could be valuable for parties implementing the API technically, we also recognize that it could hinder adoption. For this reason, we aim to recommend a proven, widely supported, and easy-to-implement authentication standard.
+To optimize the use and adoption of the Open Education API (with the focus on providing a standardized API based on the underlying semantic data model), the specification does not prescribe a specific authentication & authorisation method. Whilst having a clear stance and a prescriptive choice in this area could be valuable for parties implementing the API technically, we also recognize that it could hinder adoption. For this reason, we aim to recommend a proven, widely supported, and easy-to-implement authentication standard.
 
 ## Minimal level of classification
 Since the current OOAPIv5 implementation only provides information on a REST API, based on the [open API specification 3.0](https://swagger.io/specification/). We suggest API endpoints that have CIA (Confidentiality, Integrity, Availability) scores above 'LLL' to implement security measures for accessing the endpoints. The types of security measures would depend on the sensitivity of the types of data exposed by the endpoint.
@@ -16,7 +16,7 @@ Since the current OOAPIv5 implementation only provides information on a REST API
 To ensure secure data exchange, we recommend using an open and dominant standard that is actively being developed. Proper implementation and use of a security standard are crucial. Choosing an open and widely used standard ensures broad support from vendors and/or the availability of sufficient libraries for correct implementation, ultimately achieving the main goal: secure data exchange. The dutch ‘forum standaardisatie’ (https://www.forumstandaardisatie.nl/) is a valuable resource for consulting advice on the use of open standards.
 
 Based on the above, we recommend the OAuth2 protocol, an open standard developed and maintained within the IETF.
-For machine-to-machine (M2M) data exchange (where user authorization is not required), we recommend, as a best practice, using the OAuth2 client credentials grant type for authenticating and authorizing the client to access the data: https://oauth.net/2/grant-types/client-credentials
+For machine-to-machine (M2M) data exchange (where user authorization is not required), we recommend, as a best practice, using the OAuth2 client credentials grant type for authenticating and authorising the client to access the data: https://oauth.net/2/grant-types/client-credentials
 
 For an implementation requiring delegated user access for approving data processing, we recommend using the OpenID Connect flow, based on the OAuth2 authorization code flow: https://openid.net/developers/how-connect-works
 

@@ -32,7 +32,7 @@ For future use the OOAPI has also been mapped on the [MORA](https://mbodigitaal.
 Where OOAPI maps to:
 
 * Education offering
-* Course catalog
+* Course catalogue
 * Education 
 * Education demand
 * Exams/Testing

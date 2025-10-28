@@ -17,9 +17,9 @@ The current list of objects that allow for expansion of the related objects are:
 * course
 * course-offering
 * group
-* organization
-* program
-* program-offering
+* organisation
+* programme
+* programme-offering
 * room
 
 ## Example of the use of expand
@@ -100,7 +100,7 @@ To complete this information a person request and an offering request is needed.
         "surname": "Damme",
         "displayName": "Maartje van Damme",
         "initials": "MCW",
-        "activeEnrollment": false,
+        "activeEnrolment": false,
         "dateOfBirth": "2003-09-30",
         "cityOfBirth": "Utrecht",
         "countryOfBirth": "NL",
@@ -208,8 +208,8 @@ To complete this information a person request and an offering request is needed.
         "ext": {},
         "startDate": "2019-08-21T00:00:00.000Z",
         "endDate": "2019-10-23T00:00:00.000Z",
-        "enrollStartDate": "2019-05-01T00:00:00.000Z",
-        "enrollEndDate": "2019-08-01T00:00:00.000Z",
+        "enrolStartDate": "2019-05-01T00:00:00.000Z",
+        "enrolEndDate": "2019-08-01T00:00:00.000Z",
         "flexibleEntryPeriodStart": "2019-08-24",
         "flexibleEntryPeriodEnd": "2019-08-24",
         "addresses": [
@@ -254,8 +254,8 @@ To complete this information a person request and an offering request is needed.
             }
         ],
         "course": "4c88e8b1-8fa9-4021-9bad-b22efe4d02eb",
-        "programOffering": "8ac6982d-28e6-4714-8f27-4da24a40a52a",
-        "organization": "452c1a86-a0af-475b-b03f-724878b0f387"
+        "programmeOffering": "8ac6982d-28e6-4714-8f27-4da24a40a52a",
+        "organisation": "452c1a86-a0af-475b-b03f-724878b0f387"
     }
 }
 ```

@@ -55,7 +55,7 @@ Example 3: Use of the `fields` query parameter together with `expand`
 "displayName": "Maartje van Damme",
 "initials": "MCW",
 "idCheckName": "string",
-"activeEnrollment": false,
+"activeEnrolment": false,
 "dateOfBirth": "2003-09-30",
 "cityOfBirth": "Utrecht",
 "countryOfBirth": 
@@ -169,7 +169,7 @@ If not all returned information is required or desired by the client. the fields
 "preferredName": "Maartje",
 "surname": "Damme",
 "displayName": "Maartje van Damme",
-"activeEnrollment": false,
+"activeEnrolment": false,
 "affiliations": [
     "student"
 ],
@@ -202,7 +202,7 @@ If the client wants to only retrieve the most minimal set of attributes (i.e., o
 "givenName": "Martina",
 "surname": "Damme",
 "displayName": "Maartje van Damme",
-"activeEnrollment": false,
+"activeEnrolment": false,
 "affiliations": [
     "student"
 ],
@@ -291,7 +291,7 @@ Clients can also minimize the amount of information returned from the server if 
         "displayName": "Maartje van Damme",
         "initials": "MCW",
         "idCheckName": "van der Graaf, Jacobus Adrianus, s12345678",
-        "activeEnrollment": false,
+        "activeEnrolment": false,
         "dateOfBirth": "2003-09-30",
         "cityOfBirth": "Utrecht",
         "countryOfBirth": 
@@ -413,7 +413,7 @@ To minimise the response for this request the `fields` query parameter can also 
             "code": "string"
         },
         "surname": "Damme",
-        "activeEnrollment": false,
+        "activeEnrolment": false,
         "email": "vandamme.mcw@universiteitvanharderwijk.nl",
         "secondaryEmail": "poekie@xyz.nl"
         },
