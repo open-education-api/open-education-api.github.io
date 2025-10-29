@@ -41,7 +41,7 @@ The working group informs Bureau Edustandaard by e-mail about major releases, th
 
 ## Compliancy rules: when are you in compliance with the specification?
 This section describes how an institution or supplier can demonstrate that they are in compliance with the specification. Compliance with the specification is understood to mean:
-*	All required fields for the end points have been filled in according to the data requirements. The specific version of the OOAPI being implemented must be specified;
+*	All required fields for the endpoints have been filled in according to the data requirements. The specific version of the OOAPI being implemented must be specified;
 *	Where optional fields are applied, they must be filled in according to the data requirements;
 *	Documentation on own implementation is available online for at least the working group members. Compliance with the specification can be demonstrated with a badge stating 'complies with OOAPI'. Each version of the OOAPI will have its own 'complies with OOAPI Vx.x' badge so that it is clear which version of the specification it complies with. 
 

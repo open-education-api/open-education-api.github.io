@@ -6,7 +6,7 @@
     * [Scope / Toepassingsgebied](architecture/scope "scope")
     * [Bovensectorale samenwerking / Cross-sectoral cooperation](architecture/cross-sectoral-cooperation "cross-sectoral-cooperation" )
     * [IBP (inclusief mapping OOAPI op HORA voor BIV) / Confidentiality, Integrity and Availability](architecture/ISP "information-security-and-privacy")
-    * [IAA / Identification, Authentication and Authorization](architecture/IAA "Identification-Authentication-and-Authorization")
+    * [IAA / Identification, Authentication and Authorisation](architecture/IAA "Identification-Authentication-and-Authorisation")
     * [Gegevensuitwisseling in de keten / Data exchange and relations with other specifications](architecture/interfacing "interface and other specifications")
     * [Ketenprocessen / Supply chain](architecture/supply-chain "supply-chain")
     * [Zeggenschappen / Data ownership](architecture/data-ownership "data-ownership")
