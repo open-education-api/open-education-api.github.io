@@ -2,7 +2,7 @@
 OOAPI is currently developed as part of a three-layer approach
 Data –> interface type –> API realisation. A realisation also has a use case.
 
-![OOAPI datamodel and interfacing](../_media/ooapi_v50_components_Interfacing.png)
+![OOAPI data model and interfacing](../_media/ooapi_v50_components_Interfacing.png)
 
 Currently, there is one API realisation available: the REST interface. The current REST interface is a further detail of the overall OOAPI data model. In some cases the data model has been simplified to make endpoints easier to consume, for example the aggregated type of education is not available as an endpoint only the three specific forms, programme, course and component. For offerings a different approach has been chosen mostly to make the relation with an association reusable. The REST interface has been created based on the [REST-API-Design-rules](https://forumstandaardisatie.nl/open-standaarden/rest-api-design-rules). 
 

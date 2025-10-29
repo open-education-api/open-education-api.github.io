@@ -1,9 +1,9 @@
 # About identifiers
 
-## UUID's
-Each resource specified in OOAPI has an identifier in the form of a [UUID (Universally unique identifier)](https://en.wikipedia.org/wiki/Universally_unique_identifier), the attribute name for this identifier is `Id` prefixed with the name of the resource, e.g. `programmeId`. Using UUID's guarantees that all identifiers are globally unique. The id's for resources should be stable. 
+## UUIDs
+Each resource specified in OOAPI has an identifier in the form of a [UUID (Universally unique identifier)](https://en.wikipedia.org/wiki/Universally_unique_identifier), the attribute name for this identifier is `Id` prefixed with the name of the resource, e.g. `programmeId`. Using UUIDs guarantees that all identifiers are globally unique. The id's for resources should be stable. 
 
-OOAPI recommends using version 4 UUID's (random). We strongly advice institutions and suppliers implementing OOAPI to make sure their UUID's are properly generated  using enough randomness. 
+OOAPI recommends using version 4 UUIDs (random). We strongly advise institutions and suppliers implementing OOAPI to make sure their UUIDs are properly generated  using enough randomness. 
 
 ## Primary codes
 Most institutions already have their own unique, often human-readable, identifiers or codes for resources. Such codes can be communicated using the `primaryCode` attribute. If no primary code is available for a resource, the `primaryCode` attribute can be filled with the UUID used as the resource id.
@@ -63,4 +63,4 @@ The following `codeTypes` are available:
 | `username`                | User login name.                                                  |
 | `uuid`                    | Universally unique identifier.                                    |
 
-Since `codeType` is an extensible enumeration, implementation may add their own `codeTypes`, as long as their are prefixed with "x-".
+Since `codeType` is an extensible enumeration, implementations may add their own `codeTypes`, as long as they are prefixed with "x-".

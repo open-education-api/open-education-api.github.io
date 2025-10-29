@@ -44,7 +44,7 @@ The working group member:
 * must visit at least 3 working group meetings a year. Only institutions affiliated with SURF and 1 representative for each institution affiliated with SURF have voting rights.
 
 ## Bureau Edustandaard (governance)
-[Bureau Edustandaard](https://www.edustandaard.nl/) is a platform where public and private parties in the research and educational fields in the Netherlands collaborate to make agreements on important matters. These agreements, for example, include how to use recognized concepts to find digital learning material, or transfer education data from one system to another.
+[Bureau Edustandaard](https://www.edustandaard.nl/) is a platform where public and private parties in the research and educational fields in the Netherlands collaborate to make agreements on important matters. These agreements, for example, include how to use recognised concepts to find digital learning material, or transfer education data from one system to another.
 
 The Bureau Edustandaard platform ensures knowledge sharing, communication and interaction between services, systems, and organisations, which in turn improves the digital online experience of pupils, students and researchers alike.
 

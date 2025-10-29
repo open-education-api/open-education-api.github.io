@@ -1,4 +1,4 @@
-# Datamodel
+# Data model
 
 ![OOAPI objects and their relationships in a schema](https://open-education-api.github.io/specification/v5/OOAPIv5_model.png)
 
@@ -9,19 +9,19 @@
 The service entity describes metadata relating to the OOAPI endpoint, such as who to contact about questions regarding this endpoint, links to documentation, etc.
 
 ### EducationSpecification
-An EducationSpecification provides information about what a learner can learn from Educations derived from the EducationSpecification. It is also used to aggregate Educations from the supplying institution.
+An EducationSpecification provides information about what a learner is expected to gain from Educations derived from the EducationSpecification. It is also used to aggregate Educations from the supplying institution.
 
 ### Educations
 Educations are templates for educational activities that can be offered. Educations come in three forms:
-* Programs
+* Programmes
 * Courses
 * Components
 
-#### Program
-A Program describes a coherent collection of courses leading to a certain outcome. Programs can be repeatedly offered to learners through ProgramOfferings.
+#### Programme
+A Programme describes a coherent collection of courses leading to a certain outcome. Programmes can be repeatedly offered to learners through ProgrammeOfferings.
 
 #### Course
-A Course describes an educational activity that can result in credits being awarded to the learning once the learner successfully completes an Offering of said Course. A Course is the smallest educational unit that a learner can pass or fail.
+A Course describes an educational activity that can result in credits being awarded to the learner once the learner successfully completes an Offering of said Course. A Course is the smallest educational unit that a learner can pass or fail.
 
 #### Component
 A Component is a template for the most concrete learning activities the OOAPI describes. Examples include workgroups, lectures and tests.
@@ -31,12 +31,12 @@ An AcademicSession is a named period in time. AcademicSessions can be nested in 
 
 ### Offerings
 Offerings are concrete instances of Educations, taking place at a certain time. Offerings come in three forms:
-* ProgramOfferings
+* ProgrammeOfferings
 * CourseOfferings
 * ComponentOfferings
 
-#### ProgramOffering
-A ProgramOffering is the concrete offering of a Program in time. Persons can be associated with a ProgramOffering through a ProgramOfferingAssociation.
+#### ProgrammeOffering
+A ProgrammeOffering is the concrete offering of a Programme in time. Persons can be associated with a ProgrammeOffering through a ProgrammeOfferingAssociation.
 
 #### CourseOffering
 A CourseOffering is the concrete offering of a Course in time. Persons can be associated with a CourseOffering through a CourseOfferingAssociation.
@@ -46,7 +46,7 @@ A ComponentOffering is the concrete offering of a Component in time. Persons can
 
 ### Associations
 
-#### ProgramOfferingAssociation
+#### ProgrammeOfferingAssociation
 
 #### CourseOfferingAssociation
 

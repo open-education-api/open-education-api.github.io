@@ -7,7 +7,7 @@ A typical implementation of OOAPI exposes internal (data) service endpoints for 
 ![OOAPI components to provide access to API endpoints](../_media/ooapi_v50_components_IAA.png)
 
 ## IAA not within scope of the specification
-To optimize the use and adoption of the Open Education API (with the focus on providing a standardized API based on the underlying semantic data model), the specification does not prescribe a specific authentication and authorisation method. Whilst having a clear stance and a prescriptive choice in this area could be valuable for parties implementing the API technically, we also recognise that it could hinder adoption. For this reason, we aim to recommend a proven, widely supported, and easy-to-implement authentication standard.
+To optimize the use and adoption of the Open Education API (with the focus on providing a standardised API based on the underlying semantic data model), the specification does not prescribe a specific authentication and authorisation method. Whilst having a clear stance and a prescriptive choice in this area could be valuable for parties implementing the API technically, we also recognise that it could hinder adoption. For this reason, we aim to recommend a proven, widely supported, and easy-to-implement authentication standard.
 
 ## Minimal level of classification
 Since the current OOAPIv5 implementation only provides information on a REST API, based on the [OpenAPI specification 3.0](https://swagger.io/specification/). We suggest API endpoints that have CIA (Confidentiality, Integrity, Availability) scores above 'LLL' to implement security measures for accessing the endpoints. The types of security measures would depend on the sensitivity of the types of data exposed by the endpoint.
