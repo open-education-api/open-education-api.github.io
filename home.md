@@ -31,7 +31,7 @@ By incorporating the OOAPI into your IT infrastructure, students can easily:
 
 ## Benefits for web-development team
 
-* Fast development times due to standardization.
+* Fast development times due to standardisation.
 * No major cost/investment required.
 * Easier to exchange data with other educational institutes.
 * No need to develop individual, bespoke APIs.

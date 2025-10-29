@@ -12,7 +12,7 @@ The shared goals of the governance model are:
 * **Development**: support effective development and maintenance of the Open Education API.
 
 ## Community (governance)
-The Community consists of members (representatives) of education institutions and suppliers that work closely with SURF to further define and develop the Open Education API. See [Community](community/) for more information. 
+The Community consists of members (representatives) of educational institutions and suppliers that work closely with SURF to further define and develop the Open Education API. See [Community](community/) for more information. 
 
 ## Working group (governance)
 The Working group is a subgroup of the Community and consists of a number of members that meet on a regular basis. See [Working group](community/workinggroup.md)
@@ -28,8 +28,8 @@ The Working group is a subgroup of the Community and consists of a number of mem
 ### Becoming a member of the working group
 * Prospective members can enlist by posting a motivation message on the community site or sending an email to info@openonderwijsapi.nl, with a brief motivation.
 * A prospective member may also be nominated by a member of the working group.
-* The working group votes on membership of organisation not affiliated with SURF.
-* Any new member of the working group must have an authorised signatory of the institution or organisation they work for to sign a letter of intent in which they agree to the rights and obligations of the working group member.
+* The working group votes on membership of an organisation not affiliated with SURF.
+* Any new member of the working group must have an authorised signatory of the institution or organisation they work for is required to sign a letter of intent in which they agree to the rights and obligations of the working group member.
 
 ### Terminating membership of the working group
 * A working group member can terminate their membership through the mailing list.
@@ -57,7 +57,7 @@ Amongst others, Bureau Edustandaard:
 
 Collaboration within Bureau Edustandaard takes place within:
 
-* the **Standardization council** (a council consisting of directors of educational institutions, public and private organisations),
+* the **Standardisation council** (a council consisting of directors of educational institutions, public and private organisations),
 * the **Architecture council**, and
 * the **Edustandaard working groups**.
 
@@ -66,8 +66,8 @@ To achieve their goals the bureau also maintains contact with other (national an
 ### Bureau Edustandaard and the OOAPI
 For the Open Education API, Bureau Edustandaard:
 
-* give advice on and manage the standardization of the OOAPI.
-* ensure that the OOAPI conforms with other standards in the context of ROSA by means of a ROSA scan.
+* gives advice on and manage the standardisation of the OOAPI.
+* ensure that the OOAPI conforms to other standards in the context of ROSA by means of a ROSA scan.
 * inform the Community about updates and changes to the OOAPI.
 * publish all relevant information concerning the OOAPI on the [Bureau Edustandaard website](https://www.edustandaard.nl/), including the OOAPI specification, updates and changes to the OOAPI, and formal documentation.
 
@@ -81,5 +81,5 @@ For issues that affect the GitHub environment ([https://github.com/open-educatio
 * The outcome of the vote is recorded.
 * Any follow-up action is taken depending on the outcome of the vote.
 
-## Bylaws and code of conduct
+## By-laws and code of conduct
 In addition to this governance document, there are also the [Bylaws](governance/bylaws.md) and a [Code of conduct](governance/code-of-conduct.md)
