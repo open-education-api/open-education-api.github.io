@@ -6,7 +6,7 @@
   partially, or not at all. Support for filtering **SHOULD** be documented in the service
   endpoint description. Support for this functionality **cannot be enforced** by any
   party, including organisations that provide or consume OOAPI endpoints.  
-- The **availability** of this query functionality is determined by each implementing
+- The **availability** of this filter functionality is determined by each implementing
   organisation. The general structure and semantics are
   **standardised** within the OOAPI specification.  
 - This mechanism is intended to promote **consistency** across implementations, while
@@ -21,7 +21,7 @@
 
 ---
 
-When requesting collections of resources, a client can optionally request that items be
+When requesting collections of resources, a client can optionally request items to be
 filtered using the query parameter `filter_query`.
 
 This mechanism is a **generic structure** that enables flexible filtering on any exposed
@@ -47,19 +47,21 @@ they are combined using logical **AND**.
 ### Example request
 
 ```http
-GET /course-offerings?filter_query[start_date][gt_date]=2025-09-01T00:00:00Z&filter_query[programme.code][in]=B-IT-2025
+GET /organisations/{organisationId}/course-offerings
+  ?filter_query[programme_offerings.programme.primary_code][in]=B-IT-2025
+  &filter_query[enrol_start_date_time][gt_date]=2025-08-01T00:00:00Z
 ```
 
-This request returns all course offerings that start after 1 September 2025 and belong to
-the programme with code `B-IT-2025`.
+This request returns all course offerings from an organisation with organisationId that starts 
+after 1 August 2025 and belong to the programme with code `B-IT-2025`.
 
 Additional fields can be filtered in the same way. For instance:
 
 ```http
-GET /persons?filter_query[family_name][like]=Sm*&filter_query[date_of_birth][eq_date]=1998-05-12
+GET /persons?filter_query[surname][like]=Sm*&filter_query[dateOfBirth][eq_date]=1998-05-12
 ```
 
-This example returns all persons whose family name starts with “Sm” and whose date of
+This example returns all persons whose surname starts with “Sm” and whose date of
 birth is exactly 12 May 1998.
 
 ---
@@ -82,7 +84,7 @@ If the server also supports the `%` wildcard (for example, in SQL-style pattern 
 the following request may produce the same result:
 
 ```http
-GET /courses?filter_query[name][like]=bio%25
+GET /courses?filter_query[name[].value][like]=bio%25
 ```
 
 Here, `%` acts as a wildcard, but it must be URL-encoded as `%25` since the percent sign
@@ -108,7 +110,7 @@ filter_query[__or][][field][operation]=value
 ### Example request
 
 ```http
-GET /course-offerings?filter_query[__or][][name][like]=bio*&filter_query[__or][][name][like]=chem*
+GET /courses?filter_query[__or][][name][like]=bio*&filter_query[__or][][name][like]=chem*
 ```
 
 This request returns all course offerings whose `name` starts with either “bio” or “chem”.  
@@ -123,8 +125,11 @@ string or categorical matching such as `eq`, `neq`, `like`, and `in`. Comparison
 ### Example request
 
 ```http
-GET /course-offerings?filter_query[__or][][name][like]=bio*&filter_query[__or][][name][like]=chem*&filter_query[programme.code][eq]=B-IT-2025
-```
+GET /courses?filter_query[__or][][name][like]=bio*&filter_query[__or][][name][like]=chem*&filter_query[programmescode][eq]=B-IT-2025
+GET /organisations/{organisationId}/course-offerings
+  ?filter_query[__or][][course.name][like]=bio*
+  &filter_query[__or][][course.name][like]=hem*
+  &filter_query[programme_offerings.programme.primary_code][in]=B-IT-2025
 
 This request returns all course offerings whose `name` starts with either “bio” or “chem”
 and belong to the programme with code `B-IT-2025`.
