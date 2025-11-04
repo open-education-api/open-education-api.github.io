@@ -75,7 +75,7 @@ and **may not be supported** consistently.
 ### Example request
 
 ```http
-GET /courses?filter_query[name][like]=bio*
+GET /courses?filter_query[name[].value][like]=bio*
 ```
 
 This request returns all items whose `name` starts with “bio”.
@@ -110,7 +110,7 @@ filter_query[__or][][field][operation]=value
 ### Example request
 
 ```http
-GET /courses?filter_query[__or][][name][like]=bio*&filter_query[__or][][name][like]=chem*
+GET /courses?filter_query[__or][][name[].value][like]=bio*&filter_query[__or][][name][like]=chem*
 ```
 
 This request returns all course offerings whose `name` starts with either “bio” or “chem”.  
@@ -125,10 +125,10 @@ string or categorical matching such as `eq`, `neq`, `like`, and `in`. Comparison
 ### Example request
 
 ```http
-GET /courses?filter_query[__or][][name][like]=bio*&filter_query[__or][][name][like]=chem*&filter_query[programmescode][eq]=B-IT-2025
+GET /courses?filter_query[__or][][name[].value][like]=bio*&filter_query[__or][][name[].value][like]=chem*&filter_query[programmescode][eq]=B-IT-2025
 GET /organisations/{organisationId}/course-offerings
-  ?filter_query[__or][][course.name][like]=bio*
-  &filter_query[__or][][course.name][like]=hem*
+  ?filter_query[__or][][course.name[].value][like]=bio*
+  &filter_query[__or][][course.name[].value][like]=hem*
   &filter_query[programme_offerings.programme.primary_code][in]=B-IT-2025
 
 This request returns all course offerings whose `name` starts with either “bio” or “chem”
