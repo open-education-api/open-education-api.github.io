@@ -70,5 +70,33 @@
 
   <!-- Versioned plugin JS -->
   <script src="https://cdn.jsdelivr.net/npm/docsify-versioned-plugin@0.0.1/index.js"></script>
+
+  <!-- Override van de versie-switch zodat de URL altijd /{version}/#/pad is -->
+  <script>
+    window.addEventListener('DOMContentLoaded', function () {
+      document.addEventListener(
+        'change',
+        function (event) {
+          const el = event.target;
+          // We gaan er vanuit dat er maar één select op de pagina is: die van de versie-plugin
+          if (!el || el.tagName !== 'SELECT') return;
+
+          const folder = (el.value || '').replace(/^\/|\/$/g, ''); // strip leading/trailing slashes
+          if (!folder) return;
+
+          // voorkom dat de handler van de plugin zelf ook nog een URL zet
+          event.stopImmediatePropagation();
+
+          const hash = window.location.hash || '#/';
+          const base = window.location.origin; // werkt lokaal én op GitHub Pages
+
+          // Altijd naar /{folder}/#/huidig-pad
+          window.location.href = base + '/' + folder + '/' + hash.replace(/^#?/, '#');
+        },
+        true // capture, zodat wij eerst zijn
+      );
+    });
+  </script>
+
 </body>
 </html>
