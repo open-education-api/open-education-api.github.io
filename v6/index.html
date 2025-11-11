@@ -9,7 +9,6 @@
 
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple.css">
   <link rel="stylesheet" href="theme.css">
-  <!-- Versioned plugin CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-versioned-plugin@0.0.1/styles.css">
 
   <style>
@@ -17,13 +16,81 @@
       --docsifytabs-border-color: #ededed;
       --docsifytabs-tab-highlight-color:#0074d9;
     }
+
     body[data-page="technical/consumers-and-profiles/rio.md"] .colored-table,
     body[data-page="technical/consumers-and-profiles/rio.md"] .markdown-section code {
-      font-size: 14px;   
+      font-size: 14px;
+    }
+
+    /* === OOAPI versie-banner (achter sidebar) === */
+    #version-banner {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1;            /* lager dan sidebar → loopt erachter */
+      background: #ffc400;   /* OOAPI-geel */
+      color: #002d72;        /* OOAPI-donkerblauw */
+      text-align: center;
+      padding: 10px 0;
+      font-size: 15px;
+      font-weight: 500;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+      display: false;        /* wordt via JS op block gezet */
+      display: none;
+    }
+
+    /* content iets naar beneden zodat die niet onder de balk valt */
+    body.with-banner .content {
+      margin-top: 52px;
+    }
+
+    #version-banner a {
+      color: #002d72;
+      font-weight: 600;
+      text-decoration: underline;
+    }
+
+    #version-banner a:hover {
+      color: #000;
+    }
+
+    #version-banner strong.version-label {
+      font-weight: 700;
+      font-size: 16px;
+    }
+
+    /* Versie-dropdown rechtsboven */
+    .docsify-version-select {
+      position: fixed !important;
+      top: 10px;
+      right: 20px;
+      z-index: 1000;
+      background: #0074d9;
+      color: #fff;
+      border-radius: 4px;
+      padding: 4px 8px;
+      font-weight: 500;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+    }
+
+    .docsify-version-select select {
+      background: #0074d9;
+      color: #fff;
+      border: none;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+    }
+
+    .docsify-version-select select:hover {
+      background: #005fa3;
     }
   </style>
 </head>
+
 <body>
+  <div id="version-banner"></div>
   <div id="app"></div>
 
   <script>
@@ -34,32 +101,31 @@
       search: 'auto',
       name: 'Open Onderwijs API',
       externalLinkTarget: '_self',
-      //loadNavbar: true,
       loadSidebar: true,
       alias: {
         '/.*/_sidebar.md': '/_sidebar.md',
       },
       subMaxLevel: 0,
-      maxLevel: 1, // set sidebar display level
+      maxLevel: 1,
       logo: '_media/OpenEducationApi_Logo.png',
       tabs: {
-        persist    : true,      // default
-        sync       : true,      // default
-        theme      : 'classic', // default
-        tabComments: true,      // default
-        tabHeadings: true       // default
+        persist: true,
+        sync: true,
+        theme: 'classic',
+        tabComments: true,
+        tabHeadings: true
       },
 
-      /* Versieconfiguratie voor de dropdown */
+      /* Versieconfiguratie */
       versions: [
-        { folder: 'v6',   label: 'v6.0',          default: true },
-        { folder: 'v5',   label: 'v5.0',          default: false }
+        { folder: 'v6', label: 'v6.0', default: true },
+        { folder: 'v5', label: 'v5.0', default: false }
       ],
       versionSelectorLabel: 'Version'
     }
   </script>
 
-  <!-- Docsify v4 -->
+  <!-- Docsify scripts -->
   <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/docsify-sidebar-collapse.min.js"></script>
@@ -67,9 +133,27 @@
   <script src="//cdn.jsdelivr.net/npm/docsify-tabs@1"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/front-matter.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
-
-  <!-- Versioned plugin JS -->
   <script src="https://cdn.jsdelivr.net/npm/docsify-versioned-plugin@0.0.1/index.js"></script>
+
+  <!-- Banner-logica: alleen tonen bij niet-laatste versie -->
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const path = location.pathname;
+      const version = path.match(/v\d+(\.\d+)?/);
+      const banner = document.getElementById('version-banner');
+      const defaultVersion = 'v6'; // huidige / latest versie
+
+      if (version && version[0] !== defaultVersion) {
+        banner.innerHTML = `
+          You are viewing the <strong>OOAPI </strong><strong class="version-label">${version[0]}</strong> documentation.
+          This is <strong>not the latest version</strong> —
+          see the <a href="/v6/">latest version</a>.
+        `;
+        banner.style.display = 'block';
+        document.body.classList.add('with-banner');
+      }
+    });
+  </script>
 
   <!-- Override van de versie-switch zodat de URL altijd /{version}/#/pad is -->
   <script>
@@ -78,25 +162,24 @@
         'change',
         function (event) {
           const el = event.target;
-          // We gaan er vanuit dat er maar één select op de pagina is: die van de versie-plugin
+          // we gaan ervan uit dat de enige <select> die we moeten vangen de versie-selector is
           if (!el || el.tagName !== 'SELECT') return;
 
-          const folder = (el.value || '').replace(/^\/|\/$/g, ''); // strip leading/trailing slashes
+          const folder = (el.value || '').replace(/^\/|\/$/g, '');
           if (!folder) return;
 
           // voorkom dat de handler van de plugin zelf ook nog een URL zet
           event.stopImmediatePropagation();
 
           const hash = window.location.hash || '#/';
-          const base = window.location.origin; // werkt lokaal én op GitHub Pages
+          const base = window.location.origin;
 
-          // Altijd naar /{folder}/#/huidig-pad
+          // altijd naar /{folder}/#/huidig-pad
           window.location.href = base + '/' + folder + '/' + hash.replace(/^#?/, '#');
         },
-        true // capture, zodat wij eerst zijn
+        true
       );
     });
   </script>
-
 </body>
 </html>
