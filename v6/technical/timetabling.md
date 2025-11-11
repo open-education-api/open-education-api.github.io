@@ -3,6 +3,10 @@
 ## Overview
 This chapter explains how timetabling is implemented using the **OOAPI** model. It focuses on the relationships between **Programmes**, **Courses**, **Learning Components**, and their corresponding **Offerings**. It also demonstrates how multiple course instances (offerings) can exist within one academic year.
 
+![Timetabling overview](../_media/timetabling-overview.png "Relations between programme, course, components and offerings")
+
+*Figure 1 – Relationship between education specifications (Programme, Course, Component) and their Offerings, including associations with AcademicSession, Room, Group and Person.*
+
 ---
 
 ## 1. Conceptual Foundation
@@ -183,8 +187,6 @@ In this example:
 - A **LearningComponentOffering** (lecture group A) is linked to the Semester 1 **CourseOffering** via `courseOfferings`.
 - A **TestComponentOffering** (final exam) is also linked to the Semester 1 **CourseOffering** via `courseOfferings`.
 
-All identifiers (`programmeOfferingId`, `courseOfferingId`, `learningComponentOfferingId`, `testComponentOfferingId`, `programme`, `course`, `learningComponent`, `testComponent`, `academicSession`) follow the OOAPI v6 pattern of using UUIDs or institution-defined identifiers as strings.
-
 ---
 
 ## 5. Practical Notes for Implementers
@@ -205,4 +207,3 @@ All identifiers (`programmeOfferingId`, `courseOfferingId`, `learningComponentOf
 - Arrays like `programmeOfferings` and `courseOfferings` connect these objects according to the OOAPI v6 specification.
 
 This model enables consistent, standardised integration of academic structure and scheduling, ensuring interoperability across timetabling, enrolment, and learning management systems.
-
