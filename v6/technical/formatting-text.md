@@ -1,13 +1,36 @@
-# Formatting text
+### Formatting text
 
-Most resources have attributes that are supposed to convey longer texts, e.g. `description`. These fields can be formatted to improve readability using a variant of Markdown. OOAPI allows a subset of the [GitHub Flavored Markdown Spec](https://github.github.com/gfm/).
+Most resources include attributes intended to convey longer texts, such as `description`.
+These fields can be formatted to improve readability by using a subset of Markdown. OOAPI
+supports the [GitHub Flavoured Markdown Specification](https://github.github.com/gfm/),
+but only a restricted set of elements is permitted to ensure consistent rendering across
+tools and documentation systems.
 
-More information and guidelines can be read [here](https://guides.github.com/features/mastering-markdown/)
+#### Supported Markdown elements
 
-To ensure optimal interoperability, Markdown formatted text in OOAPI SHOULD NOT use:
+The following Markdown features are supported within OOAPI fields:
 
-- Task list Items
-- The images element
+- Headings (levels 1–3)
+- Paragraphs and line breaks
+- Emphasis (bold `**text**` and italic `*text*`)
+- Ordered and unordered lists
+- Links and inline URLs
+- Inline code and fenced code blocks
+- Blockquotes
+- Horizontal rules
+- Tables (using standard GitHub Flavoured Markdown syntax)
+
+#### Unsupported Markdown elements
+
+To ensure optimal interoperability, Markdown-formatted text in OOAPI should not use:
+
+- Task list items
+- The image element (`![alt](url)`)
 - Raw HTML
+- Automatic HTML attributes (e.g. `<div>`, `<span>`)
+- Embedded media or iframes
 
-GitHub Flavored Markdown was chosen because it additional formatting options in addition to options in specifications such as CommonMark Markdown.
+GitHub Flavoured Markdown was chosen because it offers a familiar and lightweight syntax
+while providing additional formatting options compared with specifications such as
+CommonMark Markdown. By limiting the supported subset, OOAPI ensures predictable rendering
+in OpenAPI documentation tools and API client implementations.
