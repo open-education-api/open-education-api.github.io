@@ -1,5 +1,5 @@
 # The specification
-The actual OOAPI specification is specified using the [Open API Specification](https://www.openapis.org/), a standard that specifies how to specify (among other things) REST API's. The detailed OOAPI specifications can be found here:
+The actual OOAPI specification is specified using the [OpenAPI Specification](https://www.openapis.org/), a standard that specifies how to specify (among other things) REST APIs. The detailed OOAPI specifications can be found here:
 
 * [OOAPI v5](https://open-education-api.github.io/specification/v5/docs.html) (Current version)
 
