@@ -33,6 +33,7 @@
   * [Sorting responses](technical/sorting-responses.md)
   * [Data minimisation](technical/data-minimisation.md "OOAPI - Data minimisation")
   * [Formatting text](technical/formatting-text.md)
+  * [Timetabling](technical/timetabling.md)
   * [Historical and future data](technical/historical-and-future-data.md)
   * [Extending OOAPI](technical/extending-ooapi.md)
   * [Consumers and profiles](technical/consumers-and-profiles/)
