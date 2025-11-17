@@ -69,8 +69,7 @@ birth is exactly 12 May 1998.
 ## Using wildcards
 
 Partial matches can be expressed using wildcards. Implementing organisations **SHOULD**
-use only the asterisk `*` as a wildcard. Other characters such as `%` **must be escaped**
-and **may not be supported** consistently.
+use only the asterisk `*` as a wildcard.
 
 ### Example request
 
@@ -79,19 +78,6 @@ GET /courses?filter_query[name[].value][like]=bio*
 ```
 
 This request returns all items whose `name` starts with “bio”.
-
-If the server also supports the `%` wildcard (for example, in SQL-style pattern matching),
-the following request may produce the same result:
-
-```http
-GET /courses?filter_query[name[].value][like]=bio%25
-```
-
-Here, `%` acts as a wildcard, but it must be URL-encoded as `%25` since the percent sign
-is a reserved URL character.
-
-**Note:** Implementers SHOULD prefer using the `*` wildcard for interoperability across
-implementations, as `%` support is optional and behaviour may vary between servers.
 
 ---
 
