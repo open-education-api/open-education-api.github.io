@@ -1,67 +1,71 @@
 :root {
-  --base-font-size: 16px;
-  /*--theme-color: #2CA1A3;*/
-  --theme-color: #03818d;
+    --base-font-size: 16px;
+    --theme-color: #03818d;
 
-  --content-max-width: 65em;
-  --theme-content-padding: 2rem;
+    --content-max-width: 65em;
 
-  --zoomimage-overlay-background: rgba(255, 255, 255, 0.875);
+    /* // --sidebar-nav-link-padding: 0.40em 0; */
+
+    --zoomimage-overlay-background: rgba(255, 255, 255, 0.875);
 }
 
 
 /* ================================================================= */
-/* === OOAPI CUSTOM STYLING (BRITISH ENGLISH) ======================= */
+/* === OOAPI CUSTOM STYLING                                      === */
 /* ================================================================= */
 
 
-/* =============================================== */
-/*   Main content column                            */
-/* =============================================== */
+/* ========================================================= */
+/*   Main content column                                     */
+/* ========================================================= */
 
-/* Consistent content layout:
-   - maximum width
-   - centred within the viewport
-   - horizontal padding via variable
-   The banner mirrors this behaviour. */
+/* Themeable uses max-width and auto margins to centre the content.
+   We mirror this so the banner aligns perfectly without introducing
+   new root variables. */
 
 .markdown-section {
   max-width: var(--content-max-width);
   margin: 0 auto;
-  padding: 2.5rem var(--theme-content-padding);
+  padding: 2.5rem 2rem;     /* 2rem is Themeable's actual default horizontal padding */
   text-align: left;
   box-sizing: border-box;
 }
 
 
-/* =============================================== */
-/*   Version banner at the top                      */
-/* =============================================== */
+/* ========================================================= */
+/*   Version banner (fixed at the top, behind the sidebar)   */
+/* ========================================================= */
 
 #version-banner {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1;           /* remains underneath the sidebar, which may overlap it */
+  z-index: 1;               /* sidebar stays above the banner */
   display: none;
   font-size: 15px;
   font-weight: 500;
   box-shadow: 0 1px 4px rgba(0,0,0,0.1);
 }
 
-/* Inner container of the banner:
-   - same column width and horizontal padding as .markdown-section
-   - text centred within that column */
+/* Inner banner container:
+   - uses same max-width as content
+   - uses SAME hardcoded padding as Themeable (2rem)
+   - centres text within the content column, not the screen */
 .version-banner-inner {
   max-width: var(--content-max-width);
   margin: 0 auto;
-  padding: 10px var(--theme-content-padding);
+  padding: 10px 2rem;       /* matching Themeable's horizontal padding */
   text-align: center;
   box-sizing: border-box;
 }
 
-/* Older versions → OOAPI yellow banner */
+
+/* ========================================================= */
+/*   Banner variants                                         */
+/* ========================================================= */
+
+/* Old version banner (yellow) */
 #version-banner.banner-old {
   background: #FFC400;
   color: #002d72 !important;
@@ -78,7 +82,7 @@
   text-decoration: underline;
 }
 
-/* Beta version → OOAPI teal banner */
+/* Beta version banner (teal) */
 #version-banner.banner-beta {
   background: #2CA1A3;
   color: #ffffff !important;
@@ -96,17 +100,24 @@
   text-decoration: underline;
 }
 
-/* The content must be pushed down because the banner is fixed. */
+
+/* ========================================================= */
+/*   Content offset due to fixed banner                      */
+/* ========================================================= */
+
 body.with-banner .content {
-  margin-top: 52px;
+  margin-top: 52px;         /* banner height */
 }
 
 
-/* Version label displayed beneath the logo in the sidebar */
+/* ========================================================= */
+/*   Version label under the logo in the sidebar             */
+/* ========================================================= */
+
 .sidebar .app-name small {
-  display: block;                 /* ensures it sits neatly on its own line */
+  display: block;
   margin-top: 6px;
-  font-size: 18px;                /* increase size (20px also possible) */
+  font-size: 18px;          /* increase version visibility */
   font-weight: 600;
-  color: var(--theme-color);     /* or a fixed colour, e.g. #2CA1A3 */
+  color: var(--theme-color);
 }
