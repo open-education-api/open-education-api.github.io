@@ -7,11 +7,26 @@
     /* // --sidebar-nav-link-padding: 0.40em 0; */
 
     --zoomimage-overlay-background: rgba(255, 255, 255, 0.875);
-}
+
+    /* Docsify tabs */
+    --docsifytabs-border-color: #ededed;
+    --docsifytabs-tab-highlight-color: #0074d9;
+  }
 
 /* ================================================================= */
 /* === OOAPI CUSTOM STYLING                                      === */
 /* ================================================================= */
+
+
+/* ========================================================= */
+/*   Rio adjustments                                         */
+/* ========================================================= */
+
+body[data-page="technical/consumers-and-profiles/rio.md"] .colored-table,
+body[data-page="technical/consumers-and-profiles/rio.md"] .markdown-section code {
+  font-size: 14px;   
+}
+
 
 /* ========================================================= */
 /*   Main content column                                     */
