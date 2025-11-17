@@ -1,7 +1,7 @@
 # Governance
 *Governance document 1 January 2019, Version: 3*
 
-The governance model describes the decision-making process and the role of various members of the [Community](#community-governance), [Working group](#working-group-governance), and [Bureau Edustandaard](#bureau-edustandaard-governance). It also outlines the strategic goals and procedures within the project, and provides an understanding of how the Open Education API is governed.
+The governance model describes the decision-making process and the role of various members of the [Community](#community-governance), [Working group](#working-group-governance), and [Bureau Edustandaard](#bureau-edustandaard-governance). It also outlines the strategic goals and procedures within the project, and provides an understanding of how the Open Education API is governed. In addition to these bodies, the Steering Committee serves as the final decision-making authority. It ensures alignment with sector-wide objectives, approves major changes to the specification, and validates recommendations from the Working Group and Bureau Edustandaard before they are formally adopted.
 
 The shared goals of the governance model are:
 
@@ -18,11 +18,11 @@ The Community consists of members (representatives) of educational institutions 
 The Working group is a subgroup of the Community and consists of a number of members that meet on a regular basis. See [Working group](community/workinggroup.md)
 
 ### Who can join the working group?
-* Participation is not limited to higher education institutions, and is open to anyone who can represent the interests of the OOAPI. Suppliers can therefore also join the working group.
+* Participation is not limited to higher educational institutions, and is open to anyone who can represent the interests of the OOAPI. Suppliers can therefore also join the working group.
 * The ratio between institutions affiliated with SURF and organisations not affiliated with SURF must be at least 3:1.
 
 ### List of affiliated institutions
-* A member of the working group may represent up to one higher education institution or organisation.
+* A member of the working group may represent up to one higher educational institution or organisation.
 * The working group may have more than one member from the same institution, but if there are more than 20 members in the working group, the maximum number of members per institution is limited to one. If a member of the working group is unable to attend a meeting, an alternate member may be appointed.
 
 ### Becoming a member of the working group

@@ -21,4 +21,4 @@ These matches are:
 The development of the OOAPI has also been influenced by existing standards and regulations based on the Dutch [comply or explain / pas toe of leg uit list](https://www.forumstandaardisatie.nl/open-standaarden/verplicht). For the development, ["Digikoppeling"](https://www.logius.nl/diensten/digikoppeling/documentatie) has been used as a guideline. For the development the following elements were taken into account:
 * [Digikoppeling Restful API Profiel](https://publicatie.centrumvoorstandaarden.nl/dk/restapi/)
 * [REST-API Design Rules (Nederlandse API Strategie IIa) 1.0](https://publicatie.centrumvoorstandaarden.nl/api/adr/)
-    * Deviation: The language of the endpoint (API-04) and documentation (API-017) is English. This was chosen due to the international context in which HE institutions operate.
+    * Deviation: The language of the endpoint (API-04) and the documentation (API-017) is UK English. This was chosen because higher education institutions operate in an international context, in British English.

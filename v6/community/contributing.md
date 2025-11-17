@@ -32,4 +32,4 @@ Please follow these guidelines before opening an issue:
   * Meta properties (e.g. `createdAt`)
 * Links should have descriptive names (e.g. `author` instead of `person` for blog posts).
 * Nesting of properties is allowed.
-* Date and date-time properties are formatted in accordance with the [RFC3339](https://xml2rfc.tools.ietf.org/public/rfc/html/rfc3339.html#anchor14) standard.
+* Date and date-time properties are formatted in accordance with the [RFC3339](https://www.rfc-editor.org/rfc/rfc3339.html) standard.

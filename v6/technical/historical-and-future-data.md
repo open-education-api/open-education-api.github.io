@@ -1,7 +1,7 @@
 # Historical and future data
 
 ## timelineOverrides
-OOAPI v5 adds a mechanism to communicate about data that were valid in the past or will become valid in the future. An implementation is expected to always return *the current value* of an entity as the main object in a response. To specify historic and future changes an implementation can add one or more "timelineOverrides". Each timelineOverride is a repetition of the main object, but with attributes that can have a different value or with absent optional attributes (indicating that an attribute did not exists in the past or will not exist in the future).
+OOAPI v5 has added a mechanism to communicate about data that were valid in the past or will become valid in the future. An implementation is expected to always return *the current value* of an entity as the main object in a response. To specify historic and future changes an implementation can add one or more "timelineOverrides". Each timelineOverride is a repetition of the main object, but with attributes that can have a different value or with absent optional attributes (indicating that an attribute did not exists in the past or will not exist in the future).
 
 A timelineOverride also specifies two date fields: `validFrom` (inclusive) and `validTo` (exclusive) indicating for which period of time the changed attributes are valid.
 
