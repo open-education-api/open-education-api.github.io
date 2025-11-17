@@ -9,11 +9,9 @@
     --zoomimage-overlay-background: rgba(255, 255, 255, 0.875);
 }
 
-
 /* ================================================================= */
 /* === OOAPI CUSTOM STYLING                                      === */
 /* ================================================================= */
-
 
 /* ========================================================= */
 /*   Main content column                                     */
@@ -30,7 +28,6 @@
   text-align: left;
   box-sizing: border-box;
 }
-
 
 /* ========================================================= */
 /*   Version banner (fixed at the top, behind the sidebar)   */
@@ -59,7 +56,6 @@
   text-align: center;
   box-sizing: border-box;
 }
-
 
 /* ========================================================= */
 /*   Banner variants                                         */
@@ -100,7 +96,6 @@
   text-decoration: underline;
 }
 
-
 /* ========================================================= */
 /*   Content offset due to fixed banner                      */
 /* ========================================================= */
@@ -108,7 +103,6 @@
 body.with-banner .content {
   margin-top: 52px;         /* banner height */
 }
-
 
 /* ========================================================= */
 /*   Version label under the logo in the sidebar             */
