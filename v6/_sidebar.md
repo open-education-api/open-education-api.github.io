@@ -32,7 +32,6 @@
   * [Filtering](technical/filtering-responses.md)
     * [Responses](technical/filtering-responses.md)
     * [Generic](technical/filtering-generic.md)
-  * [Sorting responses](technical/sorting-responses.md)
   * [Data minimisation](technical/data-minimisation.md "OOAPI - Data minimisation")
   * [Text formatting](technical/formatting-text.md)
   * [Historic and future data](technical/historical-and-future-data.md)
