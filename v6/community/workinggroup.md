@@ -1,6 +1,6 @@
 # Working group
 
-The Working group is a subgroup of the Community and consists of a number of members that meet on a regular basis. The [Working group members](#working-group-members) are responsible for topics such as:
+The working group is a subgroup of the Community and consists of a number of members who meet on a regular basis. The [Working group members](#working-group-members) are responsible for topics such as:
 
 * the project roadmap.
 * the design and future development of the Open Education API specification (the development has an annual cycle consisting of a minor and a major release).
@@ -20,7 +20,7 @@ The working group "way of working" is defined in the [Governance](governance/) m
 
 For more information on the Governance model, please access the [Governance](governance/) link.
 
-To register for the working group and become an active part of the Community, please e-mail us at: info@openonderwijsapi.nl
+To register for the working group and become an active part of the Community, please e-mail us at info@openonderwijsapi.nl
 
 ## Working group members
 

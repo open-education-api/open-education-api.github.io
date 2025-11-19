@@ -2,12 +2,12 @@
 
 ## Required requests
 
-To be compatible with ooapi V4 and eduXchange v1 an institution of the EuroTeQ alliance needs to implement the following requests:
+To be compatible with OOAPI V4 and eduXchange v1 an institution within EuroTeQ alliance needs to implement the following requests:
 
-* `GET /organizations`
-* `GET /organizations?type=root`
-* `GET /organizations/{organizationId}`
-* `GET /organizations/{organizationId}/courses`
+* `GET /organisations`
+* `GET /organisations?type=root`
+* `GET /organisations/{organisationId}`
+* `GET /organisations/{organisationId}/courses`
 * `GET /courses`
 * `GET /courses/{courseId}`
 * `GET /courses/{courseId}/offerings`
@@ -20,15 +20,15 @@ To be compatible with ooapi V4 and eduXchange v1 an institution of the EuroTeQ a
 
 !> The general `pageSize` parameter must be supported.
 
-!> For `/organizations` the `type=root` parameter must be supported.
+!> For `/organisations` the `type=root` parameter must be supported.
 
-!> For `/course/{ID}` the `expand=coordinator` and `expand=organization` paramaters must be supported.
+!> For `/course/{ID}` the `expand=coordinator` and `expand=organisation` paramaters must be supported.
 
 !> To select educational information meant for eduXchange, eduXchange will always append the query parameter `targetgroup=euroteq` to every call.
 
 ## Agreements on language use
 
-Some attributes in OOAPI can have multiple values. It is receommended that all participants agree on the use of these values. This results in an unambiguous list on the frontend.
+Some attributes in OOAPI can have multiple values. It is recommended that all participants agree on the use of these values. This results in an unambiguous list on the front end.
 
 ### level attribute of a course
 
@@ -39,7 +39,7 @@ For the level attribute of a course the participants agreed to use
 
 ## Extension objects
 
-Extension objects are used to supply the eduXchange frontend with additional information which is not specified in the OOAPI V4 specification.
+Extension objects are used to supply the eduXchange front end with additional information which is not specified in the OOAPI V4 specification.
 
 ### Course extension
 When eduXchange requests courses and the query parameter `targetgroup` is set to `euroteq`, only courses meant for euroteq should be returned.
@@ -94,11 +94,11 @@ This is an example of the extension object for eduXchange courses.
 ### Offering extension
 The targetgroup extension object should also be added to the offering object. The ext object for eduXchange offerings has the following attributes:
 
-* `enrollmentStartDate`: the date of the start of the enrollment for the offering, `"2022-11-03"`
-* `enrollmentEndDate`: the date of the end of the enrollment for the offering, `"2022-11-03"`
-* `enrollmentUrl`: an `URI` to an enrollment page of the institution when the SURF edubroker is not in use.
-* `notificationUrl`: an `URI` to a notification page of the institution that is shown when the current date is before the enrollmentStartDate.
-* `dateComment`: a string with additional date information, for example `"The course takes place on monday morning"`
+* `enrolmentStartDate`: the date of the start of the enrolment for the offering, `"2022-11-03"`
+* `enrolmentEndDate`: the date of the end of the enrolment for the offering, `"2022-11-03"`
+* `enrolmentUrl`: an `URL` to an enrolment page of the institution when the SURF edubroker is not in use.
+* `notificationUrl`: an `URL` to a notification page of the institution that is shown when the current date is before the enrolmentStartDate.
+* `dateComment`: a string with additional date information, for example `"The course takes place on Monday morning"`
 
 **Example**
 
@@ -107,11 +107,11 @@ This is an example of the extension object for eduXchange offerings.
 ```json
 {
 	"ext": {
-		"enrollmentStartDate": "2022-11-3",
-		"enrollmentEndDate": "2022-11-4",
-		"enrollmentUrl": "https://my.institution.org/my-enrollment",
+		"enrolmentStartDate": "2022-11-03",
+		"enrolmentEndDate": "2022-11-04",
+		"enrolmentUrl": "https://my.institution.org/my-enrolment",
 		"notificationUrl": "https://my.institution.org/my-notification",
-		"dateComment": "This date is in ECT and the course takes place on Monday morning."
+		"dateComment": "This date is in CET and the course takes place on Monday morning."
 	}
 }
 ```
