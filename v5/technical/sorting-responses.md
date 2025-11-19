@@ -5,7 +5,7 @@ When requesting collections of resources a client can request that the items be 
 The sorting takes place based on comma separated values. e.g.:
 
 ```
-GET /programs?sort=programId
+GET /programs?order=programId
 ```
 
 Returns a list of all programs sorted ascending based on `programId`.
