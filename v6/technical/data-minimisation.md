@@ -1,7 +1,7 @@
 # Data minimisation and security
 The API follows the principle of data minimisation, a key privacy requirement, ensuring that only the minimum necessary (personal) data is shared with each API client. This approach protects sensitive information. This allows users of the specification to retain control over which information they share with API clients. Within the standard there are two reasons for applying data minimisation:  
 A. Security & privacy reasons: In this case the client of the API should not have access to all or specific data within the API. This is API security and requires 'server-controlled access enforcement'.  
-B. Data-usage-optimization: In this case the API client has access to all data within the API, but is not interested in all information with every API call and it is not necessary to transmit all the data. This can be solved via Fields selection.  
+B. Data-usage-optimisation: In this case the API client has access to all data within the API, but is not interested in all information with every API call and it is not necessary to transmit all the data. This can be solved via Field selection.  
 
 # A. Server-controlled access enforcement
 All data access is centrally controlled and enforced by the server. This means:  
@@ -9,33 +9,33 @@ All data access is centrally controlled and enforced by the server. This means:
 •	Access to data is explicitly authorised and scoped per client.  
 •	Clients cannot bypass security policies or fetch unauthorised data, even if they attempt to manipulate query parameters or headers.  
 
-Most of the data that is handeled in the API is public data. Nevertheless, the server remains responsible for a correctly implementing of the required security levels, including support for differentiated access depending on the type of client. It is advisable to standardise this approach based on the confidentiality and integrity classification of the data concerned. Differentiation may, for example, be made between:  
-•	Internal clients may have access to the most complete data sets (but even with internal services the privacy aspect needs to be taken into account).  
+Most of the data that is handled in the API is public data. Nevertheless, the server remains responsible for the correct implementation of the required security levels, including support for differentiated access depending on the type of client. It is advisable to standardise this approach based on the confidentiality and integrity classification of the data concerned. Differentiation may, for example, be made between:  
+•	Internal clients may have access to the most complete datasets (but even with internal services the privacy aspect needs to be taken into account).  
 •	Third-party or external clients may receive only a minimal required subset.  
 •	Clients that request data to become publicly available may access only data that is classified as public.  
 
-This principle of data minimisation must be enforced through the API’s implementation, rather than in the specification itself and is not further detailed in het specification itself. 
+This principle of data minimisation must be enforced through the API’s implementation, rather than in the specification itself and is not further detailed in the specification itself. 
 
-# B. Data minimisation (/data-usage-optimization) via fields selection
+# B. Data minimisation (/data-usage-optimisation) via field selection
 Data minimisation is a core principle: the API should provide only the data necessary for a given request. This reduces the risk of exposing sensitive information and supports best practice in privacy and security.  
-To support both data minimisation and performance optimization, the API can optionally allow clients to indicate which fields they are interested in. This mechanism can help reduce payload sizes and unnecessary data transmission.
-This can be implemented and supported using the `fields` query parameter. Via this approach a client can express fields preferences that the client wants the server to return in the response. Use and support of this functionality is a new feature with v6 and is optional. It is not a 'must have' feature. A server can indicate the supports and use of the `fields` parameter via the service endpoint. If an endpoint does not support the `fields` parameter and a request is made using the `fields` query parameter the server needs to return an error message. 
+To support both data minimisation and performance optimisation, the API can optionally allow clients to indicate which fields they are interested in. This mechanism can help reduce payload size and unnecessary data transmission.
+This can be implemented and supported using the `fields` query parameter. Through this approach, a client can express field preferences that the client wants the server to return in the response. Use and support of this functionality is a new feature with v6 and is optional. It is not a 'must have' feature. A server can indicate the support and use of the `fields` parameter via the service endpoint. If an endpoint does not support the `fields` parameter and a request is made using the `fields` query parameter the server needs to return an error message. 
 
 *Important:* This is a request hint, *not* a security feature. 
 The server always determines the final response shape based on the client’s access rights. If a client requests unauthorised fields, they are silently omitted or replaced with appropriate redaction placeholders.
 
 This form of data minimisation also has to be handled by the implementation of the API and is included in the specification via the `fields` query parameter.
 
-If fields selection is implemented on the server side, the client can explicitly determine the subset of fields the client wants to receive via the `fields` query parameter. In case there is no `fields` query parameter used by the client, the server will return all the fields that the client has access to. If the client makes a selection on the fields it wants to receive via the query parameter the server will only return the mandatory fields and if applicable the additional requested fields. 
+If field selection is implemented on the server side, the client can explicitly determine the subset of fields the client wants to receive via the `fields` query parameter. In case there is no `fields` query parameter used by the client, the server will return all the fields that the client has access to. If the client makes a selection on the fields it wants to receive via the query parameter the server will only return the mandatory fields and if applicable the additional requested fields. 
 
 *Please note:* This approach also applies to consumer objects, ext objects and expands: if the client wants to limit the returned payload on these object, the fields parameter can be used to indicate which fields it expects to be returned.
 
 Below are three examples to demonstrate the use of the `fields` parameter if this is supported.  
-Example 1: Use of the `fields` query parameter to minimize data fields  
+Example 1: Use of the `fields` query parameter to minimise data fields  
 Example 2: Use of the `fields` query parameter to receive only required fields  
 Example 3: Use of the `fields` query parameter together with `expand` 
 
-## Example 1: Use of the fields query parameter to minimize data fields
+## Example 1: Use of the fields query parameter to minimise data fields
 
 `GET persons/me` will provide:
 
@@ -55,7 +55,7 @@ Example 3: Use of the `fields` query parameter together with `expand`
 "displayName": "Maartje van Damme",
 "initials": "MCW",
 "idCheckName": "string",
-"activeEnrollment": false,
+"activeEnrolment": false,
 "dateOfBirth": "2003-09-30",
 "cityOfBirth": "Utrecht",
 "countryOfBirth": 
@@ -136,7 +136,7 @@ Example 3: Use of the `fields` query parameter together with `expand`
 [
             {
                 "language": "en-GB",
-                "value": "Extra time for Math tests shown in a percentile of the overall time of a test"
+                "value": "Extra time for Maths tests shown in a percentile of the overall time of a test"
             }
         ],
         "startDateTime": "2025-05-30T20:00:00+01:00",
@@ -153,8 +153,8 @@ Example 3: Use of the `fields` query parameter together with `expand`
 }
 ```
 
-If not all returned information is required or desired by the client. the fields query parameter can be used to reduce the information returned by the server, for example the request:  
-`GET persons/me?fields=(alternateName,surNamePrefix,preferredName,assignedNeeds(code,description))` will return all required fields and the specified fields; the affiliations and the assignedNeeds object with its code field. This limits the amount of data being shared:
+If not all returned information is required or desired by the client. The fields query parameter can be used to reduce the information returned by the server, for example the request:  
+`GET persons/me?fields=(alternateName,surnamePrefix,preferredName,assignedNeeds(code,description))` will return all required fields and the specified fields; the affiliations and the assignedNeeds object with its code field. This limits the amount of data being shared:
 
 ```
 {
@@ -169,7 +169,7 @@ If not all returned information is required or desired by the client. the fields
 "preferredName": "Maartje",
 "surname": "Damme",
 "displayName": "Maartje van Damme",
-"activeEnrollment": false,
+"activeEnrolment": false,
 "affiliations": [
     "student"
 ],
@@ -180,7 +180,7 @@ If not all returned information is required or desired by the client. the fields
     "description": [
       {
         "language": "en-GB",
-        "value": "Extra time for Math tests shown in a percentile of the overall time of a test"
+        "value": "Extra time for Maths tests shown in a percentile of the overall time of a test"
       }
     ]
   }
@@ -202,7 +202,7 @@ If the client wants to only retrieve the most minimal set of attributes (i.e., o
 "givenName": "Martina",
 "surname": "Damme",
 "displayName": "Maartje van Damme",
-"activeEnrollment": false,
+"activeEnrolment": false,
 "affiliations": [
     "student"
 ],
@@ -212,7 +212,7 @@ If the client wants to only retrieve the most minimal set of attributes (i.e., o
 
 ## Example 3: Use of the `fields` query parameter together with `expand` 
 
-Clients can also minimize the amount of information returned from the server if the `expland` parameter is used. For example the below call with an expand on the person object.
+Clients can also minimise the amount of information returned from the server if the `expand` parameter is used. For example the following call with an expand on the person object.
 
 `GET /test-component-offering-associations/{testComponentOfferingAssociationId}?expand=person` will provide
 
@@ -291,7 +291,7 @@ Clients can also minimize the amount of information returned from the server if 
         "displayName": "Maartje van Damme",
         "initials": "MCW",
         "idCheckName": "van der Graaf, Jacobus Adrianus, s12345678",
-        "activeEnrollment": false,
+        "activeEnrolment": false,
         "dateOfBirth": "2003-09-30",
         "cityOfBirth": "Utrecht",
         "countryOfBirth": 
@@ -372,7 +372,7 @@ Clients can also minimize the amount of information returned from the server if 
         [
                     {
                         "language": "en-GB",
-                        "value": "Extra time for Math tests shown in a percentile of the overall time of a test"
+                        "value": "Extra time for Maths tests shown in a percentile of the overall time of a test"
                     }
                 ],
                 "startDateTime": "2025-05-30T20:00:00+01:00",
@@ -391,7 +391,7 @@ Clients can also minimize the amount of information returned from the server if 
 }
 ```
 
-To minimise the response for this request the `fields` query parameter can also be used. An example to limit the data is the follwoing call: `GET /test-component-offering-associations/{testComponentOfferingAssociationId}?expand=person&fields=(remoteState,documents(documentName),ext,email,secondaryEmail,person(ext))`. This will return the mandatory fields and the specified fields and reduces the response data:
+To minimise the response for this request the `fields` query parameter can also be used. An example to limit the data is the following call: `GET /test-component-offering-associations/{testComponentOfferingAssociationId}?expand=person&fields=(remoteState,documents(documentName),ext,email,secondaryEmail,person(ext))`. This will return the mandatory fields and the specified fields and reduces the response data:
 
 ```
 {
@@ -413,7 +413,7 @@ To minimise the response for this request the `fields` query parameter can also 
             "code": "string"
         },
         "surname": "Damme",
-        "activeEnrollment": false,
+        "activeEnrolment": false,
         "email": "vandamme.mcw@universiteitvanharderwijk.nl",
         "secondaryEmail": "poekie@xyz.nl"
         },
