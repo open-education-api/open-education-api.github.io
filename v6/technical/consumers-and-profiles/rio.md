@@ -221,7 +221,7 @@ EducationSpecifications can have relations to other EducationSpecifications whic
 > ### RIO field constraints ###
 > [1] Niet toegestaan zijn: line feeds, carriage return, tabs, spaties voorafgaande en achter de tekst spaties en dubbele spaties in de tekst. \
 > [2] Toegestane tekens zijn letters, cijfers, punt, underscore, min, slash en spatie. \
-> [3] ISCED Detailed fields will be mapped to Broad fields according to Appendix I of the [ISCED-F 2013 Manual](http://uis.unesco.org/sites/default/files/documents/isced-fields-of-education-and-training-2013-en.pdf) \
+> [3] ISCED Detailed fields will be mapped to Broad fields according to Appendix I of the [ISCED-F 2013 Manual]( https://unesdoc.unesco.org/ark:/48223/pf0000228085.locale=en) \
 > [4] 3 cijfers, de hoofdletter A en drie cijfers.
 
 </div>
@@ -367,7 +367,7 @@ Notes:
 > ### RIO field constraints ###
 > [1] Niet toegestaan zijn: line feeds, carriage return, tabs, spaties voorafgaande en achter de tekst spaties en dubbele spaties in de tekst. \
 > [2] Toegestane tekens zijn letters, cijfers, punt, underscore, min, slash en spatie. \
-> [3] ISCED Detailed fields will be mapped to Broad fields according to Appendix I of the [ISCED-F 2013 Manual](http://uis.unesco.org/sites/default/files/documents/isced-fields-of-education-and-training-2013-en.pdf) \
+> [3] ISCED Detailed fields will be mapped to Broad fields according to Appendix I of the [ISCED-F 2013 Manual]( https://unesdoc.unesco.org/ark:/48223/pf0000228085.locale=en) \
 > [4] 3 cijfers, de hoofdletter A en drie cijfers.
 
 
@@ -414,7 +414,7 @@ Notes:
 > ### RIO field constraints ###
 > [1] Niet toegestaan zijn: line feeds, carriage return, tabs, spaties voorafgaande en achter de tekst spaties en dubbele spaties in de tekst. \
 > [2] Toegestane tekens zijn letters, cijfers, punt, underscore, min, slash en spatie. \
-> [3] ISCED Detailed fields will be mapped to Broad fields according to Appendix I of the [ISCED-F 2013 Manual](http://uis.unesco.org/sites/default/files/documents/isced-fields-of-education-and-training-2013-en.pdf) \
+> [3] ISCED Detailed fields will be mapped to Broad fields according to Appendix I of the [ISCED-F 2013 Manual]( https://unesdoc.unesco.org/ark:/48223/pf0000228085.locale=en) \
 > [4] 3 cijfers, de hoofdletter A en drie cijfers.
 
 
@@ -455,7 +455,7 @@ Notes:
 > ### RIO field constraints ###
 > [1] Niet toegestaan zijn: line feeds, carriage return, tabs, spaties voorafgaande en achter de tekst spaties en dubbele spaties in de tekst. \
 > [2] Toegestane tekens zijn letters, cijfers, punt, underscore, min, slash en spatie. \
-> [3] ISCED Detailed fields will be mapped to Broad fields according to Appendix I of the [ISCED-F 2013 Manual](http://uis.unesco.org/sites/default/files/documents/isced-fields-of-education-and-training-2013-en.pdf) \
+> [3] ISCED Detailed fields will be mapped to Broad fields according to Appendix I of the [ISCED-F 2013 Manual]( https://unesdoc.unesco.org/ark:/48223/pf0000228085.locale=en) \
 > [4] 3 cijfers, de hoofdletter A en drie cijfers.
 
 
