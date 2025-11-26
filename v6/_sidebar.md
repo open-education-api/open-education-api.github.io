@@ -34,6 +34,7 @@
     * [Generic](technical/filtering-generic.md)
   * [Data minimisation](technical/data-minimisation.md "OOAPI - Data minimisation")
   * [Text formatting](technical/formatting-text.md)
+  * [Supplementary Information](technical/supplementary-information.md)
   * [Historic and future data](technical/historical-and-future-data.md)
   * [Extending OOAPI](technical/extending-ooapi.md)
   * [Consumers and profiles](technical/consumers-and-profiles/)
