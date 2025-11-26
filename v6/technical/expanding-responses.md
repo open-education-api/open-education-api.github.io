@@ -210,8 +210,8 @@ To complete this information a person request and an offering request is needed.
         "endDate": "2019-10-23T00:00:00.000Z",
         "enrolStartDate": "2019-05-01T00:00:00.000Z",
         "enrolEndDate": "2019-08-01T00:00:00.000Z",
-        "flexibleEntryPeriodStart": "2019-08-24",
-        "flexibleEntryPeriodEnd": "2019-08-24",
+        "flexibleEntryPeriodStartDateTime": "2019-08-24T09:00:00+01:00",
+        "flexibleEntryPeriodEndDateTime": "2019-08-24T09:00:00+01:00",
         "addresses": [
             {
             "addressType": "postal",

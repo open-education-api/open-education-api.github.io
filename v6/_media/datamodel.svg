@@ -382,9 +382,9 @@
 <polygon fill="none" stroke="black" points="1210.5,-1626 1210.5,-1651 1371.5,-1651 1371.5,-1626 1210.5,-1626"/>
 <text text-anchor="start" x="1215.5" y="-1634.8" font-family="Helvetica,sans-Serif" font-size="14.00">enrolStartDate</text>
 <polygon fill="none" stroke="black" points="1210.5,-1601 1210.5,-1626 1371.5,-1626 1371.5,-1601 1210.5,-1601"/>
-<text text-anchor="start" x="1215.5" y="-1609.8" font-family="Helvetica,sans-Serif" font-size="14.00">flexibleEntryPeriodEnd</text>
+<text text-anchor="start" x="1215.5" y="-1609.8" font-family="Helvetica,sans-Serif" font-size="14.00">flexibleEntryPeriodEndDateTime</text>
 <polygon fill="none" stroke="black" points="1210.5,-1576 1210.5,-1601 1371.5,-1601 1371.5,-1576 1210.5,-1576"/>
-<text text-anchor="start" x="1215.5" y="-1584.8" font-family="Helvetica,sans-Serif" font-size="14.00">flexibleEntryPeriodStart</text>
+<text text-anchor="start" x="1215.5" y="-1584.8" font-family="Helvetica,sans-Serif" font-size="14.00">flexibleEntryPeriodStartDateTime</text>
 <polygon fill="none" stroke="black" points="1210.5,-1551 1210.5,-1576 1371.5,-1576 1371.5,-1551 1210.5,-1551"/>
 <text text-anchor="start" x="1215.5" y="-1559.8" font-family="Helvetica,sans-Serif" font-size="14.00">link</text>
 <polygon fill="none" stroke="black" points="1210.5,-1526 1210.5,-1551 1371.5,-1551 1371.5,-1526 1210.5,-1526"/>
@@ -657,9 +657,9 @@
 <polygon fill="none" stroke="black" points="1210.5,-304 1210.5,-329 1371.5,-329 1371.5,-304 1210.5,-304"/>
 <text text-anchor="start" x="1215.5" y="-312.8" font-family="Helvetica,sans-Serif" font-size="14.00">enrolStartDate</text>
 <polygon fill="none" stroke="black" points="1210.5,-279 1210.5,-304 1371.5,-304 1371.5,-279 1210.5,-279"/>
-<text text-anchor="start" x="1215.5" y="-287.8" font-family="Helvetica,sans-Serif" font-size="14.00">flexibleEntryPeriodEnd</text>
+<text text-anchor="start" x="1215.5" y="-287.8" font-family="Helvetica,sans-Serif" font-size="14.00">flexibleEntryPeriodEndDateTime</text>
 <polygon fill="none" stroke="black" points="1210.5,-254 1210.5,-279 1371.5,-279 1371.5,-254 1210.5,-254"/>
-<text text-anchor="start" x="1215.5" y="-262.8" font-family="Helvetica,sans-Serif" font-size="14.00">flexibleEntryPeriodStart</text>
+<text text-anchor="start" x="1215.5" y="-262.8" font-family="Helvetica,sans-Serif" font-size="14.00">flexibleEntryPeriodStartDateTime</text>
 <polygon fill="none" stroke="black" points="1210.5,-229 1210.5,-254 1371.5,-254 1371.5,-229 1210.5,-229"/>
 <text text-anchor="start" x="1215.5" y="-237.8" font-family="Helvetica,sans-Serif" font-size="14.00">link</text>
 <polygon fill="none" stroke="black" points="1210.5,-204 1210.5,-229 1371.5,-229 1371.5,-204 1210.5,-204"/>
