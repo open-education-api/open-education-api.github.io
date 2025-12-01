@@ -8,8 +8,8 @@
  */
 
 (function () {
-  const CURRENT_VERSION = 'v5'; // stable release (folder name)
-  const BETA_VERSION = 'v6';    // beta release (folder name)
+  const CURRENT_VERSION = 'v6';   // stable release (folder name)
+  const BETA_VERSION = 'v6.1';    // beta release (folder name)
 
   /**
    * Format folder name (e.g. "v6" -> "v6.0", "v6.1" stays "v6.1").
@@ -59,9 +59,9 @@
         <div class="version-banner-inner">
           <strong>OOAPI ${versionLabel} (old).</strong>
           Latest:
-          <a href="/${CURRENT_VERSION}/">v5.0</a>.
+          <a href="/${CURRENT_VERSION}/">${formatVersionLabel(CURRENT_VERSION)}</a>.
           Beta:
-          <a href="/${BETA_VERSION}/">v6.0</a>.
+          <a href="/${BETA_VERSION}/">${formatVersionLabel(BETA_VERSION)}</a>.
         </div>
       `;
     }
