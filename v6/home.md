@@ -1,4 +1,4 @@
-# Open Education API
+# Open Education API V6.0
 
 Educational institutions are increasingly sharing educational data: with their students via apps, between different systems within an institution, and with other institutions.
 

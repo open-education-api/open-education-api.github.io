@@ -9,7 +9,7 @@
 
 (function () {
   const CURRENT_VERSION = 'v6';   // stable release (folder name)
-  const BETA_VERSION = 'v6.1';    // beta release (folder name)
+  const BETA_VERSION = '';    // beta release (folder name)
 
   /**
    * Format folder name (e.g. "v6" -> "v6.0", "v6.1" stays "v6.1").
@@ -39,35 +39,35 @@
       document.body.classList.remove('with-banner');
       banner.className = '';
       banner.innerHTML = '';
-      return;
-    }
-
-    if (versionFolder === BETA_VERSION) {
+    } else if (BETA_VERSION && versionFolder === BETA_VERSION) {
       // Beta banner
       banner.className = 'banner-beta';
       banner.innerHTML = `
         <div class="version-banner-inner">
           <strong>OOAPI ${versionLabel} (beta).</strong>
           Latest stable:
-          <a href="/${CURRENT_VERSION}/">v5.0</a>.
+          <a href="/${CURRENT_VERSION}/">${formatVersionLabel(CURRENT_VERSION)}</a>.
         </div>
       `;
+      banner.style.display = 'block';
+      document.body.classList.add('with-banner');
     } else {
       // Older-than-stable banner
       banner.className = 'banner-old';
+      const betaPart = BETA_VERSION
+        ? ` Beta:
+            <a href="/${BETA_VERSION}/">${formatVersionLabel(BETA_VERSION)}</a>.`
+        : '';
       banner.innerHTML = `
         <div class="version-banner-inner">
           <strong>OOAPI ${versionLabel} (old).</strong>
           Latest:
-          <a href="/${CURRENT_VERSION}/">${formatVersionLabel(CURRENT_VERSION)}</a>.
-          Beta:
-          <a href="/${BETA_VERSION}/">${formatVersionLabel(BETA_VERSION)}</a>.
+          <a href="/${CURRENT_VERSION}/">${formatVersionLabel(CURRENT_VERSION)}</a>.${betaPart}
         </div>
       `;
+      banner.style.display = 'block';
+      document.body.classList.add('with-banner');
     }
-
-    banner.style.display = 'block';
-    document.body.classList.add('with-banner');
   }
 
   /**
