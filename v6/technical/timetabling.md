@@ -48,7 +48,20 @@ Each Offering refers to its conceptual parent (e.g. `course`, `learningComponent
 ---
 
 ## 3. Hierarchical Relationships
-The complete structure from concept to execution looks as follows:
+
+The OOAPI model distinguishes between **educational specifications** and their
+**offerings**, while also supporting hierarchical structuring within each of these
+domains. This chapter focuses on the hierarchical aspect of the model and describes
+how programmes, courses, learning components, and test components can be organised,
+together with their corresponding offerings.
+
+The hierarchy described here reflects a *possible* structural organisation and is
+intended for explanatory purposes only. It does **not** imply that all hierarchical
+relationships are mandatory or universally applicable. In particular, a **Course**
+does not necessarily form part of a **Programme** and may exist as a fully
+self-contained educational specification.
+
+The conceptual hierarchy and the hierarchy of offerings can be represented as follows:
 
 ```
 Programme
@@ -64,9 +77,18 @@ ProgrammeOffering
       └── TestComponentOffering (Final Exam)
 ```
 
-This relationship ensures that:
-- Every **Offering** directly links to its conceptual **educationSpecification**.
-- The structure allows for multiple **CourseOfferings** of the same **Course** in a single academic year.
+This representation illustrates hierarchical containment only. Each **Offering**
+refers to its corresponding educational specification (for example, a
+`courseOffering` refers to a `course`), but the diagram does not describe the full
+set of conceptual or associative relationships between specifications and offerings.
+In practice, associations such as enrolment, grouping, or participation are modelled
+explicitly through association endpoints rather than through hierarchy.
+
+The hierarchy shown above should therefore be understood as a structural aid, not as
+a complete or normative model of all relationships within OOAPI. A relational,
+left-to-right view of the associations between educational specifications, offerings,
+and related entities would require a different form of representation, such as a
+class diagram or an entity–relationship diagram (ERD).
 
 ---
 
