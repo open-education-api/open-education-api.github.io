@@ -43,19 +43,19 @@ The working group member:
 * actively contributes to developing the Open Education API and promotes its use. He or she must invest at least 60 hours a year to achieve the working group's objectives.
 * must visit at least 3 working group meetings a year. Only institutions affiliated with SURF and 1 representative for each institution affiliated with SURF have voting rights.
 
-## Bureau Edustandaard (governance)
-[Bureau Edustandaard](https://www.edustandaard.nl/) is a platform where public and private parties in the research and educational fields in the Netherlands collaborate to make agreements on important matters. These agreements, for example, include how to use recognized concepts to find digital learning material, or transfer education data from one system to another.
+## Edustandaard (governance)
+[Edustandaard](https://www.edustandaard.nl/) is a platform where public and private parties in the research and educational fields in the Netherlands collaborate to make agreements on important matters. These agreements, for example, include how to use recognized concepts to find digital learning material, or transfer education data from one system to another.
 
-The Bureau Edustandaard platform ensures knowledge sharing, communication and interaction between services, systems, and organizations, which in turn improves the digital online experience of pupils, students and researchers alike.
+The Edustandaard platform ensures knowledge sharing, communication and interaction between services, systems, and organizations, which in turn improves the digital online experience of pupils, students and researchers alike.
 
-Amongst others, Bureau Edustandaard:
+Amongst others, Edustandaard:
 
 * gives advice on specific standards for the research and educational sectors.
 * manages agreements, architectures, and standards.
 * manages the chain reference architecture [ROSA](https://rosa.wikixl.nl/) for the entire education domain.
 * safeguards the agreed standards.
 
-Collaboration within Bureau Edustandaard takes place within:
+Collaboration within Edustandaard takes place within:
 
 * the **Standardization council** (a council consisting of directors of educational institutions, public and private organizations),
 * the **Architecture council**, and
@@ -63,13 +63,13 @@ Collaboration within Bureau Edustandaard takes place within:
 
 To achieve their goals the bureau also maintains contact with other (national and international) standards organizations.
 
-### Bureau Edustandaard and the OOAPI
-For the Open Education API, Bureau Edustandaard:
+### Edustandaard and the OOAPI
+For the Open Education API, Edustandaard:
 
 * give advice on and manage the standardization of the OOAPI.
 * ensure that the OOAPI conforms with other standards in the context of ROSA by means of a ROSA scan.
 * inform the Community about updates and changes to the OOAPI.
-* publish all relevant information concerning the OOAPI on the [Bureau Edustandaard website](https://www.edustandaard.nl/), including the OOAPI specification, updates and changes to the OOAPI, and formal documentation.
+* publish all relevant information concerning the OOAPI on the [Edustandaard website](https://www.edustandaard.nl/), including the OOAPI specification, updates and changes to the OOAPI, and formal documentation.
 
 ## Decisions within GitHub
 For issues that affect the GitHub environment ([https://github.com/open-education-api](https://github.com/open-education-api "https://github.com/open-education-api")), the following applies:
