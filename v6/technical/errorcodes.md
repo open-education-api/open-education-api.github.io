@@ -19,13 +19,23 @@ All error responses MUST conform to the Problem Details format.
 
 ### Common fields
 
-| Field | Description |
-|------|-------------|
-| `type` | A URI identifying the problem type |
-| `title` | A short, human-readable summary |
-| `status` | The HTTP status code |
-| `detail` | A human-readable explanation |
-| `instance` | A URI identifying the specific request instance |
+All OOAPI error responses MUST include the following required Problem Details
+fields:
+
+- `type`
+- `status`
+- `title`
+
+Other Problem Details fields are optional unless explicitly stated otherwise.
+
+| Field | Required | Description |
+|------|----------|-------------|
+| `type` | MUST | A URI identifying the problem type |
+| `title` | MUST | A short, human-readable summary |
+| `status` | MUST | The HTTP status code |
+| `detail` | MAY | A human-readable explanation |
+| `instance` | MAY | A URI identifying the specific request instance |
+
 
 Some error responses MAY define additional fields.
 
