@@ -1,0 +1,25 @@
+get:
+  summary: GET /faculties/{facultyId}
+  description: Get a single faculty.
+  tags:
+    - faculties
+  parameters:
+    - name: facultyId
+      in: path
+      description: Faculty ID
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: OK
+      content:
+        application/hal+json:
+          schema:
+            $ref: '../schemas/Faculty.yaml'
+    '404':
+      description: Not Found
+      content:
+        application/problem+json:
+          schema:
+            $ref: '../schemas/Problem.yaml'
