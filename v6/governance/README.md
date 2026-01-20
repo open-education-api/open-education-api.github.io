@@ -1,7 +1,7 @@
 # Governance
 *Governance document 1 January 2019, Version: 3*
 
-The governance model describes the decision-making process and the role of various members of the [Community](#community-governance), [Working group](#working-group-governance), and [Bureau Edustandaard](#bureau-edustandaard-governance). It also outlines the strategic goals and procedures within the project, and provides an understanding of how the Open Education API is governed. In addition to these bodies, the Steering Committee serves as the final decision-making authority. It ensures alignment with sector-wide objectives, approves major changes to the specification, and validates recommendations from the Working Group and Bureau Edustandaard before they are formally adopted.
+The governance model describes the decision-making process and the role of various members of the [Community](#community-governance), [Working group](#working-group-governance), and [Edustandaard](#edustandaard-governance). It also outlines the strategic goals and procedures within the project, and provides an understanding of how the Open Education API is governed. In addition to these bodies, the Steering Committee serves as the final decision-making authority. It ensures alignment with sector-wide objectives, approves major changes to the specification, and validates recommendations from the Working Group and Edustandaard before they are formally adopted.
 
 The shared goals of the governance model are:
 
