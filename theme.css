@@ -111,6 +111,24 @@ body[data-page="technical/consumers-and-profiles/rio.md"] .markdown-section code
   text-decoration: underline;
 }
 
+/* Unreleased version banner (teal) */
+#version-banner.banner-unreleased {
+  background: #2CA1A3;
+  color: #ffffff !important;
+}
+
+#version-banner.banner-unreleased strong,
+#version-banner.banner-unreleased .version-label {
+  color: #ffffff !important;
+}
+
+#version-banner.banner-unreleased a,
+#version-banner.banner-unreleased a:visited {
+  color: #ffffff !important;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
 /* ========================================================= */
 /*   Content offset due to fixed banner                      */
 /* ========================================================= */
