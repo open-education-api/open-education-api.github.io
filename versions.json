@@ -1,5 +1,5 @@
 { "current": "v6.0",
   "versions": [ { "label": "v5.0", "text":"v5.0", "folder": "v5", "status": "old" },
-                { "label": "v6.0", "text":"v6.0", "folder": "v6", "status": "current" }
+                { "label": "v6.0", "text":"v6.0", "folder": "v6.0", "status": "current" }
               ]
 }

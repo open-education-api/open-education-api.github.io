@@ -104,16 +104,30 @@
     initialiseVersionSwitch();
   }
 
-  // Apply config to Docsify versions (single source: versions.json).
-  (function applyConfig() {
-    if (window.$docsify) {
-      const docsifyVersions = toDocsifyVersions();
-      if (docsifyVersions && docsifyVersions.length) {
-        window.$docsify.versions = docsifyVersions;
-        window.$docsify.versionSelectorLabel = window.$docsify.versionSelectorLabel || 'Version';
-      }
+  /* --- Execution (side-effects) ------------------------------------------- */
+
+  // Ensure current path folder exists in versions config.
+  // If not, add it as an extra entry so the version selector always shows.
+  if (VERSIONS_CFG && Array.isArray(VERSIONS_CFG.versions)) {
+    const folder = (location.pathname || '/').split('/').filter(Boolean)[0];
+    if (folder && !VERSIONS_CFG.versions.some(v => v && v.folder === folder)) {
+      VERSIONS_CFG.versions.push({
+        folder: folder,
+        label: folder,
+        text: folder,
+        status: 'unreleased'
+      });
     }
-  })();
+  }
+
+  // Apply config to Docsify versions (single source: versions.json).
+  if (window.$docsify) {
+    const docsifyVersions = toDocsifyVersions();
+    if (docsifyVersions && docsifyVersions.length) {
+      window.$docsify.versions = docsifyVersions;
+      window.$docsify.versionSelectorLabel = window.$docsify.versionSelectorLabel || 'Version';
+    }
+  }
 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initialise);
