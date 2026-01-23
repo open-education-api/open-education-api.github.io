@@ -25,7 +25,7 @@ info:
 
 
   x-logo:
-    url: ../logo.png
+    url: ./logo.png
 
 servers:
   - url: http://demo01.eduapi.nl/v5
