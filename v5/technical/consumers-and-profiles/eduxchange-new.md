@@ -4,11 +4,8 @@ In this documentation of the eduxchange consumer object you will find:
 
 - [Versions](#versions)
 - [Required OOAPI Resources](#required-ooapi-resources)
-- [Agreements per eduXchange Instance](#agreements-per-eduxchange-instance)
-- [Agreements per Alliance](#agreements-per-alliance)
-- [Student Orientation Consumer Objects](#student-orientation-consumer-objects)
 - [Student Registration Consumer Objects](#student-registration-consumer-objects)
-- [Changes since OOAPI v4](#changes-since-ooapi-v4)
+- [Agreements per Alliance](#agreements-per-alliance)
 
 ---
 
@@ -21,7 +18,7 @@ In this documentation of the eduxchange consumer object you will find:
 | eduxchange.nl | ewuu, lde, ko |
 | eduxchange.eu | euroteq       |
 
-Currently eduXchange uses version 2.2 of the this profile.
+Currently eduXchange uses version 2.2 of this profile.
 
 ### Version History
 
@@ -132,7 +129,7 @@ To be compatible with eduXchange, an institution needs to implement the followin
 | `endDate`          |    ✓    |
 | `consumers`        |    ✓    |
 
-### Consumer objects
+### Consumer Objects
 
 To be compatible with the [eduXchange catalogue website](https://www.eduxchange.nl), an implementation needs to implement the eduXchange consumer object and query parameter. See [specific consumers](consumers.md) for more information.
 
@@ -465,7 +462,7 @@ The mode of delivery values differ from standard OOAPI options. These values nee
 | `Hybrid`                      | EuroTeQ students attend online, local students attend on campus                                                                |
 | `Blended`                     | Course is largely online for all students, but may include face-to-face elements requiring travel (e.g., lab work, final exam) |
 
-#### EuroTeq Level
+#### EuroTeQ Level
 
 | Value      |
 | ---------- |
