@@ -84,50 +84,119 @@ To be compatible with eduXchange, an institution needs to implement the followin
 | `name`             |    ✓    |
 | `shortName`        |    ✓    |
 | `consumers`        |    ✓    |
+| `description`      |          |
+| `addresses`        |          |
+| `link`             |          |
+| `logo`             |          |
+| `otherCodes`       |          |
 
 #### Programs
 
-| Attribute          |      Required       |
-| ------------------ | :-----------------: |
-| `programId`        |         ✓          |
-| `programType`      | ✓ (value: `minor`) |
-| `primaryCode`      |         ✓          |
-| `name`             |         ✓          |
-| `abbreviation`     |         ✓          |
-| `description`      |         ✓          |
-| `teachingLanguage` |         ✓          |
-| `level`            |         ✓          |
-| `studyLoad`        |         ✓          |
-| `consumers`        |         ✓          |
+| Attribute                 |      Required       |
+| ------------------------- | :-----------------: |
+| `programId`               |         ✓          |
+| `programType`             | ✓ (value: `minor`) |
+| `primaryCode`             |         ✓          |
+| `name`                    |         ✓          |
+| `abbreviation`            |         ✓          |
+| `description`             |         ✓          |
+| `teachingLanguage`        |         ✓          |
+| `level`                   |         ✓          |
+| `studyLoad`               |         ✓          |
+| `consumers`               |         ✓          |
+| `modeOfDelivery`          |                     |
+| `modeOfStudy`             |                     |
+| `duration`                |                     |
+| `firstStartDate`          |                     |
+| `fieldsOfStudy`           |                     |
+| `levelOfQualification`    |                     |
+| `enrollment`              |                     |
+| `resources`               |                     |
+| `learningOutcomes`        |                     |
+| `assessment`              |                     |
+| `admissionRequirements`   |                     |
+| `qualificationRequirements` |                   |
+| `link`                    |                     |
+| `otherCodes`              |                     |
+| `addresses`               |                     |
+| `coordinators`            | ✓ (via `expand`)   |
+| `organization`            | ✓ (via `expand`)   |
 
 #### Courses
 
-| Attribute          | Required |
-| ------------------ | :------: |
-| `courseId`         |    ✓    |
-| `primaryCode`      |    ✓    |
-| `name`             |    ✓    |
-| `abbreviation`     |    ✓    |
-| `description`      |    ✓    |
-| `teachingLanguage` |    ✓    |
-| `level`            |    ✓    |
-| `studyLoad`        |    ✓    |
-| `consumers`        |    ✓    |
+| Attribute                   | Required |
+| --------------------------- | :------: |
+| `courseId`                  |    ✓    |
+| `primaryCode`               |    ✓    |
+| `name`                      |    ✓    |
+| `abbreviation`              |    ✓    |
+| `description`               |    ✓    |
+| `teachingLanguage`          |    ✓    |
+| `level`                     |    ✓    |
+| `studyLoad`                 |    ✓    |
+| `consumers`                 |    ✓    |
+| `modeOfDelivery`            |          |
+| `duration`                  |          |
+| `firstStartDate`            |          |
+| `fieldsOfStudy`             |          |
+| `levelOfQualification`      |          |
+| `enrollment`                |          |
+| `resources`                 |          |
+| `learningOutcomes`          |          |
+| `assessment`                |          |
+| `admissionRequirements`     |          |
+| `qualificationRequirements` |          |
+| `link`                      |          |
+| `otherCodes`                |          |
+| `addresses`                 |          |
+| `coordinators`              | ✓ (via `expand`) |
+| `organization`              |          |
 
 #### Offerings
 
+| Attribute                  | Required |
+| -------------------------- | :------: |
+| `offeringId`               |    ✓    |
+| `primaryCode`              |    ✓    |
+| `offeringType`             |    ✓    |
+| `name`                     |    ✓    |
+| `description`              |    ✓    |
+| `teachingLanguage`         |    ✓    |
+| `resultExpected`           |    ✓    |
+| `startDate`                |    ✓    |
+| `endDate`                  |    ✓    |
+| `consumers`                |    ✓    |
+| `abbreviation`             |          |
+| `modeOfDelivery`           |          |
+| `maxNumberStudents`        |          |
+| `enrolledNumberStudents`   |          |
+| `pendingNumberStudents`    |          |
+| `minNumberStudents`        |          |
+| `link`                     |          |
+| `otherCodes`               |          |
+| `enrollStartDate`          |          |
+| `enrollEndDate`            |          |
+| `flexibleEntryPeriodStart` |          |
+| `flexibleEntryPeriodEnd`   |          |
+| `addresses`                |          |
+| `academicSession`          | ✓ (via `expand`) |
+| `priceInformation`         |          |
+| `organization`             |          |
+
+#### Persons (Coordinators)
+
+Persons are returned when using the `expand=coordinators` parameter on programs and courses.
+
 | Attribute          | Required |
 | ------------------ | :------: |
-| `offeringId`       |    ✓    |
+| `personId`         |    ✓    |
 | `primaryCode`      |    ✓    |
-| `offeringType`     |    ✓    |
-| `name`             |    ✓    |
-| `description`      |    ✓    |
-| `teachingLanguage` |    ✓    |
-| `resultExpected`   |    ✓    |
-| `startDate`        |    ✓    |
-| `endDate`          |    ✓    |
-| `consumers`        |    ✓    |
+| `givenName`        |    ✓    |
+| `surname`          |    ✓    |
+| `displayName`      |    ✓    |
+| `activeEnrollment` |    ✓    |
+| `affiliations`     |    ✓    |
+| `mail`             |    ✓    |
 
 ### Consumer Objects
 
@@ -250,6 +319,7 @@ The structure is the same as for programs/courses: a `consumerKey` attribute and
 
 | Attribute                       | Required | Type         | Description                                                                                            |
 | ------------------------------- | :------: | ------------ | ------------------------------------------------------------------------------------------------------ |
+| `name`                          |    ✓    | string       | Alliance name. Allowed values: `"ewuu"`, `"lde"`, `"euroteq"`, `"kom"`                                  |
 | `enrollmentUrl`                 |          | string (URL) | Redirect URL for own students. Required if `enrollmentForOwnStudents` in program/course is `"url"`.    |
 | `enrollmentUrlForGuests`        |          | string (URL) | Redirect URL for guest students. Required if `enrollmentForGuests` in program/course is `"url"`.       |
 | `enrollmentUrlForProfessionals` |          | string (URL) | Redirect URL for professionals. Required if `enrollmentForProfessionals` in program/course is `"url"`. |
