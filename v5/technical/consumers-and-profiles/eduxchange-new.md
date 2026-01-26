@@ -13,10 +13,10 @@ In this documentation of the eduxchange consumer object you will find:
 
 **Last update:** June 26th, 2025
 
-| Instance      | Alliances     |
-| ------------- | ------------- |
-| eduxchange.nl | ewuu, lde, ko |
-| eduxchange.eu | euroteq       |
+| Instance      | Alliances      |
+| ------------- | -------------- |
+| eduxchange.nl | ewuu, lde, kom |
+| eduxchange.eu | euroteq        |
 
 Currently eduXchange uses version 2.2 of this profile.
 
@@ -53,11 +53,11 @@ To be compatible with eduXchange, an institution needs to implement the followin
 | -------------------------------------------------------------- | ------------------------------------------ | :------------------: | :-------------------: |
 | `GET /organizations?pageSize={pagesize}&organizationType=root` | Get information about the institutions     |          ✓          |          ✓           |
 | `GET /programs?pageSize={pagesize}&programType=minor`          | Get minors                                 |          ✓          |                       |
-| `GET /programs/{programId}?expand=coordinators,organization`   | Get detailed information about a minor     |          ✓          |                       |
+| `GET /programs/{programId}?expand=coordinators,organization,parent` | Get detailed information about a minor     |          ✓          |                       |
 | `GET /programs/{programId}/offerings`                          | Get offerings for a minor                  |          ✓          |                       |
-| `GET /programs/{programId}/courses?pageSize={pagesize}`        | Get the courses that are part of a minor   |                      |                       |
+| `GET /programs/{programId}/courses?pageSize={pagesize}`        | Get the courses that are part of a minor   |       (optional)     |                       |
 | `GET /courses?pageSize={pageSize}`                             | Get courses                                |                      |          ✓           |
-| `GET /courses/{courseId}?expand=coordinators`                  | Get detailed information about a course    |                      |          ✓           |
+| `GET /courses/{courseId}?expand=coordinators,programs`         | Get detailed information about a course    |                      |          ✓           |
 | `GET /courses/{courseId}/offerings`                            | Get offerings for a course                 |                      |          ✓           |
 | `GET /offerings/{offeringId}?expand=academicSession`           | Get detailed information about an offering |          ✓          |          ✓           |
 
@@ -76,127 +76,129 @@ To be compatible with eduXchange, an institution needs to implement the followin
 
 #### Organizations
 
-| Attribute          | Required |
-| ------------------ | :------: |
-| `organizationId`   |    ✓    |
-| `primaryCode`      |    ✓    |
-| `organizationType` |    ✓    |
-| `name`             |    ✓    |
-| `shortName`        |    ✓    |
-| `consumers`        |    ✓    |
-| `description`      |          |
-| `addresses`        |          |
-| `link`             |          |
-| `logo`             |          |
-| `otherCodes`       |          |
+| Attribute          | Required | Multilingual |
+| ------------------ | :------: | :----------: |
+| `organizationId`   |    ✓    |              |
+| `primaryCode`      |    ✓    |              |
+| `organizationType` |    ✓    |              |
+| `name`             |    ✓    |      ✓      |
+| `shortName`        |    ✓    |              |
+| `consumers`        |    ✓    |              |
+| `description`      |          |      ✓      |
+| `addresses`        |          |              |
+| `link`             |          |              |
+| `logo`             |          |              |
+| `otherCodes`       |          |              |
 
 #### Programs
 
-| Attribute                 |      Required       |
-| ------------------------- | :-----------------: |
-| `programId`               |         ✓          |
-| `programType`             | ✓ (value: `minor`) |
-| `primaryCode`             |         ✓          |
-| `name`                    |         ✓          |
-| `abbreviation`            |         ✓          |
-| `description`             |         ✓          |
-| `teachingLanguage`        |         ✓          |
-| `level`                   |         ✓          |
-| `studyLoad`               |         ✓          |
-| `consumers`               |         ✓          |
-| `modeOfDelivery`          |                     |
-| `modeOfStudy`             |                     |
-| `duration`                |                     |
-| `firstStartDate`          |                     |
-| `fieldsOfStudy`           |                     |
-| `levelOfQualification`    |                     |
-| `enrollment`              |                     |
-| `resources`               |                     |
-| `learningOutcomes`        |                     |
-| `assessment`              |                     |
-| `admissionRequirements`   |                     |
-| `qualificationRequirements` |                   |
-| `link`                    |                     |
-| `otherCodes`              |                     |
-| `addresses`               |                     |
-| `coordinators`            | ✓ (via `expand`)   |
-| `organization`            | ✓ (via `expand`)   |
+| Attribute                   |      Required       | Multilingual |
+| --------------------------- | :-----------------: | :----------: |
+| `programId`                 |         ✓          |              |
+| `programType`               | ✓ (value: `minor`) |              |
+| `primaryCode`               |         ✓          |              |
+| `name`                      |         ✓          |      ✓      |
+| `abbreviation`              |         ✓          |              |
+| `description`               |         ✓          |      ✓      |
+| `teachingLanguage`          |         ✓          |              |
+| `level`                     |         ✓          |              |
+| `studyLoad`                 |         ✓          |              |
+| `consumers`                 |         ✓          |              |
+| `modeOfDelivery`            |                     |              |
+| `modeOfStudy`               |                     |              |
+| `duration`                  |                     |              |
+| `firstStartDate`            |                     |              |
+| `fieldsOfStudy`             |                     |              |
+| `levelOfQualification`      |                     |              |
+| `enrollment`                |                     |      ✓      |
+| `resources`                 |                     |              |
+| `learningOutcomes`          |                     |      ✓      |
+| `assessment`                |                     |      ✓      |
+| `admissionRequirements`     |                     |      ✓      |
+| `qualificationRequirements` |                     |              |
+| `link`                      |                     |              |
+| `otherCodes`                |                     |              |
+| `addresses`                 |                     |              |
+| `coordinators`              | ✓ (via `expand`)   |              |
+| `organization`              | ✓ (via `expand`)   |              |
+| `parent`                    | ✓ (via `expand`)   |      ✓      |
 
 #### Courses
 
-| Attribute                   | Required |
-| --------------------------- | :------: |
-| `courseId`                  |    ✓    |
-| `primaryCode`               |    ✓    |
-| `name`                      |    ✓    |
-| `abbreviation`              |    ✓    |
-| `description`               |    ✓    |
-| `teachingLanguage`          |    ✓    |
-| `level`                     |    ✓    |
-| `studyLoad`                 |    ✓    |
-| `consumers`                 |    ✓    |
-| `modeOfDelivery`            |          |
-| `duration`                  |          |
-| `firstStartDate`            |          |
-| `fieldsOfStudy`             |          |
-| `levelOfQualification`      |          |
-| `enrollment`                |          |
-| `resources`                 |          |
-| `learningOutcomes`          |          |
-| `assessment`                |          |
-| `admissionRequirements`     |          |
-| `qualificationRequirements` |          |
-| `link`                      |          |
-| `otherCodes`                |          |
-| `addresses`                 |          |
-| `coordinators`              | ✓ (via `expand`) |
-| `organization`              |          |
+| Attribute                   | Required | Multilingual |
+| --------------------------- | :------: | :----------: |
+| `courseId`                  |    ✓    |              |
+| `primaryCode`               |    ✓    |              |
+| `name`                      |    ✓    |      ✓      |
+| `abbreviation`              |    ✓    |              |
+| `description`               |    ✓    |      ✓      |
+| `teachingLanguage`          |    ✓    |              |
+| `level`                     |    ✓    |              |
+| `studyLoad`                 |    ✓    |              |
+| `consumers`                 |    ✓    |              |
+| `modeOfDelivery`            |          |              |
+| `duration`                  |          |              |
+| `firstStartDate`            |          |              |
+| `fieldsOfStudy`             |          |              |
+| `levelOfQualification`      |          |              |
+| `enrollment`                |          |      ✓      |
+| `resources`                 |          |              |
+| `learningOutcomes`          |          |      ✓      |
+| `assessment`                |          |      ✓      |
+| `admissionRequirements`     |          |      ✓      |
+| `qualificationRequirements` |          |              |
+| `link`                      |          |              |
+| `otherCodes`                |          |              |
+| `addresses`                 |          |              |
+| `coordinators`              | ✓ (via `expand`) |              |
+| `organization`              |          |              |
+| `programs`                  | ✓ (via `expand`) |      ✓      |
 
 #### Offerings
 
-| Attribute                  | Required |
-| -------------------------- | :------: |
-| `offeringId`               |    ✓    |
-| `primaryCode`              |    ✓    |
-| `offeringType`             |    ✓    |
-| `name`                     |    ✓    |
-| `description`              |    ✓    |
-| `teachingLanguage`         |    ✓    |
-| `resultExpected`           |    ✓    |
-| `startDate`                |    ✓    |
-| `endDate`                  |    ✓    |
-| `consumers`                |    ✓    |
-| `abbreviation`             |          |
-| `modeOfDelivery`           |          |
-| `maxNumberStudents`        |          |
-| `enrolledNumberStudents`   |          |
-| `pendingNumberStudents`    |          |
-| `minNumberStudents`        |          |
-| `link`                     |          |
-| `otherCodes`               |          |
-| `enrollStartDate`          |          |
-| `enrollEndDate`            |          |
-| `flexibleEntryPeriodStart` |          |
-| `flexibleEntryPeriodEnd`   |          |
-| `addresses`                |          |
-| `academicSession`          | ✓ (via `expand`) |
-| `priceInformation`         |          |
-| `organization`             |          |
+| Attribute                  | Required | Multilingual |
+| -------------------------- | :------: | :----------: |
+| `offeringId`               |    ✓    |              |
+| `primaryCode`              |    ✓    |              |
+| `offeringType`             |    ✓    |              |
+| `name`                     |    ✓    |      ✓      |
+| `description`              |    ✓    |      ✓      |
+| `teachingLanguage`         |    ✓    |              |
+| `resultExpected`           |    ✓    |              |
+| `startDate`                |    ✓    |              |
+| `endDate`                  |    ✓    |              |
+| `consumers`                |    ✓    |              |
+| `abbreviation`             |          |              |
+| `modeOfDelivery`           |          |              |
+| `maxNumberStudents`        |          |              |
+| `enrolledNumberStudents`   |          |              |
+| `pendingNumberStudents`    |          |              |
+| `minNumberStudents`        |          |              |
+| `link`                     |          |              |
+| `otherCodes`               |          |              |
+| `enrollStartDate`          |          |              |
+| `enrollEndDate`            |          |              |
+| `flexibleEntryPeriodStart` |          |              |
+| `flexibleEntryPeriodEnd`   |          |              |
+| `addresses`                |          |              |
+| `academicSession`          | ✓ (via `expand`) |      ✓      |
+| `priceInformation`         |          |      ✓      |
+| `organization`             |          |              |
 
-#### Persons (Coordinators)
+#### Persons (Coordinators, Orientation Phase)
 
-Persons are returned when using the `expand=coordinators` parameter on programs and courses.
+Persons are returned when using the `expand=coordinators` parameter on programs and courses. For displaying coordinator information, eduXchange only uses `displayName` and `mail`.
 
 | Attribute          | Required |
 | ------------------ | :------: |
-| `personId`         |    ✓    |
-| `primaryCode`      |    ✓    |
-| `givenName`        |    ✓    |
-| `surname`          |    ✓    |
+| `personId`         |          |
+| `primaryCode`      |          |
+| `givenName`        |          |
+| `surname`          |          |
 | `displayName`      |    ✓    |
-| `activeEnrollment` |    ✓    |
-| `affiliations`     |    ✓    |
 | `mail`             |    ✓    |
+| `activeEnrollment` |          |
+| `affiliations`     |          |
 
 ### Consumer Objects
 
@@ -363,6 +365,21 @@ When a waitlist is used for enrolment, these attributes communicate this in the 
 
 ### GET /persons/me
 
+#### Required OOAPI Attributes for Persons (Students)
+
+| Attribute          | Required |
+| ------------------ | :------: |
+| `personId`         |    ✓    |
+| `primaryCode`      |    ✓    |
+| `givenName`        |    ✓    |
+| `surname`          |    ✓    |
+| `displayName`      |    ✓    |
+| `activeEnrollment` |    ✓    |
+| `affiliations`     |    ✓    |
+| `mail`             |    ✓    |
+| `otherCodes`       |    ✓    |
+| `consumers`        |    ✓    |
+
 !> For eduxchange.nl the following applies: the response to `GET /persons/me` needs to include a `studielinkNumber` to facilitate deduplication. This is achieved by adding an extra object in the `otherCodes` array of Person:
 
 ```json
@@ -486,7 +503,48 @@ Participants agreed to use CROHO themes in the `theme` attribute of the consumer
 | 18   | Language and culture                |
 | 19   | Technology                          |
 
-### EuroTeq Alliance
+### KOM Alliance (Kies op Maat)
+
+!> For KOM, providing courses is optional. Minors (programs) are required, but underlying courses do not need to be exposed.
+
+#### KOM Partner Codes
+
+*To be determined.*
+
+#### KOM Themes
+
+*To be determined.*
+
+#### KOM Price Information
+
+For KOM, the `priceInformation` attribute on offerings is used to display additional costs for a minor. Use the following structure:
+
+```json
+{
+  "priceInformation": [
+    {
+      "costType": "additional costs",
+      "displayAmount": "€150",
+      "ext": {
+        "description": [
+          { "language": "nl-NL", "value": "Materiaalkosten" },
+          { "language": "en-GB", "value": "Material costs" }
+        ]
+      }
+    }
+  ]
+}
+```
+
+| Field                  | Description                                      |
+| ---------------------- | ------------------------------------------------ |
+| `costType`             | Use `"additional costs"` for KOM                 |
+| `displayAmount`        | Formatted price string, e.g., `"€150"`           |
+| `ext.description`      | Multilingual description of the additional costs |
+
+---
+
+### EuroTeQ Alliance
 
 The additional parameter `alliances.name=euroteq` is added to all requests done by the eduXchange frontend.
 
