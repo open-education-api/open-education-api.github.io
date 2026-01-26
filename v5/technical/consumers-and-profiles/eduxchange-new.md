@@ -256,11 +256,11 @@ The following attributes control which students can view a minor or course and w
 
 Used when one institution acts as overall coordinator for a joint program, with underlying courses at other institutions.
 
-| Attribute     | Version | Required | Type   | Description                                                  |
-| ------------- | ------- | :------: | ------ | ------------------------------------------------------------ |
-| `shortName`   | v2.0    |          | string | Partner ID of the source institution, e.g., `"21PE"` for LDE |
-| `primaryCode` | v2.0    |          | string | Primary code of the source course                            |
-| `uuid`        | v2.0    |          | string | UUID referencing the OOAPI endpoint of the source course     |
+| Attribute     | Required | Type   | Description                                                  |
+| ------------- | :------: | ------ | ------------------------------------------------------------ |
+| `shortName`   |          | string | Partner ID of the source institution, e.g., `"21PE"` for LDE |
+| `primaryCode` |          | string | Primary code of the source course                            |
+| `uuid`        |          | string | UUID referencing the OOAPI endpoint of the source course     |
 
 #### Example: Program/Course Consumer Object
 
