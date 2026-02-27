@@ -1,9 +1,9 @@
 # eduXchange
 
-In this documentation of the eduxchange consumer object you will find:
+In this documentation of the eduXchange consumer object you will find:
 
 - [Versions](#versions)
-- [Required OOAPI Resources](#required-ooapi-resources)
+- [Required OEAPI Resources](#required-oeapi-resources)
 - [Student Registration Consumer Objects](#student-registration-consumer-objects)
 - [Agreements per Alliance](#agreements-per-alliance)
 
@@ -11,7 +11,7 @@ In this documentation of the eduxchange consumer object you will find:
 
 ## Versions
 
-**Last update:** June 26th, 2025
+**Last update:** 26 June 2025
 
 | Instance      | Alliances      |
 | ------------- | -------------- |
@@ -30,19 +30,19 @@ Currently eduXchange uses version 2.2 of this profile.
 
 ---
 
-## Required OOAPI Resources
+## Required OEAPI Resources
 
-The subset of OOAPI Resources used in eduXchange is described in the picture below:
+The subset of OEAPI Resources used in eduXchange is described in the picture below:
 
 - **White resources**: Used in the orientation process
   - Dashed lines indicate resources only accessed through the `expand` parameter
 - **Grey resources**: Used in the enrolment and grade transmission processes
 
-![OOAPI Resources used in eduXchange](../../_media/Student%20mobility%202025%20-%20OOAPI%20Resources.jpg "OOAPI Resources used in eduXchange")
+![OEAPI Resources used in eduXchange](../../_media/Student%20mobility%202025%20-%20OEAPI%20Resources.jpg "OEAPI Resources used in eduXchange")
 
 ### Endpoints
 
-To be compatible with eduXchange, an institution needs to implement the following OOAPI endpoints:
+To be compatible with eduXchange, an institution needs to implement the following OEAPI endpoints:
 
 #### Orientation Endpoints
 
@@ -72,7 +72,7 @@ To be compatible with eduXchange, an institution needs to implement the followin
 | `PATCH /associations/{associationId}` |    ✓     |
 
 
-### Required OOAPI Attributes per Resource
+### Required OEAPI Attributes per Resource
 
 #### Organizations
 
@@ -234,8 +234,8 @@ The consumer object for eduXchange has the following structure:
 | `enrollmentForProfessionals` |          | string  | Enrollment process for professionals. Allowed values: `"broker"`, `"url"`. Only used if `targetGroup` is `"forProfessionals"`. If `"url"`, the `enrollmentUrlForProfessionals` in the **offering** consumer object is mandatory. |
 | `jointPartnerCodes`          |          | array   | Array of partner codes for joint programs. Uses agreed partner codes, e.g., `["21PF", "21PB"]` for LDE.                                                                                                                          |
 | `source`                     |          | object  | Reference to the source of a Course/Program for joint programs. See `source` object attributes below.                                                                                                                            |
-| `modeOfDelivery`             |          | string  | Used only for the EuroTeQ alliance to override the regular OOAPI modes of delivery                                                                                                                                               |
-| `level`                      |          | string  | Used only for the EuroTeQ alliance to override the regular OOAPI levels                                                                                                                                                          |
+| `modeOfDelivery`             |          | string  | Used only for the EuroTeQ alliance to override the regular OEAPI modes of delivery                                                                                                                                               |
+| `level`                      |          | string  | Used only for the EuroTeQ alliance to override the regular OEAPI levels                                                                                                                                                          |
 
 eduXchange can be used by students and professionals. There are three types of students:
 
@@ -260,7 +260,7 @@ Used when one institution acts as overall coordinator for a joint program, with 
 | ------------- | :------: | ------ | ------------------------------------------------------------ |
 | `shortName`   |          | string | Partner ID of the source institution, e.g., `"21PE"` for LDE |
 | `primaryCode` |          | string | Primary code of the source course                            |
-| `uuid`        |          | string | UUID referencing the OOAPI endpoint of the source course     |
+| `uuid`        |          | string | UUID referencing the OEAPI endpoint of the source course     |
 
 #### Example: Program/Course Consumer Object
 
@@ -364,7 +364,7 @@ When a waitlist is used for enrolment, these attributes communicate this in the 
 
 ### GET /persons/me
 
-#### Required OOAPI Attributes for Persons (Students)
+#### Required OEAPI Attributes for Persons (Students)
 
 | Attribute          | Required |
 | ------------------ | :------: |
@@ -449,7 +449,7 @@ To be compatible with the registering process of the `broker` after the 'registe
 | Field         | Description                                                                                                                                                                                                                      |
 | ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `remoteState` | Initial state of the Guest institution. From the Home institution's perspective, the Guest's state is the remoteState.                                                                                                           |
-| `state`       | Mandatory in OOAPI. During the initial POST, the Guest cannot know the Home's state, so set to `associated` (without real meaning at this stage). The Home institution responds with their initial `state` in the HTTP response. |
+| `state`       | Mandatory in OEAPI. During the initial POST, the Guest cannot know the Home's state, so set to `associated` (without real meaning at this stage). The Home institution responds with their initial `state` in the HTTP response. |
 
 #### Association States
 
@@ -465,9 +465,9 @@ To be compatible with the registering process of the `broker` after the 'registe
 
 ## Agreements per Alliance
 
-An alliance is a partnership between two or more institutions that agreed to exchange student information using eduxchange. To refer to partners in an alliance, a list of partner codes is specified.
+An alliance is a partnership between two or more institutions that agreed to exchange student information using eduXchange. To refer to partners in an alliance, a list of partner codes is specified.
 
-Some attributes in OOAPI can have multiple values. It is recommended that all participants within an alliance agree on the use of these values. This results in an unambiguous list on the frontend for students.
+Some attributes in OEAPI can have multiple values. It is recommended that all participants within an alliance agree on the use of these values. This results in an unambiguous list on the frontend for students.
 
 ### EWUU Alliance
 
@@ -580,7 +580,7 @@ The additional parameter `alliances.name=euroteq` is added to all requests done 
 
 #### EuroTeq Mode of Delivery
 
-The mode of delivery values differ from standard OOAPI options. These values need to be specified in the consumer attribute:
+The mode of delivery values differ from standard OEAPI options. These values need to be specified in the consumer attribute:
 
 | Value                         | Description                                                                                                                    |
 | ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
