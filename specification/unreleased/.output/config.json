@@ -1,0 +1,16 @@
+{
+  "version": 3,
+  "framework": {
+    "version": "0.69.3"
+  },
+  "routes": [
+    {
+      "src": "/dist/api",
+      "dest": "/dist/api/security",
+      "status": 301,
+      "headers": {
+        "Location": "/dist/api/security"
+      }
+    }
+  ]
+}

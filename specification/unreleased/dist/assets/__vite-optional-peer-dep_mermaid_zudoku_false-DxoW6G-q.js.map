@@ -1,0 +1,1 @@
+{"version":3,"file":"__vite-optional-peer-dep_mermaid_zudoku_false-DxoW6G-q.js","sources":["../../../__vite-optional-peer-dep:mermaid:zudoku:false"],"sourcesContent":["export default {};throw new Error(`Could not resolve \"mermaid\" imported by \"zudoku\".`)"],"names":["__viteOptionalPeerDep_mermaid_zudoku_false"],"mappings":"AAAA,MAAAA,EAAe,CAAA,EAAG,MAAM,IAAI,MAAM,mDAAmD"}
