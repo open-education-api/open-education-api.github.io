@@ -5,11 +5,11 @@
   },
   "routes": [
     {
-      "src": "/dist/api",
-      "dest": "/dist/api/security",
+      "src": "/specification/unreleased/api",
+      "dest": "/specification/unreleased/api/security",
       "status": 301,
       "headers": {
-        "Location": "/dist/api/security"
+        "Location": "/specification/unreleased/api/security"
       }
     }
   ]
