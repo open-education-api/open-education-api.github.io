@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <script type="module" crossorigin src="/specification/unreleased/assets/entry.client-BWHcCYeb.js"></script>
+    <script type="module" crossorigin src="/specification/unreleased/assets/entry.client-B4idD83M.js"></script>
     <link rel="stylesheet" crossorigin href="/specification/unreleased/assets/entry-WnDGrxgJ.css">
     <title data-rh="true">OOAPI Information Model - Zudoku</title>
 <meta data-rh="true" name="description" content="OpenAPI (fka Swagger) specification for the Open Education API."/>
@@ -71,77 +71,75 @@ in the model represent groups and group memberships of a person.</p>
 <p>Information on the EDU-API model that was also used for this api is shown <a target="_blank" href="eduapi.png">here</a></p>
 <h2 class="group relative text-2xl font-bold" id="api-paths">API Paths<a href="#api-paths" class="ms-[0.33em] rounded text-[0.8em] text-muted-foreground p-0.5 -m-0.5 opacity-0 group-hover:opacity-50 hover:text-primary hover:!opacity-100 transition-opacity duration-200 inline-flex items-center align-middle" aria-label="Link to api-paths"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-link size-[0.75em] min-w-4 min-h-4" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
 <p>The following paths are described in the model:</p>
-<ul>
-<li>/ (The service endpoint)</li>
-<li>/academic-sessions</li>
-<li>/academic-sessions/{academicSessionId}</li>
-<li>/academic-sessions/{academicSessionId}/course-offerings</li>
-<li>/academic-sessions/{academicSessionId}/learning-component-offerings</li>
-<li>/academic-sessions/{academicSessionId}/programme-offerings</li>
-<li>/academic-sessions/{academicSessionId}/test-component-offerings</li>
-<li>/buildings</li>
-<li>/buildings/{buildingId}</li>
-<li>/buildings/{buildingId}/rooms</li>
-<li>/course-offering-associations/{courseOfferingAssociationId}</li>
-<li>/course-offering-associations/external/me</li>
-<li>/course-offerings/{courseOfferingId}</li>
-<li>/course-offerings/{courseOfferingId}/course-offering-associations</li>
-<li>/course-offerings/{courseOfferingId}/groups</li>
-<li>/courses</li>
-<li>/courses/{courseId}</li>
-<li>/courses/{courseId}/course-offerings</li>
-<li>/courses/{courseId}/learning-component-offerings</li>
-<li>/courses/{courseId}/learning-components</li>
-<li>/courses/{courseId}/test-component-offerings</li>
-<li>/courses/{courseId}/test-components</li>
-<li>/documents/{documentId}</li>
-<li>/groups</li>
-<li>/groups/{groupId}</li>
-<li>/groups/{groupId}/memberships</li>
-<li>/groups/{groupId}/memberships/{personId}</li>
-<li>/learning-component-offering-associations/{learningComponentOfferingAssociationId}</li>
-<li>/learning-component-offerings/{learningComponentOfferingId}</li>
-<li>/learning-component-offerings/{learningComponentOfferingId}/groups</li>
-<li>/learning-components/{learningComponentId}</li>
-<li>/learning-components/{learningComponentId}/learning-component-offerings</li>
-<li>/learning-outcomes</li>
-<li>/learning-outcomes/{learningOutcomeId}</li>
-<li>/organisations</li>
-<li>/organisations/{organisationId}</li>
-<li>/organisations/{organisationId}/course-offerings</li>
-<li>/organisations/{organisationId}/courses</li>
-<li>/organisations/{organisationId}/groups</li>
-<li>/organisations/{organisationId}/learning-component-offerings</li>
-<li>/organisations/{organisationId}/learning-components</li>
-<li>/organisations/{organisationId}/programme-offerings</li>
-<li>/organisations/{organisationId}/programmes</li>
-<li>/organisations/{organisationId}/test-component-offerings</li>
-<li>/organisations/{organisationId}/test-components</li>
-<li>/persons</li>
-<li>/persons/{personId}</li>
-<li>/persons/{personId}/course-offering-associations</li>
-<li>/persons/{personId}/learning-component-offering-associations</li>
-<li>/persons/{personId}/programme-offering-associations</li>
-<li>/persons/{personId}/test-component-offering-associations</li>
-<li>/persons/me</li>
-<li>/programme-offering-associations/{programmeOfferingAssociationId}</li>
-<li>/programme-offering-associations/external/me</li>
-<li>/programme-offerings/{programmeOfferingId}</li>
-<li>/programme-offerings/{programmeOfferingId}/groups</li>
-<li>/programme-offerings/{programmeOfferingId}/programme-offering-associations</li>
-<li>/programmes</li>
-<li>/programmes/{programmeId}</li>
-<li>/programmes/{programmeId}/courses</li>
-<li>/programmes/{programmeId}/programme-offerings</li>
-<li>/programmes/{programmeId}/programmes</li>
-<li>/rooms</li>
-<li>/rooms/{roomId}</li>
-<li>/test-component-offering-associations/{testComponentOfferingAssociationId}</li>
-<li>/test-component-offerings/{testComponentOfferingId}</li>
-<li>/test-component-offerings/{testComponentOfferingId}/groups</li>
-<li>/test-components/{testComponentId}</li>
-<li>/test-components/{testComponentId}/test-component-offerings</li>
-</ul><div class="h-16"></div><div class="flex justify-between text-xs text-muted-foreground "><div></div><div class="flex items-center gap-2"><div></div><div><div title="Wednesday, March 4, 2026 at 12:24:52 PM">Last modified on<!-- --> <time dateTime="2026-03-04T12:24:52.000Z">March 4, 2026</time></div></div></div></div><div class="h-px bg-border mt-2 mb-6"></div><div class="flex flex-wrap gap-2 -mx-4 text-muted-foreground font-semibold justify-end mb-10" data-pagefind-ignore="all"></div></div><div class="hidden xl:block" data-pagefind-ignore="all"><aside class="sticky scrollbar top-8 lg:top-(--header-height) h-[calc(100vh-var(--header-height))] pt-(--padding-content-top) pb-(--padding-content-bottom) overflow-y-auto ps-1 text-sm"><div class="flex items-center gap-2 font-medium mb-2"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-list-tree" aria-hidden="true"><path d="M8 5h13"></path><path d="M13 12h8"></path><path d="M13 19h8"></path><path d="M3 10a2 2 0 0 0 2 2h3"></path><path d="M3 5v12a2 2 0 0 0 2 2h3"></path></svg>On this page</div><div class="relative ms-px ps-4"><div class="absolute inset-0 end-auto bg-border w-[1.5px]"></div><div class="absolute inset-s-0 -translate-y-1 h-6 w-[2.5px] bg-primary" style="top:0;opacity:0"></div><ul class="relative font-medium list-none space-y-2"><li class="truncate ps-0" title="Model"><a data-active="model" aria-current="page" class="hover:text-accent-foreground text-muted-foreground active" href="/specification/unreleased/index#model" data-discover="true">Model</a></li><li class="truncate ps-0" title="Relationship Definitions"><a data-active="relationship-definitions" aria-current="page" class="hover:text-accent-foreground text-muted-foreground active" href="/specification/unreleased/index#relationship-definitions" data-discover="true">Relationship Definitions</a></li><li class="truncate ps-0" title="Notes"><a data-active="notes" aria-current="page" class="hover:text-accent-foreground text-muted-foreground active" href="/specification/unreleased/index#notes" data-discover="true">Notes</a></li><li class="truncate ps-0" title="Background Information"><a data-active="background-information" aria-current="page" class="hover:text-accent-foreground text-muted-foreground active" href="/specification/unreleased/index#background-information" data-discover="true">Background Information</a></li><li class="truncate ps-0" title="API Paths"><a data-active="api-paths" aria-current="page" class="hover:text-accent-foreground text-muted-foreground active" href="/specification/unreleased/index#api-paths" data-discover="true">API Paths</a></li></ul></div></aside></div></div></main></div><script>$RB=[];$RV=function(a){$RT=performance.now();for(var b=0;b<a.length;b+=2){var c=a[b],e=a[b+1];null!==e.parentNode&&e.parentNode.removeChild(e);var f=c.parentNode;if(f){var g=c.previousSibling,h=0;do{if(c&&8===c.nodeType){var d=c.data;if("/$"===d||"/&"===d)if(0===h)break;else h--;else"$"!==d&&"$?"!==d&&"$~"!==d&&"$!"!==d&&"&"!==d||h++}d=c.nextSibling;f.removeChild(c);c=d}while(c);for(;e.firstChild;)f.insertBefore(e.firstChild,c);g.data="$";g._reactRetry&&requestAnimationFrame(g._reactRetry)}}a.length=0};
+<pre class="not-prose my-4"><div class="border code-block-wrapper relative group rounded-xl overflow-hidden"><div class="flex items-center py-0.5 bg-black/4"><div class="flex items-center gap-1.5 flex-1 text-sm w-full px-3">Code</div><button type="button" aria-label="Copy code" title="Copy code" class="transition p-1.5 mx-1 rounded-lg hover:bg-accent hover:brightness-95"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-copy" aria-hidden="true"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></div><div class="code-block p-0.5 text-sm not-prose scrollbar bg-black/4 [&amp;_code]:rounded-b-[calc(var(--radius)+1px)] [&amp;&gt;pre]:rounded-b-[calc(var(--radius)+1px)] [&amp;_code]:px-3 [&amp;_code]:py-2"><code class="language-text shiki shiki-themes github-light github-dark overflow-x-auto scrollbar not-inline" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><span class="line"><span>- / (The service endpoint)</span></span>
+<span class="line"><span>- /academic-sessions</span></span>
+<span class="line"><span>- /academic-sessions/\{academicSessionId\}</span></span>
+<span class="line"><span>- /academic-sessions/\{academicSessionId\}/course-offerings</span></span>
+<span class="line"><span>- /academic-sessions/\{academicSessionId\}/learning-component-offerings</span></span>
+<span class="line"><span>- /academic-sessions/\{academicSessionId\}/programme-offerings</span></span>
+<span class="line"><span>- /academic-sessions/\{academicSessionId\}/test-component-offerings</span></span>
+<span class="line"><span>- /buildings</span></span>
+<span class="line"><span>- /buildings/\{buildingId\}</span></span>
+<span class="line"><span>- /buildings/\{buildingId\}/rooms</span></span>
+<span class="line"><span>- /course-offering-associations/\{courseOfferingAssociationId\}</span></span>
+<span class="line"><span>- /course-offering-associations/external/me</span></span>
+<span class="line"><span>- /course-offerings/\{courseOfferingId\}</span></span>
+<span class="line"><span>- /course-offerings/\{courseOfferingId\}/course-offering-associations</span></span>
+<span class="line"><span>- /course-offerings/\{courseOfferingId\}/groups</span></span>
+<span class="line"><span>- /courses</span></span>
+<span class="line"><span>- /courses/\{courseId\}</span></span>
+<span class="line"><span>- /courses/\{courseId\}/course-offerings</span></span>
+<span class="line"><span>- /courses/\{courseId\}/learning-component-offerings</span></span>
+<span class="line"><span>- /courses/\{courseId\}/learning-components</span></span>
+<span class="line"><span>- /courses/\{courseId\}/test-component-offerings</span></span>
+<span class="line"><span>- /courses/\{courseId\}/test-components</span></span>
+<span class="line"><span>- /documents/\{documentId\}</span></span>
+<span class="line"><span>- /groups</span></span>
+<span class="line"><span>- /groups/\{groupId\}</span></span>
+<span class="line"><span>- /groups/\{groupId\}/memberships</span></span>
+<span class="line"><span>- /groups/\{groupId\}/memberships/\{personId\}</span></span>
+<span class="line"><span>- /learning-component-offering-associations/\{learningComponentOfferingAssociationId\}</span></span>
+<span class="line"><span>- /learning-component-offerings/\{learningComponentOfferingId\}</span></span>
+<span class="line"><span>- /learning-component-offerings/\{learningComponentOfferingId\}/groups</span></span>
+<span class="line"><span>- /learning-components/\{learningComponentId\}</span></span>
+<span class="line"><span>- /learning-components/\{learningComponentId\}/learning-component-offerings</span></span>
+<span class="line"><span>- /learning-outcomes</span></span>
+<span class="line"><span>- /learning-outcomes/\{learningOutcomeId\}</span></span>
+<span class="line"><span>- /organisations</span></span>
+<span class="line"><span>- /organisations/\{organisationId\}</span></span>
+<span class="line"><span>- /organisations/\{organisationId\}/course-offerings</span></span>
+<span class="line"><span>- /organisations/\{organisationId\}/courses</span></span>
+<span class="line"><span>- /organisations/\{organisationId\}/groups</span></span>
+<span class="line"><span>- /organisations/\{organisationId\}/learning-component-offerings</span></span>
+<span class="line"><span>- /organisations/\{organisationId\}/learning-components</span></span>
+<span class="line"><span>- /organisations/\{organisationId\}/programme-offerings</span></span>
+<span class="line"><span>- /organisations/\{organisationId\}/programmes</span></span>
+<span class="line"><span>- /organisations/\{organisationId\}/test-component-offerings</span></span>
+<span class="line"><span>- /organisations/\{organisationId\}/test-components</span></span>
+<span class="line"><span>- /persons</span></span>
+<span class="line"><span>- /persons/\{personId\}</span></span>
+<span class="line"><span>- /persons/\{personId\}/course-offering-associations</span></span>
+<span class="line"><span>- /persons/\{personId\}/learning-component-offering-associations</span></span>
+<span class="line"><span>- /persons/\{personId\}/programme-offering-associations</span></span>
+<span class="line"><span>- /persons/\{personId\}/test-component-offering-associations</span></span>
+<span class="line"><span>- /persons/me</span></span>
+<span class="line"><span>- /programme-offering-associations/\{programmeOfferingAssociationId\}</span></span>
+<span class="line"><span>- /programme-offering-associations/external/me</span></span>
+<span class="line"><span>- /programme-offerings/\{programmeOfferingId\}</span></span>
+<span class="line"><span>- /programme-offerings/\{programmeOfferingId\}/groups</span></span>
+<span class="line"><span>- /programme-offerings/\{programmeOfferingId\}/programme-offering-associations</span></span>
+<span class="line"><span>- /programmes</span></span>
+<span class="line"><span>- /programmes/\{programmeId\}</span></span>
+<span class="line"><span>- /programmes/\{programmeId\}/courses</span></span>
+<span class="line"><span>- /programmes/\{programmeId\}/programme-offerings</span></span>
+<span class="line"><span>- /programmes/\{programmeId\}/programmes</span></span>
+<span class="line"><span>- /rooms</span></span>
+<span class="line"><span>- /rooms/\{roomId\}</span></span>
+<span class="line"><span>- /test-component-offering-associations/\{testComponentOfferingAssociationId\}</span></span>
+<span class="line"><span>- /test-component-offerings/\{testComponentOfferingId\}</span></span>
+<span class="line"><span>- /test-component-offerings/\{testComponentOfferingId\}/groups</span></span>
+<span class="line"><span>- /test-components/\{testComponentId\}</span></span>
+<span class="line"><span>- /test-components/\{testComponentId\}/test-component-offerings</span></span></code></div></div></pre><div class="h-16"></div><div class="flex justify-between text-xs text-muted-foreground "><div></div><div class="flex items-center gap-2"><div></div><div><div title="Wednesday, March 4, 2026 at 12:28:42 PM">Last modified on<!-- --> <time dateTime="2026-03-04T12:28:42.000Z">March 4, 2026</time></div></div></div></div><div class="h-px bg-border mt-2 mb-6"></div><div class="flex flex-wrap gap-2 -mx-4 text-muted-foreground font-semibold justify-end mb-10" data-pagefind-ignore="all"></div></div><div class="hidden xl:block" data-pagefind-ignore="all"><aside class="sticky scrollbar top-8 lg:top-(--header-height) h-[calc(100vh-var(--header-height))] pt-(--padding-content-top) pb-(--padding-content-bottom) overflow-y-auto ps-1 text-sm"><div class="flex items-center gap-2 font-medium mb-2"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-list-tree" aria-hidden="true"><path d="M8 5h13"></path><path d="M13 12h8"></path><path d="M13 19h8"></path><path d="M3 10a2 2 0 0 0 2 2h3"></path><path d="M3 5v12a2 2 0 0 0 2 2h3"></path></svg>On this page</div><div class="relative ms-px ps-4"><div class="absolute inset-0 end-auto bg-border w-[1.5px]"></div><div class="absolute inset-s-0 -translate-y-1 h-6 w-[2.5px] bg-primary" style="top:0;opacity:0"></div><ul class="relative font-medium list-none space-y-2"><li class="truncate ps-0" title="Model"><a data-active="model" aria-current="page" class="hover:text-accent-foreground text-muted-foreground active" href="/specification/unreleased/index#model" data-discover="true">Model</a></li><li class="truncate ps-0" title="Relationship Definitions"><a data-active="relationship-definitions" aria-current="page" class="hover:text-accent-foreground text-muted-foreground active" href="/specification/unreleased/index#relationship-definitions" data-discover="true">Relationship Definitions</a></li><li class="truncate ps-0" title="Notes"><a data-active="notes" aria-current="page" class="hover:text-accent-foreground text-muted-foreground active" href="/specification/unreleased/index#notes" data-discover="true">Notes</a></li><li class="truncate ps-0" title="Background Information"><a data-active="background-information" aria-current="page" class="hover:text-accent-foreground text-muted-foreground active" href="/specification/unreleased/index#background-information" data-discover="true">Background Information</a></li><li class="truncate ps-0" title="API Paths"><a data-active="api-paths" aria-current="page" class="hover:text-accent-foreground text-muted-foreground active" href="/specification/unreleased/index#api-paths" data-discover="true">API Paths</a></li></ul></div></aside></div></div></main></div><script>$RB=[];$RV=function(a){$RT=performance.now();for(var b=0;b<a.length;b+=2){var c=a[b],e=a[b+1];null!==e.parentNode&&e.parentNode.removeChild(e);var f=c.parentNode;if(f){var g=c.previousSibling,h=0;do{if(c&&8===c.nodeType){var d=c.data;if("/$"===d||"/&"===d)if(0===h)break;else h--;else"$"!==d&&"$?"!==d&&"$~"!==d&&"$!"!==d&&"&"!==d||h++}d=c.nextSibling;f.removeChild(c);c=d}while(c);for(;e.firstChild;)f.insertBefore(e.firstChild,c);g.data="$";g._reactRetry&&requestAnimationFrame(g._reactRetry)}}a.length=0};
 $RC=function(a,b){if(b=document.getElementById(b))(a=document.getElementById(a))?(a.previousSibling.data="$~",$RB.push(a,b),2===$RB.length&&("number"!==typeof $RT?requestAnimationFrame($RV.bind(null,$RB)):(a=performance.now(),setTimeout($RV.bind(null,$RB),2300>a&&2E3<a?2300-a:$RT+300-a)))):b.parentNode.removeChild(b)};$RC("B:0","S:0")</script></div>
-  <script>window.DATA={"mutations":[],"queries":[{"dehydratedAt":1772627176487,"state":{"dataUpdateCount":0,"dataUpdatedAt":0,"error":null,"errorUpdateCount":0,"errorUpdatedAt":0,"fetchFailureCount":0,"fetchFailureReason":null,"fetchMeta":null,"isInvalidated":false,"status":"pending","fetchStatus":"idle"},"queryKey":["zuplo-build-check",null,"/__zuplo/docs"],"queryHash":"[\"zuplo-build-check\",null,\"/__zuplo/docs\"]"},{"dehydratedAt":1772627176487,"state":{"dataUpdateCount":0,"dataUpdatedAt":0,"error":null,"errorUpdateCount":0,"errorUpdatedAt":0,"fetchFailureCount":0,"fetchFailureReason":null,"fetchMeta":null,"isInvalidated":false,"status":"pending","fetchStatus":"idle"},"queryKey":["refresh-user-profile"],"queryHash":"[\"refresh-user-profile\"]"},{"dehydratedAt":1772627176487,"state":{"data":[],"dataUpdateCount":1,"dataUpdatedAt":1772627176480,"error":null,"errorUpdateCount":0,"errorUpdatedAt":0,"fetchFailureCount":0,"fetchFailureReason":null,"fetchMeta":null,"isInvalidated":false,"status":"success","fetchStatus":"idle"},"queryKey":["plugin-navigation","/index"],"queryHash":"[\"plugin-navigation\",\"/index\"]"}]}</script></body>
+  <script>window.DATA={"mutations":[],"queries":[{"dehydratedAt":1772627402427,"state":{"dataUpdateCount":0,"dataUpdatedAt":0,"error":null,"errorUpdateCount":0,"errorUpdatedAt":0,"fetchFailureCount":0,"fetchFailureReason":null,"fetchMeta":null,"isInvalidated":false,"status":"pending","fetchStatus":"idle"},"queryKey":["zuplo-build-check",null,"/__zuplo/docs"],"queryHash":"[\"zuplo-build-check\",null,\"/__zuplo/docs\"]"},{"dehydratedAt":1772627402427,"state":{"dataUpdateCount":0,"dataUpdatedAt":0,"error":null,"errorUpdateCount":0,"errorUpdatedAt":0,"fetchFailureCount":0,"fetchFailureReason":null,"fetchMeta":null,"isInvalidated":false,"status":"pending","fetchStatus":"idle"},"queryKey":["refresh-user-profile"],"queryHash":"[\"refresh-user-profile\"]"},{"dehydratedAt":1772627402427,"state":{"data":[],"dataUpdateCount":1,"dataUpdatedAt":1772627402419,"error":null,"errorUpdateCount":0,"errorUpdatedAt":0,"fetchFailureCount":0,"fetchFailureReason":null,"fetchMeta":null,"isInvalidated":false,"status":"success","fetchStatus":"idle"},"queryKey":["plugin-navigation","/index"],"queryHash":"[\"plugin-navigation\",\"/index\"]"}]}</script></body>
 </html>
