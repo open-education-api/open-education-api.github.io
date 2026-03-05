@@ -6933,7 +6933,7 @@ components:
             - string
             - 'null'
           description: The duration of this component. The duration format is from the ISO 8601 ABNF as given in Appendix A of RFC 3339.
-          pattern: ^(-?)P(?=\d|T\d)(?:(\d+)Y)?(?:(\d+)M)?(?:(\d+)([DW]))?(?:T(?:(\d+)H)?(?:(\d+)M)?(?:(\d+(?:\.\d+)?)S)?)?$
+          pattern: ^-?P(?:\d+Y)?(?:\d+M)?(?:\d+(?:D|W))?(?:T(?:\d+H)?(?:\d+M)?(?:\d+(?:\.\d+)?S)?)?$
           example: P1DT10H30M
         description:
           type:
@@ -7160,14 +7160,14 @@ components:
             - string
             - 'null'
           description: The duration of this component. The duration format is from the ISO 8601 ABNF as given in Appendix A of RFC 3339.
-          pattern: ^(-?)P(?=\d|T\d)(?:(\d+)Y)?(?:(\d+)M)?(?:(\d+)([DW]))?(?:T(?:(\d+)H)?(?:(\d+)M)?(?:(\d+(?:\.\d+)?)S)?)?$
+          pattern: ^-?P(?:\d+Y)?(?:\d+M)?(?:\d+(?:D|W))?(?:T(?:\d+H)?(?:\d+M)?(?:\d+(?:\.\d+)?S)?)?$
           example: PT1H30M
         extraDuration:
           type:
             - string
             - 'null'
           description: The extra duration of this component for candidates that are awarded extra time as a personal need. The duration format is from the ISO 8601 ABNF as given in Appendix A of RFC 3339.
-          pattern: ^(-?)P(?=\d|T\d)(?:(\d+)Y)?(?:(\d+)M)?(?:(\d+)([DW]))?(?:T(?:(\d+)H)?(?:(\d+)M)?(?:(\d+(?:\.\d+)?)S)?)?$
+          pattern: ^-?P(?:\d+Y)?(?:\d+M)?(?:\d+(?:D|W))?(?:T(?:\d+H)?(?:\d+M)?(?:\d+(?:\.\d+)?S)?)?$
           example: PT30M
         resultValueType:
           oneOf:
@@ -7713,7 +7713,7 @@ components:
                 - string
                 - 'null'
               description: The extra duration of this component for this specific candidate. The duration format is from the ISO 8601 ABNF as given in Appendix A of RFC 3339.
-              pattern: ^(-?)P(?=\d|T\d)(?:(\d+)Y)?(?:(\d+)M)?(?:(\d+)([DW]))?(?:T(?:(\d+)H)?(?:(\d+)M)?(?:(\d+(?:\.\d+)?)S)?)?$
+              pattern: ^-?P(?:\d+Y)?(?:\d+M)?(?:\d+(?:D|W))?(?:T(?:\d+H)?(?:\d+M)?(?:\d+(?:\.\d+)?S)?)?$
               example: PT20M
             requiredPersonalNeeds:
               type:
@@ -10737,7 +10737,7 @@ components:
             - string
             - 'null'
           description: The duration of this programme. The duration format is from the ISO 8601 ABNF as given in Appendix A of RFC 3339.
-          pattern: ^(-?)P(?=\d|T\d)(?:(\d+)Y)?(?:(\d+)M)?(?:(\d+)([DW]))?(?:T(?:(\d+)H)?(?:(\d+)M)?(?:(\d+(?:\.\d+)?)S)?)?$
+          pattern: ^-?P(?:\d+Y)?(?:\d+M)?(?:\d+(?:D|W))?(?:T(?:\d+H)?(?:\d+M)?(?:\d+(?:\.\d+)?S)?)?$
           example: P1DT10H30M
         firstStartDateTime:
           type:
@@ -11018,7 +11018,7 @@ components:
             - string
             - 'null'
           description: The duration of this course. The duration format is from the ISO 8601 ABNF as given in Appendix A of RFC 3339.
-          pattern: ^(-?)P(?=\d|T\d)(?:(\d+)Y)?(?:(\d+)M)?(?:(\d+)([DW]))?(?:T(?:(\d+)H)?(?:(\d+)M)?(?:(\d+(?:\.\d+)?)S)?)?$
+          pattern: ^-?P(?:\d+Y)?(?:\d+M)?(?:\d+(?:D|W))?(?:T(?:\d+H)?(?:\d+M)?(?:\d+(?:\.\d+)?S)?)?$
           example: P1DT10H30M
         firstStartDate:
           type:
