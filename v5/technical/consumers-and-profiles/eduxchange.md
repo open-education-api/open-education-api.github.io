@@ -156,34 +156,35 @@ To be compatible with eduXchange, an institution needs to implement the followin
 
 #### Offerings
 
-| Attribute                  | Required | Multilingual |
-| -------------------------- | :------: | :----------: |
-| `offeringId`               |    ✓    |              |
-| `primaryCode`              |    ✓    |              |
-| `offeringType`             |    ✓    |              |
-| `name`                     |    ✓    |      ✓      |
-| `description`              |    ✓    |      ✓      |
-| `teachingLanguage`         |    ✓    |              |
-| `resultExpected`           |    ✓    |              |
-| `startDate`                |    ✓    |              |
-| `endDate`                  |    ✓    |              |
-| `consumers`                |    ✓    |              |
-| `abbreviation`             |          |              |
-| `modeOfDelivery`           |          |              |
-| `maxNumberStudents`        |          |              |
-| `enrolledNumberStudents`   |          |              |
-| `pendingNumberStudents`    |          |              |
-| `minNumberStudents`        |          |              |
-| `link`                     |          |              |
-| `otherCodes`               |          |              |
-| `enrollStartDate`          |          |              |
-| `enrollEndDate`            |          |              |
-| `flexibleEntryPeriodStart` |          |              |
-| `flexibleEntryPeriodEnd`   |          |              |
-| `addresses`                |          |              |
-| `academicSession`          | ✓ (via `expand`) |      ✓      |
-| `priceInformation`         |          |      ✓      |
-| `organization`             |          |              |
+| Attribute                  |                                 Required                                  | Multilingual |
+| -------------------------- | :-----------------------------------------------------------------------: | :----------: |
+| `offeringId`               |                                    ✓                                     |              |
+| `primaryCode`              |                                    ✓                                     |              |
+| `offeringType`             |                                    ✓                                     |              |
+| `name`                     |                                    ✓                                     |      ✓      |
+| `description`              |                                    ✓                                     |      ✓      |
+| `teachingLanguage`         |                                    ✓                                     |              |
+| `resultExpected`           |                                    ✓                                     |              |
+| `resultValueType`          | (required when an institution wants to use eduXchange grade transmission) |              |
+| `startDate`                |                                    ✓                                     |              |
+| `endDate`                  |                                    ✓                                     |              |
+| `consumers`                |                                    ✓                                     |              |
+| `abbreviation`             |                                                                           |              |
+| `modeOfDelivery`           |                                                                           |              |
+| `maxNumberStudents`        |                                                                           |              |
+| `enrolledNumberStudents`   |                                                                           |              |
+| `pendingNumberStudents`    |                                                                           |              |
+| `minNumberStudents`        |                                                                           |              |
+| `link`                     |                                                                           |              |
+| `otherCodes`               |                                                                           |              |
+| `enrollStartDate`          |                                                                           |              |
+| `enrollEndDate`            |                                                                           |              |
+| `flexibleEntryPeriodStart` |                                                                           |              |
+| `flexibleEntryPeriodEnd`   |                                                                           |              |
+| `addresses`                |                                                                           |              |
+| `academicSession`          |                             ✓ (via `expand`)                             |      ✓      |
+| `priceInformation`         |                                                                           |      ✓      |
+| `organization`             |                                                                           |              |
 
 #### Persons (Coordinators, Orientation Phase)
 
