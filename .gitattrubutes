@@ -1,0 +1,19 @@
+*.html linguist-language=HTML
+*.html linguist-detectable=false
+*.html linguist-documentation=true
+
+*.css  linguist-language=CSS
+*.css  linguist-detectable=false
+*.css  linguist-documentation=true
+
+*.js   linguist-language=JavaScript
+*.js   linguist-detectable=false
+*.js   linguist-documentation=true
+
+*.md   linguist-language=Markdown
+*.md   linguist-detectable=false
+*.md   linguist-documentation=true
+
+*.mdx  linguist-language=MDX
+*.mdx  linguist-detectable=false
+*.mdx  linguist-documentation=true
