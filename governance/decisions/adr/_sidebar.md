@@ -1,4 +1,4 @@
-# [Architecture Decision Records](_sidebar.md)
+# [Architecture Decision Records](README.md)
 
 * [Language Variant for OEAPI (British English vs. American English)](0001-english-language-selection.md)
 * [oneOf Identifier vs Object pattern](0002-use-of-oneof-identifiers.md)
