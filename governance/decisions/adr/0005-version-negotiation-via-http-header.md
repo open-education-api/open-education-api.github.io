@@ -12,7 +12,7 @@ informed:
 
 # OEAPI versioning exchange
 
-Status: Proposed
+## Status: Proposed
 
 ## Context
 

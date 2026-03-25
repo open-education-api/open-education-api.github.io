@@ -2,7 +2,7 @@
 title: Language Variant for OEAPI (British English vs. American English)
 adr: 0001
 status: Accepted
-date: 2025-08-22
+date: 2025-08-27
 decision-makers:
   - OEAPI management
 consulted:
@@ -13,7 +13,7 @@ informed:
 
 # Language Variant for OOAPI (British English vs. American English)
 
-## Status
+## Status: Accepted
 
 Proposed (22 aug 2025): This decision note is presented to the OOAPI
 management for discussion and resolution.
