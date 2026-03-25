@@ -1,10 +1,13 @@
 ---
 title: OEAPI versioning exchange
-adr: 006
+adr: 0005
 status: Proposed
 date: 2026-03-19
-deciders:
+decision-makers:
   - Technical Working Group
+consulted: 
+informed:
+  - Community
 ---
 
 # OEAPI versioning exchange
