@@ -1,8 +1,8 @@
 ---
 title: Marketing / Promotion Fields
 adr: 0003
-status: Proposed
-date: 2026-03-19
+status: Accepted
+date: 2025-11-13
 decision-makers:
   - Technical Working Group
 consulted: 
@@ -12,7 +12,7 @@ informed:
 
 # Marketing / Promotion Fields
 
-## Status: Proposed
+## Status: Accepted
 
 ## Context
 

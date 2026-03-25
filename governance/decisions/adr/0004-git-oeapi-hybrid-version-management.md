@@ -1,8 +1,8 @@
 ---
 title: Version Management Restructuring for the OOAPI Specification
 adr: 0004
-status: Proposed
-date: 2026-03-19
+status: Accepted
+date: 2025-12-16
 decision-makers:
   - Technical Working Group
 consulted:
@@ -12,7 +12,7 @@ informed:
 
 # Version Management Restructuring for the OOAPI Specification
 
-## Status: Proposed
+## Status: Accepted
 
 ## Context
 

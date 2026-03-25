@@ -1,8 +1,8 @@
 ---
 title: oneOf Identifier vs Object pattern
 adr: 0002
-status: Proposed
-date: 2026-03-19
+status: Accepted
+date: 2025-11-13
 decision-makers:
   - Technical Working Group
 consulted:
@@ -12,7 +12,7 @@ informed:
 
 # oneOf Identifier vs Object pattern
 
-## Status: Proposed
+## Status: Accepted
 
 ## Context
 
