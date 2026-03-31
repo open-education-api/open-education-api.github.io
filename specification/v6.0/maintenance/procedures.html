@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en" >
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <script type="module" crossorigin src="/specification/v6.0/assets/entry.client-CEEwTHB6.js"></script>
+    <link rel="stylesheet" crossorigin href="/specification/v6.0/assets/entry-WnDGrxgJ.css">
+    <title data-rh="true">OEAPI Procedures - Zudoku</title>
+<meta data-rh="true" name="description" content="This document describes the procedures used to maintain the Open Education API
+(OEAPI)."/>
+<link data-rh="true" rel="icon" href="https://cdn.zudoku.dev/logos/favicon.svg"/>
+
+
+    <link rel="preconnect" href="https://cdn.zudoku.dev/">
+  </head>
+  <body>
+    <div id="root"><!--$--><script>((e, i, a, u, m, l, d, h) => {
+  let c = document.documentElement, v = ["light", "dark"];
+  function f(r) {
+    (Array.isArray(e) ? e : [e]).forEach((y) => {
+      let S = y === "class", k = S && l ? m.map((b) => l[b] || b) : m;
+      S ? (c.classList.remove(...k), c.classList.add(l && l[r] ? l[r] : r)) : c.setAttribute(y, r);
+    }), C(r);
+  }
+  function C(r) {
+    h && v.includes(r) && (c.style.colorScheme = r);
+  }
+  function s() {
+    return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  }
+  if (u) f(u);
+  else try {
+    let r = localStorage.getItem(i) || a, y = d && r === "system" ? s() : r;
+    f(y);
+  } catch {
+  }
+})("class","theme","system",null,["light","dark"],null,true,true)</script><header class="sticky lg:top-0 z-10 bg-background/80 backdrop-blur w-full" data-pagefind-ignore="all"><style>:root { --banner-height: 0px; }</style><div class="inset-shadow-[0_-1px_0_0_var(--border)] relative"><div class="absolute w-0 left-0 right-0 bottom-[-1px] h-[2px] bg-primary transition-all duration-300 ease-in-out" style="opacity:0;width:0"></div><div class="max-w-screen-2xl mx-auto flex items-center justify-between h-(--top-header-height) px-4 lg:px-8 border-transparent"><div class="flex"><a href="/specification/unreleased" data-discover="true"><div class="flex items-center gap-3.5"><span class="font-semibold text-2xl"></span></div></a></div><div class="absolute inset-x-0 justify-center items-center hidden lg:flex w-full pointer-events-none"></div><div class="flex items-center gap-8"><div class="flex lg:hidden justify-self-end"><button type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="radix-_R_f96l9_" data-state="closed" class="lg:hidden"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu" aria-hidden="true"><path d="M4 5h16"></path><path d="M4 12h16"></path><path d="M4 19h16"></path></svg></button><div class="absolute w-0 left-0 right-0 bottom-[-1px] h-[2px] bg-primary transition-all duration-300 ease-in-out" style="opacity:0;width:0"></div></div><div class="hidden lg:flex items-center justify-self-end text-sm gap-2"><button type="button" class="not-prose inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*=&#x27;size-&#x27;])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50 size-9"></button></div></div></div></div><div class="hidden lg:block inset-shadow-[0_-1px_0_0_var(--border)]"><div class="max-w-screen-2xl mx-auto border-transparent relative"><!--$--><div class="items-center justify-between px-8 h-(--top-nav-height) hidden lg:flex text-sm relative"><nav class="text-sm"><ul class="flex flex-row items-center gap-8"><li><a class="flex items-center gap-2 lg:py-3.5 font-medium -mb-px transition duration-150 delay-75 relative text-foreground/75 hover:text-foreground" href="https://openonderwijsapi.nl">Back</a></li><li><a class="flex items-center gap-2 lg:py-3.5 font-medium -mb-px transition duration-150 delay-75 relative text-foreground/75 hover:text-foreground" href="/specification/unreleased/index" data-discover="true">Home</a></li><li><a class="flex items-center gap-2 lg:py-3.5 font-medium -mb-px transition duration-150 delay-75 relative text-foreground/75 hover:text-foreground" href="/specification/unreleased/api" data-discover="true">API Reference</a></li></ul></nav></div><!--/$--></div></div></header><div class="grid max-w-screen-2xl w-full lg:mx-auto [&amp;:has(&gt;:only-child)]:grid-rows-1 grid-rows-[0_min-content_1fr] lg:grid-rows-[min-content_1fr] grid-cols-1 lg:grid-cols-[var(--side-nav-width)_1fr]"><!--$?--><template id="B:0"></template><main class="col-span-full row-span-full grid place-items-center"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-loader-circle animate-spin" aria-hidden="true"><path d="M21 12a9 9 0 1 1-6.219-8.56"></path></svg></main><!--/$--></div><!--/$--><script>window.__staticRouterHydrationData = JSON.parse("{\"loaderData\":{},\"actionData\":null,\"errors\":null}");</script><script>requestAnimationFrame(function(){$RT=performance.now()});</script><div hidden id="S:0"><main data-pagefind-body="true" class="px-4 lg:pe-8 lg:px-8 col-span-full"><div class="grid grid-cols-1 xl:grid-cols-(--sidecar-grid-cols) gap-8 justify-between" data-pagefind-filter="section:markdown" data-pagefind-meta="section:markdown"><div class="prose dark:prose-invert prose-neutral typography max-w-full xl:w-full xl:max-w-3xl flex-1 shrink pt-(--padding-content-top)"><h1 class="group relative text-4xl font-extrabold" id="oeapi-procedures">OEAPI Procedures<a href="#oeapi-procedures" class="ms-[0.33em] rounded text-[0.8em] text-muted-foreground p-0.5 -m-0.5 opacity-0 group-hover:opacity-50 hover:text-primary hover:!opacity-100 transition-opacity duration-200 inline-flex items-center align-middle" aria-label="Link to oeapi-procedures"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-link size-[0.75em] min-w-4 min-h-4" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<p>This document describes the procedures used to maintain the Open Education API
+(OEAPI).</p>
+<h2 class="group relative text-2xl font-bold" id="change-procedure">Change Procedure<a href="#change-procedure" class="ms-[0.33em] rounded text-[0.8em] text-muted-foreground p-0.5 -m-0.5 opacity-0 group-hover:opacity-50 hover:text-primary hover:!opacity-100 transition-opacity duration-200 inline-flex items-center align-middle" aria-label="Link to change-procedure"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-link size-[0.75em] min-w-4 min-h-4" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>For the overall change management process, see
+<a href="https://openonderwijsapi.nl/v6.0/contributing/specification/change-management.md" target="_blank" rel="noreferrer">Change management</a>.</p>
+<h3 class="group relative text-xl font-semibold" id="developer-steps">Developer steps<a href="#developer-steps" class="ms-[0.33em] rounded text-[0.8em] text-muted-foreground p-0.5 -m-0.5 opacity-0 group-hover:opacity-50 hover:text-primary hover:!opacity-100 transition-opacity duration-200 inline-flex items-center align-middle" aria-label="Link to developer-steps"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-link size-[0.75em] min-w-4 min-h-4" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li>Identify the target version for the change.<!-- -->
+<ul>
+<li>Use <code class="font-mono border p-1 py-0.5 rounded-sm bg-border/50 dark:bg-border/70 wrap-anywhere inline">main</code> if the change is intended for the next upcoming version.</li>
+<li>Use <code class="font-mono border p-1 py-0.5 rounded-sm bg-border/50 dark:bg-border/70 wrap-anywhere inline">release/X.Y</code> if the change is intended as a fix for an existing
+published version.</li>
+</ul>
+</li>
+<li>Create a working branch from the correct target branch.<!-- -->
+<ul>
+<li>Branch from <code class="font-mono border p-1 py-0.5 rounded-sm bg-border/50 dark:bg-border/70 wrap-anywhere inline">main</code> for changes to the next upcoming version.</li>
+<li>Branch from <code class="font-mono border p-1 py-0.5 rounded-sm bg-border/50 dark:bg-border/70 wrap-anywhere inline">release/X.Y</code> for fixes to an existing published version.</li>
+</ul>
+</li>
+<li>Implement the change in the working branch.</li>
+<li>Create a pull request to the correct target branch.<!-- -->
+<ul>
+<li>Create a pull request to <code class="font-mono border p-1 py-0.5 rounded-sm bg-border/50 dark:bg-border/70 wrap-anywhere inline">main</code> if the branch was created from <code class="font-mono border p-1 py-0.5 rounded-sm bg-border/50 dark:bg-border/70 wrap-anywhere inline">main</code>.</li>
+<li>Create a pull request to <code class="font-mono border p-1 py-0.5 rounded-sm bg-border/50 dark:bg-border/70 wrap-anywhere inline">release/X.Y</code> if the branch was created from
+<code class="font-mono border p-1 py-0.5 rounded-sm bg-border/50 dark:bg-border/70 wrap-anywhere inline">release/X.Y</code>.</li>
+</ul>
+</li>
+<li>Complete the review process and address any review comments.</li>
+<li>Merge the pull request into the target branch.</li>
+<li>Changes on <code class="font-mono border p-1 py-0.5 rounded-sm bg-border/50 dark:bg-border/70 wrap-anywhere inline">main</code> are automatic published to <code class="font-mono border p-1 py-0.5 rounded-sm bg-border/50 dark:bg-border/70 wrap-anywhere inline">specification/unreleased</code>.
+<a class="" href="/specification/unreleased/maintenance/workflow#create-and-publish-from-main-unreleased" data-discover="true">Create and publish from main (unreleased)</a></li>
+</ol>
+<h3 class="group relative text-xl font-semibold" id="branching-rules">Branching rules<a href="#branching-rules" class="ms-[0.33em] rounded text-[0.8em] text-muted-foreground p-0.5 -m-0.5 opacity-0 group-hover:opacity-50 hover:text-primary hover:!opacity-100 transition-opacity duration-200 inline-flex items-center align-middle" aria-label="Link to branching-rules"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-link size-[0.75em] min-w-4 min-h-4" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li>Only the next upcoming version is developed on <code class="font-mono border p-1 py-0.5 rounded-sm bg-border/50 dark:bg-border/70 wrap-anywhere inline">main</code>.</li>
+<li>More distant future versions are not developed in parallel.</li>
+<li>Fixes for an already published version start from <code class="font-mono border p-1 py-0.5 rounded-sm bg-border/50 dark:bg-border/70 wrap-anywhere inline">release/X.Y</code>.</li>
+<li>Changes for future development start from <code class="font-mono border p-1 py-0.5 rounded-sm bg-border/50 dark:bg-border/70 wrap-anywhere inline">main</code>.</li>
+</ul>
+<h2 class="group relative text-2xl font-bold" id="update-documentation-release">Update Documentation (Release)<a href="#update-documentation-release" class="ms-[0.33em] rounded text-[0.8em] text-muted-foreground p-0.5 -m-0.5 opacity-0 group-hover:opacity-50 hover:text-primary hover:!opacity-100 transition-opacity duration-200 inline-flex items-center align-middle" aria-label="Link to update-documentation-release"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-link size-[0.75em] min-w-4 min-h-4" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>This procedure describes how to update the documentation for an existing
+released version.</p>
+<h3 class="group relative text-xl font-semibold" id="steps">Steps<a href="#steps" class="ms-[0.33em] rounded text-[0.8em] text-muted-foreground p-0.5 -m-0.5 opacity-0 group-hover:opacity-50 hover:text-primary hover:!opacity-100 transition-opacity duration-200 inline-flex items-center align-middle" aria-label="Link to steps"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-link size-[0.75em] min-w-4 min-h-4" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ol>
+<li>Identify the target version for the change. Use <code class="font-mono border p-1 py-0.5 rounded-sm bg-border/50 dark:bg-border/70 wrap-anywhere inline">release/X.Y</code>.</li>
+<li>Create a working branch from <code class="font-mono border p-1 py-0.5 rounded-sm bg-border/50 dark:bg-border/70 wrap-anywhere inline">release/X.Y</code>.</li>
+<li>Implement the documentation change in the working branch.</li>
+<li>Create a pull request to <code class="font-mono border p-1 py-0.5 rounded-sm bg-border/50 dark:bg-border/70 wrap-anywhere inline">release/X.Y</code>.</li>
+<li>Complete the review process and address any review comments.</li>
+<li>Merge the pull request into <code class="font-mono border p-1 py-0.5 rounded-sm bg-border/50 dark:bg-border/70 wrap-anywhere inline">release/X.Y</code>.</li>
+<li>Manually trigger the publish workflow
+<a class="" href="/specification/unreleased/maintenance/workflow#Publish-Zudoku-specification-by-hand-from-a-release-branch" data-discover="true">Publish Zudoku specification</a></li>
+</ol>
+<h2 class="group relative text-2xl font-bold" id="release-procedure-new-majorminor">Release Procedure (new major/minor)<a href="#release-procedure-new-majorminor" class="ms-[0.33em] rounded text-[0.8em] text-muted-foreground p-0.5 -m-0.5 opacity-0 group-hover:opacity-50 hover:text-primary hover:!opacity-100 transition-opacity duration-200 inline-flex items-center align-middle" aria-label="Link to release-procedure-new-majorminor"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-link size-[0.75em] min-w-4 min-h-4" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<ol>
+<li>Ensure all changes for the upcoming release are merged into <code class="font-mono border p-1 py-0.5 rounded-sm bg-border/50 dark:bg-border/70 wrap-anywhere inline">main</code>.</li>
+<li>Determine the new version number. If breaking, increment the major version;
+if non-breaking, increment the minor version.</li>
+<li>Create a release candidate tag from <code class="font-mono border p-1 py-0.5 rounded-sm bg-border/50 dark:bg-border/70 wrap-anywhere inline">main</code> (e.g. <code class="font-mono border p-1 py-0.5 rounded-sm bg-border/50 dark:bg-border/70 wrap-anywhere inline">v6.1-rc.1</code>).</li>
+<li>Push the tag to GitHub.</li>
+<li>Verify that the website publication has been triggered as expected.</li>
+</ol>
+<p>Pushing a release candidate tag triggers the automated release workflow. See
+<a class="" href="/specification/unreleased/maintenance/workflow#create-and-publish-new-release-from-tag" data-discover="true">Create and publish new release from tag</a>
+for the workflow description.</p>
+<p>The workflow:</p>
+<ul>
+<li>creates the corresponding release branch <code class="font-mono border p-1 py-0.5 rounded-sm bg-border/50 dark:bg-border/70 wrap-anywhere inline">release/X.Y</code>,
+i.e. <code class="font-mono border p-1 py-0.5 rounded-sm bg-border/50 dark:bg-border/70 wrap-anywhere inline">release/6.1</code>, if it does not yet exist</li>
+<li>creates the GitHub Release</li>
+<li>builds the release artefacts</li>
+<li>publishes the released version to the documentation site</li>
+<li>creates a protected branch <code class="font-mono border p-1 py-0.5 rounded-sm bg-border/50 dark:bg-border/70 wrap-anywhere inline">release/X.Y</code>, i.e. <code class="font-mono border p-1 py-0.5 rounded-sm bg-border/50 dark:bg-border/70 wrap-anywhere inline">release/6.1</code></li>
+</ul>
+<h2 class="group relative text-2xl font-bold" id="release-candidate-procedure">Release Candidate Procedure<a href="#release-candidate-procedure" class="ms-[0.33em] rounded text-[0.8em] text-muted-foreground p-0.5 -m-0.5 opacity-0 group-hover:opacity-50 hover:text-primary hover:!opacity-100 transition-opacity duration-200 inline-flex items-center align-middle" aria-label="Link to release-candidate-procedure"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-link size-[0.75em] min-w-4 min-h-4" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<ol>
+<li>Ensure all changes for the upcoming release candidate are merged into the
+release branch <code class="font-mono border p-1 py-0.5 rounded-sm bg-border/50 dark:bg-border/70 wrap-anywhere inline">release/X.Y</code>, i.e. <code class="font-mono border p-1 py-0.5 rounded-sm bg-border/50 dark:bg-border/70 wrap-anywhere inline">release/6.1</code>.</li>
+<li>Create a new release candidate tag from <code class="font-mono border p-1 py-0.5 rounded-sm bg-border/50 dark:bg-border/70 wrap-anywhere inline">release/X.Y</code>
+(e.g. <code class="font-mono border p-1 py-0.5 rounded-sm bg-border/50 dark:bg-border/70 wrap-anywhere inline">v6.1-rc.2</code>).</li>
+<li>Push the tag to GitHub.</li>
+<li>If changes must be propagated, create a pull request from <code class="font-mono border p-1 py-0.5 rounded-sm bg-border/50 dark:bg-border/70 wrap-anywhere inline">release/X.Y</code>
+to the appropriate target branch (e.g. <code class="font-mono border p-1 py-0.5 rounded-sm bg-border/50 dark:bg-border/70 wrap-anywhere inline">main</code>, <code class="font-mono border p-1 py-0.5 rounded-sm bg-border/50 dark:bg-border/70 wrap-anywhere inline">release/X.(Y+1)</code> or
+<code class="font-mono border p-1 py-0.5 rounded-sm bg-border/50 dark:bg-border/70 wrap-anywhere inline">release/(X+1).0</code>).</li>
+<li>Verify that the website publication has been triggered as expected.</li>
+</ol>
+<p>Pushing a release candidate tag triggers the automated release workflow. See
+<a class="" href="/specification/unreleased/maintenance/workflow#create-and-publish-new-release-from-tag" data-discover="true">Create and publish new release from tag</a>
+for the workflow description.</p>
+<p>The workflow:</p>
+<ul>
+<li>creates the GitHub Release</li>
+<li>builds the release artefacts</li>
+<li>publishes the released version to the documentation site</li>
+</ul>
+<h2 class="group relative text-2xl font-bold" id="finalise-release">Finalise Release<a href="#finalise-release" class="ms-[0.33em] rounded text-[0.8em] text-muted-foreground p-0.5 -m-0.5 opacity-0 group-hover:opacity-50 hover:text-primary hover:!opacity-100 transition-opacity duration-200 inline-flex items-center align-middle" aria-label="Link to finalise-release"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-link size-[0.75em] min-w-4 min-h-4" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<ol>
+<li>Ensure that the release branch <code class="font-mono border p-1 py-0.5 rounded-sm bg-border/50 dark:bg-border/70 wrap-anywhere inline">release/X.Y</code>, i.e. <code class="font-mono border p-1 py-0.5 rounded-sm bg-border/50 dark:bg-border/70 wrap-anywhere inline">release/6.1</code>,
+is final.</li>
+<li>Create the final version tag from <code class="font-mono border p-1 py-0.5 rounded-sm bg-border/50 dark:bg-border/70 wrap-anywhere inline">release/X.Y</code> (e.g. <code class="font-mono border p-1 py-0.5 rounded-sm bg-border/50 dark:bg-border/70 wrap-anywhere inline">v6.1</code>).</li>
+<li>Push the tag to GitHub.</li>
+<li>Verify that the website publication has been triggered as expected.</li>
+</ol>
+<p>Pushing the final version tag triggers the automated release workflow. See
+<a class="" href="/specification/unreleased/maintenance/workflow#create-and-publish-new-release-from-tag" data-discover="true">Create and publish new release from tag</a>
+for the workflow description.</p>
+<p>The workflow:</p>
+<ul>
+<li>creates the GitHub Release</li>
+<li>builds the release artefacts</li>
+<li>publishes the released version to the documentation site</li>
+</ul><div class="h-16"></div><div class="flex justify-between text-xs text-muted-foreground "><div></div><div class="flex items-center gap-2"><div></div><div><div title="Tuesday, March 17, 2026 at 10:52:01 AM">Last modified on<!-- --> <time dateTime="2026-03-17T10:52:01.000Z">March 17, 2026</time></div></div></div></div><div class="h-px bg-border mt-2 mb-6"></div><div class="flex flex-wrap gap-2 -mx-4 text-muted-foreground font-semibold justify-end mb-10" data-pagefind-ignore="all"></div></div><div class="hidden xl:block" data-pagefind-ignore="all"><aside class="sticky scrollbar top-8 lg:top-(--header-height) h-[calc(100vh-var(--header-height))] pt-(--padding-content-top) pb-(--padding-content-bottom) overflow-y-auto ps-1 text-sm"><div class="flex items-center gap-2 font-medium mb-2"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-list-tree" aria-hidden="true"><path d="M8 5h13"></path><path d="M13 12h8"></path><path d="M13 19h8"></path><path d="M3 10a2 2 0 0 0 2 2h3"></path><path d="M3 5v12a2 2 0 0 0 2 2h3"></path></svg>On this page</div><div class="relative ms-px ps-4"><div class="absolute inset-0 end-auto bg-border w-[1.5px]"></div><div class="absolute inset-s-0 -translate-y-1 h-6 w-[2.5px] bg-primary" style="top:0;opacity:0"></div><ul class="relative font-medium list-none space-y-2"><li class="truncate ps-0" title="Change Procedure"><a data-active="change-procedure" aria-current="page" class="hover:text-accent-foreground text-muted-foreground active" href="/specification/unreleased/maintenance/procedures#change-procedure" data-discover="true">Change Procedure</a><ul class="list-none ps-4 pt-2 space-y-2"><li class="truncate" title="Developer steps"><a data-active="developer-steps" aria-current="page" class="hover:text-accent-foreground text-muted-foreground active" href="/specification/unreleased/maintenance/procedures#developer-steps" data-discover="true">Developer steps</a></li><li class="truncate" title="Branching rules"><a data-active="branching-rules" aria-current="page" class="hover:text-accent-foreground text-muted-foreground active" href="/specification/unreleased/maintenance/procedures#branching-rules" data-discover="true">Branching rules</a></li></ul></li><li class="truncate ps-0" title="Update Documentation (Release)"><a data-active="update-documentation-release" aria-current="page" class="hover:text-accent-foreground text-muted-foreground active" href="/specification/unreleased/maintenance/procedures#update-documentation-release" data-discover="true">Update Documentation (Release)</a><ul class="list-none ps-4 pt-2 space-y-2"><li class="truncate" title="Steps"><a data-active="steps" aria-current="page" class="hover:text-accent-foreground text-muted-foreground active" href="/specification/unreleased/maintenance/procedures#steps" data-discover="true">Steps</a></li></ul></li><li class="truncate ps-0" title="Release Procedure (new major/minor)"><a data-active="release-procedure-new-majorminor" aria-current="page" class="hover:text-accent-foreground text-muted-foreground active" href="/specification/unreleased/maintenance/procedures#release-procedure-new-majorminor" data-discover="true">Release Procedure (new major/minor)</a></li><li class="truncate ps-0" title="Release Candidate Procedure"><a data-active="release-candidate-procedure" aria-current="page" class="hover:text-accent-foreground text-muted-foreground active" href="/specification/unreleased/maintenance/procedures#release-candidate-procedure" data-discover="true">Release Candidate Procedure</a></li><li class="truncate ps-0" title="Finalise Release"><a data-active="finalise-release" aria-current="page" class="hover:text-accent-foreground text-muted-foreground active" href="/specification/unreleased/maintenance/procedures#finalise-release" data-discover="true">Finalise Release</a></li></ul></div></aside></div></div></main></div><script>$RB=[];$RV=function(a){$RT=performance.now();for(var b=0;b<a.length;b+=2){var c=a[b],e=a[b+1];null!==e.parentNode&&e.parentNode.removeChild(e);var f=c.parentNode;if(f){var g=c.previousSibling,h=0;do{if(c&&8===c.nodeType){var d=c.data;if("/$"===d||"/&"===d)if(0===h)break;else h--;else"$"!==d&&"$?"!==d&&"$~"!==d&&"$!"!==d&&"&"!==d||h++}d=c.nextSibling;f.removeChild(c);c=d}while(c);for(;e.firstChild;)f.insertBefore(e.firstChild,c);g.data="$";g._reactRetry&&requestAnimationFrame(g._reactRetry)}}a.length=0};
+$RC=function(a,b){if(b=document.getElementById(b))(a=document.getElementById(a))?(a.previousSibling.data="$~",$RB.push(a,b),2===$RB.length&&("number"!==typeof $RT?requestAnimationFrame($RV.bind(null,$RB)):(a=performance.now(),setTimeout($RV.bind(null,$RB),2300>a&&2E3<a?2300-a:$RT+300-a)))):b.parentNode.removeChild(b)};$RC("B:0","S:0")</script></div>
+  <script>window.DATA={"mutations":[],"queries":[{"dehydratedAt":1774973014034,"state":{"dataUpdateCount":0,"dataUpdatedAt":0,"error":null,"errorUpdateCount":0,"errorUpdatedAt":0,"fetchFailureCount":0,"fetchFailureReason":null,"fetchMeta":null,"isInvalidated":false,"status":"pending","fetchStatus":"idle"},"queryKey":["zuplo-build-check",null,"/__zuplo/docs"],"queryHash":"[\"zuplo-build-check\",null,\"/__zuplo/docs\"]"},{"dehydratedAt":1774973014034,"state":{"dataUpdateCount":0,"dataUpdatedAt":0,"error":null,"errorUpdateCount":0,"errorUpdatedAt":0,"fetchFailureCount":0,"fetchFailureReason":null,"fetchMeta":null,"isInvalidated":false,"status":"pending","fetchStatus":"idle"},"queryKey":["refresh-user-profile"],"queryHash":"[\"refresh-user-profile\"]"},{"dehydratedAt":1774973014034,"state":{"data":[],"dataUpdateCount":1,"dataUpdatedAt":1774973014015,"error":null,"errorUpdateCount":0,"errorUpdatedAt":0,"fetchFailureCount":0,"fetchFailureReason":null,"fetchMeta":null,"isInvalidated":false,"status":"success","fetchStatus":"idle"},"queryKey":["plugin-navigation","/maintenance/procedures"],"queryHash":"[\"plugin-navigation\",\"/maintenance/procedures\"]"}]}</script></body>
+</html>
