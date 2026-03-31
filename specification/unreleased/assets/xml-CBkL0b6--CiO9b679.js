@@ -1,0 +1,2 @@
+import{a as e}from"./entry.client-Dk1XTHAW.js";const l=s=>e.jsxs("svg",{xmlns:"http://www.w3.org/2000/svg",viewBox:"0 0 24 24",width:"1em",height:"1em",...s,children:[e.jsx("title",{children:"XML"}),e.jsx("path",{className:"fill-foreground",d:"m12.89 3 1.96.4L11.11 21l-1.96-.4L12.89 3m6.7 9L16 8.41V5.58L22.42 12 16 18.41v-2.83L19.59 12M1.58 12 8 5.58v2.83L4.41 12 8 15.58v2.83L1.58 12Z"})]});export{l as default};
+//# sourceMappingURL=xml-CBkL0b6--CiO9b679.js.map
