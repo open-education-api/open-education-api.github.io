@@ -1,5 +1,5 @@
 ---
-title: Version Management Restructuring for the OOAPI Specification
+title: Restructuring OEAPI Version Management to Ensure Immutable Releases
 adr: 0004
 status: Accepted
 date: 2025-12-16
@@ -10,13 +10,13 @@ informed:
   - Community
 ---
 
-# Version Management Restructuring for the OOAPI Specification
+# Restructuring OEAPI Version Management to Ensure Immutable Release
 
 ## Status: Accepted
 
 ## Context
 
-The OOAPI specification, including its embedded documentation, currently
+The OEAPI specification, including its embedded documentation, currently
 exists inside a single branch that contains multiple version folders (v1 t/m
 v6). This structure was workable in earlier stages of development, but it now
 causes several lifecycle and governance problems. Multiple versions of the
@@ -64,7 +64,7 @@ Disadvantages: introduces operational and financial overhead.
 
 ## Decision
 
-We adopt Option 3. The OOAPI specification will be restructured so that each
+We adopt Option 3. The OEAPI specification will be restructured so that each
 major and minor version lives in its own release branch such as release/6.0
 or release/6.1. Tags freeze exact semantic versions such as v6.0.0 or v6.1.0.
 The folder named v6 will be replaced with a generic folder /source/. Each
