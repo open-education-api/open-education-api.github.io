@@ -157,12 +157,12 @@ ADRs are documented as discussions in the publication repository that hosts gene
 
 ## Decision
 
-### Option 1-4
+Option 5 is not selected because we do not want to use Github for discussion on the Architecture Decision Records.
 
-When comparing Options 1 to 4, Option 4 emerges as the most reasonable choice. Options 1 and 2 place ADRs within repositories that primarily serve other purposes, creating a risk that architectural decisions become subordinate to specification changes or documentation maintenance, which reduces their clarity and long term visibility. Option 3 relies on the publication stream, which is a derived and regenerated context and therefore unsuitable for maintaining an authoritative and evolving decision record. Option 4, by contrast, provides a clear and dedicated location for architectural decisions, making their scope and intent explicit and preserving decision history over time. Although it introduces an additional repository, this trade off is outweighed by the clarity, neutrality, and architectural focus it provides.
+When comparing options 1 to 4, option 4 emerges as the most reasonable choice. Options 1 and 2 place ADRs within repositories that primarily serve other purposes, creating a risk that architectural decisions become subordinate to specification changes or documentation maintenance, which reduces their clarity and long term visibility. Option 3 relies on the publication stream, which is a derived and regenerated context and therefore unsuitable for maintaining an authoritative and evolving decision record. Option 4, by contrast, provides a clear and dedicated location for architectural decisions, making their scope and intent explicit and preserving decision history over time. Although it introduces an additional repository, this trade off is outweighed by the clarity, neutrality, and architectural focus it provides.
 
-### Option 5
-
-Within Option 5, which uses GitHub Discussions for capturing architectural decisions, Option 5a is the most natural choice. Locating ADR discussions in the specification repository aligns with current community practice, as this repository is already the primary place where a broad part of the OEAPI community collaborates and discusses change. This placement keeps architectural decisions close to technical change, reinforces their perceived authority through established governance, and situates them where engagement already occurs. While discussions may be more technical and less narrative in nature, these drawbacks are manageable and do not outweigh the benefits of visibility, ownership, and proximity to implementation.
+Option 4 is therefore selected.
 
 ## Consequences
+
+A new dedicated ADR repository will be created to manage the lifecycle of the ADRs. These ADRs will be published to the publication repository, where they form part of the overall information sharing alongside the specification and the documentation.
