@@ -53,8 +53,9 @@ communicated via the standard HTTP `Accept` header together with the
 
 6. Versioning via the HTTP `Accept` header without standard HTTP negotiation
    (the client sends exactly one requested OEAPI version in the `Accept`
-   header, optionally including zero or one consumer type and version, and
-   the server determines whether a compatible representation can be returned)
+   header, optionally including zero or one consumer type in combination with
+   consumer version, and the server determines whether a compatible
+   representation can be returned)
 
 For use of the `Accept` header, see
 [RFC 9110](https://www.rfc-editor.org/rfc/rfc9110.html).
@@ -108,9 +109,10 @@ complexity of full HTTP negotiation.
   negotiation keeps both OEAPI version information and optional consumer
   information in the HTTP layer and allows them to be expressed together as
   part of representation metadata. The client sends exactly one requested
-  OEAPI version and optionally one consumer type and version in the
-  `Accept` header, enabling a single, consistent mechanism for versioning
-  while maintaining clarity and alignment with HTTP semantics.
+  OEAPI version and optionally one consumer type in combination with
+  consumer version in the `Accept` header, enabling a single, consistent
+  mechanism for versioning while maintaining clarity and alignment with
+  HTTP semantics.
 
 Versioning via dedicated custom headers (option 3) keeps version information
 in the HTTP layer, but introduces non-standard header fields such as
@@ -127,7 +129,8 @@ clarity in how versioning is expressed.
 The preferred approach is to express both OEAPI and consumer versioning in the
 standard HTTP `Accept` and `Content-Type` headers. This corresponds to option
 6, where the client sends exactly one requested OEAPI version and optionally
-one consumer type and version as part of the media type parameters.
+one consumer type in combination with consumer version as part of the media
+type parameters.
 
 This approach keeps all versioning concerns within the standard HTTP
 representation model, provides a single consistent mechanism for both OEAPI
