@@ -4,6 +4,10 @@
     "version": "6.0",
     "title": "Open Education API",
     "description": "OpenAPI (fka Swagger) specification for the Open Education API. \n\nThe model provides an overview of the educational domain that is modelled and\nforms the basis of the OEAPI. The overarching educational concept is not exposed\nthrough API endpoints. Instead, the educational specification defines four base\nobjects: programme, course, learning component, and test component, each with\nits own endpoint.\n\nThese base objects can be used to realise offerings. There is, however, no\ndedicated offering endpoint. Offerings are represented through four base\ntypes: programme offering, course offering, learning component offering, and\ntest component offering.\n\nRelations between an offering and a person, such as enrolment, are realised\nthrough association endpoints. These endpoints define the different types of\nassociations that can exist between offerings and persons. Other objects shown\nin the model represent groups and group memberships of a person.\n",
+    "license": {
+      "name": "EUPL-1.2",
+      "url": "https://github.com/open-education-api/specification/blob/release/6.0/LICENSE.md"
+    },
     "contact": {
       "name": "OEAPI Working Group / SURF",
       "url": "https://openonderwijsapi.nl",
