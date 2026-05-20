@@ -1,0 +1,21 @@
+name: Block PRs to main
+
+on:
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  block-pr-to-main:
+    name: Block pull requests to main
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Fail when pull request targets main
+        run: |
+          echo "Pull requests directly to main are not allowed."
+          echo "Use the appropriate release or development branch instead."
+          exit 1
