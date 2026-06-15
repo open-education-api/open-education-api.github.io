@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Redirecting...</title>
+  <script>
+    const match = window.location.pathname.match(/^\/specification\/(v[0-9]+(?:\.[0-9]+)?)(?:\/.*)?$/);
+
+    if (match) {
+      window.location.replace(`/specification/${match[1]}/`);
+    } else {
+      window.location.replace('/');
+    }
+  </script>
+</head>
+<body>
+  Redirecting...
+</body>
+</html>
