@@ -6069,8 +6069,11 @@ paths:
       summary: PATCH /test-component-offering-association-attempts/{testComponentOfferingAssociationAttemptId}
       operationId: partialUpdateTestComponentOfferingAssociationAttemptById
       description: |
-        Update the result of an attempt. Other elements of the attempt object COULD 
-        also be PATCHED. But are not likely and have therefore not been included in this endpoint.
+        This patch operation is used in a situation where one system is responsible for the test component offering association and another system is
+        acting on this association by planning test moments and enrolling people in those test moment. This patch operation allows the 
+        system responsible for the test moment execution to update the state of a person attending a test moment. Updates can be used to update presence, but also update 
+        the result/score achieved.
+
         Implementation of the PATCH activity is based on use PATCH with JSON Merge Patch standard, 
         a specialized media type `application/merge-patch+json` for partial resource representation 
         to update parts of resource objects.
@@ -6089,9 +6092,7 @@ paths:
         content:
           application/merge-patch+json:
             schema:
-              properties:
-                result:
-                  $ref: '#/components/schemas/Result'
+              $ref: '#/components/schemas/TestComponentOfferingAssociationAttemptFull'
       responses:
         '200':
           description: OK
@@ -7729,7 +7730,32 @@ components:
               type:
                 - integer
                 - 'null'
-              description: The attempt this association is linked to.
+              description: The attempt this association is linked to. This attempt attribute has been deprecated in favor of the initialAttemptOnAssociation attribute.
+              deprecated: true
+              example: 2
+            initialAttemptOnAssociation:
+              type:
+                - integer
+                - 'null'
+              description: |
+                Persons (students) often are allowed only a limited number of attempts on a specific test. These attempts can be handled in different ways by different institutions. 
+                Some scenarios are:
+                  - All attempts are consumed on one association on only one offering.
+                  - Each attempt is consumed on a different association on the same offering.
+                  - Each attempt is consumed on a different association on a different offering.
+                Also combinations of these scenarios are possible, for example when a student is allowed to have 2 attempts on the same offering, 
+                in special situation the exam board allows a third attempt but only on a different offering.
+                Because a student can already have consumed attempts under previous associations and offerings, it is necessary to know the first attempt to be consumed within this association.
+              example: 2
+            maximumNumberOfAttemptsOnAssociation:
+              type:
+                - integer
+                - 'null'
+              description: |
+                Depending on the scenario used for handling attempts. Three variants are possible here:
+                  - Only one attempt is allowed on this association. The value of this property is 1.
+                  - An unlimited number of attempts is allowed on this association. The value of this property is null.
+                  - A limited number of attempts is allowed on this association. The value of this property is the maximum number of attempts allowed on this association.
               example: 2
             attendance:
               oneOf:
@@ -11511,6 +11537,14 @@ components:
         - role
         - state
       properties:
+        primaryCode:
+          description: |
+            The primary human readable identifier for this association. This is often the source identifier as defined by the institution.
+            For OEAPI 6.x this attribute is not required. For OEAPI 7.x this attribute may become required.
+          $ref: '#/components/schemas/IdentifierEntry'
+          example:
+            codeType: identifier
+            code: '2.1'
         role:
           $ref: '#/components/schemas/associationRole'
         startDateTime:
@@ -11534,6 +11568,13 @@ components:
           format: date-time
           description: The actual end date and time the person stopped participating in the offering. Formatted according to RFC3339 (full-date)
           example: '2025-10-23T08:30:00+01:00'
+        otherCodes:
+          type:
+            - array
+            - 'null'
+          description: An array of additional human readable codes/identifiers for the entity being described.
+          items:
+            $ref: '#/components/schemas/IdentifierEntry'
         state:
           $ref: '#/components/schemas/associationState'
         remoteState:
@@ -11622,6 +11663,15 @@ components:
             - 'null'
           description: The score of this programme/course/component association (based on resultValueType in offering)
           example: '9'
+        resultvaluetype:
+          oneOf:
+            - $ref: '#/components/schemas/resultValueType'
+            - type: 'null'
+          description: |
+            The type of the result value (e.g. grade, percentage, pass/fail, etc.). 
+            The resultvaluetype of the score is usually based on the resultValueType defined in the offering. In situations where the score
+            is based on a different resultValueType than the one defined in the offering, this property can be used to provide the necessary 
+            context for interpreting the score.
         rawScore:
           type:
             - integer
