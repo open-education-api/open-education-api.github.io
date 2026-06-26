@@ -1,8 +1,8 @@
 ---
 title: OEAPI versioning exchange
 adr: 0005
-status: Proposed
-date: 2026-03-19
+status: Accepted
+date: 2026-05-19
 decision-makers:
   - Technical Working Group
 consulted: 
@@ -158,6 +158,10 @@ version. This MAY concern either the OEAPI version or the consumer version.
 The error body MUST include the requested version and the list of supported
 versions. If the error concerns a consumer version, the consumer key MUST also
 be included.
+
+To indicate compatibility between a specific consumer version and the base
+OEAPI version, a mandatory (consumer) YAML field will be defined. This field
+specifies the OEAPI version(s) with which the consumer is compatible.
 
 ## Example
 
