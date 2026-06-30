@@ -329,9 +329,6 @@
             "$ref": "#/components/parameters/filterQuery"
           },
           {
-            "$ref": "#/components/parameters/filterQueryOr"
-          },
-          {
             "$ref": "#/components/parameters/fields"
           },
           {
@@ -538,9 +535,6 @@
             "$ref": "#/components/parameters/filterQuery"
           },
           {
-            "$ref": "#/components/parameters/filterQueryOr"
-          },
-          {
             "$ref": "#/components/parameters/fields"
           },
           {
@@ -668,9 +662,6 @@
           },
           {
             "$ref": "#/components/parameters/filterQuery"
-          },
-          {
-            "$ref": "#/components/parameters/filterQueryOr"
           },
           {
             "$ref": "#/components/parameters/fields"
@@ -805,9 +796,6 @@
             "$ref": "#/components/parameters/filterQuery"
           },
           {
-            "$ref": "#/components/parameters/filterQueryOr"
-          },
-          {
             "$ref": "#/components/parameters/fields"
           },
           {
@@ -940,9 +928,6 @@
             "$ref": "#/components/parameters/filterQuery"
           },
           {
-            "$ref": "#/components/parameters/filterQueryOr"
-          },
-          {
             "$ref": "#/components/parameters/fields"
           },
           {
@@ -1066,9 +1051,6 @@
           },
           {
             "$ref": "#/components/parameters/filterQuery"
-          },
-          {
-            "$ref": "#/components/parameters/filterQueryOr"
           },
           {
             "$ref": "#/components/parameters/fields"
@@ -1220,9 +1202,6 @@
           },
           {
             "$ref": "#/components/parameters/filterQuery"
-          },
-          {
-            "$ref": "#/components/parameters/filterQueryOr"
           },
           {
             "$ref": "#/components/parameters/fields"
@@ -1874,9 +1853,6 @@
             "$ref": "#/components/parameters/filterQuery"
           },
           {
-            "$ref": "#/components/parameters/filterQueryOr"
-          },
-          {
             "$ref": "#/components/parameters/fields"
           },
           {
@@ -1998,9 +1974,6 @@
             "$ref": "#/components/parameters/filterQuery"
           },
           {
-            "$ref": "#/components/parameters/filterQueryOr"
-          },
-          {
             "$ref": "#/components/parameters/fields"
           },
           {
@@ -2105,9 +2078,6 @@
           },
           {
             "$ref": "#/components/parameters/filterQuery"
-          },
-          {
-            "$ref": "#/components/parameters/filterQueryOr"
           },
           {
             "$ref": "#/components/parameters/search"
@@ -2239,9 +2209,6 @@
             "$ref": "#/components/parameters/filterQuery"
           },
           {
-            "$ref": "#/components/parameters/filterQueryOr"
-          },
-          {
             "$ref": "#/components/parameters/search"
           },
           {
@@ -2362,9 +2329,6 @@
           },
           {
             "$ref": "#/components/parameters/filterQuery"
-          },
-          {
-            "$ref": "#/components/parameters/filterQueryOr"
           },
           {
             "$ref": "#/components/parameters/fields"
@@ -2572,9 +2536,6 @@
             "$ref": "#/components/parameters/filterQuery"
           },
           {
-            "$ref": "#/components/parameters/filterQueryOr"
-          },
-          {
             "$ref": "#/components/parameters/fields"
           },
           {
@@ -2717,9 +2678,6 @@
           },
           {
             "$ref": "#/components/parameters/filterQuery"
-          },
-          {
-            "$ref": "#/components/parameters/filterQueryOr"
           },
           {
             "$ref": "#/components/parameters/fields"
@@ -2881,9 +2839,6 @@
             "$ref": "#/components/parameters/filterQuery"
           },
           {
-            "$ref": "#/components/parameters/filterQueryOr"
-          },
-          {
             "$ref": "#/components/parameters/fields"
           },
           {
@@ -2982,9 +2937,6 @@
           },
           {
             "$ref": "#/components/parameters/filterQuery"
-          },
-          {
-            "$ref": "#/components/parameters/filterQueryOr"
           },
           {
             "$ref": "#/components/parameters/fields"
@@ -3126,9 +3078,6 @@
           },
           {
             "$ref": "#/components/parameters/filterQuery"
-          },
-          {
-            "$ref": "#/components/parameters/filterQueryOr"
           },
           {
             "$ref": "#/components/parameters/fields"
@@ -3291,9 +3240,6 @@
           },
           {
             "$ref": "#/components/parameters/filterQuery"
-          },
-          {
-            "$ref": "#/components/parameters/filterQueryOr"
           },
           {
             "$ref": "#/components/parameters/fields"
@@ -3592,9 +3538,6 @@
           },
           {
             "$ref": "#/components/parameters/filterQuery"
-          },
-          {
-            "$ref": "#/components/parameters/filterQueryOr"
           },
           {
             "$ref": "#/components/parameters/fields"
@@ -4296,9 +4239,6 @@
             "$ref": "#/components/parameters/filterQuery"
           },
           {
-            "$ref": "#/components/parameters/filterQueryOr"
-          },
-          {
             "$ref": "#/components/parameters/fields"
           },
           {
@@ -4403,9 +4343,6 @@
           },
           {
             "$ref": "#/components/parameters/filterQuery"
-          },
-          {
-            "$ref": "#/components/parameters/filterQueryOr"
           },
           {
             "$ref": "#/components/parameters/fields"
@@ -4517,9 +4454,6 @@
           },
           {
             "$ref": "#/components/parameters/filterQuery"
-          },
-          {
-            "$ref": "#/components/parameters/filterQueryOr"
           },
           {
             "$ref": "#/components/parameters/fields"
@@ -4713,9 +4647,6 @@
             "$ref": "#/components/parameters/filterQuery"
           },
           {
-            "$ref": "#/components/parameters/filterQueryOr"
-          },
-          {
             "$ref": "#/components/parameters/fields"
           },
           {
@@ -4836,9 +4767,6 @@
           },
           {
             "$ref": "#/components/parameters/filterQuery"
-          },
-          {
-            "$ref": "#/components/parameters/filterQueryOr"
           },
           {
             "$ref": "#/components/parameters/fields"
@@ -5032,9 +4960,6 @@
           },
           {
             "$ref": "#/components/parameters/filterQuery"
-          },
-          {
-            "$ref": "#/components/parameters/filterQueryOr"
           },
           {
             "$ref": "#/components/parameters/fields"
@@ -5290,9 +5215,6 @@
             "$ref": "#/components/parameters/filterQuery"
           },
           {
-            "$ref": "#/components/parameters/filterQueryOr"
-          },
-          {
             "$ref": "#/components/parameters/fields"
           },
           {
@@ -5540,9 +5462,6 @@
             "$ref": "#/components/parameters/filterQuery"
           },
           {
-            "$ref": "#/components/parameters/filterQueryOr"
-          },
-          {
             "$ref": "#/components/parameters/fields"
           },
           {
@@ -5647,9 +5566,6 @@
           },
           {
             "$ref": "#/components/parameters/filterQuery"
-          },
-          {
-            "$ref": "#/components/parameters/filterQueryOr"
           },
           {
             "$ref": "#/components/parameters/fields"
@@ -5784,9 +5700,6 @@
             "$ref": "#/components/parameters/filterQuery"
           },
           {
-            "$ref": "#/components/parameters/filterQueryOr"
-          },
-          {
             "$ref": "#/components/parameters/fields"
           },
           {
@@ -5885,9 +5798,6 @@
           },
           {
             "$ref": "#/components/parameters/filterQuery"
-          },
-          {
-            "$ref": "#/components/parameters/filterQueryOr"
           },
           {
             "$ref": "#/components/parameters/fields"
@@ -6020,9 +5930,6 @@
           },
           {
             "$ref": "#/components/parameters/filterQuery"
-          },
-          {
-            "$ref": "#/components/parameters/filterQueryOr"
           },
           {
             "$ref": "#/components/parameters/fields"
@@ -6161,9 +6068,6 @@
             "$ref": "#/components/parameters/filterQuery"
           },
           {
-            "$ref": "#/components/parameters/filterQueryOr"
-          },
-          {
             "$ref": "#/components/parameters/fields"
           },
           {
@@ -6296,9 +6200,6 @@
             "$ref": "#/components/parameters/filterQuery"
           },
           {
-            "$ref": "#/components/parameters/filterQueryOr"
-          },
-          {
             "$ref": "#/components/parameters/fields"
           },
           {
@@ -6390,9 +6291,6 @@
           },
           {
             "$ref": "#/components/parameters/filterQuery"
-          },
-          {
-            "$ref": "#/components/parameters/filterQueryOr"
           },
           {
             "$ref": "#/components/parameters/fields"
@@ -6749,9 +6647,6 @@
             "$ref": "#/components/parameters/filterQuery"
           },
           {
-            "$ref": "#/components/parameters/filterQueryOr"
-          },
-          {
             "$ref": "#/components/parameters/fields"
           },
           {
@@ -6900,9 +6795,6 @@
             "$ref": "#/components/parameters/filterQuery"
           },
           {
-            "$ref": "#/components/parameters/filterQueryOr"
-          },
-          {
             "$ref": "#/components/parameters/fields"
           },
           {
@@ -7039,9 +6931,6 @@
             "$ref": "#/components/parameters/filterQuery"
           },
           {
-            "$ref": "#/components/parameters/filterQueryOr"
-          },
-          {
             "$ref": "#/components/parameters/fields"
           },
           {
@@ -7173,9 +7062,6 @@
           },
           {
             "$ref": "#/components/parameters/filterQuery"
-          },
-          {
-            "$ref": "#/components/parameters/filterQueryOr"
           },
           {
             "$ref": "#/components/parameters/fields"
@@ -7848,9 +7734,6 @@
             "$ref": "#/components/parameters/filterQuery"
           },
           {
-            "$ref": "#/components/parameters/filterQueryOr"
-          },
-          {
             "$ref": "#/components/parameters/fields"
           },
           {
@@ -7955,9 +7838,6 @@
           },
           {
             "$ref": "#/components/parameters/filterQuery"
-          },
-          {
-            "$ref": "#/components/parameters/filterQueryOr"
           },
           {
             "$ref": "#/components/parameters/fields"
@@ -8072,9 +7952,6 @@
           },
           {
             "$ref": "#/components/parameters/filterQuery"
-          },
-          {
-            "$ref": "#/components/parameters/filterQueryOr"
           },
           {
             "$ref": "#/components/parameters/fields"
@@ -8301,9 +8178,6 @@
             "$ref": "#/components/parameters/filterQuery"
           },
           {
-            "$ref": "#/components/parameters/filterQueryOr"
-          },
-          {
             "$ref": "#/components/parameters/fields"
           },
           {
@@ -8420,9 +8294,6 @@
           },
           {
             "$ref": "#/components/parameters/filterQuery"
-          },
-          {
-            "$ref": "#/components/parameters/filterQueryOr"
           },
           {
             "$ref": "#/components/parameters/fields"
@@ -8554,9 +8425,6 @@
           },
           {
             "$ref": "#/components/parameters/filterQuery"
-          },
-          {
-            "$ref": "#/components/parameters/filterQueryOr"
           },
           {
             "$ref": "#/components/parameters/fields"
@@ -8696,9 +8564,6 @@
           },
           {
             "$ref": "#/components/parameters/filterQuery"
-          },
-          {
-            "$ref": "#/components/parameters/filterQueryOr"
           },
           {
             "$ref": "#/components/parameters/fields"
@@ -9246,9 +9111,6 @@
           },
           {
             "$ref": "#/components/parameters/filterQuery"
-          },
-          {
-            "$ref": "#/components/parameters/filterQueryOr"
           },
           {
             "$ref": "#/components/parameters/fields"
@@ -9874,9 +9736,6 @@
             "$ref": "#/components/parameters/filterQuery"
           },
           {
-            "$ref": "#/components/parameters/filterQueryOr"
-          },
-          {
             "$ref": "#/components/parameters/fields"
           },
           {
@@ -9981,9 +9840,6 @@
           },
           {
             "$ref": "#/components/parameters/filterQuery"
-          },
-          {
-            "$ref": "#/components/parameters/filterQueryOr"
           },
           {
             "$ref": "#/components/parameters/fields"
@@ -10095,9 +9951,6 @@
           },
           {
             "$ref": "#/components/parameters/filterQuery"
-          },
-          {
-            "$ref": "#/components/parameters/filterQueryOr"
           },
           {
             "$ref": "#/components/parameters/fields"
@@ -10289,9 +10142,6 @@
           },
           {
             "$ref": "#/components/parameters/filterQuery"
-          },
-          {
-            "$ref": "#/components/parameters/filterQueryOr"
           },
           {
             "$ref": "#/components/parameters/fields"
@@ -17184,9 +17034,49 @@
         "required": false,
         "style": "deepObject",
         "explode": true,
-        "description": "Filter object serialised as `filter_query[field][operation]=value`.\nMultiple top-level fields are combined with AND. CSV is accepted where noted.\n\nInspired by Storyblok (https://www.storyblok.com/docs/api/content-delivery/v2/filter-queries)\n\nWildcards:\n- Prefer using only the asterisk `*` as a wildcard for partial matches (e.g., like and not_like).\n\nImplementation note:\n- The availability and behaviour of this query functionality are entirely determined by the organisation hosting\n  the API implementation. It is not mandatory for implementers to support this functionality, and it cannot be enforced \n  upon organisations that provide or consume OEAPI endpoints.\n- It is up to each implementer to decide whether to support this feature. It is **not** a requirement of the OEAPI \n  standard itself.\n- Consumers or working groups that wish to apply specific filtering mechanisms are encouraged to do so using \n  this approach for the sake of consistency across implementations.\n\nExamples:  \n- **Filter course offerings by programme, delivery, language and start date**  \n  `filter_query[programme.code][in]=B-IT-2025&filter_query[organisation.code][in]=RuG&filter_query[mode_of_delivery][in]=on_campus,hybrid&filter_query[language_of_instruction][in]=en-GB&filter_query[start_date][gt_date]=2025-09-01T00:00:00Z`  \n  \n- **Only offerings with email contact present**  \n  `filter_query[contacts.email][is]=not_empty`  \n",
+        "description": "Filter object serialised as `filter_query[field][operation]=value`.\nMultiple top-level fields are combined with AND. CSV is accepted where noted.\n\nOR blocks. Provide an array of single-field filter objects, each combined with OR.\nSerialises as `filter_query[__or][][field][operation]=value`.\n\nInspired by Storyblok (https://www.storyblok.com/docs/api/content-delivery/v2/filter-queries)\n\nWildcards:\n- Prefer using only the asterisk `*` as a wildcard for partial matches (e.g., like and not_like).\n\nImplementation note:\n- The availability and behaviour of this query functionality are entirely determined by the organisation hosting\n  the API implementation. It is not mandatory for implementers to support this functionality, and it cannot be enforced \n  upon organisations that provide or consume OEAPI endpoints.\n- It is up to each implementer to decide whether to support this feature. It is **not** a requirement of the OEAPI \n  standard itself.\n- Consumers or working groups that wish to apply specific filtering mechanisms are encouraged to do so using \n  this approach for the sake of consistency across implementations.\n\nExamples:  \n- **Filter course offerings by programme, delivery, language and start date**  \n  `filter_query[programme.code][in]=B-IT-2025&filter_query[organisation.code][in]=RuG&filter_query[mode_of_delivery][in]=on_campus,hybrid&filter_query[language_of_instruction][in]=en-GB&filter_query[start_date][gt_date]=2025-09-01T00:00:00Z`  \n  \n- **Only offerings with email contact present**  \n  `filter_query[contacts.email][is]=not_empty`\n\n- **Provider is Org A or Org B, OR campus city contains “Utrecht”**  \n  `?filter_query[__or][][organisation.id][in]=org-uu,org-hku&filter_query[__or][][campus.city][like]=*Utrecht*`  \n    \n- **Start date after 1 Sept 2025 OR has evening/block_week tag**  \n  `?filter_query[__or][][start_date][gt_date]=2025-09-01T00:00:00Z&filter_query[__or][][tags][any_in_array]=evening,block_week`  \n",
         "schema": {
           "type": "object",
+          "properties": {
+            "__or": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "object",
+                  "properties": {
+                    "in": {
+                      "type": "string",
+                      "description": "Exact match; multiple values allowed as CSV.",
+                      "example": "org-uu,org-hku"
+                    },
+                    "like": {
+                      "type": "string",
+                      "description": "Partial match using wildcards. Prefer `*` as the wildcard.\n# Quotes are required here because YAML interprets unquoted * as an alias reference.\n",
+                      "example": "*Utrecht*"
+                    },
+                    "any_in_array": {
+                      "type": "string",
+                      "description": "Match if any of the CSV values occur.",
+                      "example": "evening,block_week"
+                    },
+                    "gt_date": {
+                      "type": "string",
+                      "format": "date-time",
+                      "description": "ISO 8601 / RFC 3339 date-time.",
+                      "example": "2025-09-01T00:00:00Z"
+                    },
+                    "lt_date": {
+                      "type": "string",
+                      "format": "date-time",
+                      "description": "ISO 8601 / RFC 3339 date-time.",
+                      "example": "2025-12-31T23:59:59Z"
+                    }
+                  }
+                }
+              }
+            }
+          },
           "additionalProperties": {
             "type": "object",
             "properties": {
@@ -17254,52 +17144,6 @@
                 "format": "date-time",
                 "description": "ISO 8601 date-time.",
                 "example": "2025-12-31T23:59:59Z"
-              }
-            }
-          }
-        }
-      },
-      "filterQueryOr": {
-        "name": "filter_query[__or][]",
-        "in": "query",
-        "required": false,
-        "style": "deepObject",
-        "explode": true,
-        "description": "OR blocks. Provide an array of single-field filter objects, each combined with OR.\nSerialises as `filter_query[__or][][field][operation]=value`.\n\nInspired by Storyblok (https://www.storyblok.com/docs/api/content-delivery/v2/filter-queries)\n\nWildcards:\n- Prefer using only the asterisk `*` as a wildcard for partial matches (e.g., like).\n\nImplementation note:\n- The availability and behaviour of this query functionality are entirely determined by the organisation hosting\n  the API implementation. It is not mandatory for implementers to support this functionality, and it cannot be enforced \n  upon organisations that provide or consume OEAPI endpoints.\n- It is up to each implementer to decide whether to support this feature. It is **not** a requirement of the OEAPI \n  standard itself.\n- Consumers or working groups that wish to apply specific filtering mechanisms are encouraged to do so using \n  this approach for the sake of consistency across implementations.\n\nExamples:  \n  - **Provider is Org A or Org B, OR campus city contains “Utrecht”**  \n    `?filter_query[__or][][organisation.id][in]=org-uu,org-hku&filter_query[__or][][campus.city][like]=*Utrecht*`  \n    \n  - **Start date after 1 Sept 2025 OR has evening/block_week tag**  \n    `?filter_query[__or][][start_date][gt_date]=2025-09-01T00:00:00Z&filter_query[__or][][tags][any_in_array]=evening,block_week`  \n",
-        "schema": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "additionalProperties": {
-              "type": "object",
-              "properties": {
-                "in": {
-                  "type": "string",
-                  "description": "Exact match; multiple values allowed as CSV.",
-                  "example": "org-uu,org-hku"
-                },
-                "like": {
-                  "type": "string",
-                  "description": "Partial match using wildcards. Prefer `*` as the wildcard.\n",
-                  "example": "*Utrecht*"
-                },
-                "any_in_array": {
-                  "type": "string",
-                  "description": "Match if any of the CSV values occur.",
-                  "example": "evening,block_week"
-                },
-                "gt_date": {
-                  "type": "string",
-                  "format": "date-time",
-                  "description": "ISO 8601 / RFC 3339 date-time.",
-                  "example": "2025-09-01T00:00:00Z"
-                },
-                "lt_date": {
-                  "type": "string",
-                  "format": "date-time",
-                  "description": "ISO 8601 / RFC 3339 date-time.",
-                  "example": "2025-12-31T23:59:59Z"
-                }
               }
             }
           }
