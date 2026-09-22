@@ -1,0 +1,274 @@
+:root {
+    --base-font-size: 16px;
+    --theme-color: #03818d;
+
+    --content-max-width: 65em;
+
+    /* // --sidebar-nav-link-padding: 0.40em 0; */
+
+    --zoomimage-overlay-background: rgba(255, 255, 255, 0.875);
+
+    /* Docsify tabs */
+    --docsifytabs-border-color: #ededed;
+    --docsifytabs-tab-highlight-color: #0074d9;
+  }
+
+/* ================================================================= */
+/* === OOAPI CUSTOM STYLING                                      === */
+/* ================================================================= */
+
+
+/* ========================================================= */
+/*   Rio adjustments                                         */
+/* ========================================================= */
+
+body[data-page="technical/consumers-and-profiles/rio.md"] .colored-table,
+body[data-page="technical/consumers-and-profiles/rio.md"] .markdown-section code {
+  font-size: 14px;   
+}
+
+
+/* ========================================================= */
+/*   Main content column                                     */
+/* ========================================================= */
+
+/* Themeable uses max-width and auto margins to centre the content.
+   We mirror this so the banner aligns perfectly without introducing
+   new root variables. */
+
+.markdown-section {
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+  padding: 2.5rem 2rem;     /* 2rem is Themeable's actual default horizontal padding */
+  text-align: left;
+  box-sizing: border-box;
+}
+
+/* ========================================================= */
+/*   Version banner (fixed at the top, behind the sidebar)   */
+/* ========================================================= */
+
+#version-banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;               /* sidebar stays above the banner */
+  display: none;
+  font-size: 15px;
+  font-weight: 500;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+
+/* Inner banner container:
+   - uses same max-width as content
+   - uses SAME hardcoded padding as Themeable (2rem)
+   - centres text within the content column, not the screen */
+.version-banner-inner {
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+  padding: 10px 2rem;       /* matching Themeable's horizontal padding */
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* ========================================================= */
+/*   Banner variants                                         */
+/* ========================================================= */
+
+/* Old version banner (yellow) */
+#version-banner.banner-old {
+  background: #FFC400;
+  color: #002d72 !important;
+}
+
+#version-banner.banner-old strong {
+  color: #002d72 !important;
+}
+
+#version-banner.banner-old a,
+#version-banner.banner-old a:visited {
+  color: #002d72 !important;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+/* Beta version banner (teal) */
+#version-banner.banner-beta {
+  background: #2CA1A3;
+  color: #ffffff !important;
+}
+
+#version-banner.banner-beta strong,
+#version-banner.banner-beta .version-label {
+  color: #ffffff !important;
+}
+
+#version-banner.banner-beta a,
+#version-banner.banner-beta a:visited {
+  color: #ffffff !important;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+/* Unreleased version banner (teal) */
+#version-banner.banner-unreleased {
+  background: #2CA1A3;
+  color: #ffffff !important;
+}
+
+#version-banner.banner-unreleased strong,
+#version-banner.banner-unreleased .version-label {
+  color: #ffffff !important;
+}
+
+#version-banner.banner-unreleased a,
+#version-banner.banner-unreleased a:visited {
+  color: #ffffff !important;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+/* ========================================================= */
+/*   Content offset due to fixed banner                      */
+/* ========================================================= */
+
+body.with-banner .content {
+  margin-top: 52px;         /* banner height */
+}
+
+/* ========================================================= */
+/*   Version label under the logo in the sidebar             */
+/* ========================================================= */
+
+.sidebar .app-name small {
+  display: block;
+  margin-top: 6px;
+  font-size: 18px;          /* increase version visibility */
+  font-weight: 600;
+  color: var(--theme-color);
+}
+
+/* ========================================================= */
+/*   Styles for right menu bar.                              */
+/* ========================================================= */
+
+#page-toc {
+  position: fixed;
+  top: 100px;
+  right: 32px;
+  z-index: 20;
+  width: 140px;
+  overflow: hidden;
+  box-sizing: border-box;
+  border-left: 1px solid var(--sidebar-border-color, #eeeeee);
+  background: var(--base-background-color, #ffffff);
+  font-family: var(--base-font-family);
+  font-size: var(--sidebar-nav-link-font-size, 14px);
+  line-height: var(--sidebar-nav-link-line-height, 1.5);
+}
+
+#page-toc-toggle {
+  width: 100%;
+  margin: 0;
+  padding: 8px 12px;
+  border: 0;
+  background: transparent;
+  color: var(--sidebar-nav-link-color, inherit);
+  font: inherit;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+#page-toc-toggle::after {
+  content: '+';
+  float: right;
+}
+
+#page-toc-list {
+  display: none;
+  margin: 0;
+  padding: 0 12px 8px;
+  list-style: none;
+}
+
+#page-toc-list li {
+  margin: 0;
+  padding: 0;
+}
+
+#page-toc-list li.toc-level-3 {
+  padding-left: 16px;
+}
+
+#page-toc-list a {
+  display: block;
+  padding: 4px 0;
+  color: var(--sidebar-nav-link-color, inherit);
+  text-decoration: none;
+}
+
+#page-toc-list a:hover {
+  color: var(--sidebar-nav-link-color--active, var(--theme-color));
+}
+
+body.page-toc-expanded #page-toc {
+  width: 220px;
+  max-height: calc(100vh - 132px);
+  overflow-y: auto;
+}
+
+body.page-toc-expanded #page-toc-toggle::after {
+  content: '−';
+}
+
+body.page-toc-expanded #page-toc-list {
+  display: block;
+}
+
+@media screen and (min-width: 1400px) {
+  body.has-page-toc .content {
+    right: 284px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  #page-toc {
+    display: none;
+  }
+}
+  
+/* ========================================================= */
+/*   Changelog                                               */
+/* ========================================================= */
+
+body[data-page$="/changelog/changelog.md"] .markdown-section > h1:not(:first-child) {
+  margin-top: 3.5rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 2px solid var(--theme-color);
+}
+
+body[data-page$="/changelog/changelog.md"] .markdown-section h2 {
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid #e5e5e5;
+  font-size: 1.35rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+body[data-page$="/changelog/changelog.md"] .markdown-section h3 {
+  margin-top: 1rem;
+  margin-bottom: 0.4rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--theme-color);
+}
+
+body[data-page$="/changelog/changelog.md"] .markdown-section h3 + ul {
+  margin-top: 0.25rem;
+  margin-bottom: 1.5rem;
+}
