@@ -1,7 +1,7 @@
 {
   "openapi": "3.1.1",
   "info": {
-    "version": "6.0",
+    "version": "6.0-rc.3",
     "title": "Open Education API",
     "description": "OpenAPI (fka Swagger) specification for the Open Education API. \n\nThe model provides an overview of the educational domain that is modelled and\nforms the basis of the OEAPI. The overarching educational concept is not exposed\nthrough API endpoints. Instead, the educational specification defines four base\nobjects: programme, course, learning component, and test component, each with\nits own endpoint.\n\nThese base objects can be used to realise offerings. There is, however, no\ndedicated offering endpoint. Offerings are represented through four base\ntypes: programme offering, course offering, learning component offering, and\ntest component offering.\n\nRelations between an offering and a person, such as enrolment, are realised\nthrough association endpoints. These endpoints define the different types of\nassociations that can exist between offerings and persons. Other objects shown\nin the model represent groups and group memberships of a person.\n",
     "license": {
@@ -20,7 +20,7 @@
   },
   "servers": [
     {
-      "url": "http://demo01.eduapi.nl/v6",
+      "url": "https://demo01.eduapi.nl/v6",
       "description": "SURF demo implementation"
     }
   ],
@@ -109,7 +109,7 @@
     },
     {
       "name": "learning component offerings",
-      "description": "The offerings API provides information about offerings which have a global\ntimeframe, e.g. a period to which students can enrol.\n"
+      "description": "The offerings API provides information about learning component offerings which \nhave a global timeframe, e.g. a period to which students can enrol.\n"
     },
     {
       "name": "learning components",
@@ -176,7 +176,7 @@
     },
     {
       "name": "programme offerings",
-      "description": "The offerings API provides information about offerings which have a global\ntimeframe, e.g. a period to which students can enrol.\n"
+      "description": "The offerings API provides information about programme offerings which have a \nglobal timeframe, e.g. a period to which students can enrol.\n"
     },
     {
       "name": "programme_model",
@@ -229,7 +229,7 @@
     },
     {
       "name": "test component offerings",
-      "description": "The offerings API provides information about offerings which have a global\ntimeframe, e.g. a period to which students can enrol.\n"
+      "description": "The offerings API provides information about test component offerings which \nhave a global timeframe, e.g. a period to which students can enrol.\n"
     },
     {
       "name": "test components",
@@ -270,7 +270,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json": {
+              "application/vnd.oeapi+json": {
                 "schema": {
                   "$ref": "#/components/schemas/Service"
                 }
@@ -365,7 +365,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json": {
+              "application/vnd.oeapi+json": {
                 "schema": {
                   "allOf": [
                     {
@@ -469,7 +469,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json": {
+              "application/vnd.oeapi+json": {
                 "schema": {
                   "$ref": "#/components/schemas/AcademicSession"
                 }
@@ -580,7 +580,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json": {
+              "application/vnd.oeapi+json": {
                 "schema": {
                   "allOf": [
                     {
@@ -593,7 +593,10 @@
                       ],
                       "properties": {
                         "items": {
-                          "$ref": "#/components/schemas/CourseOffering"
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/CourseOffering"
+                          }
                         },
                         "ext": {
                           "$ref": "#/components/schemas/Ext"
@@ -709,7 +712,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json": {
+              "application/vnd.oeapi+json": {
                 "schema": {
                   "allOf": [
                     {
@@ -841,7 +844,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json": {
+              "application/vnd.oeapi+json": {
                 "schema": {
                   "allOf": [
                     {
@@ -973,7 +976,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json": {
+              "application/vnd.oeapi+json": {
                 "schema": {
                   "allOf": [
                     {
@@ -1063,7 +1066,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json": {
+              "application/vnd.oeapi+json": {
                 "schema": {
                   "allOf": [
                     {
@@ -1148,7 +1151,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json": {
+              "application/vnd.oeapi+json": {
                 "schema": {
                   "$ref": "#/components/schemas/Building"
                 }
@@ -1233,7 +1236,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json": {
+              "application/vnd.oeapi+json": {
                 "schema": {
                   "allOf": [
                     {
@@ -1299,7 +1302,7 @@
         "requestBody": {
           "required": true,
           "content": {
-            "application/json": {
+            "application/vnd.oeapi+json": {
               "schema": {
                 "required": [
                   "remoteState"
@@ -1324,7 +1327,7 @@
           "201": {
             "description": "Created",
             "content": {
-              "application/json": {
+              "application/vnd.oeapi+json": {
                 "schema": {
                   "allOf": [
                     {
@@ -1362,6 +1365,9 @@
           },
           "406": {
             "$ref": "#/components/responses/ErrorNotAcceptable"
+          },
+          "409": {
+            "$ref": "#/components/responses/ErrorConflict"
           },
           "429": {
             "$ref": "#/components/responses/ErrorTooManyRequests"
@@ -1421,7 +1427,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json": {
+              "application/vnd.oeapi+json": {
                 "schema": {
                   "$ref": "#/components/schemas/CourseOfferingAssociation"
                 }
@@ -1476,7 +1482,7 @@
         "requestBody": {
           "required": true,
           "content": {
-            "application/json": {
+            "application/vnd.oeapi+json": {
               "schema": {
                 "$ref": "#/components/schemas/CourseOfferingAssociation"
               }
@@ -1510,6 +1516,9 @@
           },
           "406": {
             "$ref": "#/components/responses/ErrorNotAcceptable"
+          },
+          "409": {
+            "$ref": "#/components/responses/ErrorConflict"
           },
           "429": {
             "$ref": "#/components/responses/ErrorTooManyRequests"
@@ -1559,7 +1568,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json": {
+              "application/vnd.oeapi+json": {
                 "schema": {
                   "allOf": [
                     {
@@ -1597,6 +1606,9 @@
           },
           "406": {
             "$ref": "#/components/responses/ErrorNotAcceptable"
+          },
+          "409": {
+            "$ref": "#/components/responses/ErrorConflict"
           },
           "429": {
             "$ref": "#/components/responses/ErrorTooManyRequests"
@@ -1656,7 +1668,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json": {
+              "application/vnd.oeapi+json": {
                 "schema": {
                   "$ref": "#/components/schemas/CourseOffering",
                   "title": "courseOffering"
@@ -1712,7 +1724,7 @@
         "requestBody": {
           "required": true,
           "content": {
-            "application/json": {
+            "application/vnd.oeapi+json": {
               "schema": {
                 "$ref": "#/components/schemas/CourseOffering"
               }
@@ -1746,6 +1758,9 @@
           },
           "406": {
             "$ref": "#/components/responses/ErrorNotAcceptable"
+          },
+          "409": {
+            "$ref": "#/components/responses/ErrorConflict"
           },
           "429": {
             "$ref": "#/components/responses/ErrorTooManyRequests"
@@ -1777,7 +1792,7 @@
         "requestBody": {
           "required": true,
           "content": {
-            "application/json": {
+            "application/vnd.oeapi+json": {
               "schema": {
                 "$ref": "#/components/schemas/CourseOffering"
               }
@@ -1811,6 +1826,9 @@
           },
           "406": {
             "$ref": "#/components/responses/ErrorNotAcceptable"
+          },
+          "409": {
+            "$ref": "#/components/responses/ErrorConflict"
           },
           "429": {
             "$ref": "#/components/responses/ErrorTooManyRequests"
@@ -1887,7 +1905,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json": {
+              "application/vnd.oeapi+json": {
                 "schema": {
                   "allOf": [
                     {
@@ -1993,7 +2011,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json": {
+              "application/vnd.oeapi+json": {
                 "schema": {
                   "allOf": [
                     {
@@ -2122,7 +2140,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json": {
+              "application/vnd.oeapi+json": {
                 "schema": {
                   "allOf": [
                     {
@@ -2251,7 +2269,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json": {
+              "application/vnd.oeapi+json": {
                 "schema": {
                   "allOf": [
                     {
@@ -2362,7 +2380,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json": {
+              "application/vnd.oeapi+json": {
                 "schema": {
                   "allOf": [
                     {
@@ -2470,7 +2488,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json": {
+              "application/vnd.oeapi+json": {
                 "schema": {
                   "$ref": "#/components/schemas/CourseExpanded"
                 }
@@ -2590,7 +2608,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json": {
+              "application/vnd.oeapi+json": {
                 "schema": {
                   "allOf": [
                     {
@@ -2752,7 +2770,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json": {
+              "application/vnd.oeapi+json": {
                 "schema": {
                   "allOf": [
                     {
@@ -2852,7 +2870,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json": {
+              "application/vnd.oeapi+json": {
                 "schema": {
                   "allOf": [
                     {
@@ -2993,7 +3011,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json": {
+              "application/vnd.oeapi+json": {
                 "schema": {
                   "allOf": [
                     {
@@ -3093,7 +3111,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json": {
+              "application/vnd.oeapi+json": {
                 "schema": {
                   "allOf": [
                     {
@@ -3264,7 +3282,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json": {
+              "application/vnd.oeapi+json": {
                 "schema": {
                   "allOf": [
                     {
@@ -3350,7 +3368,8 @@
               "items": {
                 "type": "string",
                 "enum": [
-                  "organisation"
+                  "organisation",
+                  "academic_session"
                 ]
               }
             }
@@ -3366,7 +3385,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json": {
+              "application/vnd.oeapi+json": {
                 "schema": {
                   "$ref": "#/components/schemas/Group"
                 }
@@ -3421,7 +3440,7 @@
         "requestBody": {
           "required": true,
           "content": {
-            "application/json": {
+            "application/vnd.oeapi+json": {
               "schema": {
                 "$ref": "#/components/schemas/Group",
                 "title": "group"
@@ -3499,6 +3518,9 @@
           "406": {
             "$ref": "#/components/responses/ErrorNotAcceptable"
           },
+          "409": {
+            "$ref": "#/components/responses/ErrorConflict"
+          },
           "429": {
             "$ref": "#/components/responses/ErrorTooManyRequests"
           },
@@ -3547,7 +3569,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json": {
+              "application/vnd.oeapi+json": {
                 "schema": {
                   "allOf": [
                     {
@@ -3635,7 +3657,7 @@
         "requestBody": {
           "required": true,
           "content": {
-            "application/json": {
+            "application/vnd.oeapi+json": {
               "schema": {
                 "$ref": "#/components/schemas/Membership",
                 "title": "membership"
@@ -3682,6 +3704,9 @@
           },
           "406": {
             "$ref": "#/components/responses/ErrorNotAcceptable"
+          },
+          "409": {
+            "$ref": "#/components/responses/ErrorConflict"
           },
           "429": {
             "$ref": "#/components/responses/ErrorTooManyRequests"
@@ -3741,7 +3766,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json": {
+              "application/vnd.oeapi+json": {
                 "schema": {
                   "$ref": "#/components/schemas/LearningComponentOfferingAssociation"
                 }
@@ -3796,7 +3821,7 @@
         "requestBody": {
           "required": true,
           "content": {
-            "application/json": {
+            "application/vnd.oeapi+json": {
               "schema": {
                 "$ref": "#/components/schemas/LearningComponentOfferingAssociation"
               },
@@ -3898,6 +3923,9 @@
           "406": {
             "$ref": "#/components/responses/ErrorNotAcceptable"
           },
+          "409": {
+            "$ref": "#/components/responses/ErrorConflict"
+          },
           "429": {
             "$ref": "#/components/responses/ErrorTooManyRequests"
           },
@@ -3946,7 +3974,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json": {
+              "application/vnd.oeapi+json": {
                 "schema": {
                   "allOf": [
                     {
@@ -3984,6 +4012,9 @@
           },
           "406": {
             "$ref": "#/components/responses/ErrorNotAcceptable"
+          },
+          "409": {
+            "$ref": "#/components/responses/ErrorConflict"
           },
           "429": {
             "$ref": "#/components/responses/ErrorTooManyRequests"
@@ -4043,7 +4074,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json": {
+              "application/vnd.oeapi+json": {
                 "schema": {
                   "$ref": "#/components/schemas/LearningComponentOffering"
                 }
@@ -4098,7 +4129,7 @@
         "requestBody": {
           "required": true,
           "content": {
-            "application/json": {
+            "application/vnd.oeapi+json": {
               "schema": {
                 "$ref": "#/components/schemas/LearningComponentOffering"
               }
@@ -4132,6 +4163,9 @@
           },
           "406": {
             "$ref": "#/components/responses/ErrorNotAcceptable"
+          },
+          "409": {
+            "$ref": "#/components/responses/ErrorConflict"
           },
           "429": {
             "$ref": "#/components/responses/ErrorTooManyRequests"
@@ -4163,7 +4197,7 @@
         "requestBody": {
           "required": true,
           "content": {
-            "application/json": {
+            "application/vnd.oeapi+json": {
               "schema": {
                 "$ref": "#/components/schemas/LearningComponentOffering"
               }
@@ -4197,6 +4231,9 @@
           },
           "406": {
             "$ref": "#/components/responses/ErrorNotAcceptable"
+          },
+          "409": {
+            "$ref": "#/components/responses/ErrorConflict"
           },
           "429": {
             "$ref": "#/components/responses/ErrorTooManyRequests"
@@ -4258,7 +4295,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json": {
+              "application/vnd.oeapi+json": {
                 "schema": {
                   "allOf": [
                     {
@@ -4379,7 +4416,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json": {
+              "application/vnd.oeapi+json": {
                 "schema": {
                   "allOf": [
                     {
@@ -4478,7 +4515,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json": {
+              "application/vnd.oeapi+json": {
                 "schema": {
                   "allOf": [
                     {
@@ -4581,7 +4618,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json": {
+              "application/vnd.oeapi+json": {
                 "schema": {
                   "$ref": "#/components/schemas/LearningComponent"
                 }
@@ -4692,7 +4729,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json": {
+              "application/vnd.oeapi+json": {
                 "schema": {
                   "allOf": [
                     {
@@ -4799,7 +4836,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json": {
+              "application/vnd.oeapi+json": {
                 "schema": {
                   "allOf": [
                     {
@@ -4885,7 +4922,6 @@
               "items": {
                 "type": "string",
                 "enum": [
-                  "organisation",
                   "parents",
                   "children"
                 ]
@@ -4903,7 +4939,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json": {
+              "application/vnd.oeapi+json": {
                 "schema": {
                   "$ref": "#/components/schemas/LearningOutcome"
                 }
@@ -4981,7 +5017,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json": {
+              "application/vnd.oeapi+json": {
                 "schema": {
                   "allOf": [
                     {
@@ -5084,7 +5120,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json": {
+              "application/vnd.oeapi+json": {
                 "schema": {
                   "$ref": "#/components/schemas/Organisation"
                 }
@@ -5139,7 +5175,7 @@
         "requestBody": {
           "required": true,
           "content": {
-            "application/json": {
+            "application/vnd.oeapi+json": {
               "schema": {
                 "$ref": "#/components/schemas/Organisation"
               }
@@ -5173,6 +5209,9 @@
           },
           "406": {
             "$ref": "#/components/responses/ErrorNotAcceptable"
+          },
+          "409": {
+            "$ref": "#/components/responses/ErrorConflict"
           },
           "429": {
             "$ref": "#/components/responses/ErrorTooManyRequests"
@@ -5260,7 +5299,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json": {
+              "application/vnd.oeapi+json": {
                 "schema": {
                   "allOf": [
                     {
@@ -5375,7 +5414,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json": {
+              "application/vnd.oeapi+json": {
                 "schema": {
                   "allOf": [
                     {
@@ -5481,7 +5520,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json": {
+              "application/vnd.oeapi+json": {
                 "schema": {
                   "allOf": [
                     {
@@ -5613,7 +5652,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json": {
+              "application/vnd.oeapi+json": {
                 "schema": {
                   "allOf": [
                     {
@@ -5713,7 +5752,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json": {
+              "application/vnd.oeapi+json": {
                 "schema": {
                   "allOf": [
                     {
@@ -5845,7 +5884,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json": {
+              "application/vnd.oeapi+json": {
                 "schema": {
                   "allOf": [
                     {
@@ -5981,7 +6020,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json": {
+              "application/vnd.oeapi+json": {
                 "schema": {
                   "allOf": [
                     {
@@ -6113,7 +6152,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json": {
+              "application/vnd.oeapi+json": {
                 "schema": {
                   "allOf": [
                     {
@@ -6213,7 +6252,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json": {
+              "application/vnd.oeapi+json": {
                 "schema": {
                   "allOf": [
                     {
@@ -6312,7 +6351,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json": {
+              "application/vnd.oeapi+json": {
                 "schema": {
                   "allOf": [
                     {
@@ -6376,13 +6415,9 @@
         "requestBody": {
           "required": true,
           "content": {
-            "application/json": {
+            "application/vnd.oeapi+json": {
               "schema": {
-                "allOf": [
-                  {
-                    "$ref": "#/components/schemas/PersonProperties"
-                  }
-                ]
+                "$ref": "#/components/schemas/PersonProperties"
               }
             }
           }
@@ -6391,7 +6426,7 @@
           "201": {
             "description": "Created",
             "content": {
-              "application/json": {
+              "application/vnd.oeapi+json": {
                 "schema": {
                   "allOf": [
                     {
@@ -6423,6 +6458,9 @@
           "406": {
             "$ref": "#/components/responses/ErrorNotAcceptable"
           },
+          "409": {
+            "$ref": "#/components/responses/ErrorConflict"
+          },
           "429": {
             "$ref": "#/components/responses/ErrorTooManyRequests"
           },
@@ -6452,7 +6490,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json": {
+              "application/vnd.oeapi+json": {
                 "schema": {
                   "$ref": "#/components/schemas/Person"
                 }
@@ -6516,7 +6554,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json": {
+              "application/vnd.oeapi+json": {
                 "schema": {
                   "$ref": "#/components/schemas/Person"
                 }
@@ -6571,7 +6609,7 @@
         "requestBody": {
           "required": true,
           "content": {
-            "application/json": {
+            "application/vnd.oeapi+json": {
               "schema": {
                 "$ref": "#/components/schemas/Person"
               }
@@ -6605,6 +6643,9 @@
           },
           "406": {
             "$ref": "#/components/responses/ErrorNotAcceptable"
+          },
+          "409": {
+            "$ref": "#/components/responses/ErrorConflict"
           },
           "429": {
             "$ref": "#/components/responses/ErrorTooManyRequests"
@@ -6699,7 +6740,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json": {
+              "application/vnd.oeapi+json": {
                 "schema": {
                   "allOf": [
                     {
@@ -6832,7 +6873,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json": {
+              "application/vnd.oeapi+json": {
                 "schema": {
                   "allOf": [
                     {
@@ -6965,7 +7006,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json": {
+              "application/vnd.oeapi+json": {
                 "schema": {
                   "allOf": [
                     {
@@ -7098,7 +7139,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json": {
+              "application/vnd.oeapi+json": {
                 "schema": {
                   "allOf": [
                     {
@@ -7176,7 +7217,7 @@
         "requestBody": {
           "required": true,
           "content": {
-            "application/json": {
+            "application/vnd.oeapi+json": {
               "schema": {
                 "required": [
                   "remoteState"
@@ -7201,7 +7242,7 @@
           "201": {
             "description": "CREATED",
             "content": {
-              "application/json": {
+              "application/vnd.oeapi+json": {
                 "schema": {
                   "allOf": [
                     {
@@ -7239,6 +7280,9 @@
           },
           "406": {
             "$ref": "#/components/responses/ErrorNotAcceptable"
+          },
+          "409": {
+            "$ref": "#/components/responses/ErrorConflict"
           },
           "429": {
             "$ref": "#/components/responses/ErrorTooManyRequests"
@@ -7297,7 +7341,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json": {
+              "application/vnd.oeapi+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProgrammeOfferingAssociation"
                 }
@@ -7352,7 +7396,7 @@
         "requestBody": {
           "required": true,
           "content": {
-            "application/json": {
+            "application/vnd.oeapi+json": {
               "schema": {
                 "$ref": "#/components/schemas/ProgrammeOfferingAssociation"
               }
@@ -7386,6 +7430,9 @@
           },
           "406": {
             "$ref": "#/components/responses/ErrorNotAcceptable"
+          },
+          "409": {
+            "$ref": "#/components/responses/ErrorConflict"
           },
           "429": {
             "$ref": "#/components/responses/ErrorTooManyRequests"
@@ -7435,7 +7482,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json": {
+              "application/vnd.oeapi+json": {
                 "schema": {
                   "allOf": [
                     {
@@ -7473,6 +7520,9 @@
           },
           "406": {
             "$ref": "#/components/responses/ErrorNotAcceptable"
+          },
+          "409": {
+            "$ref": "#/components/responses/ErrorConflict"
           },
           "429": {
             "$ref": "#/components/responses/ErrorTooManyRequests"
@@ -7515,13 +7565,8 @@
                 "type": "string",
                 "enum": [
                   "academic_session",
-                  "course",
-                  "course_offering",
-                  "learning_component",
                   "organisation",
-                  "programme",
-                  "programme_offering",
-                  "test_component"
+                  "programme"
                 ]
               }
             }
@@ -7537,7 +7582,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json": {
+              "application/vnd.oeapi+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProgrammeOffering",
                   "title": "programmeOffering"
@@ -7593,7 +7638,7 @@
         "requestBody": {
           "required": true,
           "content": {
-            "application/json": {
+            "application/vnd.oeapi+json": {
               "schema": {
                 "$ref": "#/components/schemas/ProgrammeOffering"
               }
@@ -7627,6 +7672,9 @@
           },
           "406": {
             "$ref": "#/components/responses/ErrorNotAcceptable"
+          },
+          "409": {
+            "$ref": "#/components/responses/ErrorConflict"
           },
           "429": {
             "$ref": "#/components/responses/ErrorTooManyRequests"
@@ -7658,7 +7706,7 @@
         "requestBody": {
           "required": true,
           "content": {
-            "application/json": {
+            "application/vnd.oeapi+json": {
               "schema": {
                 "$ref": "#/components/schemas/ProgrammeOffering"
               }
@@ -7692,6 +7740,9 @@
           },
           "406": {
             "$ref": "#/components/responses/ErrorNotAcceptable"
+          },
+          "409": {
+            "$ref": "#/components/responses/ErrorConflict"
           },
           "429": {
             "$ref": "#/components/responses/ErrorTooManyRequests"
@@ -7753,7 +7804,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json": {
+              "application/vnd.oeapi+json": {
                 "schema": {
                   "allOf": [
                     {
@@ -7874,7 +7925,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json": {
+              "application/vnd.oeapi+json": {
                 "schema": {
                   "allOf": [
                     {
@@ -8003,7 +8054,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json": {
+              "application/vnd.oeapi+json": {
                 "schema": {
                   "allOf": [
                     {
@@ -8112,7 +8163,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json": {
+              "application/vnd.oeapi+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProgrammeExpanded"
                 }
@@ -8209,7 +8260,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json": {
+              "application/vnd.oeapi+json": {
                 "schema": {
                   "allOf": [
                     {
@@ -8350,7 +8401,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json": {
+              "application/vnd.oeapi+json": {
                 "schema": {
                   "allOf": [
                     {
@@ -8486,7 +8537,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json": {
+              "application/vnd.oeapi+json": {
                 "schema": {
                   "allOf": [
                     {
@@ -8585,7 +8636,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json": {
+              "application/vnd.oeapi+json": {
                 "schema": {
                   "allOf": [
                     {
@@ -8687,7 +8738,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json": {
+              "application/vnd.oeapi+json": {
                 "schema": {
                   "$ref": "#/components/schemas/Room"
                 }
@@ -8770,7 +8821,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json": {
+              "application/vnd.oeapi+json": {
                 "schema": {
                   "$ref": "#/components/schemas/TestComponentOfferingAssociation"
                 }
@@ -8825,7 +8876,7 @@
         "requestBody": {
           "required": true,
           "content": {
-            "application/json": {
+            "application/vnd.oeapi+json": {
               "schema": {
                 "$ref": "#/components/schemas/TestComponentOfferingAssociation"
               },
@@ -8927,6 +8978,9 @@
           "406": {
             "$ref": "#/components/responses/ErrorNotAcceptable"
           },
+          "409": {
+            "$ref": "#/components/responses/ErrorConflict"
+          },
           "429": {
             "$ref": "#/components/responses/ErrorTooManyRequests"
           },
@@ -8975,7 +9029,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json": {
+              "application/vnd.oeapi+json": {
                 "schema": {
                   "allOf": [
                     {
@@ -9014,6 +9068,9 @@
           "406": {
             "$ref": "#/components/responses/ErrorNotAcceptable"
           },
+          "409": {
+            "$ref": "#/components/responses/ErrorConflict"
+          },
           "429": {
             "$ref": "#/components/responses/ErrorTooManyRequests"
           },
@@ -9047,7 +9104,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json": {
+              "application/vnd.oeapi+json": {
                 "schema": {
                   "$ref": "#/components/schemas/Url"
                 }
@@ -9147,7 +9204,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json": {
+              "application/vnd.oeapi+json": {
                 "schema": {
                   "allOf": [
                     {
@@ -9238,7 +9295,7 @@
         "requestBody": {
           "required": true,
           "content": {
-            "application/json": {
+            "application/vnd.oeapi+json": {
               "schema": {
                 "$ref": "#/components/schemas/TestComponentOfferingAssociationAttempt"
               }
@@ -9272,6 +9329,9 @@
           },
           "406": {
             "$ref": "#/components/responses/ErrorNotAcceptable"
+          },
+          "409": {
+            "$ref": "#/components/responses/ErrorConflict"
           },
           "429": {
             "$ref": "#/components/responses/ErrorTooManyRequests"
@@ -9312,7 +9372,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json": {
+              "application/vnd.oeapi+json": {
                 "schema": {
                   "$ref": "#/components/schemas/TestComponentOfferingAssociationAttemptFull"
                 }
@@ -9367,7 +9427,7 @@
         "requestBody": {
           "required": true,
           "content": {
-            "application/json": {
+            "application/vnd.oeapi+json": {
               "schema": {
                 "$ref": "#/components/schemas/TestComponentOfferingAssociationAttemptFull"
               }
@@ -9401,6 +9461,9 @@
           },
           "406": {
             "$ref": "#/components/responses/ErrorNotAcceptable"
+          },
+          "409": {
+            "$ref": "#/components/responses/ErrorConflict"
           },
           "429": {
             "$ref": "#/components/responses/ErrorTooManyRequests"
@@ -9443,7 +9506,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json": {
+              "application/vnd.oeapi+json": {
                 "schema": {
                   "allOf": [
                     {
@@ -9481,6 +9544,9 @@
           },
           "406": {
             "$ref": "#/components/responses/ErrorNotAcceptable"
+          },
+          "409": {
+            "$ref": "#/components/responses/ErrorConflict"
           },
           "429": {
             "$ref": "#/components/responses/ErrorTooManyRequests"
@@ -9540,7 +9606,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json": {
+              "application/vnd.oeapi+json": {
                 "schema": {
                   "$ref": "#/components/schemas/TestComponentOffering"
                 }
@@ -9595,7 +9661,7 @@
         "requestBody": {
           "required": true,
           "content": {
-            "application/json": {
+            "application/vnd.oeapi+json": {
               "schema": {
                 "$ref": "#/components/schemas/TestComponentOffering"
               }
@@ -9629,6 +9695,9 @@
           },
           "406": {
             "$ref": "#/components/responses/ErrorNotAcceptable"
+          },
+          "409": {
+            "$ref": "#/components/responses/ErrorConflict"
           },
           "429": {
             "$ref": "#/components/responses/ErrorTooManyRequests"
@@ -9660,7 +9729,7 @@
         "requestBody": {
           "required": true,
           "content": {
-            "application/json": {
+            "application/vnd.oeapi+json": {
               "schema": {
                 "$ref": "#/components/schemas/TestComponentOffering"
               }
@@ -9694,6 +9763,9 @@
           },
           "406": {
             "$ref": "#/components/responses/ErrorNotAcceptable"
+          },
+          "409": {
+            "$ref": "#/components/responses/ErrorConflict"
           },
           "429": {
             "$ref": "#/components/responses/ErrorTooManyRequests"
@@ -9755,7 +9827,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json": {
+              "application/vnd.oeapi+json": {
                 "schema": {
                   "allOf": [
                     {
@@ -9876,7 +9948,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json": {
+              "application/vnd.oeapi+json": {
                 "schema": {
                   "allOf": [
                     {
@@ -9975,7 +10047,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json": {
+              "application/vnd.oeapi+json": {
                 "schema": {
                   "allOf": [
                     {
@@ -10078,7 +10150,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json": {
+              "application/vnd.oeapi+json": {
                 "schema": {
                   "$ref": "#/components/schemas/TestComponent"
                 }
@@ -10189,7 +10261,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "application/json": {
+              "application/vnd.oeapi+json": {
                 "schema": {
                   "allOf": [
                     {
@@ -10335,7 +10407,7 @@
                 "path": {
                   "description": "the path of the operation",
                   "type": "string",
-                  "format": "uri-reference",
+                  "format": "uri-template",
                   "maxLength": 2048,
                   "example": "/courses"
                 }
@@ -10365,7 +10437,7 @@
                 "path": {
                   "description": "the path of the operation",
                   "type": "string",
-                  "format": "uri-reference",
+                  "format": "uri-template",
                   "maxLength": 2048,
                   "example": "/courses"
                 }
@@ -10450,17 +10522,23 @@
           },
           "parentId": {
             "description": "The identifier of the parent academicSession for this session (e.g. Autumn\nterm 20xx where the current session is week 40).\nWhen the client does not request expansion of `parent`, only this\nidentifier is returned.\nThis field is [`expandable`](https://openonderwijsapi.nl/v6.0/#/technical/expanding-responses).\n",
-            "$ref": "#/components/schemas/Identifier"
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/Identifier"
+              },
+              {
+                "type": "null"
+              }
+            ]
           },
           "parent": {
             "description": "The expanded parent academicSession object of this session (e.g. Autumn\nterm 20xx where the current session is week 40).\nWhen the client requests expansion of `parent`, the full expanded\nacademicSession object MUST be returned here instead of only the identifier.\nIf no parent is defined, this value is `null`.\n",
-            "type": [
-              "object",
-              "null"
-            ],
-            "allOf": [
+            "oneOf": [
               {
                 "$ref": "#/components/schemas/AcademicSession"
+              },
+              {
+                "type": "null"
               }
             ]
           },
@@ -10486,17 +10564,23 @@
           },
           "yearId": {
             "description": "The identifier of the top-level academicSession year for this session\n(e.g. 20xx where the current session is week 40 of a semester).\nWhen the client does not request expansion of `year`, only this identifier\nis returned.\nThis field is [`expandable`](https://openonderwijsapi.nl/v6.0/#/technical/expanding-responses).\n",
-            "$ref": "#/components/schemas/Identifier"
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/Identifier"
+              },
+              {
+                "type": "null"
+              }
+            ]
           },
           "year": {
             "description": "The expanded top-level academicSession year object for this session\n(e.g. 20xx where the current session is week 40 of a semester).\nWhen the client requests expansion of `year`, the full expanded\nacademicSession object MUST be returned here instead of only the identifier.\nIf no top-level year is defined, this value is `null`.\n",
-            "type": [
-              "object",
-              "null"
-            ],
-            "allOf": [
+            "oneOf": [
               {
                 "$ref": "#/components/schemas/AcademicSession"
+              },
+              {
+                "type": "null"
               }
             ]
           },
@@ -10783,13 +10867,12 @@
               "null"
             ],
             "items": {
-              "type": [
-                "object",
-                "null"
-              ],
-              "allOf": [
+              "oneOf": [
                 {
                   "$ref": "#/components/schemas/LearningOutcome"
+                },
+                {
+                  "type": "null"
                 }
               ]
             }
@@ -10863,17 +10946,23 @@
           },
           "parentId": {
             "description": "The identifier of the parent learningComponent of which the current learningComponent is a child.\nWhen the client does not request expansion of `parent`, only this identifier is returned.\nThis field is [`expandable`](https://openonderwijsapi.nl/v6.0/#/technical/expanding-responses).\n",
-            "$ref": "#/components/schemas/Identifier"
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/Identifier"
+              },
+              {
+                "type": "null"
+              }
+            ]
           },
           "parent": {
             "description": "The expanded parent learningComponent of which the current learningComponent is a child.\nWhen the client requests expansion of `parent`, the full expanded learningComponent object MUST be returned here instead of only the identifier.\nIf no parent is defined, this value is `null`.\n",
-            "type": [
-              "object",
-              "null"
-            ],
-            "allOf": [
+            "oneOf": [
               {
                 "$ref": "#/components/schemas/LearningComponent"
+              },
+              {
+                "type": "null"
               }
             ]
           },
@@ -10894,46 +10983,57 @@
               "null"
             ],
             "items": {
-              "type": [
-                "object",
-                "null"
-              ],
-              "allOf": [
+              "oneOf": [
                 {
                   "$ref": "#/components/schemas/LearningComponent"
+                },
+                {
+                  "type": "null"
                 }
               ]
             }
           },
           "courseId": {
             "description": "The identifier of the course of which this component is a part.\nWhen the client does not request expansion of `course`, only this identifier is returned.\nThis field is [`expandable`](https://openonderwijsapi.nl/v6.0/#/technical/expanding-responses).\n",
-            "$ref": "#/components/schemas/Identifier"
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/Identifier"
+              },
+              {
+                "type": "null"
+              }
+            ]
           },
           "course": {
             "description": "The expanded course object of which this component is a part.\nWhen the client requests expansion of `course`, the full expanded course object MUST be returned here instead of only the identifier.\nIf no course is defined, this value is `null`.\n",
-            "type": [
-              "object",
-              "null"
-            ],
-            "allOf": [
+            "oneOf": [
               {
                 "$ref": "#/components/schemas/Course"
+              },
+              {
+                "type": "null"
               }
             ]
           },
           "organisationId": {
             "description": "The identifier of the organisation which provides this component.\nWhen the client does not request expansion of `organisation`, only this identifier is returned.\nThis field is [`expandable`](https://openonderwijsapi.nl/v6.0/#/technical/expanding-responses).\n",
-            "$ref": "#/components/schemas/Identifier"
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/Identifier"
+              },
+              {
+                "type": "null"
+              }
+            ]
           },
           "organisation": {
             "description": "The expanded organisation object which provides this component.\nWhen the client requests expansion of `organisation`, the full expanded organisation object MUST be returned here instead of only the identifier.\nIf no organisation is defined, this value is `null`.\n",
-            "type": [
-              "object",
-              "null"
-            ],
-            "allOf": [
+            "oneOf": [
               {
                 "$ref": "#/components/schemas/Organisation"
+              },
+              {
+                "type": "null"
               }
             ]
           },
@@ -11217,17 +11317,23 @@
           },
           "parentId": {
             "description": "The identifier of the parent Test Component of which the current Test Component is a child.\nWhen the client does not request expansion of `parent`, only this identifier is returned.\nThis field is [`expandable`](https://openonderwijsapi.nl/v6.0/#/technical/expanding-responses).\n",
-            "$ref": "#/components/schemas/Identifier"
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/Identifier"
+              },
+              {
+                "type": "null"
+              }
+            ]
           },
           "parent": {
             "description": "The expanded parent Test Component of which the current Test Component is a child.\nWhen the client requests expansion of `parent`, the full Test Component object MUST be returned here instead of only the identifier.\nIf no parent is defined, this value is `null`.\n",
-            "type": [
-              "object",
-              "null"
-            ],
-            "allOf": [
+            "oneOf": [
               {
                 "$ref": "#/components/schemas/TestComponent"
+              },
+              {
+                "type": "null"
               }
             ]
           },
@@ -11248,34 +11354,46 @@
           },
           "courseId": {
             "description": "The identifier of the course of which this component is a part.\nWhen the client does not request expansion of `course`, only this identifier is returned.\nThis field is [`expandable`](https://openonderwijsapi.nl/v6.0/#/technical/expanding-responses).\n",
-            "$ref": "#/components/schemas/Identifier"
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/TestComponent"
+              },
+              {
+                "type": "null"
+              }
+            ]
           },
           "course": {
             "description": "The expanded course object of which this component is a part.\nWhen the client requests expansion of `course`, the full course object MUST be returned here instead of only the identifier.\nIf no course is defined, this value is `null`.\n",
-            "type": [
-              "object",
-              "null"
-            ],
-            "allOf": [
+            "oneOf": [
               {
                 "$ref": "#/components/schemas/Course"
+              },
+              {
+                "type": "null"
               }
             ],
             "title": "Course object"
           },
           "organisationId": {
             "description": "The identifier of the organisation which provides this component.\nWhen the client does not request expansion of `organisation`, only this identifier is returned.\nThis field is [`expandable`](https://openonderwijsapi.nl/v6.0/#/technical/expanding-responses).\n",
-            "$ref": "#/components/schemas/Identifier"
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/Identifier"
+              },
+              {
+                "type": "null"
+              }
+            ]
           },
           "organisation": {
             "description": "The expanded organisation object which provides this component.\nWhen the client requests expansion of `organisation`, the full organisation object MUST be returned here instead of only the identifier.\nIf no organisation is defined, this value is `null`.\n",
-            "type": [
-              "object",
-              "null"
-            ],
-            "allOf": [
+            "oneOf": [
               {
                 "$ref": "#/components/schemas/Organisation"
+              },
+              {
+                "type": "null"
               }
             ]
           },
@@ -11378,30 +11496,35 @@
                   "null"
                 ],
                 "items": {
-                  "type": [
-                    "object",
-                    "null"
-                  ],
-                  "allOf": [
+                  "oneOf": [
                     {
                       "$ref": "#/components/schemas/Room"
+                    },
+                    {
+                      "type": "null"
                     }
                   ]
                 }
               },
               "learningComponentId": {
                 "description": "The identifier of the learningComponent that is offered in this learningComponent offering.\nWhen the client does not request expansion of `learningComponent`, only this identifier is returned.\nThis field is [`expandable`](https://openonderwijsapi.nl/v6.0/#/technical/expanding-responses).\n",
-                "$ref": "#/components/schemas/Identifier"
+                "oneOf": [
+                  {
+                    "$ref": "#/components/schemas/Identifier"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
               },
               "learningComponent": {
                 "description": "The expanded learningComponent object that is offered in this learningComponent offering.\nWhen the client requests expansion of `learningComponent`, the full expanded learningComponent object MUST be returned here instead of only the identifier.\nIf no learningComponent is defined, this value is `null`.\n",
-                "type": [
-                  "object",
-                  "null"
-                ],
-                "allOf": [
+                "oneOf": [
                   {
                     "$ref": "#/components/schemas/LearningComponent"
+                  },
+                  {
+                    "type": "null"
                   }
                 ]
               },
@@ -11422,30 +11545,35 @@
                   "null"
                 ],
                 "items": {
-                  "type": [
-                    "object",
-                    "null"
-                  ],
-                  "allOf": [
+                  "oneOf": [
                     {
                       "$ref": "#/components/schemas/CourseOffering"
+                    },
+                    {
+                      "type": "null"
                     }
                   ]
                 }
               },
               "organisationId": {
                 "description": "The identifier of the organisation that manages this component offering.\nWhen the client does not request expansion of `organisation`, only this identifier is returned.\nThis field is [`expandable`](https://openonderwijsapi.nl/v6.0/#/technical/expanding-responses).\n",
-                "$ref": "#/components/schemas/Identifier"
+                "oneOf": [
+                  {
+                    "$ref": "#/components/schemas/Identifier"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
               },
               "organisation": {
                 "description": "The expanded organisation object that manages this component offering.\nWhen the client requests expansion of `organisation`, the full expanded organisation object MUST be returned here instead of only the identifier.\nIf no organisation is defined, this value is `null`.\n",
-                "type": [
-                  "object",
-                  "null"
-                ],
-                "allOf": [
+                "oneOf": [
                   {
                     "$ref": "#/components/schemas/Organisation"
+                  },
+                  {
+                    "type": "null"
                   }
                 ]
               }
@@ -11494,11 +11622,7 @@
             ],
             "properties": {
               "result": {
-                "oneOf": [
-                  {
-                    "$ref": "#/components/schemas/LearningComponentOfferingAssociationResult"
-                  }
-                ]
+                "$ref": "#/components/schemas/LearningComponentOfferingAssociationResult"
               },
               "attendance": {
                 "oneOf": [
@@ -11512,33 +11636,45 @@
               },
               "personId": {
                 "description": "The identifier of the person referenced here.\nWhen the client does not request expansion of `person`, only this identifier is returned.\nThis field is [`expandable`](https://openonderwijsapi.nl/v6.0/#/technical/expanding-responses).\n",
-                "$ref": "#/components/schemas/Identifier"
+                "oneOf": [
+                  {
+                    "$ref": "#/components/schemas/Identifier"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
               },
               "person": {
                 "description": "The expanded person object referenced here.\nWhen the client requests expansion of `person`, the full expanded person object MUST be returned here instead of only the identifier.\nIf no person is defined, this value is `null`.\n",
-                "type": [
-                  "object",
-                  "null"
-                ],
-                "allOf": [
+                "oneOf": [
                   {
                     "$ref": "#/components/schemas/Person"
+                  },
+                  {
+                    "type": "null"
                   }
                 ]
               },
               "learningComponentOfferingId": {
                 "description": "The identifier of the learningComponentOffering referenced here.\nWhen the client does not request expansion of `offering`, only this identifier is returned.\nThis field is [`expandable`](https://openonderwijsapi.nl/v6.0/#/technical/expanding-responses).\n",
-                "$ref": "#/components/schemas/Identifier"
+                "oneOf": [
+                  {
+                    "$ref": "#/components/schemas/Identifier"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
               },
               "learningComponentOffering": {
                 "description": "The expanded learningComponentOffering object referenced here.\nWhen the client requests expansion of `offering`, the full expanded learningComponentOffering object MUST be returned here instead of only the identifier.\nIf no offering is defined, this value is `null`.\n",
-                "type": [
-                  "object",
-                  "null"
-                ],
-                "allOf": [
+                "oneOf": [
                   {
                     "$ref": "#/components/schemas/LearningComponentOffering"
+                  },
+                  {
+                    "type": "null"
                   }
                 ]
               }
@@ -11623,30 +11759,35 @@
                   "null"
                 ],
                 "items": {
-                  "type": [
-                    "object",
-                    "null"
-                  ],
-                  "allOf": [
+                  "oneOf": [
                     {
                       "$ref": "#/components/schemas/Room"
+                    },
+                    {
+                      "type": "null"
                     }
                   ]
                 }
               },
               "componentId": {
                 "description": "The identifier of the component that is offered in this component offering.\nWhen the client does not request expansion of `component`, only this identifier is returned.\nThis field is [`expandable`](https://openonderwijsapi.nl/v6.0/#/technical/expanding-responses).\n",
-                "$ref": "#/components/schemas/Identifier"
+                "oneOf": [
+                  {
+                    "$ref": "#/components/schemas/Identifier"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
               },
               "component": {
                 "description": "The expanded component that is offered in this component offering.\nWhen the client requests expansion of `component`, the full component object MUST be returned here instead of only the identifier.\nIf no component is defined, this value is `null`.\n",
-                "type": [
-                  "object",
-                  "null"
-                ],
-                "allOf": [
+                "oneOf": [
                   {
                     "$ref": "#/components/schemas/TestComponent"
+                  },
+                  {
+                    "type": "null"
                   }
                 ]
               },
@@ -11673,17 +11814,23 @@
               },
               "organisationId": {
                 "description": "The identifier of the organisation that manages this component offering.\nWhen the client does not request expansion of `organisation`, only this identifier is returned.\nThis field is [`expandable`](https://openonderwijsapi.nl/v6.0/#/technical/expanding-responses).\n",
-                "$ref": "#/components/schemas/Identifier"
+                "oneOf": [
+                  {
+                    "$ref": "#/components/schemas/Identifier"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
               },
               "organisation": {
                 "description": "The expanded organisation object that manages this component offering.\nWhen the client requests expansion of `organisation`, the full organisation object MUST be returned here instead of only the identifier.\nIf no organisation is defined, this value is `null`.\n",
-                "type": [
-                  "object",
-                  "null"
-                ],
-                "allOf": [
+                "oneOf": [
                   {
                     "$ref": "#/components/schemas/Organisation"
+                  },
+                  {
+                    "type": "null"
                   }
                 ]
               },
@@ -11847,34 +11994,46 @@
               },
               "personId": {
                 "description": "The identifier of the person referenced here.\nWhen the client does not request expansion of `person`, only this identifier is returned.\nThis field is [`expandable`](https://openonderwijsapi.nl/v6.0/#/technical/expanding-responses).\n",
-                "$ref": "#/components/schemas/Identifier"
+                "oneOf": [
+                  {
+                    "$ref": "#/components/schemas/Identifier"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
               },
               "person": {
                 "description": "The expanded person object referenced here.\nWhen the client requests expansion of `person`, the full person object MUST be returned here instead of only the identifier.\nIf no person is defined, this value is `null`.\n",
-                "type": [
-                  "object",
-                  "null"
-                ],
-                "allOf": [
+                "oneOf": [
                   {
                     "$ref": "#/components/schemas/Person"
+                  },
+                  {
+                    "type": "null"
                   }
                 ],
                 "title": "Person"
               },
               "testComponentOfferingId": {
                 "description": "The identifier of the testComponentOffering referenced here.\nWhen the client does not request expansion of `offering`, only this identifier is returned.\nThis field is [`expandable`](https://openonderwijsapi.nl/v6.0/#/technical/expanding-responses).\n",
-                "$ref": "#/components/schemas/Identifier"
+                "oneOf": [
+                  {
+                    "$ref": "#/components/schemas/Identifier"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
               },
               "testComponentOffering": {
                 "description": "The expanded testComponentOffering object referenced here.\nWhen the client requests expansion of `testComponentOffering`, the full TestComponentOffering object MUST be returned here instead of only the identifier.\nIf no testComponentOffering is defined, this value is `null`.\n",
-                "type": [
-                  "object",
-                  "null"
-                ],
-                "allOf": [
+                "oneOf": [
                   {
                     "$ref": "#/components/schemas/TestComponentOffering"
+                  },
+                  {
+                    "type": "null"
                   }
                 ]
               },
@@ -11982,7 +12141,7 @@
                   "null"
                 ],
                 "description": "If this is a course wherein participants who have already enrolled can\nstart at various moments without missing any essential content, use this\nattribute in combination with `flexibleEntryPeriodStartDateTime`.\n",
-                "format": "date",
+                "format": "date-time",
                 "example": "2019-10-21T22:59:59+01:00"
               },
               "addresses": {
@@ -12007,17 +12166,23 @@
               },
               "courseId": {
                 "description": "The identifier of the course that is offered in this course offering.\nWhen the client does not request expansion of `course`, only this\nidentifier is returned.\nThis field is [`expandable`](https://openonderwijsapi.nl/v6.0/#/technical/expanding-responses).\n",
-                "$ref": "#/components/schemas/Identifier"
+                "oneOf": [
+                  {
+                    "$ref": "#/components/schemas/Identifier"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
               },
               "course": {
                 "description": "The expanded course object that is offered in this course offering.\nWhen the client requests expansion of `course`, the full expanded\ncourse object MUST be returned here instead of only the identifier.\nIf no course is defined, this value is `null`.\n",
-                "type": [
-                  "object",
-                  "null"
-                ],
-                "allOf": [
+                "oneOf": [
                   {
                     "$ref": "#/components/schemas/Course"
+                  },
+                  {
+                    "type": "null"
                   }
                 ]
               },
@@ -12043,17 +12208,23 @@
               },
               "organisationId": {
                 "description": "The identifier of the organisation that manages this course offering.\nWhen the client does not request expansion of `organisation`, only this\nidentifier is returned.\nThis field is [`expandable`](https://openonderwijsapi.nl/v6.0/#/technical/expanding-responses).\n",
-                "$ref": "#/components/schemas/Identifier"
+                "oneOf": [
+                  {
+                    "$ref": "#/components/schemas/Identifier"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
               },
               "organisation": {
                 "description": "The expanded organisation object that manages this course offering.\nWhen the client requests expansion of `organisation`, the full expanded\norganisation object MUST be returned here instead of only the identifier.\nIf no organisation is defined, this value is `null`.\n",
-                "type": [
-                  "object",
-                  "null"
-                ],
-                "allOf": [
+                "oneOf": [
                   {
                     "$ref": "#/components/schemas/Organisation"
+                  },
+                  {
+                    "type": "null"
                   }
                 ]
               }
@@ -12124,33 +12295,45 @@
               },
               "courseOfferingId": {
                 "description": "The identifier of the courseOffering referenced here.\nWhen the client or server does not expand `offering`, only this\nidentifier is returned.\nThis field is [`expandable`](https://openonderwijsapi.nl/v6.0/#/technical/expanding-responses).\n",
-                "$ref": "#/components/schemas/Identifier"
+                "oneOf": [
+                  {
+                    "$ref": "#/components/schemas/Identifier"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
               },
               "courseOffering": {
                 "description": "The expanded courseOffering object referenced here.\nWhen the client or server expands `offering`, the full expanded\ncourseOffering object MUST be returned here instead of only the\nidentifier.\nIf no offering is defined, this value is `null`.\n",
-                "type": [
-                  "object",
-                  "null"
-                ],
-                "allOf": [
+                "oneOf": [
                   {
                     "$ref": "#/components/schemas/CourseOffering"
+                  },
+                  {
+                    "type": "null"
                   }
                 ]
               },
               "personId": {
                 "description": "The identifier of the person referenced here.\nWhen the client or server does not expand `person`, only this\nidentifier is returned.\nThis field is [`expandable`](https://openonderwijsapi.nl/v6.0/#/technical/expanding-responses).\n",
-                "$ref": "#/components/schemas/Identifier"
+                "oneOf": [
+                  {
+                    "$ref": "#/components/schemas/Identifier"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
               },
               "person": {
                 "description": "The expanded person object referenced here.\nWhen the client or server expands `person`, the full expanded\nperson object MUST be returned here instead of only the identifier.\nIf no person is defined, this value is `null`.\n",
-                "type": [
-                  "object",
-                  "null"
-                ],
-                "allOf": [
+                "oneOf": [
                   {
                     "$ref": "#/components/schemas/Person"
+                  },
+                  {
+                    "type": "null"
                   }
                 ]
               }
@@ -12264,33 +12447,45 @@
               },
               "organisationId": {
                 "description": "The identifier of the organisation that manages this group.\nWhen the client does not request expansion of `organisation`, only this\nidentifier is returned.\nThis field is [`expandable`](https://openonderwijsapi.nl/v6.0/#/technical/expanding-responses).\n",
-                "$ref": "#/components/schemas/Identifier"
+                "oneOf": [
+                  {
+                    "$ref": "#/components/schemas/Identifier"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
               },
               "organisation": {
                 "description": "The expanded organisation object that manages this group.\nWhen the client requests expansion of `organisation`, the full expanded\norganisation object MUST be returned here instead of only the identifier.\nIf no organisation is defined, this value is `null`.\n",
-                "type": [
-                  "object",
-                  "null"
-                ],
-                "allOf": [
+                "oneOf": [
                   {
                     "$ref": "#/components/schemas/Organisation"
+                  },
+                  {
+                    "type": "null"
                   }
                 ]
               },
               "academicSessionId": {
                 "description": "The identifier of the academicSession for which this group is intended.\nWhen the client does not request expansion of `academicSession`, only this\nidentifier is returned.\nThis field is [`expandable`](https://openonderwijsapi.nl/v6.0/#/technical/expanding-responses).\n",
-                "$ref": "#/components/schemas/Identifier"
+                "oneOf": [
+                  {
+                    "$ref": "#/components/schemas/Identifier"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
               },
               "academicSession": {
                 "description": "The expanded academicSession object for which this group is intended.\nWhen the client requests expansion of `academicSession`, the full expanded\nacademicSession object MUST be returned here instead of only the identifier.\nIf no academicSession is defined, this value is `null`.\n",
-                "type": [
-                  "object",
-                  "null"
-                ],
-                "allOf": [
+                "oneOf": [
                   {
                     "$ref": "#/components/schemas/AcademicSession"
+                  },
+                  {
+                    "type": "null"
                   }
                 ]
               },
@@ -12487,13 +12682,12 @@
               "null"
             ],
             "items": {
-              "type": [
-                "object",
-                "null"
-              ],
-              "allOf": [
+              "oneOf": [
                 {
                   "$ref": "#/components/schemas/LearningOutcome"
+                },
+                {
+                  "type": "null"
                 }
               ]
             }
@@ -12515,13 +12709,12 @@
               "null"
             ],
             "items": {
-              "type": [
-                "object",
-                "null"
-              ],
-              "allOf": [
+              "oneOf": [
                 {
                   "$ref": "#/components/schemas/LearningOutcome"
+                },
+                {
+                  "type": "null"
                 }
               ]
             }
@@ -12715,33 +12908,45 @@
           },
           "rootId": {
             "description": "The identifier of the organisation which is the root organisation of this organisation.\nWhen the client does not request expansion of `root`, only this identifier is returned.\nThis field is [`expandable`](https://openonderwijsapi.nl/v6.0/#/technical/expanding-responses).\n",
-            "$ref": "#/components/schemas/Identifier"
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/Identifier"
+              },
+              {
+                "type": "null"
+              }
+            ]
           },
           "root": {
             "description": "The expanded organisation object which is the root organisation of this organisation.\nWhen the client requests expansion of `root`, the full expanded organisation object MUST be returned here instead of only the identifier.\nIf no root organisation is defined, this value is `null`.\n",
-            "type": [
-              "object",
-              "null"
-            ],
-            "allOf": [
+            "oneOf": [
               {
                 "$ref": "#/components/schemas/Organisation"
+              },
+              {
+                "type": "null"
               }
             ]
           },
           "parentId": {
             "description": "The identifier of the organisational unit which is the parent of this organisation.\nWhen the client does not request expansion of `parent`, only this identifier is returned.\nThis field is [`expandable`](https://openonderwijsapi.nl/v6.0/#/technical/expanding-responses).\n",
-            "$ref": "#/components/schemas/Identifier"
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/Identifier"
+              },
+              {
+                "type": "null"
+              }
+            ]
           },
           "parent": {
             "description": "The expanded organisation object which is the parent of this organisation.\nWhen the client requests expansion of `parent`, the full expanded organisation object MUST be returned here instead of only the identifier.\nIf no parent organisation is defined, this value is `null`.\n",
-            "type": [
-              "object",
-              "null"
-            ],
-            "allOf": [
+            "oneOf": [
               {
                 "$ref": "#/components/schemas/Organisation"
+              },
+              {
+                "type": "null"
               }
             ]
           },
@@ -12762,13 +12967,12 @@
               "null"
             ],
             "items": {
-              "type": [
-                "object",
-                "null"
-              ],
-              "allOf": [
+              "oneOf": [
                 {
                   "$ref": "#/components/schemas/Organisation"
+                },
+                {
+                  "type": "null"
                 }
               ]
             }
@@ -12910,33 +13114,45 @@
               },
               "programmeId": {
                 "description": "The identifier of the programme that is offered in this programmeOffering.\nWhen the client does not request expansion of `programme`, only this identifier is returned.\nThis field is [`expandable`](https://openonderwijsapi.nl/v6.0/#/technical/expanding-responses).\n",
-                "$ref": "#/components/schemas/Identifier"
+                "oneOf": [
+                  {
+                    "$ref": "#/components/schemas/Identifier"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
               },
               "programme": {
                 "description": "The expanded programme object that is offered in this programmeOffering.\nWhen the client requests expansion of `programme`, the full expanded programme object MUST be returned here instead of only the identifier.\nIf no programme is defined, this value is `null`.\n",
-                "type": [
-                  "object",
-                  "null"
-                ],
-                "allOf": [
+                "oneOf": [
                   {
                     "$ref": "#/components/schemas/Programme"
+                  },
+                  {
+                    "type": "null"
                   }
                 ]
               },
               "organisationId": {
                 "description": "The identifier of the organisation that manages this programmeOffering.\nWhen the client does not request expansion of `organisation`, only this identifier is returned.\nThis field is [`expandable`](https://openonderwijsapi.nl/v6.0/#/technical/expanding-responses).\n",
-                "$ref": "#/components/schemas/Identifier"
+                "oneOf": [
+                  {
+                    "$ref": "#/components/schemas/Identifier"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
               },
               "organisation": {
                 "description": "The expanded organisation object that manages this programmeOffering.\nWhen the client requests expansion of `organisation`, the full expanded organisation object MUST be returned here instead of only the identifier.\nIf no organisation is defined, this value is `null`.\n",
-                "type": [
-                  "object",
-                  "null"
-                ],
-                "allOf": [
+                "oneOf": [
                   {
                     "$ref": "#/components/schemas/Organisation"
+                  },
+                  {
+                    "type": "null"
                   }
                 ]
               }
@@ -13080,17 +13296,23 @@
           },
           "buildingId": {
             "description": "The identifier of the building in which the room is located.\nWhen the client does not request expansion of `building`, only this identifier is returned.\nThis field is [`expandable`](https://openonderwijsapi.nl/v6.0/#/technical/expanding-responses).\n",
-            "$ref": "#/components/schemas/Identifier"
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/Identifier"
+              },
+              {
+                "type": "null"
+              }
+            ]
           },
           "building": {
             "description": "The expanded building object in which the room is located.\nWhen the client requests expansion of `building`, the full building object MUST be returned here instead of only the identifier.\nIf no building is defined, this value is `null`.\n",
-            "type": [
-              "object",
-              "null"
-            ],
-            "allOf": [
+            "oneOf": [
               {
                 "$ref": "#/components/schemas/Building"
+              },
+              {
+                "type": "null"
               }
             ]
           },
@@ -13155,35 +13377,45 @@
             "properties": {
               "personId": {
                 "description": "The identifier of the person referenced here.\nWhen the client does not request expansion of `person`, only this identifier is returned.\nThis field is [`expandable`](https://openonderwijsapi.nl/v6.0/#/technical/expanding-responses).\n",
-                "readOnly": true,
-                "$ref": "#/components/schemas/Identifier"
+                "oneOf": [
+                  {
+                    "$ref": "#/components/schemas/Identifier"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
               },
               "person": {
                 "description": "The expanded person object referenced here.\nWhen the client requests expansion of `person`, the full expanded person object MUST be returned here instead of only the identifier.\nIf no person is defined, this value is `null`.\n",
-                "readOnly": true,
-                "type": [
-                  "object",
-                  "null"
-                ],
-                "allOf": [
+                "oneOf": [
                   {
                     "$ref": "#/components/schemas/Person"
+                  },
+                  {
+                    "type": "null"
                   }
                 ]
               },
               "programmeOfferingId": {
                 "description": "The identifier of the `programmeOffering` referenced here.\nWhen the client does not request expansion of `offering`, only this identifier is returned.\nThis field is [`expandable`](https://openonderwijsapi.nl/v6.0/#/technical/expanding-responses).\n",
-                "$ref": "#/components/schemas/Identifier"
+                "oneOf": [
+                  {
+                    "$ref": "#/components/schemas/Identifier"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
               },
               "programmeOffering": {
                 "description": "The expanded programmeOffering object referenced here.\nWhen the client requests expansion of `offering`, the full expanded programmeOffering object MUST be returned here instead of only the identifier.\nIf no offering is defined, this value is `null`.\n",
-                "type": [
-                  "object",
-                  "null"
-                ],
-                "allOf": [
+                "oneOf": [
                   {
                     "$ref": "#/components/schemas/ProgrammeOffering"
+                  },
+                  {
+                    "type": "null"
                   }
                 ]
               }
@@ -13266,15 +13498,7 @@
               "null"
             ],
             "items": {
-              "type": [
-                "object",
-                "null"
-              ],
-              "allOf": [
-                {
-                  "$ref": "#/components/schemas/Room"
-                }
-              ]
+              "$ref": "#/components/schemas/Room"
             }
           },
           "attendance": {
@@ -13297,17 +13521,23 @@
           },
           "coordinatorId": {
             "description": "The identifier of the coordinator responsible for overseeing the test.\nWhen the client does not request expansion of `coordinator`, only this identifier is returned.\nThis field is [`expandable`](https://openonderwijsapi.nl/v6.0/#/technical/expanding-responses).\n",
-            "$ref": "#/components/schemas/Identifier"
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/Identifier"
+              },
+              {
+                "type": "null"
+              }
+            ]
           },
           "coordinator": {
             "description": "The expanded person object representing the coordinator responsible for overseeing the test.\nWhen the client requests expansion of `coordinator`, the full person object MUST be returned here instead of only the identifier.\nIf no coordinator is defined, this value is `null`.\n",
-            "type": [
-              "object",
-              "null"
-            ],
-            "allOf": [
+            "oneOf": [
               {
                 "$ref": "#/components/schemas/Person"
+              },
+              {
+                "type": "null"
               }
             ]
           },
@@ -13361,6 +13591,7 @@
           "learning_outcomes",
           "organisation",
           "parent",
+          "parents",
           "person",
           "programme",
           "programmes",
@@ -13638,10 +13869,10 @@
         }
       },
       "Language": {
-        "description": "The language used in the described entity. A string formatted according to RFC 4647 https://www.rfc-editor.org/rfc/rfc4647.html\nRFC 4647 supports language specifications from very general to very specific. \nThis breaks down as:\n- ([a-z]{2,3}) - Primary language subtag (2-3 letters) ISO 639-1, ISO 639-2, or ISO 639-3 https://www.iso.org/iso-639-language-code\n- (-([A-Z]{2}|[0-9]{3}))? - Optional region/country (2 uppercase letters or 3 digits) ISO 3166-1 or UN M.49 https://www.iso.org/iso-3166-country-codes.html\n- (-([a-z]{4}))? - Optional script subtag (4 lowercase letters)\n- (-([a-z]{2}|[0-9]{3}))* - Optional variant subtags\n- (-[a-z0-9]{2,8})* - Optional extension subtags\n- (-x(-[a-z0-9]{1,8})+)? - Optional private use extensions\n\nWhen using this schema, the most common format is a two-letter language code as specified by ISO 639-1, optionally followed by a dash and a two-letter country code as specified by ISO 3166-1 (e.g. \"en\" or \"en-GB\").\nMore specific language tags are also allowed, such as \"zh-Hant-TW\" for Traditional Chinese as used in Taiwan.\nFor sign language based on a certain language two methods are commonly used: either using the subtag \"sgn\" (e.g. \"nl-sgn-NL\" for Dutch Sign Language) or using the subtag \"s\" (e.g. \"nl-s-NL\" for Dutch Sign Language). Both methods are allowed.\n",
+        "description": "The language used in the described entity. The value **must be a language tag that conforms to RFC 5646** (Tags for Identifying Languages, BCP 47):\nhttps://www.rfc-editor.org/rfc/rfc5646.html\n\nA tag consists of the following components, in this exact order:\n1. **language** – two‑ to three‑letter codes (ISO 639‑1/‑2) **or** four‑letter codes (ISO 639‑5) **or** five‑ to eight‑letter registered language subtags.\n2. **script** – optional, four letters in Title‑Case (e.g. `Latn`, `Hant`).\n3. **region** – optional, either two uppercase letters (ISO 3166‑1) **or** three digits (UN M.49).\n4. **variant** – zero or more subtags, each either five‑ to eight‑alphanumerics or a digit followed by three alphanumerics (e.g. `1901`, `oxendict`).\n5. **extension** – zero or more extensions. Each extension starts with a *singleton* (a single alphanumeric character except `x`) followed by one or more subtags of two‑ to eight‑alphanumerics (e.g. `u‑co‑phonebk`).\n6. **private‑use** – optional, the letter `x` followed by one or more subtags of one‑ to eight‑alphanumerics (e.g. `x‑private`).\n\nThe most common form is a two‑letter language code (ISO 639‑1) optionally followed by a hyphen and a two‑letter country code (ISO 3166‑1), for example `en` or `en‑GB`.\n\nMore specific tags are also valid, for instance `zh‑Hant‑TW` (Traditional Chinese as used in Taiwan).\n\nFor sign languages two conventions are recognised:\n* `sgn` – e.g. `nl‑sgn‑NL` (Dutch Sign Language)\n* `s`   – e.g. `nl‑s‑NL` (Dutch Sign Language)\n",
         "type": "string",
         "minLength": 2,
-        "pattern": "^([a-z]{2,3})(-([A-Z]{2}|[0-9]{3}))?(-([a-z]{4}))?(-([a-z]{2}|[0-9]{3}))*(-[a-z0-9]{2,8})*(-x(-[a-z0-9]{1,8})+)?$",
+        "pattern": "^(?:(?:[A-Za-z]{2,3}(?:-[A-Za-z]{3}){0,2}|[A-Za-z]{4}|[A-Za-z]{5,8})(?:-[A-Za-z]{4})?(?:-(?:[A-Z]{2}|[0-9]{3}))?(?:-(?:[A-Za-z0-9]{5,8}|[0-9][A-Za-z0-9]{3}))*?(?:-(?:[A-WY-Za-wy-z0-9](?:-[A-Za-z0-9]{2,8})+))*?(?:-x(?:-[A-Za-z0-9]{1,8})+)?|x(?:-[A-Za-z0-9]{1,8})+)$",
         "example": "en-GB"
       },
       "LanguageTypedString": {
@@ -13930,17 +14161,23 @@
           },
           "academicSessionId": {
             "description": "The identifier of the academicSession during which this courseOffering takes place.\nWhen the client does not request expansion of `academicSession`, only this identifier is returned.\nThis field is [`expandable`](https://openonderwijsapi.nl/v6.0/#/technical/expanding-responses).\n",
-            "$ref": "#/components/schemas/Identifier"
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/Identifier"
+              },
+              {
+                "type": "null"
+              }
+            ]
           },
           "academicSession": {
             "description": "The expanded academicSession object during which this courseOffering takes place.\nWhen the client requests expansion of `academicSession`, the full expanded academicSession object MUST be returned here instead of only the identifier.\nIf no academicSession is defined, this value is `null`.\n",
-            "type": [
-              "object",
-              "null"
-            ],
-            "allOf": [
+            "oneOf": [
               {
                 "$ref": "#/components/schemas/AcademicSession"
+              },
+              {
+                "type": "null"
               }
             ]
           },
@@ -15390,17 +15627,23 @@
           },
           "parentId": {
             "description": "The identifier of the parent programme of which the current programme is a child.\nWhen the client does not request expansion of `parent`, only this identifier is returned.\nThis field is [`expandable`](https://openonderwijsapi.nl/v6.0/#/technical/expanding-responses).\n",
-            "$ref": "#/components/schemas/Identifier"
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/Identifier"
+              },
+              {
+                "type": "null"
+              }
+            ]
           },
           "parent": {
             "description": "The expanded parent programme of which the current programme is a child.\nWhen the client requests expansion of `parent`, the full expanded programme object MUST be returned here instead of only the identifier.\nIf no parent is defined, this value is `null`.\n",
-            "type": [
-              "object",
-              "null"
-            ],
-            "allOf": [
+            "oneOf": [
               {
                 "$ref": "#/components/schemas/Programme"
+              },
+              {
+                "type": "null"
               }
             ]
           },
@@ -15466,17 +15709,23 @@
           },
           "organisationId": {
             "description": "The identifier of the organisation providing this programme.\nWhen the client does not request expansion of `organisation`, only this identifier is returned.\nThis field is [`expandable`](https://openonderwijsapi.nl/v6.0/#/technical/expanding-responses).\n",
-            "$ref": "#/components/schemas/Identifier"
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/Identifier"
+              },
+              {
+                "type": "null"
+              }
+            ]
           },
           "organisation": {
             "description": "The expanded organisation object providing this programme.\nWhen the client requests expansion of `organisation`, the full expanded organisation object MUST be returned here instead of only the identifier.\nIf no organisation is defined, this value is `null`.\n",
-            "type": [
-              "object",
-              "null"
-            ],
-            "allOf": [
+            "oneOf": [
               {
                 "$ref": "#/components/schemas/Organisation"
+              },
+              {
+                "type": "null"
               }
             ]
           },
@@ -15842,17 +16091,23 @@
           },
           "organisationId": {
             "description": "The identifier of the organisation that manages this course.\nWhen the client does not request expansion of `organisation`, only this\nidentifier is returned.\nThis field is [`expandable`](https://openonderwijsapi.nl/v6.0/#/technical/expanding-responses).\n",
-            "$ref": "#/components/schemas/Identifier"
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/Identifier"
+              },
+              {
+                "type": "null"
+              }
+            ]
           },
           "organisation": {
             "description": "The expanded organisation object that manages this course.\nWhen the client requests expansion of `organisation`, the full expanded\norganisation object MUST be returned here instead of only the identifier.\nIf no organisation is defined, this value is `null`.\n",
-            "type": [
-              "object",
-              "null"
-            ],
-            "allOf": [
+            "oneOf": [
               {
                 "$ref": "#/components/schemas/Organisation"
+              },
+              {
+                "type": "null"
               }
             ]
           },
@@ -16260,17 +16515,23 @@
           },
           "assessorId": {
             "description": "The identifier of the assessor responsible for evaluating the result.\nWhen the client does not request expansion of `assessor`, only this identifier is returned.\nThis field is [`expandable`](https://openonderwijsapi.nl/v6.0/#/technical/expanding-responses).\n",
-            "$ref": "#/components/schemas/Identifier"
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/Identifier"
+              },
+              {
+                "type": "null"
+              }
+            ]
           },
           "assessor": {
             "description": "The expanded assessor (person) responsible for evaluating the result.\nWhen the client requests expansion of `assessor`, the full person object MUST be returned here instead of only the identifier.\nIf no assessor is defined, this value is `null`.\n",
-            "type": [
-              "object",
-              "null"
-            ],
-            "allOf": [
+            "oneOf": [
               {
                 "$ref": "#/components/schemas/Person"
+              },
+              {
+                "type": "null"
               }
             ]
           },
@@ -16377,17 +16638,23 @@
               },
               "courseOfferingId": {
                 "description": "The identifier of the courseOffering referenced here.\nWhen the client or server does not expand `offering`, only this\nidentifier is returned.\nThis field is [`expandable`](https://openonderwijsapi.nl/v6.0/#/technical/expanding-responses).\n",
-                "$ref": "#/components/schemas/Identifier"
+                "oneOf": [
+                  {
+                    "$ref": "#/components/schemas/Identifier"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
               },
               "courseOffering": {
                 "description": "The expanded courseOffering object referenced here.\nWhen the client or server expands `offering`, the full expanded\ncourseOffering object MUST be returned here instead of only the\nidentifier.\nIf no offering is defined, this value is `null`.\n",
-                "type": [
-                  "object",
-                  "null"
-                ],
-                "allOf": [
+                "oneOf": [
                   {
                     "$ref": "#/components/schemas/CourseOffering"
+                  },
+                  {
+                    "type": "null"
                   }
                 ]
               }
@@ -16636,17 +16903,23 @@
               },
               "programmeOfferingId": {
                 "description": "The identifier of the `programmeOffering` referenced here.\nWhen the client does not request expansion of `offering`, only this identifier is returned.\nThis field is [`expandable`](https://openonderwijsapi.nl/v6.0/#/technical/expanding-responses).\n",
-                "$ref": "#/components/schemas/Identifier"
+                "oneOf": [
+                  {
+                    "$ref": "#/components/schemas/Identifier"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
               },
               "programmeOffering": {
                 "description": "The expanded programmeOffering object referenced here.\nWhen the client requests expansion of `offering`, the full expanded programmeOffering object MUST be returned here instead of only the identifier.\nIf no offering is defined, this value is `null`.\n",
-                "type": [
-                  "object",
-                  "null"
-                ],
-                "allOf": [
+                "oneOf": [
                   {
                     "$ref": "#/components/schemas/ProgrammeOffering"
+                  },
+                  {
+                    "type": "null"
                   }
                 ]
               }
@@ -16977,6 +17250,23 @@
             }
           }
         }
+      },
+      "ErrorConflict": {
+        "description": "Conflict",
+        "content": {
+          "application/problem+json": {
+            "schema": {
+              "$ref": "#/components/schemas/Problem"
+            },
+            "example": {
+              "type": "https://api.example.org/problems/conflict",
+              "title": "Conflict",
+              "status": 409,
+              "detail": "The request could not be completed due to a conflict with the current state of the resource.",
+              "instance": "https://api.example.org/courses"
+            }
+          }
+        }
       }
     },
     "parameters": {
@@ -17032,6 +17322,9 @@
         "name": "filter_query",
         "in": "query",
         "required": false,
+        "x-lint-ignore": [
+          "camel-case-properties"
+        ],
         "style": "deepObject",
         "explode": true,
         "description": "Filter object serialised as `filter_query[field][operation]=value`.\nMultiple top-level fields are combined with AND. CSV is accepted where noted.\n\nOR blocks. Provide an array of single-field filter objects, each combined with OR.\nSerialises as `filter_query[__or][][field][operation]=value`.\n\nInspired by Storyblok (https://www.storyblok.com/docs/api/content-delivery/v2/filter-queries)\n\nWildcards:\n- Prefer using only the asterisk `*` as a wildcard for partial matches (e.g., like and not_like).\n\nImplementation note:\n- The availability and behaviour of this query functionality are entirely determined by the organisation hosting\n  the API implementation. It is not mandatory for implementers to support this functionality, and it cannot be enforced \n  upon organisations that provide or consume OEAPI endpoints.\n- It is up to each implementer to decide whether to support this feature. It is **not** a requirement of the OEAPI \n  standard itself.\n- Consumers or working groups that wish to apply specific filtering mechanisms are encouraged to do so using \n  this approach for the sake of consistency across implementations.\n\nExamples:  \n- **Filter course offerings by programme, delivery, language and start date**  \n  `filter_query[programme.code][in]=B-IT-2025&filter_query[organisation.code][in]=RuG&filter_query[mode_of_delivery][in]=on_campus,hybrid&filter_query[language_of_instruction][in]=en-GB&filter_query[start_date][gt_date]=2025-09-01T00:00:00Z`  \n  \n- **Only offerings with email contact present**  \n  `filter_query[contacts.email][is]=not_empty`\n\n- **Provider is Org A or Org B, OR campus city contains “Utrecht”**  \n  `?filter_query[__or][][organisation.id][in]=org-uu,org-hku&filter_query[__or][][campus.city][like]=*Utrecht*`  \n    \n- **Start date after 1 Sept 2025 OR has evening/block_week tag**  \n  `?filter_query[__or][][start_date][gt_date]=2025-09-01T00:00:00Z&filter_query[__or][][tags][any_in_array]=evening,block_week`  \n",
