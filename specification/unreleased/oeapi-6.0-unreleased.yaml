@@ -25,8 +25,8 @@ info:
     url: https://github.com/open-education-api/specification/blob/release/6.0/LICENSE.md
   contact:
     name: OEAPI Working Group / SURF
-    url: https://openonderwijsapi.nl
-    email: info@openonderwijsapi.nl
+    url: https://oeapi.eu
+    email: info@oeapi.eu
   x-logo:
     url: ./logo.png
     href: ./docs.html
@@ -6741,7 +6741,7 @@ components:
             term 20xx where the current session is week 40).
             When the client does not request expansion of `parent`, only this
             identifier is returned.
-            This field is [`expandable`](https://openonderwijsapi.nl/v6.0/#/technical/expanding-responses).
+            This field is [`expandable`](https://oeapi.eu/v6.0/#/technical/expanding-responses).
           oneOf:
             - $ref: '#/components/schemas/Identifier'
             - type: 'null'
@@ -6761,7 +6761,7 @@ components:
             academic sessions in Autumn term 20xx).
             When the client does not request expansion of `children`, only these
             identifiers are returned.
-            This field is [`expandable`](https://openonderwijsapi.nl/v6.0/#/technical/expanding-responses).
+            This field is [`expandable`](https://oeapi.eu/v6.0/#/technical/expanding-responses).
 
             Although `childIds` and `children` (for example `organisationIds` versus `organisations`) may 
             seem unusual, this naming is intentional and follows the singular–plural convention defined 
@@ -6789,7 +6789,7 @@ components:
             (e.g. 20xx where the current session is week 40 of a semester).
             When the client does not request expansion of `year`, only this identifier
             is returned.
-            This field is [`expandable`](https://openonderwijsapi.nl/v6.0/#/technical/expanding-responses).
+            This field is [`expandable`](https://oeapi.eu/v6.0/#/technical/expanding-responses).
           oneOf:
             - $ref: '#/components/schemas/Identifier'
             - type: 'null'
@@ -6997,7 +6997,7 @@ components:
             The identifiers of the learning outcomes related to this learning component.
             When the client does not request expansion of `learningOutcomes`, only these
             identifiers are returned.
-            This field is [`expandable`](https://openonderwijsapi.nl/v6.0/#/technical/expanding-responses).
+            This field is [`expandable`](https://oeapi.eu/v6.0/#/technical/expanding-responses).
           type:
             - array
             - 'null'
@@ -7025,7 +7025,7 @@ components:
           description: The extra information that is provided for enrolment
           example:
             - language: en-GB
-              value: enrolment through SIS. [The limited implementation of Git Hub Markdown syntax](https://openonderwijsapi.nl/v6.0/#/technical/formatting-text) MAY be used for rich text representation.
+              value: enrolment through SIS. [The limited implementation of Git Hub Markdown syntax](https://oeapi.eu/v6.0/#/technical/formatting-text) MAY be used for rich text representation.
         resources:
           type:
             - array
@@ -7065,7 +7065,7 @@ components:
           description: |
             The identifier of the parent learningComponent of which the current learningComponent is a child.
             When the client does not request expansion of `parent`, only this identifier is returned.
-            This field is [`expandable`](https://openonderwijsapi.nl/v6.0/#/technical/expanding-responses).
+            This field is [`expandable`](https://oeapi.eu/v6.0/#/technical/expanding-responses).
           oneOf:
             - $ref: '#/components/schemas/Identifier'
             - type: 'null'
@@ -7081,7 +7081,7 @@ components:
           description: |
             The identifiers of the learningComponents which are a part of this learningComponent (e.g. combined tests).
             When the client does not request expansion of `children`, only these identifiers are returned.
-            This field is [`expandable`](https://openonderwijsapi.nl/v6.0/#/technical/expanding-responses).
+            This field is [`expandable`](https://oeapi.eu/v6.0/#/technical/expanding-responses).
 
             Although `childIds` and `children` (for example `organisationIds` versus `organisations`) may 
             seem unusual, this naming is intentional and follows the singular–plural convention defined 
@@ -7107,7 +7107,7 @@ components:
           description: |
             The identifier of the course of which this component is a part.
             When the client does not request expansion of `course`, only this identifier is returned.
-            This field is [`expandable`](https://openonderwijsapi.nl/v6.0/#/technical/expanding-responses).
+            This field is [`expandable`](https://oeapi.eu/v6.0/#/technical/expanding-responses).
           oneOf:
             - $ref: '#/components/schemas/Identifier'
             - type: 'null'
@@ -7123,7 +7123,7 @@ components:
           description: |
             The identifier of the organisation which provides this component.
             When the client does not request expansion of `organisation`, only this identifier is returned.
-            This field is [`expandable`](https://openonderwijsapi.nl/v6.0/#/technical/expanding-responses).
+            This field is [`expandable`](https://oeapi.eu/v6.0/#/technical/expanding-responses).
           oneOf:
             - $ref: '#/components/schemas/Identifier'
             - type: 'null'
@@ -7282,7 +7282,7 @@ components:
           description: |
             The identifiers of the learning outcomes related to this test component.
             When the client does not request expansion of `learningOutcomes`, only these identifiers are returned.
-            This field is [`expandable`](https://openonderwijsapi.nl/v6.0/#/technical/expanding-responses).
+            This field is [`expandable`](https://oeapi.eu/v6.0/#/technical/expanding-responses).
           type:
             - array
             - 'null'
@@ -7308,7 +7308,7 @@ components:
           description: The extra information that is provided for enrolment
           example:
             - language: en-GB
-              value: enrolment through SIS. [The limited implementation of Git Hub Markdown syntax](https://openonderwijsapi.nl/v6.0/#/technical/formatting-text) MAY be used for rich text representation.
+              value: enrolment through SIS. [The limited implementation of Git Hub Markdown syntax](https://oeapi.eu/v6.0/#/technical/formatting-text) MAY be used for rich text representation.
         resources:
           type:
             - array
@@ -7348,7 +7348,7 @@ components:
           description: |
             The identifier of the parent Test Component of which the current Test Component is a child.
             When the client does not request expansion of `parent`, only this identifier is returned.
-            This field is [`expandable`](https://openonderwijsapi.nl/v6.0/#/technical/expanding-responses).
+            This field is [`expandable`](https://oeapi.eu/v6.0/#/technical/expanding-responses).
           oneOf:
             - $ref: '#/components/schemas/Identifier'
             - type: 'null'
@@ -7364,7 +7364,7 @@ components:
           description: |
             The identifiers of the Test Components that are part of this Test Component.
             When the client does not request expansion of `children`, only these identifiers are returned.
-            This field is [`expandable`](https://openonderwijsapi.nl/v6.0/#/technical/expanding-responses).
+            This field is [`expandable`](https://oeapi.eu/v6.0/#/technical/expanding-responses).
 
             Although `childIds` and `children` (for example `organisationIds` versus `organisations`) may 
             seem unusual, this naming is intentional and follows the singular–plural convention defined 
@@ -7384,7 +7384,7 @@ components:
           description: |
             The identifier of the course of which this component is a part.
             When the client does not request expansion of `course`, only this identifier is returned.
-            This field is [`expandable`](https://openonderwijsapi.nl/v6.0/#/technical/expanding-responses).
+            This field is [`expandable`](https://oeapi.eu/v6.0/#/technical/expanding-responses).
           oneOf:
             - $ref: '#/components/schemas/TestComponent'
             - type: 'null'
@@ -7401,7 +7401,7 @@ components:
           description: |
             The identifier of the organisation which provides this component.
             When the client does not request expansion of `organisation`, only this identifier is returned.
-            This field is [`expandable`](https://openonderwijsapi.nl/v6.0/#/technical/expanding-responses).
+            This field is [`expandable`](https://oeapi.eu/v6.0/#/technical/expanding-responses).
           oneOf:
             - $ref: '#/components/schemas/Identifier'
             - type: 'null'
@@ -7470,7 +7470,7 @@ components:
               description: |
                 The identifiers of the rooms for this offering.
                 When the client does not request expansion of `rooms`, only these identifiers are returned.
-                This field is [`expandable`](https://openonderwijsapi.nl/v6.0/#/technical/expanding-responses).
+                This field is [`expandable`](https://oeapi.eu/v6.0/#/technical/expanding-responses).
               type:
                 - array
                 - 'null'
@@ -7492,7 +7492,7 @@ components:
               description: |
                 The identifier of the learningComponent that is offered in this learningComponent offering.
                 When the client does not request expansion of `learningComponent`, only this identifier is returned.
-                This field is [`expandable`](https://openonderwijsapi.nl/v6.0/#/technical/expanding-responses).
+                This field is [`expandable`](https://oeapi.eu/v6.0/#/technical/expanding-responses).
               oneOf:
                 - $ref: '#/components/schemas/Identifier'
                 - type: 'null'
@@ -7508,7 +7508,7 @@ components:
               description: |
                 The identifiers of the courseOfferings to which this learningComponent offering is related.
                 When the client does not request expansion of `courseOfferings`, only these identifiers are returned.
-                This field is [`expandable`](https://openonderwijsapi.nl/v6.0/#/technical/expanding-responses).
+                This field is [`expandable`](https://oeapi.eu/v6.0/#/technical/expanding-responses).
               type:
                 - array
                 - 'null'
@@ -7530,7 +7530,7 @@ components:
               description: |
                 The identifier of the organisation that manages this component offering.
                 When the client does not request expansion of `organisation`, only this identifier is returned.
-                This field is [`expandable`](https://openonderwijsapi.nl/v6.0/#/technical/expanding-responses).
+                This field is [`expandable`](https://oeapi.eu/v6.0/#/technical/expanding-responses).
               oneOf:
                 - $ref: '#/components/schemas/Identifier'
                 - type: 'null'
@@ -7574,7 +7574,7 @@ components:
               description: |
                 The identifier of the person referenced here.
                 When the client does not request expansion of `person`, only this identifier is returned.
-                This field is [`expandable`](https://openonderwijsapi.nl/v6.0/#/technical/expanding-responses).
+                This field is [`expandable`](https://oeapi.eu/v6.0/#/technical/expanding-responses).
               oneOf:
                 - $ref: '#/components/schemas/Identifier'
                 - type: 'null'
@@ -7590,7 +7590,7 @@ components:
               description: |
                 The identifier of the learningComponentOffering referenced here.
                 When the client does not request expansion of `offering`, only this identifier is returned.
-                This field is [`expandable`](https://openonderwijsapi.nl/v6.0/#/technical/expanding-responses).
+                This field is [`expandable`](https://oeapi.eu/v6.0/#/technical/expanding-responses).
               oneOf:
                 - $ref: '#/components/schemas/Identifier'
                 - type: 'null'
@@ -7651,7 +7651,7 @@ components:
               description: |
                 The identifiers of the rooms for this offering.
                 When the client does not request expansion of `rooms`, only these identifiers are returned.
-                This field is [`expandable`](https://openonderwijsapi.nl/v6.0/#/technical/expanding-responses).
+                This field is [`expandable`](https://oeapi.eu/v6.0/#/technical/expanding-responses).
               type:
                 - array
                 - 'null'
@@ -7673,7 +7673,7 @@ components:
               description: |
                 The identifier of the component that is offered in this component offering.
                 When the client does not request expansion of `component`, only this identifier is returned.
-                This field is [`expandable`](https://openonderwijsapi.nl/v6.0/#/technical/expanding-responses).
+                This field is [`expandable`](https://oeapi.eu/v6.0/#/technical/expanding-responses).
               oneOf:
                 - $ref: '#/components/schemas/Identifier'
                 - type: 'null'
@@ -7689,7 +7689,7 @@ components:
               description: |
                 The identifiers of the course offerings to which this test component offering is related.
                 When the client does not request expansion of `courseOfferings`, only these identifiers are returned.
-                This field is [`expandable`](https://openonderwijsapi.nl/v6.0/#/technical/expanding-responses).
+                This field is [`expandable`](https://oeapi.eu/v6.0/#/technical/expanding-responses).
               type:
                 - array
                 - 'null'
@@ -7710,7 +7710,7 @@ components:
               description: |
                 The identifier of the organisation that manages this component offering.
                 When the client does not request expansion of `organisation`, only this identifier is returned.
-                This field is [`expandable`](https://openonderwijsapi.nl/v6.0/#/technical/expanding-responses).
+                This field is [`expandable`](https://oeapi.eu/v6.0/#/technical/expanding-responses).
               oneOf:
                 - $ref: '#/components/schemas/Identifier'
                 - type: 'null'
@@ -7839,7 +7839,7 @@ components:
               description: |
                 The identifier of the person referenced here.
                 When the client does not request expansion of `person`, only this identifier is returned.
-                This field is [`expandable`](https://openonderwijsapi.nl/v6.0/#/technical/expanding-responses).
+                This field is [`expandable`](https://oeapi.eu/v6.0/#/technical/expanding-responses).
               oneOf:
                 - $ref: '#/components/schemas/Identifier'
                 - type: 'null'
@@ -7856,7 +7856,7 @@ components:
               description: |
                 The identifier of the testComponentOffering referenced here.
                 When the client does not request expansion of `offering`, only this identifier is returned.
-                This field is [`expandable`](https://openonderwijsapi.nl/v6.0/#/technical/expanding-responses).
+                This field is [`expandable`](https://oeapi.eu/v6.0/#/technical/expanding-responses).
               oneOf:
                 - $ref: '#/components/schemas/Identifier'
                 - type: 'null'
@@ -7872,7 +7872,7 @@ components:
               description: |
                 The identifiers of the attempts related to this testComponentOffering association.
                 When the client does not request expansion of `attempts`, only these identifiers are returned.
-                This field is [`expandable`](https://openonderwijsapi.nl/v6.0/#/technical/expanding-responses).
+                This field is [`expandable`](https://oeapi.eu/v6.0/#/technical/expanding-responses).
               type:
                 - array
                 - 'null'
@@ -7973,7 +7973,7 @@ components:
                 The identifier of the course that is offered in this course offering.
                 When the client does not request expansion of `course`, only this
                 identifier is returned.
-                This field is [`expandable`](https://openonderwijsapi.nl/v6.0/#/technical/expanding-responses).
+                This field is [`expandable`](https://oeapi.eu/v6.0/#/technical/expanding-responses).
               oneOf:
                 - $ref: '#/components/schemas/Identifier'
                 - type: 'null'
@@ -7992,7 +7992,7 @@ components:
                 course offering is related to.
                 When the client does not request expansion of `programmeOfferings`,
                 only these identifiers are returned.
-                This field is [`expandable`](https://openonderwijsapi.nl/v6.0/#/technical/expanding-responses).
+                This field is [`expandable`](https://oeapi.eu/v6.0/#/technical/expanding-responses).
               type:
                 - array
                 - 'null'
@@ -8016,7 +8016,7 @@ components:
                 The identifier of the organisation that manages this course offering.
                 When the client does not request expansion of `organisation`, only this
                 identifier is returned.
-                This field is [`expandable`](https://openonderwijsapi.nl/v6.0/#/technical/expanding-responses).
+                This field is [`expandable`](https://oeapi.eu/v6.0/#/technical/expanding-responses).
               oneOf:
                 - $ref: '#/components/schemas/Identifier'
                 - type: 'null'
@@ -8067,7 +8067,7 @@ components:
                 The identifier of the courseOffering referenced here.
                 When the client or server does not expand `offering`, only this
                 identifier is returned.
-                This field is [`expandable`](https://openonderwijsapi.nl/v6.0/#/technical/expanding-responses).
+                This field is [`expandable`](https://oeapi.eu/v6.0/#/technical/expanding-responses).
               oneOf:
                 - $ref: '#/components/schemas/Identifier'
                 - type: 'null'
@@ -8086,7 +8086,7 @@ components:
                 The identifier of the person referenced here.
                 When the client or server does not expand `person`, only this
                 identifier is returned.
-                This field is [`expandable`](https://openonderwijsapi.nl/v6.0/#/technical/expanding-responses).
+                This field is [`expandable`](https://oeapi.eu/v6.0/#/technical/expanding-responses).
               oneOf:
                 - $ref: '#/components/schemas/Identifier'
                 - type: 'null'
@@ -8183,7 +8183,7 @@ components:
                 The identifier of the organisation that manages this group.
                 When the client does not request expansion of `organisation`, only this
                 identifier is returned.
-                This field is [`expandable`](https://openonderwijsapi.nl/v6.0/#/technical/expanding-responses).
+                This field is [`expandable`](https://oeapi.eu/v6.0/#/technical/expanding-responses).
               oneOf:
                 - $ref: '#/components/schemas/Identifier'
                 - type: 'null'
@@ -8201,7 +8201,7 @@ components:
                 The identifier of the academicSession for which this group is intended.
                 When the client does not request expansion of `academicSession`, only this
                 identifier is returned.
-                This field is [`expandable`](https://openonderwijsapi.nl/v6.0/#/technical/expanding-responses).
+                This field is [`expandable`](https://oeapi.eu/v6.0/#/technical/expanding-responses).
               oneOf:
                 - $ref: '#/components/schemas/Identifier'
                 - type: 'null'
@@ -8349,7 +8349,7 @@ components:
           description: |
             The identifiers of the learning outcomes which are the parents of this learning outcome.
             When the client does not request expansion of `parents`, only these identifiers are returned.
-            This field is [`expandable`](https://openonderwijsapi.nl/v6.0/#/technical/expanding-responses).
+            This field is [`expandable`](https://oeapi.eu/v6.0/#/technical/expanding-responses).
           type:
             - array
             - 'null'
@@ -8371,7 +8371,7 @@ components:
           description: |
             The identifiers of all learning outcomes for which this learning outcome is the parent.
             When the client does not request expansion of `children`, only these identifiers are returned.
-            This field is [`expandable`](https://openonderwijsapi.nl/v6.0/#/technical/expanding-responses).
+            This field is [`expandable`](https://oeapi.eu/v6.0/#/technical/expanding-responses).
 
             Although `childIds` and `children` (for example `organisationIds` versus `organisations`) may 
             seem unusual, this naming is intentional and follows the singular–plural convention defined 
@@ -8535,7 +8535,7 @@ components:
           description: |
             The identifier of the organisation which is the root organisation of this organisation.
             When the client does not request expansion of `root`, only this identifier is returned.
-            This field is [`expandable`](https://openonderwijsapi.nl/v6.0/#/technical/expanding-responses).
+            This field is [`expandable`](https://oeapi.eu/v6.0/#/technical/expanding-responses).
           oneOf:
             - $ref: '#/components/schemas/Identifier'
             - type: 'null'
@@ -8551,7 +8551,7 @@ components:
           description: |
             The identifier of the organisational unit which is the parent of this organisation.
             When the client does not request expansion of `parent`, only this identifier is returned.
-            This field is [`expandable`](https://openonderwijsapi.nl/v6.0/#/technical/expanding-responses).
+            This field is [`expandable`](https://oeapi.eu/v6.0/#/technical/expanding-responses).
           oneOf:
             - $ref: '#/components/schemas/Identifier'
             - type: 'null'
@@ -8567,7 +8567,7 @@ components:
           description: |
             The identifiers of the organisational units for which this organisation is the parent.
             When the client does not request expansion of `children`, only these identifiers are returned.
-            This field is [`expandable`](https://openonderwijsapi.nl/v6.0/#/technical/expanding-responses).
+            This field is [`expandable`](https://oeapi.eu/v6.0/#/technical/expanding-responses).
 
             Although `childIds` and `children` (for example `organisationIds` versus `organisations`) may 
             seem unusual, this naming is intentional and follows the singular–plural convention defined 
@@ -8683,7 +8683,7 @@ components:
               description: |
                 The identifier of the programme that is offered in this programmeOffering.
                 When the client does not request expansion of `programme`, only this identifier is returned.
-                This field is [`expandable`](https://openonderwijsapi.nl/v6.0/#/technical/expanding-responses).
+                This field is [`expandable`](https://oeapi.eu/v6.0/#/technical/expanding-responses).
               oneOf:
                 - $ref: '#/components/schemas/Identifier'
                 - type: 'null'
@@ -8699,7 +8699,7 @@ components:
               description: |
                 The identifier of the organisation that manages this programmeOffering.
                 When the client does not request expansion of `organisation`, only this identifier is returned.
-                This field is [`expandable`](https://openonderwijsapi.nl/v6.0/#/technical/expanding-responses).
+                This field is [`expandable`](https://oeapi.eu/v6.0/#/technical/expanding-responses).
               oneOf:
                 - $ref: '#/components/schemas/Identifier'
                 - type: 'null'
@@ -8753,7 +8753,7 @@ components:
           type:
             - array
             - 'null'
-          description: The description of this room. [The limited implementation of Git Hub Markdown syntax](https://openonderwijsapi.nl/v6.0/#/technical/formatting-text) MAY be used for rich text representation.
+          description: The description of this room. [The limited implementation of Git Hub Markdown syntax](https://oeapi.eu/v6.0/#/technical/formatting-text) MAY be used for rich text representation.
           minItems: 1
           items:
             $ref: '#/components/schemas/LanguageTypedString'
@@ -8814,7 +8814,7 @@ components:
           description: |
             The identifier of the building in which the room is located.
             When the client does not request expansion of `building`, only this identifier is returned.
-            This field is [`expandable`](https://openonderwijsapi.nl/v6.0/#/technical/expanding-responses).
+            This field is [`expandable`](https://oeapi.eu/v6.0/#/technical/expanding-responses).
           oneOf:
             - $ref: '#/components/schemas/Identifier'
             - type: 'null'
@@ -8859,7 +8859,7 @@ components:
               description: |
                 The identifier of the person referenced here.
                 When the client does not request expansion of `person`, only this identifier is returned.
-                This field is [`expandable`](https://openonderwijsapi.nl/v6.0/#/technical/expanding-responses).
+                This field is [`expandable`](https://oeapi.eu/v6.0/#/technical/expanding-responses).
               oneOf:
                 - $ref: '#/components/schemas/Identifier'
                 - type: 'null'
@@ -8875,7 +8875,7 @@ components:
               description: |
                 The identifier of the `programmeOffering` referenced here.
                 When the client does not request expansion of `offering`, only this identifier is returned.
-                This field is [`expandable`](https://openonderwijsapi.nl/v6.0/#/technical/expanding-responses).
+                This field is [`expandable`](https://oeapi.eu/v6.0/#/technical/expanding-responses).
               oneOf:
                 - $ref: '#/components/schemas/Identifier'
                 - type: 'null'
@@ -8947,7 +8947,7 @@ components:
           description: |
             The identifiers of the rooms for this offering.
             When the client does not request expansion of `rooms`, only these identifiers are returned.
-            This field is [`expandable`](https://openonderwijsapi.nl/v6.0/#/technical/expanding-responses).
+            This field is [`expandable`](https://oeapi.eu/v6.0/#/technical/expanding-responses).
           type:
             - array
             - 'null'
@@ -8979,7 +8979,7 @@ components:
           description: |
             The identifier of the coordinator responsible for overseeing the test.
             When the client does not request expansion of `coordinator`, only this identifier is returned.
-            This field is [`expandable`](https://openonderwijsapi.nl/v6.0/#/technical/expanding-responses).
+            This field is [`expandable`](https://oeapi.eu/v6.0/#/technical/expanding-responses).
           oneOf:
             - $ref: '#/components/schemas/Identifier'
             - type: 'null'
@@ -9125,12 +9125,12 @@ components:
       example: Resource not found
     Consumer:
       type: object
-      description: The additional elements of a consumer that may be provided, see the [documentation on support for specific consumers](https://openonderwijsapi.nl/v6.0/#/technical/consumers-and-profiles/) for further information about this mechanism.
+      description: The additional elements of a consumer that may be provided, see the [documentation on support for specific consumers](https://oeapi.eu/v6.0/#/technical/consumers-and-profiles/) for further information about this mechanism.
       required:
         - consumerKey
       properties:
         consumerKey:
-          description: The key of the consumer (destination) for which this information is intended. See the [consumer registry](https://openonderwijsapi.nl/v6.0/#/technical/consumers-and-profiles/). This key is used to select the additional data to be presented in the request.
+          description: The key of the consumer (destination) for which this information is intended. See the [consumer registry](https://oeapi.eu/v6.0/#/technical/consumers-and-profiles/). This key is used to select the additional data to be presented in the request.
           type: string
           example: test-consumer
         exampleProperty:
@@ -9708,7 +9708,7 @@ components:
           description: |
             The identifier of the academicSession during which this courseOffering takes place.
             When the client does not request expansion of `academicSession`, only this identifier is returned.
-            This field is [`expandable`](https://openonderwijsapi.nl/v6.0/#/technical/expanding-responses).
+            This field is [`expandable`](https://oeapi.eu/v6.0/#/technical/expanding-responses).
           oneOf:
             - $ref: '#/components/schemas/Identifier'
             - type: 'null'
@@ -10892,7 +10892,7 @@ components:
           description: The extra information that is provided for enrolment
           example:
             - language: en-GB
-              value: enrolment through SIS. [The limited implementation of Git Hub Markdown syntax](https://openonderwijsapi.nl/v6.0/#/technical/formatting-text) MAY be used for rich text representation.
+              value: enrolment through SIS. [The limited implementation of Git Hub Markdown syntax](https://oeapi.eu/v6.0/#/technical/formatting-text) MAY be used for rich text representation.
         resources:
           type:
             - array
@@ -10907,7 +10907,7 @@ components:
           description: |
             The identifiers of the learning outcomes related to this programme.
             When the client does not request expansion of `learningOutcomes`, only these identifiers are returned.
-            This field is [`expandable`](https://openonderwijsapi.nl/v6.0/#/technical/expanding-responses).
+            This field is [`expandable`](https://oeapi.eu/v6.0/#/technical/expanding-responses).
           type:
             - array
             - 'null'
@@ -10986,7 +10986,7 @@ components:
           description: |
             The identifier of the parent programme of which the current programme is a child.
             When the client does not request expansion of `parent`, only this identifier is returned.
-            This field is [`expandable`](https://openonderwijsapi.nl/v6.0/#/technical/expanding-responses).
+            This field is [`expandable`](https://oeapi.eu/v6.0/#/technical/expanding-responses).
           oneOf:
             - $ref: '#/components/schemas/Identifier'
             - type: 'null'
@@ -11002,7 +11002,7 @@ components:
           description: |
             The identifiers of the programmes which are a part of this programme (e.g. specialisations).
             When the client does not request expansion of `children`, only these identifiers are returned.
-            This field is [`expandable`](https://openonderwijsapi.nl/v6.0/#/technical/expanding-responses).
+            This field is [`expandable`](https://oeapi.eu/v6.0/#/technical/expanding-responses).
 
             Although `childIds` and `children` (for example `organisationIds` versus `organisations`) may 
             seem unusual, this naming is intentional and follows the singular–plural convention defined 
@@ -11026,7 +11026,7 @@ components:
           description: |
             The identifiers of the persons responsible for this programme.
             When the client does not request expansion of `coordinators`, only these identifiers are returned.
-            This field is [`expandable`](https://openonderwijsapi.nl/v6.0/#/technical/expanding-responses).
+            This field is [`expandable`](https://oeapi.eu/v6.0/#/technical/expanding-responses).
           type:
             - array
             - 'null'
@@ -11046,7 +11046,7 @@ components:
           description: |
             The identifiers of the persons teaching or delivering this programme.
             When the client does not request expansion of `instructors`, only these identifiers are returned.
-            This field is [`expandable`](https://openonderwijsapi.nl/v6.0/#/technical/expanding-responses).
+            This field is [`expandable`](https://oeapi.eu/v6.0/#/technical/expanding-responses).
           type:
             - array
             - 'null'
@@ -11066,7 +11066,7 @@ components:
           description: |
             The identifier of the organisation providing this programme.
             When the client does not request expansion of `organisation`, only this identifier is returned.
-            This field is [`expandable`](https://openonderwijsapi.nl/v6.0/#/technical/expanding-responses).
+            This field is [`expandable`](https://oeapi.eu/v6.0/#/technical/expanding-responses).
           oneOf:
             - $ref: '#/components/schemas/Identifier'
             - type: 'null'
@@ -11215,7 +11215,7 @@ components:
             The identifiers of the learning outcomes related to this course.
             When the client does not request expansion of `learningOutcomes`, only these
             identifiers are returned.
-            This field is [`expandable`](https://openonderwijsapi.nl/v6.0/#/technical/expanding-responses).
+            This field is [`expandable`](https://oeapi.eu/v6.0/#/technical/expanding-responses).
           type:
             - array
             - 'null'
@@ -11264,7 +11264,7 @@ components:
           description: The extra information that is provided for enrolment
           example:
             - language: en-GB
-              value: enrolment through SIS. [The limited implementation of Git Hub Markdown syntax](https://openonderwijsapi.nl/v6.0/#/technical/formatting-text) MAY be used for rich text representation.
+              value: enrolment through SIS. [The limited implementation of Git Hub Markdown syntax](https://oeapi.eu/v6.0/#/technical/formatting-text) MAY be used for rich text representation.
         resources:
           type:
             - array
@@ -11315,7 +11315,7 @@ components:
             for example in alliances.
             When the client does not request expansion of `programmes`, only these
             identifiers are returned.
-            This field is [`expandable`](https://openonderwijsapi.nl/v6.0/#/technical/expanding-responses).
+            This field is [`expandable`](https://oeapi.eu/v6.0/#/technical/expanding-responses).
           type:
             - array
             - 'null'
@@ -11341,7 +11341,7 @@ components:
             The identifiers of the persons responsible for this course.
             When the client does not request expansion of `coordinators`, only these
             identifiers are returned.
-            This field is [`expandable`](https://openonderwijsapi.nl/v6.0/#/technical/expanding-responses).
+            This field is [`expandable`](https://oeapi.eu/v6.0/#/technical/expanding-responses).
           type:
             - array
             - 'null'
@@ -11363,7 +11363,7 @@ components:
             The identifiers of the persons teaching or delivering this course.
             When the client does not request expansion of `instructors`, only these
             identifiers are returned.
-            This field is [`expandable`](https://openonderwijsapi.nl/v6.0/#/technical/expanding-responses).
+            This field is [`expandable`](https://oeapi.eu/v6.0/#/technical/expanding-responses).
           type:
             - array
             - 'null'
@@ -11385,7 +11385,7 @@ components:
             The identifier of the organisation that manages this course.
             When the client does not request expansion of `organisation`, only this
             identifier is returned.
-            This field is [`expandable`](https://openonderwijsapi.nl/v6.0/#/technical/expanding-responses).
+            This field is [`expandable`](https://oeapi.eu/v6.0/#/technical/expanding-responses).
           oneOf:
             - $ref: '#/components/schemas/Identifier'
             - type: 'null'
@@ -11820,7 +11820,7 @@ components:
           description: |
             The identifier of the assessor responsible for evaluating the result.
             When the client does not request expansion of `assessor`, only this identifier is returned.
-            This field is [`expandable`](https://openonderwijsapi.nl/v6.0/#/technical/expanding-responses).
+            This field is [`expandable`](https://oeapi.eu/v6.0/#/technical/expanding-responses).
           oneOf:
             - $ref: '#/components/schemas/Identifier'
             - type: 'null'
@@ -11890,7 +11890,7 @@ components:
                 The identifier of the courseOffering referenced here.
                 When the client or server does not expand `offering`, only this
                 identifier is returned.
-                This field is [`expandable`](https://openonderwijsapi.nl/v6.0/#/technical/expanding-responses).
+                This field is [`expandable`](https://oeapi.eu/v6.0/#/technical/expanding-responses).
               oneOf:
                 - $ref: '#/components/schemas/Identifier'
                 - type: 'null'
@@ -12101,7 +12101,7 @@ components:
               description: |
                 The identifier of the `programmeOffering` referenced here.
                 When the client does not request expansion of `offering`, only this identifier is returned.
-                This field is [`expandable`](https://openonderwijsapi.nl/v6.0/#/technical/expanding-responses).
+                This field is [`expandable`](https://oeapi.eu/v6.0/#/technical/expanding-responses).
               oneOf:
                 - $ref: '#/components/schemas/Identifier'
                 - type: 'null'
@@ -12463,7 +12463,7 @@ components:
     consumer:
       name: consumer
       in: query
-      description: Request entities intended for a specific consumer. The `consumer` profile allows for adding additional data, or specific rules concerning the presentation of the data. A consumer can be selected based on the key of the consumer profile. An implementation of the OEAPI SHOULD always return the consumer information inside the consumer property of the object(s) that are requested. Further information regarding the use of consumers can be found in the [documentation](https://openonderwijsapi.nl/v6.0/#/technical/consumers-and-profiles/)
+      description: Request entities intended for a specific consumer. The `consumer` profile allows for adding additional data, or specific rules concerning the presentation of the data. A consumer can be selected based on the key of the consumer profile. An implementation of the OEAPI SHOULD always return the consumer information inside the consumer property of the object(s) that are requested. Further information regarding the use of consumers can be found in the [documentation](https://oeapi.eu/v6.0/#/technical/consumers-and-profiles/)
       required: false
       schema:
         type: string
