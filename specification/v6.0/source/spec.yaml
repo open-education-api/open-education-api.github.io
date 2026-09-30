@@ -1,12 +1,12 @@
 openapi: "3.1.1"
 info:
-  version: "6.0"
+  version: "6.0-rc.3"
   title: Open Education API
   description: |
     OpenAPI (fka Swagger) specification for the Open Education API. 
 
     The model provides an overview of the educational domain that is modelled and
-    forms the basis of the OOAPI. The overarching educational concept is not exposed
+    forms the basis of the OEAPI. The overarching educational concept is not exposed
     through API endpoints. Instead, the educational specification defines four base
     objects: programme, course, learning component, and test component, each with
     its own endpoint.
@@ -20,18 +20,22 @@ info:
     through association endpoints. These endpoints define the different types of
     associations that can exist between offerings and persons. Other objects shown
     in the model represent groups and group memberships of a person.
-    
+
+  license:
+    name: EUPL-1.2
+    url: https://github.com/open-education-api/specification/blob/release/6.0/LICENSE.md
+
   contact:
-    name: OOAPI Working Group / SURF
-    url: https://openonderwijsapi.nl
-    email: info@openonderwijsapi.nl   
+    name: OEAPI Working Group / SURF
+    url: https://oeapi.eu
+    email: info@oeapi.eu   
 
   x-logo:
     url:  ./logo.png
     href: ./docs.html
 
 servers:
-  - url: http://demo01.eduapi.nl/v6
+  - url: https://demo01.eduapi.nl/v6
     description: SURF demo implementation
 
 
@@ -211,7 +215,7 @@ tags:
       students based on these groups. For example, class 1b will be assigned to the
       course offering on Monday morning. Not all groups are related to an offering. A
       group of people can also be a team that is working on a task outside the 
-      scope of the OOAPI. These can be teams of students, but also teams of employees.
+      scope of the OEAPI. These can be teams of students, but also teams of employees.
 
   - name: learning component offering associations
     description: |
@@ -219,8 +223,8 @@ tags:
 
   - name: learning component offerings
     description: |
-      The offerings API provides information about offerings which have a global
-      timeframe, e.g. a period to which students can enrol.
+      The offerings API provides information about learning component offerings which 
+      have a global timeframe, e.g. a period to which students can enrol.
 
   - name: learning components 
     description: |
@@ -334,7 +338,7 @@ tags:
           <!--
           <td>
           This method is not yet implemented it requires full student details and
-          offering details. This would mean the OOAPI message would contain more than
+          offering details. This would mean the OEAPI message would contain more than
           one resource in the message. At the moment the student mobility project is
           looking into a solution.
           <br> Alternatively it could be achieved through using two calls:
@@ -363,8 +367,8 @@ tags:
 
   - name: programme offerings
     description: |
-      The offerings API provides information about offerings which have a global
-      timeframe, e.g. a period to which students can enrol.
+      The offerings API provides information about programme offerings which have a 
+      global timeframe, e.g. a period to which students can enrol.
 
   - name: programme_model
     x-displayName: Programme
@@ -412,7 +416,7 @@ tags:
 
   - name: service metadata
     description: |
-      The service API provides additional metadata needed to make the OOAPI fit for
+      The service API provides additional metadata needed to make the OEAPI fit for
       this organisation.
 
   - name: service_model
@@ -429,8 +433,8 @@ tags:
 
   - name: test component offerings
     description: |
-      The offerings API provides information about offerings which have a global
-      timeframe, e.g. a period to which students can enrol.
+      The offerings API provides information about test component offerings which 
+      have a global timeframe, e.g. a period to which students can enrol.
 
   - name: test components 
     description: |
