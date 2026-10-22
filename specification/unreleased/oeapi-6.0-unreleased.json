@@ -16236,7 +16236,7 @@
       },
       "documentType": {
         "type": "string",
-        "description": "The type of document:\n\n  - additional_document: Used to provide supplementary information\n  - assessment_form: A form used to assess a test\n  - assessment_model: A formal description of how a test is assessed\n  - assignment: A description of what is expected from a student, e.g. to submit a paper\n  - attendance_report: A report containing information on a student’s attendance for a course or test\n  - handed_in_document: A document submitted by the student\n  - instructions: Instructions for the student on how to enrol in a course or take a test\n  - plagiarism_report: A report containing information on (potential) plagiarism, e.g. in a submitted document\n  - session_report: A report containing information on a session, e.g. an academic session, course, or test session\n  - test_made: The completed test, including all answers provided by the student\n  - other: Any other type of document not listed above\n\nThis is an *extensible enumeration*. Use the prefix `x-` for custom values.\n",
+        "description": "The type of document:\n\n  - additional_document: Used to provide supplementary information\n  - assessment_form: A form used to assess a test\n  - assessment_model: A formal description of how a test is assessed\n  - assignment: A description of what is expected from a student, e.g. to submit a paper\n  - attendance_report: A report containing information on a student's attendance for a course or test\n  - handed_in_document: A document submitted by the student\n  - instructions: Instructions for the student on how to enrol in a course or take a test\n  - plagiarism_report: A report containing information on (potential) plagiarism, e.g. in a submitted document\n  - session_report: A report containing information on a session, e.g. an academic session, course, or test session\n  - test_made: The completed test, including all answers provided by the student\n  - other: Any other type of document not listed above\n\nThis is an *extensible enumeration*. Use the prefix `x-` for custom values.\n",
         "x-ooapi-extensible-enum": [
           "additional_document",
           "assessment_form",
@@ -16437,6 +16437,26 @@
             "type": "string",
             "description": "The name of the document",
             "example": "paper_test_1234333.pdf"
+          },
+          "consumer": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/Consumer"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "ext": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/Ext"
+              },
+              {
+                "type": "null"
+              }
+            ]
           }
         }
       },

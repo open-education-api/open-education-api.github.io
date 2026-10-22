@@ -11554,7 +11554,7 @@ components:
           - assessment_form: A form used to assess a test
           - assessment_model: A formal description of how a test is assessed
           - assignment: A description of what is expected from a student, e.g. to submit a paper
-          - attendance_report: A report containing information on a student’s attendance for a course or test
+          - attendance_report: A report containing information on a student's attendance for a course or test
           - handed_in_document: A document submitted by the student
           - instructions: Instructions for the student on how to enrol in a course or take a test
           - plagiarism_report: A report containing information on (potential) plagiarism, e.g. in a submitted document
@@ -11757,6 +11757,14 @@ components:
           type: string
           description: The name of the document
           example: paper_test_1234333.pdf
+        consumer:
+          oneOf:
+            - $ref: '#/components/schemas/Consumer'
+            - type: 'null'
+        ext:
+          oneOf:
+            - $ref: '#/components/schemas/Ext'
+            - type: 'null'
     Result:
       type: object
       description: A result as part of an association or attempt
