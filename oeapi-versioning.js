@@ -1,11 +1,11 @@
 /*
  *  OOAPI Documentation Version Handling
  *  ------------------------------------------------------
-    - Informational banner indicating a version that is not the latest, but may still be under maintenance
-    - Banner is fixed at the top of the viewport
-    - All alignment handled via CSS
-    - Version selector overridden for clean URLs
- */
+   - Informational banner indicating a version that is not the latest, but may still be under maintenance
+   - Banner is fixed at the top of the viewport
+   - All alignment handled via CSS
+   - Version selector overridden for clean URLs
+*/
 
 (function () {
   // Load versions.json once (synchronously) so Docsify (and the versioned plugin) can use it.
@@ -25,11 +25,11 @@
    */
   function getActiveVersion() {
     if (!VERSIONS_CFG || !Array.isArray(VERSIONS_CFG.versions)) return null;
-	  let activeVersion = VERSIONS_CFG.versions.find(versionEntry => (location.pathname + '/').startsWith(`/${versionEntry.folder}/`) );
+    let activeVersion = VERSIONS_CFG.versions.find(versionEntry => (location.pathname + '/').startsWith(`/${versionEntry.folder}/`) );
     if (!activeVersion) activeVersion = VERSIONS_CFG.versions.find(versionEntry => (VERSIONS_CFG.current === versionEntry.label) );
     return activeVersion;
   }
-    
+  
   /**
    * Add current folder to versions for Docsify versioned plugin.
    */
@@ -81,6 +81,76 @@
   }
 
   /**
+   * Set header background based on version status.
+   */
+  function updateHeaderColour() {
+    const activeVersion = getActiveVersion();
+    const header = document.querySelector('.topbar');
+    if (!activeVersion || !header) return;
+
+    const colours = {
+      current: '#17233d',
+      old: '#FFC400',
+      beta: '#2CA1A3',
+      unreleased: '#2CA1A3'
+    };
+
+    header.style.backgroundColor = colours[activeVersion.status] || colours.current;
+  }
+
+  /**
+   * Initialise header version dropdown.
+   */
+  function initialiseVersionDropdown() {
+    if (!VERSIONS_CFG || !Array.isArray(VERSIONS_CFG.versions)) return;
+
+    const menu = document.querySelector('.version-menu');
+    const button = document.getElementById('version-toggle');
+    const dropdown = document.getElementById('version-dropdown');
+    const activeVersion = getActiveVersion();
+
+    if (!menu || !button || !dropdown || !activeVersion) return;
+
+    button.textContent = activeVersion.label + ' ▾';
+    button.setAttribute('aria-expanded', 'false');
+    button.setAttribute('aria-haspopup', 'true');
+
+    dropdown.replaceChildren();
+
+    VERSIONS_CFG.versions.forEach(version => {
+      const link = document.createElement('a');
+      link.href = '/' + version.folder + '/';
+      link.textContent = version.label;
+
+      if (version.folder === activeVersion.folder) {
+        link.classList.add('active');
+        link.setAttribute('aria-current', 'page');
+      }
+
+      dropdown.appendChild(link);
+    });
+
+    button.addEventListener('click', function () {
+      const isOpen = menu.classList.toggle('open');
+      button.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    document.addEventListener('click', function (event) {
+      if (!menu.contains(event.target)) {
+        menu.classList.remove('open');
+        button.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape') {
+        menu.classList.remove('open');
+        button.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+
+  /**
    * Override Docsify Versioned Plugin to ensure stable URLs.
    */
   function initialiseVersionSwitch() {
@@ -101,7 +171,9 @@
   function initialise() {
     // kleine delay zodat Docsify de layout klaar heeft
     setTimeout(renderBanner, 80);
+    setTimeout(updateHeaderColour, 80);
     initialiseVersionSwitch();
+    initialiseVersionDropdown();
   }
 
   /* --- Execution (side-effects) ------------------------------------------- */
